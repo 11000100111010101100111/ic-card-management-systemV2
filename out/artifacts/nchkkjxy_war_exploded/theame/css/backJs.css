@@ -1,0 +1,12 @@
+body{
+    background-color: #fff;;
+}
+.back_con{
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 99;
+}

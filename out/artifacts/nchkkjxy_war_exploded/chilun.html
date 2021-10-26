@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>齿轮</title>
+        <style>
+            body{
+                background-color: #151515;
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+                overflow: hidden;
+
+
+                --blue: #c2bdc3;
+                --lightBlue: #0ff;
+                --spinAnimation: spin 3s linear infinite;
+            }
+
+
+            #container{
+                width: 90vw;
+                height: 90vw;
+                max-width: 90vh;
+                max-height: 90vh;
+                margin: auto;
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+
+            }
+
+            .back-con{
+                position: absolute;
+                width: 78%;
+                height: 78%;
+                float: left;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+
+                position: absolute;
+                width: 78%;
+                height: 78%;
+                float: left;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+
+
+
+                border: 1px solid #2b92d4;
+
+                text-align: center;
+                cursor: pointer;
+                overflow: hidden;
+                -webkit-animation-timing-function: linear;
+                -webkit-animation-name: breathe;
+                -webkit-animation-duration: 1.5s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+            }
+            @keyframes shadow {
+                0%{
+                    box-shadow: 0 0 0px #3023AE;
+                }
+                9%{
+                    box-shadow: 0 0 12px #3023AE;
+                }
+                10%{
+                    box-shadow: 0 0 0px #ff2132;
+                }
+                50%{
+                    box-shadow: 0 0 100px #ff2132;
+                }
+                90%{
+                    box-shadow: 0 0 0px #ff2132;
+                }
+                91%{
+                    box-shadow: 0 0 12px #3023AE;
+                }
+                100%{
+                    box-shadow: 0 0 0px #3023AE;
+                }
+            }
+
+
+            @-webkit-keyframes breathe {
+                0% {
+                    box-shadow: 0 1px 20px #d29eff;
+                }
+
+                100% {
+                    /*border: 1px solid rgba(59, 235, 235, 0.7);*/
+                    box-shadow: 0 1px 200px #d29eff;
+                }
+            }
+
+
+            #portal{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                /*box-shadow: 0 0 16px #5e427a;*/
+            }
+
+
+            #portal > #mainGear{
+                position: absolute;
+                top:0px;
+                left:0px;
+                right: 0px;
+                bottom: 0px;
+                z-index: 1;
+                animation: var(--spinAnimation);
+                will-change: transform;
+                z-index: 100;
+                /*box-shadow: 0 0 16px #5e427a;*/
+            }
+
+
+            #mainGear > path{
+                fill:#735290;
+            }
+
+
+
+
+            #mainGear .decoration{
+                fill: var(--blue);
+                stroke: var(--blue);
+                stroke-width:1px;
+            }
+
+
+            #mainGear .runes path, #mainGear .runes circle{
+                fill: none;
+                stroke: var(--blue);
+                stroke-width: 2px;
+            }
+
+
+            #mainGear .runes path.filled, #mainGear .runes circle{
+                fill:var(--blue);
+            }
+
+
+            .innerGear .runes path{
+                fill: var(--lightBlue);
+            }
+
+
+            @keyframes spin{
+                0%{transform: rotate(0deg);}
+                100%{transform: rotate(360deg);}
+            }
+        </style>
+    </head>
+    <body >
+        <div id="container">
+            <canvas id="number_rain" class="back-con"></canvas>
+            <div id="portal">
+                    <svg id="mainGear"  viewBox="-10 -10 532 532" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                        <filter id="shaddowMain" x="-20%" y="-20%" width="200%" height="200%">
+                            <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0" />
+                            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5"/>
+                            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                        </filter>
+
+
+                        <path filter="url(#shaddowMain)" d="M281.426,1.266c-16.909,-1.688 -33.943,-1.688 -50.852,0l-5.24,47.066c-15.965,2.358 -31.605,6.548 -46.611,12.489l-28.071,-38.14c-15.487,6.992 -30.239,15.51 -44.039,25.426l18.996,43.38c-12.648,10.024 -24.098,21.474 -34.122,34.122l-43.38,-18.996c-9.916,13.8 -18.434,28.552 -25.426,44.039l38.14,28.071c-5.941,15.006 -10.131,30.646 -12.489,46.611l-47.066,5.24c-1.688,16.909 -1.688,33.943 0,50.852l47.066,5.24c2.358,15.965 6.548,31.605 12.489,46.611l-38.14,28.071c6.992,15.487 15.51,30.239 25.426,44.039l43.38,-18.996c10.024,12.648 21.474,24.098 34.122,34.122l-18.996,43.38c13.8,9.916 28.552,18.434 44.039,25.426l28.071,-38.14c15.006,5.941 30.646,10.131 46.611,12.489l5.24,47.066c16.909,1.688 33.943,1.688 50.852,0l5.24,-47.066c15.965,-2.358 31.605,-6.548 46.611,-12.489l28.071,38.14c15.487,-6.992 30.239,-15.51 44.039,-25.426l-18.996,-43.38c12.648,-10.024 24.098,-21.474 34.122,-34.122l43.38,18.996c9.916,-13.8 18.434,-28.552 25.426,-44.039l-38.14,-28.071c5.941,-15.006 10.131,-30.646 12.489,-46.611l47.066,-5.24c1.688,-16.909 1.688,-33.943 0,-50.852l-47.066,-5.24c-2.358,-15.965 -6.548,-31.605 -12.489,-46.611l38.14,-28.071c-6.992,-15.487 -15.51,-30.239 -25.426,-44.039l-43.38,18.996c-10.024,-12.648 -21.474,-24.098 -34.122,-34.122l18.996,-43.38c-13.8,-9.916 -28.552,-18.434 -44.039,-25.426l-28.071,38.14c-15.006,-5.941 -30.646,-10.131 -46.611,-12.489l-5.24,-47.066Zm-25.426,78.094c97.49,0 176.64,79.15 176.64,176.64c0,97.49 -79.15,176.64 -176.64,176.64c-97.49,0 -176.64,-79.15 -176.64,-176.64c0,-97.49 79.15,-176.64 176.64,-176.64Z"/>
+
+
+                        <g class="runes">
+                            <g id="_11">
+
+<!--                                <path d="M137.832,47.21c4.022,-2.236 8.751,-1.415 10.556,1.832c1.804,3.246 0.005,7.697 -4.016,9.932c-4.021,2.235 -8.751,1.414 -10.556,-1.832c-1.804,-3.247 -0.005,-7.697 4.016,-9.932Z"/>-->
+<!--                                <path d="M134.525,41.66c8.038,-4.832 17.768,-3.422 21.715,3.145c3.948,6.568 0.626,15.822 -7.412,20.653c-8.039,4.831 -17.769,3.421 -21.716,-3.146c-3.947,-6.567 -0.626,-15.821 7.413,-20.652Z" />-->
+<!--                                <path class="filled" d="M126.278,60.627l-5.502,4.854l7.898,-1.128l-2.396,-3.726Z"/>-->
+<!--                                <path class="filled" d="M154.545,42.628l6.524,-2.141l-4.225,5.464l-2.299,-3.323"/>-->
+                            </g>
+                            <g id="_10">
+
+<!--                                <path d="M75.725,131.854l-5.027,15.873l-14.868,-11.133l14.868,11.133l-11.205,12.353" />-->
+<!--                                <path class="filled" d="M78.688,124.503c1.635,0.716 2.306,2.797 1.497,4.644c-0.808,1.847 -2.793,2.765 -4.428,2.049c-1.635,-0.716 -2.306,-2.797 -1.497,-4.644c0.809,-1.847 2.793,-2.765 4.428,-2.049Z"/>-->
+<!--                                <path class="filled" d="M59.452,160.086c1.274,1.386 0.98,3.733 -0.657,5.237c-1.636,1.504 -3.999,1.599 -5.273,0.212c-1.275,-1.386 -0.98,-3.733 0.656,-5.237c1.637,-1.504 4,-1.599 5.274,-0.212Z"/>-->
+<!--                                <path d="M53.279,125.007c3.844,2.696 4.315,8.663 1.051,13.319c-3.264,4.655 -9.035,6.247 -12.879,3.552c-3.844,-2.696 -4.315,-8.663 -1.051,-13.319c3.265,-4.655 9.035,-6.247 12.879,-3.552Z" />-->
+                                <circle cx="46.869" cy="132.749" r="1.309"/>
+                            </g>
+                            <g id="_9">
+
+<!--                                <path d="M38.054,234.74l0.287,40.868l-27.005,-21.188c0,0 26.646,-19.464 26.718,-19.68" />-->
+<!--                                <path class="filled" d="M31.59,246.088l-9.265,7.757l9.265,8.332l0,-16.089Z"/>-->
+                            </g>
+                            <g id="_8">
+<!--                                <path d="M54.417,358.926l8.834,4.453l-0.79,9.553c0,0 13.718,7.397 7.901,-1.581" />-->
+<!--                                <path d="M46.445,356.987l7.972,1.939c0,0 0,-15.729 5.674,-5.674" />-->
+<!--                                <path d="M62.461,372.932l-1.867,7.685l-9.265,-3.376c0,0 0.646,14.867 -4.669,6.536" />-->
+<!--                                <path d="M51.329,377.241l-7.364,-2.725l0.828,-8.479c0,0 -11.42,-6.608 -7.47,1.939" />-->
+<!--                                <path d="M54.417,358.926l-7.757,-2.155l-1.867,9.266" />-->
+<!--                                <path class="filled" d="M48.468,361.404l-1.005,10.392l9.983,3.663l1.509,-9.983l-10.487,-4.072Z"/>-->
+                            </g>
+                            <g id="_7">
+
+<!--                                <path d="M148.114,441.25l12.625,20.867l-18.5,13.863l-20.254,-11.348l1.221,-23.343l24.908,-0.039Z" />-->
+<!--                                <path d="M144.465,446.388l7.326,12.498l-10.845,9.121l-13.503,-7.254l0.575,-14.293l16.447,-0.072Z" />-->
+                            </g>
+<!--                            <path id="_6" d="M242.809,487.823l3.232,1.885l5.836,-6.015l-9.786,-6.913l-8.619,8.619l14.724,11.851l5.925,-6.375l7.991,5.656l14.903,-11.94l-9.786,-8.08l-9.696,7.631l5.566,5.925l3.771,-3.322" />-->
+<!--                            <path id="_5" class="filled" d="M373.909,436.559l-1.706,38.605l15.891,-10.594l-33.129,-18.135l18.944,-9.876Z"/>-->
+                            <g id="_4">
+
+<!--                                <path d="M463.782,359.991l2.411,16.878l-18.411,6.794l-3.069,-18.63l19.069,-5.042Z" />-->
+<!--                                <path class="filled" d="M458.974,364.669c0.269,-0.18 -8.888,3.501 -8.888,3.501l1.257,10.684l10.055,-4.489c0,0 -2.693,-9.517 -2.424,-9.696Z"/>-->
+<!--                                <path class="filled" d="M454.844,362.155l-0.449,-7.631c0,0 -3.681,-7.272 -0.359,-6.913c3.322,0.359 0.359,6.913 0.359,6.913"/>-->
+<!--                                <path class="filled" d="M445.597,374.993l-4.938,2.963c0,0 -6.015,-0.808 -5.387,1.975c0.629,2.783 5.387,-1.975 5.387,-1.975"/>-->
+                            </g>
+<!--                            <path id="_3" d="M471.399,247.987l0.877,-13.151l32.001,3.068l-1.096,34.194l-22.138,1.534l0,-22.357l8.987,0" style="stroke-width:4px;"/>-->
+                            <g id="_2">
+
+<!--                                <path d="M436.932,129.458l19.121,32.89l10.343,-7.571l-18.061,-33.146l12.293,-7.471" style="stroke-width:4px;"/>-->
+<!--                                <path d="M466.766,125.315l11.833,21.526" style="stroke-width:4px"/>-->
+                            </g>
+<!--                            <path id="_1" d="M362.988,44.27l-4.83,-8.012l8.634,-2.322l7.155,4.499l-1.114,17.195l0.876,9.037l-8.369,-0.319l-1.852,-6.66l9.345,-2.058l11.405,-11.706l7.662,3.433l1.488,9.561l-7.117,0.337" style="stroke-width:3.34px;"/>-->
+                            <g id="_12">
+
+<!--                                <path d="M258.47,33.811l16.609,-15.352l-17.776,-13.916l-16.699,14.904l21.817,18.404l12.569,-10.324" style="stroke-width:2.98px;"/>-->
+<!--                                <path class="filled" d="M257.393,9.885l-10.055,9.158l10.594,9.516l10.773,-9.875l-11.312,-8.799Z" style="stroke-width:1.55px;"/>-->
+                            </g>
+                        </g>
+                        <g class="decoration">
+                            <g>
+<
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                            <g>
+
+                            </g>
+                        </g>
+                    </svg>
+
+                </div>
+        </div>
+    </body>
+    <script>
+        let canvas = document.getElementById('number_rain');
+        let width = window.screen.width;
+        let height = window.screen.height;
+        let yPositions = Array(100).join(0).split('');
+        let context= canvas.getContext('2d');
+        let draw = function(){
+
+            context.fillStyle = 'rgba(20,20,20,0.05)';
+            context.fillRect(0,0,width,height);
+
+            context.fillStyle = '#fdabff';
+            context.font = '6px';
+
+            yPositions.map(function(Y,index){
+
+                let text = String.fromCharCode(1e2 + Math.random()*330);
+                let X = index * 10;
+                canvas.getContext('2d').fillText(text,X,Y);
+
+                if(Y > Math.random()*1e4)
+                    yPositions[index] = 0;
+                else
+                    yPositions[index] = Y + 10;
+            });
+        }
+        setInterval('draw()',30);
+    </script>
+</html>

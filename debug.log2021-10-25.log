@@ -1,0 +1,903 @@
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-08-59 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-08-59 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年59月25日 08时10分47秒]
+2021-10-25-09-02 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年02月25日 09时10分53秒]
+2021-10-25-09-03 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年03月25日 09时10分21秒]
+2021-10-25-09-03 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年03月25日 09时10分29秒]
+2021-10-25-09-04 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年04月25日 09时10分10秒]
+2021-10-25-09-07 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年07月25日 09时10分12秒]
+2021-10-25-09-09 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年09月25日 09时10分37秒]
+2021-10-25-09-09 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年09月25日 09时10分45秒]
+2021-10-25-09-09 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年09月25日 09时10分55秒]
+2021-10-25-09-11 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年11月25日 09时10分52秒]
+2021-10-25-09-12 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年12月25日 09时10分59秒]
+2021-10-25-09-13 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年13月25日 09时10分17秒]
+2021-10-25-09-14 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年14月25日 09时10分37秒]
+2021-10-25-09-16 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年16月25日 09时10分55秒]
+2021-10-25-09-17 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年17月25日 09时10分09秒]
+2021-10-25-09-17 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年17月25日 09时10分29秒]
+2021-10-25-09-17 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年17月25日 09时10分33秒]
+2021-10-25-09-17 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年17月25日 09时10分48秒]
+2021-10-25-09-17 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年17月25日 09时10分59秒]
+2021-10-25-09-18 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年18月25日 09时10分11秒]
+2021-10-25-09-19 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年19月25日 09时10分00秒]
+2021-10-25-09-19 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年19月25日 09时10分11秒]
+2021-10-25-09-19 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年19月25日 09时10分24秒]
+2021-10-25-09-20 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年20月25日 09时10分09秒]
+2021-10-25-09-20 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年20月25日 09时10分27秒]
+2021-10-25-09-21 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年21月25日 09时10分20秒]
+2021-10-25-09-21 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年21月25日 09时10分25秒]
+2021-10-25-09-22 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年22月25日 09时10分19秒]
+2021-10-25-09-22 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年22月25日 09时10分33秒]
+2021-10-25-09-23 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年23月25日 09时10分33秒]
+2021-10-25-09-23 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年23月25日 09时10分54秒]
+2021-10-25-09-24 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年24月25日 09时10分15秒]
+2021-10-25-09-24 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年24月25日 09时10分30秒]
+2021-10-25-09-24 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年24月25日 09时10分57秒]
+2021-10-25-09-25 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年25月25日 09时10分22秒]
+2021-10-25-09-26 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年26月25日 09时10分34秒]
+2021-10-25-09-26 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年26月25日 09时10分46秒]
+2021-10-25-09-28 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年28月25日 09时10分12秒]
+2021-10-25-09-33 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年33月25日 09时10分11秒]
+2021-10-25-09-35 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年35月25日 09时10分19秒]
+2021-10-25-09-35 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年35月25日 09时10分44秒]
+2021-10-25-09-35 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年35月25日 09时10分55秒]
+2021-10-25-09-36 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年36月25日 09时10分22秒]
+2021-10-25-09-37 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年37月25日 09时10分32秒]
+2021-10-25-09-37 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年37月25日 09时10分49秒]
+2021-10-25-09-38 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年38月25日 09时10分02秒]
+2021-10-25-09-38 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年38月25日 09时10分48秒]
+2021-10-25-09-40 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年40月25日 09时10分29秒]
+2021-10-25-09-42 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年42月25日 09时10分03秒]
+2021-10-25-09-42 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年42月25日 09时10分20秒]
+2021-10-25-09-42 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年42月25日 09时10分34秒]
+2021-10-25-09-42 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年42月25日 09时10分51秒]
+2021-10-25-09-43 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-09-54 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-09-54 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年54月25日 09时10分36秒]
+2021-10-25-09-56 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年56月25日 09时10分58秒]
+2021-10-25-10-02 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年02月25日 10时10分21秒]
+2021-10-25-10-03 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年03月25日 10时10分13秒]
+2021-10-25-10-04 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年04月25日 10时10分07秒]
+2021-10-25-10-04 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-13-44 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-13-47 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年47月25日 13时10分12秒]
+2021-10-25-13-50 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-13-51 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-13-51 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年51月25日 13时10分48秒]
+2021-10-25-14-55 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-14-55 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-14-56 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-14-56 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-15-00 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年00月25日 15时10分39秒]
+2021-10-25-15-03 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年03月25日 15时10分54秒]
+2021-10-25-15-05 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-15-06 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-15-07 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年07月25日 15时10分09秒]
+2021-10-25-15-08 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年08月25日 15时10分53秒]
+2021-10-25-15-09 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年09月25日 15时10分58秒]
+2021-10-25-15-15 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-15-16 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-15-17 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年17月25日 15时10分28秒]
+2021-10-25-15-25 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-15-26 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-15-27 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年27月25日 15时10分44秒]
+2021-10-25-15-36 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-15-36 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-15-46 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年46月25日 15时10分57秒]
+2021-10-25-15-47 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-15-47 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7]
+2021-10-25-15-47 [http-nio-8080-exec-8] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@16b050ea] will be managed by Spring
+2021-10-25-15-47 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-47 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-15-47 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-15-47 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7]
+2021-10-25-15-47 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7] from current transaction
+2021-10-25-15-47 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-47 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-15-47 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-15-47 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7]
+2021-10-25-15-48 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7] from current transaction
+2021-10-25-15-48 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-48 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card,phone, email, single, register_identify, user_status, money_balance, ) values ( ?, ?, ?,?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-15-48 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 2(Long), xxx(String), 362430199999999999(String), 15770674965(String), 123@123.com(String), qqq(String), 普通用户(String), 1(String), 0.00(String), 1(String)
+2021-10-25-15-48 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7]
+2021-10-25-15-48 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7]
+2021-10-25-15-48 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7]
+2021-10-25-15-48 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@156dbce7]
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626]
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@16b050ea] will be managed by Spring
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626]
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626] from current transaction
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626]
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626] from current transaction
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card,phone, email, single, register_identify, user_status, money_balance, ) values ( ?, ?, ?,?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-15-50 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 3(Long), xxx(String), 362430199999999999(String), 15770674965(String), 123@123.com(String), qqq(String), 普通用户(String), 1(String), 0.00(String), 1(String)
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626]
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626]
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626]
+2021-10-25-15-50 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d4a626]
+2021-10-25-15-50 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-15-50 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995]
+2021-10-25-15-50 [http-nio-8080-exec-1] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@16b050ea] will be managed by Spring
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-15-50 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995]
+2021-10-25-15-50 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995] from current transaction
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-15-50 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995]
+2021-10-25-15-50 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995] from current transaction
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@16b050ea]
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card,phone, email, single, register_identify, user_status, money_balance, ) values ( ?, ?, ?,?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-15-50 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 4(Long), xxx(String), 362430199999999999(String), 15770674965(String), 123@123.com(String), qqq(String), 普通用户(String), 1(String), 0.00(String), 1(String)
+2021-10-25-15-50 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995]
+2021-10-25-15-52 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995]
+2021-10-25-15-52 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995]
+2021-10-25-15-52 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@369cf995]
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e]
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4b712b08] will be managed by Spring
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4b712b08]
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e]
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e] from current transaction
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4b712b08]
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e]
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e] from current transaction
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4b712b08]
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card,phone, email, single, register_identify, user_status, money_balance, ) values ( ?, ?, ?,?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-15-52 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 5(Long), xxx(String), 362430199999999999(String), 15770674965(String), 123@123.com(String), qqq(String), 普通用户(String), 1(String), 0.00(String), 1(String)
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e]
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e]
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e]
+2021-10-25-15-52 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@563a0e7e]
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86]
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4b712b08] will be managed by Spring
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4b712b08]
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86]
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86] from current transaction
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4b712b08]
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86]
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86] from current transaction
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@4b712b08]
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card,phone, email, single, register_identify, user_status, money_balance, ) values ( ?, ?, ?,?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-15-56 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 6(Long), xxx(String), 362430199999999999(String), 15770674965(String), 123@123.com(String), qqq(String), 普通用户(String), 1(String), 0.00(String), 1(String)
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86]
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86]
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86]
+2021-10-25-15-56 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a20cd86]
+2021-10-25-15-56 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-15-57 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4]
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@2f9549ee] will be managed by Spring
+2021-10-25-15-57 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2f9549ee]
+2021-10-25-15-57 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-15-57 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4]
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4] from current transaction
+2021-10-25-15-57 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2f9549ee]
+2021-10-25-15-57 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-15-57 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4]
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4] from current transaction
+2021-10-25-15-57 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2f9549ee]
+2021-10-25-15-57 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4]
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4]
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4]
+2021-10-25-15-57 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b4033a4]
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03]
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@2f9549ee] will be managed by Spring
+2021-10-25-15-59 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2f9549ee]
+2021-10-25-15-59 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-15-59 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03]
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03] from current transaction
+2021-10-25-15-59 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2f9549ee]
+2021-10-25-15-59 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-15-59 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03]
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03] from current transaction
+2021-10-25-15-59 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@2f9549ee]
+2021-10-25-15-59 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03]
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03]
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03]
+2021-10-25-15-59 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28eebe03]
+2021-10-25-16-00 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-16-00 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-16-01 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-01 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98]
+2021-10-25-16-01 [http-nio-8080-exec-2] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@253f18e1] will be managed by Spring
+2021-10-25-16-01 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@253f18e1]
+2021-10-25-16-01 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-01 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-01 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98]
+2021-10-25-16-01 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98] from current transaction
+2021-10-25-16-01 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@253f18e1]
+2021-10-25-16-01 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-16-01 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-16-01 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98]
+2021-10-25-16-01 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98] from current transaction
+2021-10-25-16-01 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@253f18e1]
+2021-10-25-16-01 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-16-01 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98]
+2021-10-25-16-02 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98]
+2021-10-25-16-02 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98]
+2021-10-25-16-02 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48338e98]
+2021-10-25-16-03 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-16-04 [RMI TCP Connection(3)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec]
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec]
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec] from current transaction
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674965(String), x123456(String)
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec]
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec] from current transaction
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-16-04 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 10(Long), xxx(String), 362430199999999999(String), 123@123.com(String), qqq(String), 普通用户(String), 1(String), 0.00(String), 1(String), 15770674965(String)
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec]
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec]
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec]
+2021-10-25-16-04 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20b434ec]
+2021-10-25-16-07 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-07 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@275f121c]
+2021-10-25-16-07 [http-nio-8080-exec-3] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-07 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-07 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-07 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-07 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@275f121c]
+2021-10-25-16-07 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@275f121c]
+2021-10-25-16-07 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@275f121c]
+2021-10-25-16-07 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@275f121c]
+2021-10-25-16-08 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-08 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-16-08 [http-nio-8080-exec-5] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-08 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-08 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-08 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-08 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-16-08 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-16-08 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-16-08 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-16-13 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-13 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7168419c]
+2021-10-25-16-13 [http-nio-8080-exec-7] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-13 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-13 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-13 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-13 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7168419c]
+2021-10-25-16-13 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7168419c]
+2021-10-25-16-13 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7168419c]
+2021-10-25-16-13 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7168419c]
+2021-10-25-16-16 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-16 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50ecd029]
+2021-10-25-16-16 [http-nio-8080-exec-9] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-16 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-16 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-16 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-16 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50ecd029]
+2021-10-25-16-16 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50ecd029]
+2021-10-25-16-16 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50ecd029]
+2021-10-25-16-16 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50ecd029]
+2021-10-25-16-16 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-16 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a238ea3]
+2021-10-25-16-16 [http-nio-8080-exec-10] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-16 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-16 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-16 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-16 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a238ea3]
+2021-10-25-16-16 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a238ea3]
+2021-10-25-16-16 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a238ea3]
+2021-10-25-16-16 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a238ea3]
+2021-10-25-16-16 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-16 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d2d0ae0]
+2021-10-25-16-16 [http-nio-8080-exec-1] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-16 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-16 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-16 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-16 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d2d0ae0]
+2021-10-25-16-16 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d2d0ae0]
+2021-10-25-16-16 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d2d0ae0]
+2021-10-25-16-16 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d2d0ae0]
+2021-10-25-16-16 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年16月25日 16时10分14秒]
+2021-10-25-16-16 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-16 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28627023]
+2021-10-25-16-16 [http-nio-8080-exec-4] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-16 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-16 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-16 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362430199999999999(String)
+2021-10-25-16-16 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28627023]
+2021-10-25-16-16 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28627023]
+2021-10-25-16-16 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28627023]
+2021-10-25-16-16 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28627023]
+2021-10-25-16-17 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-17 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@726a9eb5]
+2021-10-25-16-17 [http-nio-8080-exec-7] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-17 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-17 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-17 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362403655984215412(String)
+2021-10-25-16-17 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@726a9eb5]
+2021-10-25-16-17 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@726a9eb5]
+2021-10-25-16-17 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@726a9eb5]
+2021-10-25-16-17 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@726a9eb5]
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f]
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 19970246855(String), 362403655984215412(String)
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f]
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f] from current transaction
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 19970246855(String), x123456(String)
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f]
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f] from current transaction
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-16-17 [http-nio-8080-exec-8] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 11(Long), 张四(String), 362403655984215412(String), 123@qq.com(String), hello(String), 普通用户(String), 1(String), 0.00(String), 1(String), 19970246855(String)
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f]
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f]
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f]
+2021-10-25-16-17 [http-nio-8080-exec-8] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78eff60f]
+2021-10-25-16-18 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-18 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@770a223a]
+2021-10-25-16-18 [http-nio-8080-exec-10] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-18 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-18 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-18 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 19970246858(String), 362403655984215412(String)
+2021-10-25-16-18 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@770a223a]
+2021-10-25-16-18 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@770a223a]
+2021-10-25-16-18 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@770a223a]
+2021-10-25-16-18 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@770a223a]
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48]
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 19970246858(String), 362403655984215411(String)
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48]
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48] from current transaction
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 19970246858(String), x123456(String)
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48]
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48] from current transaction
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-16-18 [http-nio-8080-exec-1] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 12(Long), 张四(String), 362403655984215411(String), 123@qq.com(String), hello(String), 普通用户(String), 1(String), 0.00(String), 1(String), 19970246858(String)
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48]
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48]
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48]
+2021-10-25-16-18 [http-nio-8080-exec-1] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53f7bc48]
+2021-10-25-16-19 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-19 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bf95253]
+2021-10-25-16-19 [http-nio-8080-exec-2] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-19 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-19 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-19 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 19970246855(String), 362403655984215413(String)
+2021-10-25-16-19 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bf95253]
+2021-10-25-16-19 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bf95253]
+2021-10-25-16-19 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bf95253]
+2021-10-25-16-19 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bf95253]
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d]
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 19970246851(String), 362403655984215413(String)
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d]
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d] from current transaction
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 19970246851(String), x123456(String)
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d]
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d] from current transaction
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-16-19 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 13(Long), 张四(String), 362403655984215413(String), 123@qq.com(String), hello(String), 普通用户(String), 1(String), 0.00(String), 1(String), 19970246851(String)
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d]
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d]
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d]
+2021-10-25-16-19 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@402de92d]
+2021-10-25-16-21 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-21 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30cceab5]
+2021-10-25-16-21 [http-nio-8080-exec-5] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-21 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-21 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-21 [http-nio-8080-exec-5] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 19970246851(String), 362403655984215413(String)
+2021-10-25-16-21 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30cceab5]
+2021-10-25-16-21 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30cceab5]
+2021-10-25-16-21 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30cceab5]
+2021-10-25-16-21 [http-nio-8080-exec-5] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30cceab5]
+2021-10-25-16-21 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年21月25日 16时10分27秒]
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491]
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674999(String), 362431199901235478(String)
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491]
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491] from current transaction
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674999(String), sss123456(String)
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491]
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491] from current transaction
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-16-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 14(Long), liuzhiq(String), 362431199901235478(String), 23@123.com(String), sss(String), 普通用户(String), 1(String), 0.00(String), 1(String), 15770674999(String)
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491]
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491]
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491]
+2021-10-25-16-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fade491]
+2021-10-25-16-23 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-23 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@444ac42b] was not registered for synchronization because synchronization is not active
+2021-10-25-16-23 [http-nio-8080-exec-4] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will not be managed by Spring
+2021-10-25-16-23 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasID] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-23 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasID] [DEBUG] - ==>  Preparing: select count(id) from ic_main_easy_user where easy_id = ? 
+2021-10-25-16-23 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasID] [DEBUG] - ==> Parameters: 15770674999(String)
+2021-10-25-16-23 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@444ac42b]
+2021-10-25-16-23 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-23 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d0c82c7] was not registered for synchronization because synchronization is not active
+2021-10-25-16-23 [http-nio-8080-exec-4] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will not be managed by Spring
+2021-10-25-16-23 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.getLoginUserById] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-23 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.getLoginUserById] [DEBUG] - ==>  Preparing: select id,easy_id,`password`,`indentify` from ic_main_easy_user where easy_id = ? 
+2021-10-25-16-23 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.getLoginUserById] [DEBUG] - ==> Parameters: 15770674999(String)
+2021-10-25-16-23 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d0c82c7]
+2021-10-25-16-23 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年23月25日 16时10分18秒]
+2021-10-25-16-26 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年26月25日 16时10分28秒]
+2021-10-25-16-27 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年27月25日 16时10分27秒]
+2021-10-25-16-28 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年28月25日 16时10分10秒]
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83]
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674911(String), 365274122854725481(String)
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83]
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83] from current transaction
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770674911(String), 123456a(String)
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83]
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83] from current transaction
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-16-29 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 15(Long), wu(String), 365274122854725481(String), sdada@qq.com(String), qq(String), 普通用户(String), 1(String), 0.00(String), 1(String), 15770674911(String)
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83]
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83]
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83]
+2021-10-25-16-29 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e12a83]
+2021-10-25-16-30 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年30月25日 16时10分21秒]
+2021-10-25-16-30 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年30月25日 16时10分28秒]
+2021-10-25-16-30 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年30月25日 16时10分54秒]
+2021-10-25-16-31 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年31月25日 16时10分03秒]
+2021-10-25-16-31 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年31月25日 16时10分31秒]
+2021-10-25-16-31 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年31月25日 16时10分35秒]
+2021-10-25-16-31 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年31月25日 16时10分44秒]
+2021-10-25-16-31 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年31月25日 16时10分52秒]
+2021-10-25-16-34 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年34月25日 16时10分26秒]
+2021-10-25-16-35 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年35月25日 16时10分49秒]
+2021-10-25-16-36 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年36月25日 16时10分05秒]
+2021-10-25-16-36 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年36月25日 16时10分24秒]
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc]
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 19970256541(String), 365412588975421542(String)
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc]
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc] from current transaction
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 19970256541(String), 123456a(String)
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc]
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc] from current transaction
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-16-37 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 16(Long), sss(String), 365412588975421542(String), ss@123.com(String), ss(String), 普通用户(String), 1(String), 0.00(String), 1(String), 19970256541(String)
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc]
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc]
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc]
+2021-10-25-16-37 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a10fdc]
+2021-10-25-16-38 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年38月25日 16时10分16秒]
+2021-10-25-16-44 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年44月25日 16时10分24秒]
+2021-10-25-16-45 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年45月25日 16时10分04秒]
+2021-10-25-16-46 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年46月25日 16时10分29秒]
+2021-10-25-16-46 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年46月25日 16时10分43秒]
+2021-10-25-16-47 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-47 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@466247a7]
+2021-10-25-16-47 [http-nio-8080-exec-3] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-47 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-47 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-47 [http-nio-8080-exec-3] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362741558854785412(String)
+2021-10-25-16-47 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@466247a7]
+2021-10-25-16-47 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@466247a7]
+2021-10-25-16-47 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@466247a7]
+2021-10-25-16-47 [http-nio-8080-exec-3] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@466247a7]
+2021-10-25-16-47 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-16-47 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48aef59]
+2021-10-25-16-47 [http-nio-8080-exec-2] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@b433e81] will be managed by Spring
+2021-10-25-16-47 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@b433e81]
+2021-10-25-16-47 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-16-47 [http-nio-8080-exec-2] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770674965(String), 362741558854785412(String)
+2021-10-25-16-47 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48aef59]
+2021-10-25-16-47 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48aef59]
+2021-10-25-16-47 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48aef59]
+2021-10-25-16-47 [http-nio-8080-exec-2] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48aef59]
+2021-10-25-16-47 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年47月25日 16时10分21秒]
+2021-10-25-16-57 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年57月25日 16时10分09秒]
+2021-10-25-17-00 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年00月25日 17时10分24秒]
+2021-10-25-17-00 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年00月25日 17时10分53秒]
+2021-10-25-17-01 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年01月25日 17时10分20秒]
+2021-10-25-17-01 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年01月25日 17时10分54秒]
+2021-10-25-17-02 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年02月25日 17时10分06秒]
+2021-10-25-17-03 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年03月25日 17时10分13秒]
+2021-10-25-17-03 [http-nio-8080-exec-7] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年03月25日 17时10分53秒]
+2021-10-25-17-04 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年04月25日 17时10分13秒]
+2021-10-25-17-05 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年05月25日 17时10分24秒]
+2021-10-25-17-05 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年05月25日 17时10分49秒]
+2021-10-25-17-05 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年05月25日 17时10分59秒]
+2021-10-25-17-06 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年06月25日 17时10分09秒]
+2021-10-25-17-06 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年06月25日 17时10分18秒]
+2021-10-25-17-06 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年06月25日 17时10分32秒]
+2021-10-25-17-06 [http-nio-8080-exec-3] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年06月25日 17时10分49秒]
+2021-10-25-17-11 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年11月25日 17时10分01秒]
+2021-10-25-17-11 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-25-17-19 [RMI TCP Connection(5)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-25-17-21 [http-nio-8080-exec-1] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年21月25日 17时10分09秒]
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a]
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f] will be managed by Spring
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15774698742(String), 362457899876545247(String)
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a]
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a] from current transaction
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15774698742(String), x123456(String)
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a]
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a] from current transaction
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, head_url, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-17-22 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 17(Long), helloKitty(String), 362457899876545247(String), 123@123.com(String), http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png(String), hh(String), 普通用户(String), 1(String), 0.00(String), 1(String), 15774698742(String)
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a]
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a]
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a]
+2021-10-25-17-22 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70ff799a]
+2021-10-25-17-22 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-17-22 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a171216]
+2021-10-25-17-22 [http-nio-8080-exec-4] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f] will be managed by Spring
+2021-10-25-17-22 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-22 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-17-22 [http-nio-8080-exec-4] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15774698742(String), 362457899876545247(String)
+2021-10-25-17-22 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a171216]
+2021-10-25-17-22 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a171216]
+2021-10-25-17-22 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a171216]
+2021-10-25-17-22 [http-nio-8080-exec-4] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a171216]
+2021-10-25-17-22 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-17-22 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-17-22 [http-nio-8080-exec-7] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f] will be managed by Spring
+2021-10-25-17-22 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-22 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-17-22 [http-nio-8080-exec-7] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15774698742(String), 362457899876545247(String)
+2021-10-25-17-22 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-17-22 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-17-22 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-17-22 [http-nio-8080-exec-7] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d20974]
+2021-10-25-17-22 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-17-22 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@695f7a18]
+2021-10-25-17-22 [http-nio-8080-exec-6] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f] will be managed by Spring
+2021-10-25-17-22 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-22 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-17-22 [http-nio-8080-exec-6] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15774698742(String), 362457899876545247(String)
+2021-10-25-17-22 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@695f7a18]
+2021-10-25-17-22 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@695f7a18]
+2021-10-25-17-22 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@695f7a18]
+2021-10-25-17-22 [http-nio-8080-exec-6] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@695f7a18]
+2021-10-25-17-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-17-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30554ba7]
+2021-10-25-17-22 [http-nio-8080-exec-9] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f] will be managed by Spring
+2021-10-25-17-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-17-22 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15774698742(String), 362457899876545247(String)
+2021-10-25-17-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30554ba7]
+2021-10-25-17-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30554ba7]
+2021-10-25-17-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30554ba7]
+2021-10-25-17-22 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30554ba7]
+2021-10-25-17-28 [http-nio-8080-exec-2] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年28月25日 17时10分42秒]
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7]
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f] will be managed by Spring
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770689547(String), 362457899876545287(String)
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7]
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7] from current transaction
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770689547(String), x123456(String)
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7]
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7] from current transaction
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, sex, head_url, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-17-29 [http-nio-8080-exec-9] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 18(Long), helloKitty(String), 362457899876545287(String), 123@123.com(String), 男(String), http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png(String), hh(String), 普通用户(String), 1(String), 0.00(String), 1(String), 15770689547(String)
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7]
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7]
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7]
+2021-10-25-17-29 [http-nio-8080-exec-9] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4761ebd7]
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Creating a new SqlSession
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8]
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.transaction.SpringManagedTransaction] [DEBUG] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f] will be managed by Spring
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==>  Preparing: select count(id) from ic_main_user where phone = ? or identify_card = ? 
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.hasUser] [DEBUG] - ==> Parameters: 15770689523(String), 362457899876545669(String)
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8]
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8] from current transaction
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==>  Preparing: insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (?,?,'普通用户') 
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerLoginUser] [DEBUG] - ==> Parameters: 15770689523(String), x123456(String)
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8]
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8] from current transaction
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@5a644e7f]
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==>  Preparing: insert into ic_main_user ( easy_id, `name`, identify_card, email, sex, head_url, single, register_identify, user_status, money_balance, node_status, phone ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2021-10-25-17-29 [http-nio-8080-exec-10] [com.nhky.loginAndRegister.dao.LoginAndRegisterDao.registerUser] [DEBUG] - ==> Parameters: 19(Long), helloKitty(String), 362457899876545669(String), 123@123.com(String), 男(String), http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png(String), hh(String), 普通用户(String), 1(String), 0.00(String), 1(String), 15770689523(String)
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8]
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8]
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8]
+2021-10-25-17-29 [http-nio-8080-exec-10] [org.mybatis.spring.SqlSessionUtils] [DEBUG] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a894ca8]
+2021-10-25-17-31 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed

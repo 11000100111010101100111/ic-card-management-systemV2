@@ -1,0 +1,28 @@
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\controller\LoginAndRegister.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\dao\LoginAndRegisterDao.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Identified candidate component class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\LoginAndRegisterService.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\loginAndRegister\service\serviceImpl\LoginAndRegisterImpl.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\EasyUser.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\pojo\User.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\DateUtil.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\LogUtil.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MapUtil.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\MD5.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Ignored because not a concrete top-level class: file [D:\myFile\javaEE\nchkkjxy\out\artifacts\nchkkjxy_war_exploded\WEB-INF\classes\com\nhky\utils\StringUtil.class]
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterDao' and 'com.nhky.loginAndRegister.dao.LoginAndRegisterDao' mapperInterface
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.mapper.ClassPathMapperScanner] [DEBUG] - Creating MapperFactoryBean with name 'loginAndRegisterService' and 'com.nhky.loginAndRegister.service.LoginAndRegisterService' mapperInterface
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.apache.ibatis.logging.LogFactory] [DEBUG] - Logging initialized using 'org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} inited
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2021-10-26-09-07 [RMI TCP Connection(2)-127.0.0.1] [org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] - Property 'mapperLocations' was not specified or no matching resources found
+2021-10-26-09-08 [http-nio-8080-exec-8] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年08月26日 09时10分58秒]
+2021-10-26-09-12 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年12月26日 09时10分10秒]
+2021-10-26-09-12 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年12月26日 09时10分33秒]
+2021-10-26-09-14 [http-nio-8080-exec-9] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年14月26日 09时10分46秒]
+2021-10-26-09-16 [http-nio-8080-exec-5] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年16月26日 09时10分54秒]
+2021-10-26-09-17 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年17月26日 09时10分23秒]
+2021-10-26-09-18 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年18月26日 09时10分40秒]
+2021-10-26-09-18 [http-nio-8080-exec-10] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年18月26日 09时10分59秒]
+2021-10-26-09-19 [http-nio-8080-exec-6] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年19月26日 09时10分35秒]
+2021-10-26-09-20 [http-nio-8080-exec-4] [com.nhky.utils.LogUtil] [INFO] - -----INFO    去注册    [xjh-日志-2021年20月26日 09时10分29秒]
+2021-10-26-09-44 [main] [com.alibaba.druid.pool.DruidDataSource] [INFO] - {dataSource-1} closed
