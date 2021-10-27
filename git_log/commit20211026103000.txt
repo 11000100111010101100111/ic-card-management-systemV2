@@ -1,0 +1,484 @@
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy
+$ git config --global user.name "四原色"
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy
+$ git config --global user.email 2749984520@qq.com
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy
+$ git init
+Initialized empty Git repository in D:/myFile/javaEE/nchkkjxy/.git/
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$ git add .
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_ICCard_logout_war_exploded/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_ICCard_logout_war_exploded/index.jsp.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_consume_war_exploded/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_consume_war_exploded/index.jsp.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_createICCard_war_exploded/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_personal_information_war_exploded/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_personal_information_war_exploded/index.jsp.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_recharge_war_exploded/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_recharge_war_exploded/index.jsp.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_war_exploded/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in out/artifacts/nchkkjxy_war_exploded/index.jsp.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in web/WEB-INF/web.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in web/index.jsp.
+The file will have its original line endings in your working directory
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$ git commit -m "frist_commit_by_xjh"
+[master (root-commit) 13eb2cd] frist_commit_by_xjh
+ 360 files changed, 85992 insertions(+)
+ create mode 100644 .idea/artifacts/nchkkjxy_war_exploded.xml
+ create mode 100644 .idea/encodings.xml
+ create mode 100644 .idea/libraries/libs.xml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/workspace.xml
+ create mode 100644 debug.log
+ create mode 100644 debug.log2021-10-23.log
+ create mode 100644 debug.log2021-10-24.log
+ create mode 100644 debug.log2021-10-25.log
+ create mode 100644 nchkkjxy.iml
+ create mode 100644 out/artifacts/nchkkjxy_ICCard_logout_war_exploded/WEB-INF/web.xml
+ create mode 100644 out/artifacts/nchkkjxy_ICCard_logout_war_exploded/index.jsp
+ create mode 100644 out/artifacts/nchkkjxy_consume_war_exploded/WEB-INF/web.xml
+ create mode 100644 out/artifacts/nchkkjxy_consume_war_exploded/index.jsp
+ create mode 100644 out/artifacts/nchkkjxy_createICCard_war_exploded/WEB-INF/web.xml
+ create mode 100644 out/artifacts/nchkkjxy_personal_information_war_exploded/WEB-INF/web.xml
+ create mode 100644 out/artifacts/nchkkjxy_personal_information_war_exploded/index.jsp
+ create mode 100644 out/artifacts/nchkkjxy_recharge_war_exploded/WEB-INF/web.xml
+ create mode 100644 out/artifacts/nchkkjxy_recharge_war_exploded/index.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/META-INF/nchkkjxy.kotlin_module
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/Test.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/application.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/LoginAndRegisterService.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/pojo/EasyUser.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/pojo/User.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/utils/DateUtil.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/utils/LogUtil.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/utils/MD5.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/utils/MapUtil.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/utils/StringUtil.class
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/log4j.properties
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/application.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/log4j.properties
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/mappers/loginAndRegisterMapper.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/mybatis.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/spring-mvc.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/mappers/loginAndRegisterMapper.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/mybatis.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/spring-mvc.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/icCardConsume/getOder.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/icCardConsume/mainPageOfConsume.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/loginAndRegister/backPwd.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/loginAndRegister/error.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/loginAndRegister/login.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/loginAndRegister/login1.html
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/loginAndRegister/register.html
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/loginAndRegister/register.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/main.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/personalInformation/minePage.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/static/card.html
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/ant-1.9.6.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/ant-launcher-1.9.6.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/asm-5.2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/aspectjweaver-1.8.13.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/cglib-3.2.5.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/com.springsource.org.apache.commons.logging-1.1.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/com.springsource.org.apache.log4j-1.2.15.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/commons-collections-3.2.2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/commons-compress-1.13.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/commons-dbcp2-2.1.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/commons-pool2-2.8.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/druid-1.0.15.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/fastjson-1.2.7.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/hamcrest-all-1.3.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/jackson-annotations-2.5.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/jackson-core-2.5.4.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/jackson-databind-2.5.4.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/javassist-3.22.0-CR2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/jstl-1.2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/junit-4.12.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/log4j-api-2.3.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/log4j-core-2.3.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/mybatis-3.1.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/mybatis-spring-1.2.3.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/mybatis-spring-1.3.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.6-bin.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/ognl-3.1.15.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/poi-3.17.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/poi-4.1.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/poi-5.0.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/poi-ooxml-4.1.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/poi-ooxml-5.0.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/poi-ooxml-schemas-4.1.2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/servlet-api.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/slf4j-api-1.7.25.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/slf4j-log4j12-1.7.25.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-aop-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-aspects-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-beans-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-context-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-core-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-expression-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-jdbc-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-test-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-tx-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-web-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/spring-webmvc-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lib/xmlbeans-5.0.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/ant-1.9.6.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/ant-launcher-1.9.6.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/asm-5.2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/aspectjweaver-1.8.13.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/cglib-3.2.5.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/com.springsource.org.aopalliance-1.0.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/com.springsource.org.apache.commons.logging-1.1.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/com.springsource.org.apache.log4j-1.2.15.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/commons-collections-3.2.2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/commons-compress-1.13.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/commons-dbcp2-2.1.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/commons-pool2-2.8.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/druid-1.0.15.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/fastjson-1.2.7.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/hamcrest-all-1.3.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/jackson-annotations-2.5.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/jackson-core-2.5.4.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/jackson-databind-2.5.4.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/javassist-3.22.0-CR2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/jstl-1.2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/junit-4.12.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/log4j-api-2.3.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/log4j-core-2.3.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/mybatis-3.1.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/mybatis-spring-1.2.3.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/mybatis-spring-1.3.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/mysql-connector-java-5.1.6-bin.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/ognl-3.1.15.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/poi-3.17.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/poi-4.1.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/poi-5.0.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/poi-ooxml-4.1.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/poi-ooxml-5.0.0.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/poi-ooxml-schemas-4.1.2.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/servlet-api.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/slf4j-api-1.7.25.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/slf4j-log4j12-1.7.25.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-aop-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-aspects-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-beans-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-context-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-core-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-expression-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-jdbc-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-test-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-tx-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-web-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/spring-webmvc-3.2.16.RELEASE.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/libs/xmlbeans-5.0.1.jar
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/lizi.html
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/WEB-INF/web.xml
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/chilun.html
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/index.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/login.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/login1.jsp
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/card/card.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/card/money.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/card/money_2.png
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/card/\344\270\252\344\272\272\344\277\241\346\201\257.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/card/\344\270\273\351\241\265.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/card/\345\205\205\345\200\274.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/card/\345\215\241\346\214\202\345\244\261.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/card/\345\256\211\345\205\250.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/card/\346\263\250\351\224\200.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/card/\346\266\210\350\264\271.png"
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/head_icon/defult.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/head_icon/defult_man.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/head_icon/defult_woman.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/login/404.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/login/code.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/login/error.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/login/favicon.ico
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/login/gril.JPG
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/login/logo.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/login/password.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/pic/login/user.png
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/login/\345\241\253\345\206\231\345\244\261\350\264\245.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/login/\345\277\230\350\256\260\345\257\206\347\240\201.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/login/\346\227\240\345\206\205\345\256\271.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/login/\346\227\240\346\225\260\346\215\256.png"
+ create mode 100644 "out/artifacts/nchkkjxy_war_exploded/pic/login/\346\263\250\345\206\214\346\210\220\345\212\237.png"
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/static/js/loginAndRegister/login.js
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/css/ataticAll.css
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/css/backJs.css
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/css/baseCss.css
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/css/bootstrap.min.css
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/css/myLayer.css
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/css/myRadioButton.css
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/css/ui-dialog.css
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/img/code.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/img/error.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/img/gril.JPG
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/img/logo.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/img/password.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/img/user.png
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/js/backJs.js
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/js/index.js
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/js/jquery-1.8.3.js
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/js/jquery-3.6.0.js
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/js/jquery-cookies.js
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/js/myLayer.js
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/js/particles.min.js
+ create mode 100644 out/artifacts/nchkkjxy_war_exploded/theame/js/region.js
+ create mode 100644 src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java
+ create mode 100644 src/main/java/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.java
+ create mode 100644 src/main/java/com/nhky/loginAndRegister/service/LoginAndRegisterService.java
+ create mode 100644 src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java
+ create mode 100644 src/main/java/com/nhky/pojo/EasyUser.java
+ create mode 100644 src/main/java/com/nhky/pojo/User.java
+ create mode 100644 src/main/java/com/nhky/utils/DateUtil.java
+ create mode 100644 src/main/java/com/nhky/utils/LogUtil.java
+ create mode 100644 src/main/java/com/nhky/utils/MD5.java
+ create mode 100644 src/main/java/com/nhky/utils/MapUtil.java
+ create mode 100644 src/main/java/com/nhky/utils/StringUtil.java
+ create mode 100644 src/main/resources/application.xml
+ create mode 100644 src/main/resources/log4j.properties
+ create mode 100644 src/main/resources/mappers/loginAndRegisterMapper.xml
+ create mode 100644 src/main/resources/mybatis.xml
+ create mode 100644 src/main/resources/spring-mvc.xml
+ create mode 100644 src/main/test/Test.java
+ create mode 100644 web/WEB-INF/classes/META-INF/nchkkjxy.kotlin_module
+ create mode 100644 web/WEB-INF/classes/Test.class
+ create mode 100644 web/WEB-INF/classes/application.xml
+ create mode 100644 web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/loginAndRegister/service/LoginAndRegisterService.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/pojo/EasyUser.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/pojo/User.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/utils/DateUtil.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/utils/LogUtil.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/utils/MD5.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/utils/MapUtil.class
+ create mode 100644 web/WEB-INF/classes/com/nhky/utils/StringUtil.class
+ create mode 100644 web/WEB-INF/classes/log4j.properties
+ create mode 100644 web/WEB-INF/classes/main/resources/application.xml
+ create mode 100644 web/WEB-INF/classes/main/resources/log4j.properties
+ create mode 100644 web/WEB-INF/classes/main/resources/mappers/loginAndRegisterMapper.xml
+ create mode 100644 web/WEB-INF/classes/main/resources/mybatis.xml
+ create mode 100644 web/WEB-INF/classes/main/resources/spring-mvc.xml
+ create mode 100644 web/WEB-INF/classes/mappers/loginAndRegisterMapper.xml
+ create mode 100644 web/WEB-INF/classes/mybatis.xml
+ create mode 100644 web/WEB-INF/classes/spring-mvc.xml
+ create mode 100644 web/WEB-INF/jsp/icCardConsume/getOder.jsp
+ create mode 100644 web/WEB-INF/jsp/icCardConsume/mainPageOfConsume.jsp
+ create mode 100644 web/WEB-INF/jsp/loginAndRegister/backPwd.jsp
+ create mode 100644 web/WEB-INF/jsp/loginAndRegister/error.jsp
+ create mode 100644 web/WEB-INF/jsp/loginAndRegister/login.jsp
+ create mode 100644 web/WEB-INF/jsp/loginAndRegister/login1.html
+ create mode 100644 web/WEB-INF/jsp/loginAndRegister/register.html
+ create mode 100644 web/WEB-INF/jsp/loginAndRegister/register.jsp
+ create mode 100644 web/WEB-INF/jsp/main.jsp
+ create mode 100644 web/WEB-INF/jsp/personalInformation/minePage.jsp
+ create mode 100644 web/WEB-INF/jsp/static/card.html
+ create mode 100644 web/WEB-INF/libs/ant-1.9.6.jar
+ create mode 100644 web/WEB-INF/libs/ant-launcher-1.9.6.jar
+ create mode 100644 web/WEB-INF/libs/asm-5.2.jar
+ create mode 100644 web/WEB-INF/libs/aspectjweaver-1.8.13.jar
+ create mode 100644 web/WEB-INF/libs/cglib-3.2.5.jar
+ create mode 100644 web/WEB-INF/libs/com.springsource.org.aopalliance-1.0.0.jar
+ create mode 100644 web/WEB-INF/libs/com.springsource.org.apache.commons.logging-1.1.1.jar
+ create mode 100644 web/WEB-INF/libs/com.springsource.org.apache.log4j-1.2.15.jar
+ create mode 100644 web/WEB-INF/libs/commons-collections-3.2.2.jar
+ create mode 100644 web/WEB-INF/libs/commons-compress-1.13.jar
+ create mode 100644 web/WEB-INF/libs/commons-dbcp2-2.1.1.jar
+ create mode 100644 web/WEB-INF/libs/commons-pool2-2.8.0.jar
+ create mode 100644 web/WEB-INF/libs/druid-1.0.15.jar
+ create mode 100644 web/WEB-INF/libs/fastjson-1.2.7.jar
+ create mode 100644 web/WEB-INF/libs/hamcrest-all-1.3.jar
+ create mode 100644 web/WEB-INF/libs/jackson-annotations-2.5.0.jar
+ create mode 100644 web/WEB-INF/libs/jackson-core-2.5.4.jar
+ create mode 100644 web/WEB-INF/libs/jackson-databind-2.5.4.jar
+ create mode 100644 web/WEB-INF/libs/javassist-3.22.0-CR2.jar
+ create mode 100644 web/WEB-INF/libs/jstl-1.2.jar
+ create mode 100644 web/WEB-INF/libs/junit-4.12.jar
+ create mode 100644 web/WEB-INF/libs/log4j-api-2.3.jar
+ create mode 100644 web/WEB-INF/libs/log4j-core-2.3.jar
+ create mode 100644 web/WEB-INF/libs/mybatis-3.1.1.jar
+ create mode 100644 web/WEB-INF/libs/mybatis-spring-1.2.3.jar
+ create mode 100644 web/WEB-INF/libs/mybatis-spring-1.3.1.jar
+ create mode 100644 web/WEB-INF/libs/mysql-connector-java-5.1.6-bin.jar
+ create mode 100644 web/WEB-INF/libs/ognl-3.1.15.jar
+ create mode 100644 web/WEB-INF/libs/poi-3.17.jar
+ create mode 100644 web/WEB-INF/libs/poi-4.1.0.jar
+ create mode 100644 web/WEB-INF/libs/poi-5.0.0.jar
+ create mode 100644 web/WEB-INF/libs/poi-ooxml-4.1.0.jar
+ create mode 100644 web/WEB-INF/libs/poi-ooxml-5.0.0.jar
+ create mode 100644 web/WEB-INF/libs/poi-ooxml-schemas-4.1.2.jar
+ create mode 100644 web/WEB-INF/libs/servlet-api.jar
+ create mode 100644 web/WEB-INF/libs/slf4j-api-1.7.25.jar
+ create mode 100644 web/WEB-INF/libs/slf4j-log4j12-1.7.25.jar
+ create mode 100644 web/WEB-INF/libs/spring-aop-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-aspects-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-beans-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-context-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-core-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-expression-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-jdbc-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-test-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-tx-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-web-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/spring-webmvc-3.2.16.RELEASE.jar
+ create mode 100644 web/WEB-INF/libs/xmlbeans-5.0.1.jar
+ create mode 100644 web/WEB-INF/lizi.html
+ create mode 100644 web/WEB-INF/web.xml
+ create mode 100644 web/chilun.html
+ create mode 100644 web/index.jsp
+ create mode 100644 web/login.jsp
+ create mode 100644 web/login1.jsp
+ create mode 100644 web/pic/card/card.png
+ create mode 100644 web/pic/card/money.png
+ create mode 100644 web/pic/card/money_2.png
+ create mode 100644 "web/pic/card/\344\270\252\344\272\272\344\277\241\346\201\257.png"
+ create mode 100644 "web/pic/card/\344\270\273\351\241\265.png"
+ create mode 100644 "web/pic/card/\345\205\205\345\200\274.png"
+ create mode 100644 "web/pic/card/\345\215\241\346\214\202\345\244\261.png"
+ create mode 100644 "web/pic/card/\345\256\211\345\205\250.png"
+ create mode 100644 "web/pic/card/\346\263\250\351\224\200.png"
+ create mode 100644 "web/pic/card/\346\266\210\350\264\271.png"
+ create mode 100644 web/pic/head_icon/defult.png
+ create mode 100644 web/pic/head_icon/defult_man.png
+ create mode 100644 web/pic/head_icon/defult_woman.png
+ create mode 100644 web/pic/login/404.png
+ create mode 100644 web/pic/login/code.png
+ create mode 100644 web/pic/login/error.png
+ create mode 100644 web/pic/login/favicon.ico
+ create mode 100644 web/pic/login/gril.JPG
+ create mode 100644 web/pic/login/logo.png
+ create mode 100644 web/pic/login/password.png
+ create mode 100644 web/pic/login/user.png
+ create mode 100644 "web/pic/login/\345\241\253\345\206\231\345\244\261\350\264\245.png"
+ create mode 100644 "web/pic/login/\345\277\230\350\256\260\345\257\206\347\240\201.png"
+ create mode 100644 "web/pic/login/\346\227\240\345\206\205\345\256\271.png"
+ create mode 100644 "web/pic/login/\346\227\240\346\225\260\346\215\256.png"
+ create mode 100644 "web/pic/login/\346\263\250\345\206\214\346\210\220\345\212\237.png"
+ create mode 100644 web/static/js/loginAndRegister/login.js
+ create mode 100644 web/theame/css/ataticAll.css
+ create mode 100644 web/theame/css/backJs.css
+ create mode 100644 web/theame/css/baseCss.css
+ create mode 100644 web/theame/css/bootstrap.min.css
+ create mode 100644 web/theame/css/myLayer.css
+ create mode 100644 web/theame/css/myRadioButton.css
+ create mode 100644 web/theame/css/ui-dialog.css
+ create mode 100644 web/theame/img/code.png
+ create mode 100644 web/theame/img/error.png
+ create mode 100644 web/theame/img/gril.JPG
+ create mode 100644 web/theame/img/logo.png
+ create mode 100644 web/theame/img/password.png
+ create mode 100644 web/theame/img/user.png
+ create mode 100644 web/theame/js/backJs.js
+ create mode 100644 web/theame/js/index.js
+ create mode 100644 web/theame/js/jquery-1.8.3.js
+ create mode 100644 web/theame/js/jquery-3.6.0.js
+ create mode 100644 web/theame/js/jquery-cookies.js
+ create mode 100644 web/theame/js/myLayer.js
+ create mode 100644 web/theame/js/particles.min.js
+ create mode 100644 web/theame/js/region.js
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$ git remote add origin https://gitee.com/code-on-top/ic-card-management-system.git
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$ git push origin master
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcmcore-tlsverify for more information.
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcmcore-tlsverify for more information.
+To https://gitee.com/code-on-top/ic-card-management-system.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://gitee.com/code-on-top/ic-card-management-system.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$ git pull origin master --allow-unrelated-histories
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (9/9), 7.64 KiB | 15.00 KiB/s, done.
+From https://gitee.com/code-on-top/ic-card-management-system
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+Merge made by the 'recursive' strategy.
+ .gitignore   |  18 +++++++++
+ LICENSE      | 127 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.en.md |  41 +++++++++++++++++++
+ README.md    |  47 ++++++++++++++++++++++
+ 4 files changed, 233 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 LICENSE
+ create mode 100644 README.en.md
+ create mode 100644 README.md
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$ git push origin mater
+error: src refspec mater does not match any
+error: failed to push some refs to 'https://gitee.com/code-on-top/ic-card-management-system.git'
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$ git push origin master
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcmcore-tlsverify for more information.
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcmcore-tlsverify for more information.
+Enumerating objects: 216, done.
+Counting objects: 100% (216/216), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (197/197), done.
+Writing objects: 100% (215/215), 36.15 MiB | 382.00 KiB/s, done.
+Total 215 (delta 20), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (20/20), done.
+remote: Powered by GITEE.COM [GNK-6.1]
+To https://gitee.com/code-on-top/ic-card-management-system.git
+   420f745..fc83330  master -> master
+
+波罗的海@▒▒▒▒ļ▒▒▒▒ MINGW64 /d/myFile/javaEE/nchkkjxy (master)
+$
