@@ -29,7 +29,7 @@ public class LoginAndRegister {
     //去登录
     @RequestMapping("/toLogin")
     public String toLogin(){
-        LogUtil.logInfo("去登录");
+        LogUtil.logInfo("--去登录");
         return "loginAndRegister/login";
     }
 
@@ -37,54 +37,29 @@ public class LoginAndRegister {
     //去注册
     @RequestMapping( "/toRegister")
     public String toRegister(){
-        LogUtil.logInfo("去注册");
+        LogUtil.logInfo("--去注册");
         return "loginAndRegister/register";
     }
 
     @RequestMapping("/login")
     public String login(HttpServletRequest request, Model model,HttpSession session){
+        LogUtil.logInfo("--登录");
         return loginAndRegisterService.login(request,model,session);
     }
-//    phone:phone,
-//    identify:identify,
-//    name:name,
-//    sex:sex,
-//    birthday:data,
-//    email:email,
-//    single:single,
-//    headImg:headImg,
-//    pwd:pwd
-//    @ResponseBody
-//    @RequestMapping("/register")
-//    public String register(
-//            @RequestParam("phone") String phone,
-//            @RequestParam("identify") String identify,
-//            @RequestParam("name") String name,
-//            @RequestParam("sex") String sex,
-//            @RequestParam("birthday") String birthday,
-//            @RequestParam("email") String email,
-//            @RequestParam("single") String single,
-//            @RequestParam("headImg") String headImg,
-//            @RequestParam("pwd") String pwd){
-//
-////        Map<String,Object> date = (HashMap<String,Object>)msg;
-//
-//
-////        String val = loginAndRegisterService.register(request,model);
-//        String msga = "succeed";
-////        date.put("msg",msga);
-//        return JSON.toJSONString("");
-//    }
+
     @ResponseBody
     @RequestMapping(value = "/register",method = {RequestMethod.POST,RequestMethod.PUT})
     public String register(HttpServletRequest request, Model model){
 
-//        Map<String,Object> date = (HashMap<String,Object>)msg;
+        //模拟真实网络环境，给用户一种细致的等待体验，满足用户需求
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        String val = loginAndRegisterService.register(request);
-//        String msga = "succeed";
-//        date.put("msg",msga);
-        return val;
+        LogUtil.logInfo("--注册");
+        return loginAndRegisterService.register(request);
     }
 
     @ResponseBody
@@ -95,6 +70,7 @@ public class LoginAndRegister {
         data.put("val",code);
         data.put("msg","succeed");
         session.setAttribute("code",code);
+        LogUtil.logInfo("--获取到验证码："+code);
         return JSON.toJSONString(data);
     }
 }

@@ -1,14 +1,3 @@
-/* 禁止文字选中 */
-.forbiden_txt,h1,
-h2,h3,h4,h5,p,font,label{
-    -o-user-select: none;
-    -moz-user-select: none; /*火狐 firefox*/
-    -webkit-user-select: none; /*webkit浏览器*/
-    -ms-user-select: none; /*IE10+*/
-    -khtml-user-select :none; /*早期的浏览器*/
-    user-select: none;
-}
-
 body{
     overflow-x:hidden;
     overflow-y:hidden;
@@ -33,11 +22,9 @@ body{
     --transform_slowily:0.5s;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    transition: opacity var(--transform_slowily);
-}
+{
+     transition: opacity var(--transform_slowily);
+ }
 input,textarea{
     border-radius: 2px;
     border: 1px solid var(--sub_color);

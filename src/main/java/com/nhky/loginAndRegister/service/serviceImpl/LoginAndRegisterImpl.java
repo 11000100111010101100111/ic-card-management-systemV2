@@ -5,6 +5,7 @@ import com.nhky.loginAndRegister.dao.LoginAndRegisterDao;
 import com.nhky.loginAndRegister.service.LoginAndRegisterService;
 import com.nhky.pojo.EasyUser;
 import com.nhky.pojo.User;
+import com.nhky.utils.LogUtil;
 import com.nhky.utils.MapUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
@@ -44,6 +45,13 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
                 if(easyUser.getPassword().trim().equals(pwd)){
                     model.addAttribute("userId",id);
                     session.setAttribute("userId",id);
+
+                    LogUtil.logInfo("--用户："+id+"已登录");
+                    try {
+                        Thread.sleep(0xbb8);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     //进入主页
                     return "/main";
                 }

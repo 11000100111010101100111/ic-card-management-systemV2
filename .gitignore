@@ -3,11 +3,25 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+.idea/
+out/
+web/WEB-INF/classes/
 
+
+#svn
+.svn/
+conf/
+db/
+hooks/
+locks/
+format
+README.txt
+svn.ico
 # Other files and folders
 .settings/
 
 # Executables
+*.iml
 *.swf
 *.air
 *.ipa
