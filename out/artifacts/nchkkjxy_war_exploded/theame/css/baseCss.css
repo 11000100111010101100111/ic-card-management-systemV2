@@ -8,3 +8,44 @@ h2,h3,h4,h5,p,font,label{
     -khtml-user-select :none; /*早期的浏览器*/
     user-select: none;
 }
+
+body{
+    overflow-x:hidden;
+    overflow-y:hidden;
+    /* 登录按钮长宽 */
+    --login_WH:100px;/*20%;*/
+
+    /* 主题色 */
+    --main_color:#2a3fff;
+    /* 次主题色 */
+    --sub_color: rgb(4, 167, 140);
+    /* 主要字体色 */
+    --main-font-color:#000;
+    /* 次要字体色 */
+    --sub-font-color:#666;
+    /* 淡灰色 */
+    --sub-color:#aaa;
+    --cir_shadow:rgb(255, 113, 87);
+
+    /* 动画延时快 */
+    --transform_qukily:0.3s;
+    /* 动画延时慢 */
+    --transform_slowily:0.5s;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    transition: opacity var(--transform_slowily);
+}
+input,textarea{
+    border-radius: 2px;
+    border: 1px solid var(--sub_color);
+}
+input:focus,textarea:focus{
+    outline: 2px solid var(--sub_color);
+    /*box-shadow: 0 0 8px var(--sub_color);*/
+}
+input:hover,textarea:hover{
+    box-shadow: 0 0 6px var(--sub_color);
+}

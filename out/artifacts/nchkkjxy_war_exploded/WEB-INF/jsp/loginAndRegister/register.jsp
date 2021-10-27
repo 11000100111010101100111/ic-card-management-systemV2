@@ -10,6 +10,7 @@
     <head>
         <title>注册</title>
         <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/inputCss.css">--%>
         <style>
             body{
                 /*position: relative;*/
@@ -138,20 +139,6 @@
         </style>
         <!-- 注册模块 -->
         <style>
-            *{
-                transition: opacity var(--transform_slowily);
-            }
-            input,textarea{
-                border-radius: 2px;
-                border: 1px solid var(--sub_color);
-            }
-            input:focus,textarea:focus{
-                outline: 2px solid var(--sub_color);
-                /*box-shadow: 0 0 8px var(--sub_color);*/
-            }
-            input:hover,textarea:hover{
-                box-shadow: 0 0 6px var(--sub_color);
-            }
             .register-contain{
                 position: absolute;
                 width: 60%;/*80%*/
@@ -409,10 +396,62 @@
         </style>
         <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myRadioButton.css">
         <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myLayer.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/waitting-layer.css">
 <%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/backJs.css">--%>
     </head>
     <body>
 <%--    <div class="back_con" id="jsi-particle-container"></div>--%>
+<%--        加载组件--%>
+        <div class="waitting-layer">
+    <div class="cover_layer">
+        <div class="cover_layer">
+            <div class="cover_layer">
+                <div class="cover_layer">
+                    <div class="cover_layer">
+                        <div class="cover_layer">
+                            <div class="cover_layer points-contain">
+                                <div class="point-containX">
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point center-ele">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                </div>
+                                <div class="point-containY .point-containX">
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point center-ele">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                    <div class="center-point">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="wait-font">请稍后<br><font class="f_1 f">●</font><font class="f_2 f">◉</font><font class="f_3 f">●</font></span>
+</div>
+
         <div class="msg-content">
             <div class="logo">msg</div>
             <div class="msg-body">
@@ -565,6 +604,7 @@
         </div>
         <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
         <script src="http://localhost:8080/nchkkjxy/theame/js/myLayer.js"></script>
+        <script src="http://localhost:8080/nchkkjxy/theame/js/waitting-layer.js"></script>
 <%--        <script src="http://localhost:8080/nchkkjxy/theame/js/backJs.js"></script>--%>
         <script>
             // 切换头像
@@ -882,7 +922,12 @@
                         headImg:msg.headImg,
                         pwd:msg.pwd
                     },
+                    beforeSend:function(XMLHttpRequest){
+                        my_layer.open();
+                    },
                     success: function (data) {
+                        my_layer.close();
+
                         let msg = data.val;
                         // debugger;
                         showMessage_myLayer(msg,"http://localhost:8080/nchkkjxy/pic/login/"+(data.single === "succeed"?"注册成功":"404")+".png");

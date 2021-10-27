@@ -604,6 +604,7 @@
         </div>
         <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
         <script src="http://localhost:8080/nchkkjxy/theame/js/myLayer.js"></script>
+        <script src="http://localhost:8080/nchkkjxy/theame/js/waitting-layer.js"></script>
 <%--        <script src="http://localhost:8080/nchkkjxy/theame/js/backJs.js"></script>--%>
         <script>
             // 切换头像
@@ -922,10 +923,10 @@
                         pwd:msg.pwd
                     },
                     beforeSend:function(XMLHttpRequest){
-                        $(".waitting-layer").removeClass("none");
+                        my_layer.open();
                     },
                     success: function (data) {
-                        $(".waitting-layerr").addClass("none");
+                        my_layer.close();
 
                         let msg = data.val;
                         // debugger;

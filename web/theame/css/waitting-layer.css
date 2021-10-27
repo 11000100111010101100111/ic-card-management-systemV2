@@ -1,14 +1,17 @@
+
 .waitting-layer{
     position: fixed;
+    display: none;
     max-height: 100px;
     min-height: 100px;
     max-width: 100px;
     min-width: 100px;
     width: 100px;
     height: 100px;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index:99;
 }
 .waitting-layer .cover_layer{
     position: fixed;
@@ -87,19 +90,19 @@
 .waitting-layer .wait-font .f_1{
 
     color: #ffe700;
-    animation: show_point 4s infinite ;
+    animation: show_point 1s infinite ;
     /*animation-delay: 1s;*/
 
 }
 .waitting-layer .wait-font .f_2{
     color: #fe00ff;
-    animation: show_point 4s infinite ;
-    animation-delay: 1s;
+    animation: show_point 1s infinite ;
+    animation-delay: .3s;
 }
 .waitting-layer .wait-font .f_3{
     color: #00eeff;
-    animation: show_point 4s infinite ;
-    animation-delay: 2s;
+    animation: show_point 1s infinite ;
+    animation-delay: .6s;
 }
 @keyframes show_point {
     0%{opacity: 0%;}
