@@ -39,6 +39,7 @@ body{
     transition: opacity var(--transform_slowily);
 }
 input,textarea{
+    caret-color: var(--sub_color);
     border-radius: 2px;
     border: 1px solid var(--sub_color);
 }

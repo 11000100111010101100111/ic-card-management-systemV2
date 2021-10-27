@@ -6,19 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="delete">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/theame/js/waitting-layer.js" afterDir="false" />
+    <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="set wait-animation batter in this commit by XioaJiaHai">
+      <change afterPath="$PROJECT_DIR$/file/loadding.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/loginAndRegister/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/loginAndRegister/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/baseCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/baseCss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/loginAndRegister/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/loginAndRegister/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/theame/css/waitting-layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/css/waitting-layer.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../workspace/RuoYi-Cloud" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/file" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -271,7 +261,7 @@
       <workItem from="1635160008462" duration="361000" />
       <workItem from="1635209862521" duration="2301000" />
       <workItem from="1635218218442" duration="7880000" />
-      <workItem from="1635296446583" duration="11428000" />
+      <workItem from="1635296446583" duration="13880000" />
     </task>
     <task id="LOCAL-00001" summary="delete">
       <created>1635218295900</created>
@@ -287,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635304481702</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="set wait-animation batter in this commit by XioaJiaHai">
+      <created>1635310753639</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635310753639</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +304,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="delete" />
     <MESSAGE value="add self-waitingLayer for ajax process." />
-    <option name="LAST_COMMIT_MESSAGE" value="add self-waitingLayer for ajax process." />
+    <MESSAGE value="set wait-animation batter in this commit by XioaJiaHai" />
+    <option name="LAST_COMMIT_MESSAGE" value="set wait-animation batter in this commit by XioaJiaHai" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="91" key="#Notifications" timestamp="1635227537225">
@@ -322,6 +320,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1635144978370" />
+    <state x="493" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1635320680351">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="493" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1635320680351" />
     <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1635144050904">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -330,10 +332,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="447" y="357" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1634986315518" />
-    <state x="372" y="26" key="CommitChangelistDialog2" timestamp="1635310750846">
+    <state x="372" y="26" key="CommitChangelistDialog2" timestamp="1635310854736">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="372" y="26" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1635310750846" />
+    <state x="372" y="26" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1635310854736" />
     <state width="895" height="515" key="DebuggerActiveHint" timestamp="1635148092134">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -414,10 +416,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="240" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1635228990106" />
-    <state x="562" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1635304408080">
+    <state x="562" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1635320841222">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="562" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1635304408080" />
+    <state x="562" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1635320841222" />
     <state x="321" y="168" width="894" height="604" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1635074116951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

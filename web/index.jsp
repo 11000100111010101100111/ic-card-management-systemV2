@@ -900,7 +900,7 @@
   <div class="box mid-box">
     <div class="left-login login-box"><span style="width: 100%;height: 100%"></span></div>
     <div class="right-login login-box">
-      <form class="login" action="${pageContext.request.contextPath}/go/login">
+      <form class="login" action="${pageContext.request.contextPath}/go/login" method="post">
         <h3>登 录</h3>
         <div class="from">
           <div class="input">

@@ -41,14 +41,14 @@ public class LoginAndRegister {
         return "loginAndRegister/register";
     }
 
-    @RequestMapping("/login")
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(HttpServletRequest request, Model model,HttpSession session){
         LogUtil.logInfo("--登录");
         return loginAndRegisterService.login(request,model,session);
     }
 
     @ResponseBody
-    @RequestMapping(value = "/register",method = {RequestMethod.POST,RequestMethod.PUT})
+    @RequestMapping(value = "/register",method = {RequestMethod.POST})
     public String register(HttpServletRequest request, Model model){
 
         //模拟真实网络环境，给用户一种细致的等待体验，满足用户需求
