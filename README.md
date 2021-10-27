@@ -53,3 +53,8 @@
 #### 5、Ic卡注销
   进入注销页面，用户注销IC卡，注销卡后卡被立即冻结，当管理员同意注销时，卡内剩余余额返还到用户账号的钱包余额中，并且这张卡被注销，用户可在下次申请一张卡后使用这些余额充值卡。
  :ok_hand: 
+
+## tip：
+### 1、异步访问的Loading动画：
+![异步访问的Loading动画](https://images.gitee.com/uploads/images/2021/1027/152330_11a10ecb_8091913.jpeg "loading.jpg")
+视频展示位置： :heart:  **/file/loading.mp4** 
