@@ -6,29 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/my-select.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/font/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/font/demo_index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/font/iconfont.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/font/iconfont.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/font/iconfont.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/font/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/font/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/font/iconfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/pic/main_page/card.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/pic/main_page/defult_man.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/pic/main_page/tuijian.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/theame/css/mySelect.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/theame/js/my-select.js" afterDir="false" />
+    <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="add a main page for user when he or she has logined,this modul create by XioaJiaHai.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/baseCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/baseCss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/theame/css/baseCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/css/baseCss.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +263,7 @@
       <workItem from="1635218218442" duration="7880000" />
       <workItem from="1635296446583" duration="15085000" />
       <workItem from="1635382919510" duration="213000" />
-      <workItem from="1635513351809" duration="12950000" />
+      <workItem from="1635513351809" duration="13518000" />
     </task>
     <task id="LOCAL-00001" summary="delete">
       <created>1635218295900</created>
@@ -314,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635320856803</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add a main page for user when he or she has logined,this modul create by XioaJiaHai.">
+      <created>1635571997772</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1635571997772</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +323,8 @@
     <MESSAGE value="delete" />
     <MESSAGE value="add self-waitingLayer for ajax process." />
     <MESSAGE value="set wait-animation batter in this commit by XioaJiaHai" />
-    <option name="LAST_COMMIT_MESSAGE" value="set wait-animation batter in this commit by XioaJiaHai" />
+    <MESSAGE value="add a main page for user when he or she has logined,this modul create by XioaJiaHai." />
+    <option name="LAST_COMMIT_MESSAGE" value="add a main page for user when he or she has logined,this modul create by XioaJiaHai." />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="91" key="#Notifications" timestamp="1635227537225">
@@ -364,10 +351,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="447" y="357" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1634986315518" />
-    <state x="372" y="26" key="CommitChangelistDialog2" timestamp="1635571993687">
+    <state x="372" y="26" key="CommitChangelistDialog2" timestamp="1635572079310">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="372" y="26" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1635571993687" />
+    <state x="372" y="26" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1635572079310" />
     <state width="895" height="515" key="DebuggerActiveHint" timestamp="1635148092134">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
