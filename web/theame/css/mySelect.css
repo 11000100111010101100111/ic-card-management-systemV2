@@ -27,8 +27,8 @@
     position: relative;
     padding: 10px;
     display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
     font-weight: bold;
     text-align: center;
 }

@@ -25,7 +25,12 @@ import java.util.Map;
 public class LoginAndRegister {
     @Resource(name = "loginAndRegisterImpl")
     LoginAndRegisterService loginAndRegisterService;
-
+    //去主页
+    @RequestMapping(value = "/home",method = {RequestMethod.POST,RequestMethod.GET})
+    public String home(){
+        LogUtil.logInfo("--去登录");
+        return "main";
+    }
     //去登录
     @RequestMapping("/toLogin")
     public String toLogin(){

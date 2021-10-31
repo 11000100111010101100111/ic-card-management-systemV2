@@ -1,22 +1,23 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 波罗的海
-  Date: 2021/10/10
-  Time: 15:36
-  To change this template use File | Settings | File Templates.
---%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>用户登录</title>
-    <link rel="icon shortcut" href="${pageContext.request.contextPath}/theame/img/favicon.ico" type="img/x-icon">
-    <link rel="stylesheet" href="theame/css/ataticAll.css">
+    <title>login</title>
+    <link rel="icon shortcut" href="http://localhost:8080/nchkkjxy/theame/img/favicon.ico" type="img/x-icon">
+    <link rel="stylesheet" type="text/css" href="theame/css/ataticAll.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myLayer.css">
     <style>
+        body{
+            /* 主题色 */
+            --main_color:#2a3fff;
+            /* 次主题色 */
+            --sub_color: rgb(4, 167, 140);
+        }
         a{
             text-decoration: none;
+            /*color: rgba(29, 44, 96, 0.9) !important;*/
             color: rgba(29, 44, 96, 0.9) !important;
             font-size: 13px !important;
             margin-right: 15px;
@@ -763,8 +764,131 @@
             }
         }
     </style>
+    <%--  弹窗--%>
+    <%--  <style>--%>
+    <%--    /* 遮罩层 */--%>
+    <%--    .msg-show {--%>
+    <%--      display: none;--%>
+    <%--      position: fixed;--%>
+    <%--      top: 0;--%>
+    <%--      left: 0;--%>
+    <%--      width: 200px;--%>
+    <%--      height: 250px;--%>
+    <%--      background-color: rgba(0, 0, 0, 0.2);--%>
+    <%--      z-index: 99;--%>
+    <%--    }--%>
+    <%--    *{--%>
+    <%--      transition: all 0.5s;--%>
+    <%--    }--%>
+    <%--    /* 弹窗 */--%>
+    <%--    .msg-content {--%>
+    <%--      display: none;--%>
+    <%--      position: fixed;--%>
+    <%--      top: 20%;--%>
+    <%--      left: 65%;--%>
+    <%--      margin-left: -30%;--%>
+    <%--      width: 350px;--%>
+    <%--      height: 350px;--%>
+    <%--      min-width: 31.125rem;--%>
+    <%--      min-height: 18.625rem;--%>
+    <%--      border-radius: 5px;--%>
+    <%--      background-color: white;--%>
+    <%--      z-index: 99;--%>
+    <%--      box-shadow: 0 0 10px #666;--%>
+    <%--    }--%>
+    <%--    .msg-content>.logo{--%>
+    <%--      display: inline-block;--%>
+    <%--      position: fixed;--%>
+    <%--      transform: translate(315px,10px);--%>
+    <%--      margin: 0;--%>
+    <%--      padding: 1px 2px 1px 2px;--%>
+    <%--      border-radius: 5px;--%>
+    <%--      /*border: 1px solid #fff;*/--%>
+    <%--      background-color: #2b92d4;--%>
+    <%--      color: #fff;--%>
+    <%--      font-weight: 800;--%>
+    <%--    }--%>
+    <%--    .msg-body {--%>
+    <%--      position: relative;--%>
+    <%--      width: 100%;--%>
+    <%--      height: 100%;--%>
+    <%--    }--%>
+
+    <%--    .mb_revise {--%>
+    <%--      padding: .625rem 0 0 1.5625rem;--%>
+    <%--    }--%>
+
+    <%--    .mb_revise>p {--%>
+    <%--      padding-left: .25rem;--%>
+    <%--      margin-top: 2.125rem;--%>
+    <%--      font-family: 'FangSong', Times, serif;--%>
+    <%--      font-size: 15px;--%>
+    <%--      border-left: solid .125rem royalblue;--%>
+    <%--    }--%>
+    <%--    .mb_revise .icon{--%>
+    <%--       position:relative;--%>
+    <%--       width: 200px;--%>
+    <%--       height: 200px;--%>
+    <%--       left: 50%;--%>
+    <%--      box-shadow: 0 0 100px #e1f0ff;--%>
+    <%--      transform: translateX(-50%) translateY(-80px);--%>
+    <%--       margin-top: 45px;--%>
+    <%--       background: url("${pageContext.request.contextPath}/pic/login/忘记密码.png") no-repeat center;--%>
+    <%--       background-size: cover;--%>
+    <%--    }--%>
+    <%--    /* 确定和取消 */--%>
+    <%--    .determine,--%>
+    <%--    .cancen {--%>
+    <%--      position: absolute;--%>
+    <%--      width: 9.625rem;--%>
+    <%--      height: 4.1875rem;--%>
+    <%--      color: #fff;--%>
+    <%--      font-size: 18px;--%>
+    <%--      border: 0;--%>
+    <%--      outline: none;--%>
+    <%--      border-radius: 5px;--%>
+    <%--      box-shadow: 0 .125rem .125rem rgb(107, 96, 96);--%>
+    <%--      cursor: pointer;--%>
+    <%--    }--%>
+
+    <%--    .determine {--%>
+    <%--      right: 12.5rem;--%>
+    <%--      bottom: .725rem;--%>
+    <%--      background-color: rgba(9, 139, 245, 0.788);--%>
+    <%--    }--%>
+
+    <%--    .cancen {--%>
+    <%--      right: 2rem;--%>
+    <%--      bottom: .725rem;--%>
+    <%--      background-color: rgba(212, 37, 37, 0.788);--%>
+    <%--    }--%>
+
+    <%--    .determine:hover,--%>
+    <%--    .cancen:hover {--%>
+    <%--      color: #fff;--%>
+    <%--      box-shadow: 0 .134rem .1275rem rgb(58, 57, 57);--%>
+    <%--    }--%>
+
+    <%--    .determine:active,--%>
+    <%--    .cancen:active {--%>
+    <%--      box-shadow: 0 .134rem .1275rem rgba(230, 227, 227, .758);--%>
+    <%--    }--%>
+    <%--  </style>--%>
 </head>
 <body>
+<%--<div class="msg-show">--%>
+<div class="msg-content">
+    <div class="logo">msg</div>
+    <div class="msg-body">
+        <div class="mb_revise">
+            <p class="msg-txt">消息：</p>
+            <div class="icon"></div>
+        </div>
+        <button class="determine">确定</button>
+        <button class="cancen">取消</button>
+    </div>
+</div>
+<%--</div>--%>
 <div  style="width: 100%;height: 100%;">
     <div class="box top-box">
         <%--        <span style="width: 100%;height: 100%">1</span>--%>
@@ -776,20 +900,20 @@
     <div class="box mid-box">
         <div class="left-login login-box"><span style="width: 100%;height: 100%"></span></div>
         <div class="right-login login-box">
-            <form class="login" action="#">
+            <form class="login" action="${pageContext.request.contextPath}/go/login" method="post">
                 <h3>登 录</h3>
                 <div class="from">
                     <div class="input">
                         <div class="inline-ele notfocus">
                             <div class="font inline-block-ele" style="background-image: url('${pageContext.request.contextPath}/theame/img/user.png');"></div><!--
-                            --><input contenteditable="true" type="text" class="inline-block-ele" id="uid" placeholder="请输入账号" autocomplete="off" required>
+                            --><input name="easy_id" contenteditable="true" type="text" class="inline-block-ele" id="uid" placeholder="请输入账号" autocomplete="off" required>
                         </div>
                         <%--            <label class="lab-id inline-ele" >error:12323!</label>--%>
                     </div>
                     <div class="input">
                         <div class="inline-ele notfocus">
                             <div class="font inline-block-ele" style="background-image: url('${pageContext.request.contextPath}/theame/img/password.png');"></div><!--
-                            --><input contenteditable="true" type="password" class="inline-block-ele" id="upwd" placeholder="请输入密码" autocomplete="off" required>
+                            --><input name="password" contenteditable="true" type="password" class="inline-block-ele" id="upwd" placeholder="请输入密码" autocomplete="off" required>
                         </div>
                         <%--            <label class="lab-pwd inline-ele" >error:12323!</label>--%>
                     </div>
@@ -797,7 +921,7 @@
 
                         <div class="inline-ele notfocus" style="width: 52%;height: 31px;display: inline-block;">
                             <div class="font inline-block-ele" style="background-image: url('${pageContext.request.contextPath}/theame/img/code.png');"></div><!--
-                            --><input contenteditable="true" type="text" style="height:100%;width:75%;font-size: 11px;" class="inline-block-ele" id="ucode" placeholder="请输入验证码" autocomplete="off" required>
+                            --><input name="code" contenteditable="true" type="text" style="height:100%;width:75%;font-size: 11px;" class="inline-block-ele" id="ucode" placeholder="请输入验证码" autocomplete="off" required>
                         </div>
                         <div class="code-img inline-ele" style="width: 30%;display: inline;">
                             <!-- <img src="#" alt="" title="单击换一张!!!"> -->
@@ -814,8 +938,8 @@
                     <input type="button" class="agine" value="重  置">
 
                     <div class="help">
-                        <a href="#" id="wjmm" onclick="duration()">忘记密码</a>
-                        <a href="#">账号注册</a>
+                        <a href="#" id="wjmm" >忘记密码</a>
+                        <a href="${pageContext.request.contextPath}/go/toRegister">账号注册</a>
                     </div>
                 </div>
             </form>
@@ -997,18 +1121,54 @@
     </div>
 </div>
 <%--<script href="${pageContext.request.contextPath}/theame/js/jquery-3.6.0.js"></script>--%>
-<script href="/theame/js/jquery-1.8.3.js">
+<script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+<script src="http://localhost:8080/nchkkjxy/theame/js/myLayer.js"></script>
+<%--清空输入框、忘记密码--%>
+<script>
+    //重置
+    $(".agine").click(function () {
+        $("#uid").val("");
+        $("#upwd").val("");
+        $("#ucode").val("");
+        getCodeImg();
+    });
+
+
+    $("#wjmm").click(function () {
+        showMessage_myLayer("请联系<h2 style='color: #04a78c;'>管理员<font style='font-size:16px;font-weight: 200;color: #000;border-bottom: 1px solid #04a78c;'>先生</font></h2>或致电<p style='color: #04a78c;'>15770674965</p>联系开发人员!" +
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+            "--温馨小提示<font style='color: crimson;font-size: 14px;'>&hearts;</font>");
+    });
+    // $(".msg-content .determine").click(function () {
+    //   closeMessage();
+    // });
+    // $(".msg-content .cancen").click(function () {
+    //   closeMessage();
+    // });
+    // function showMessage(msg) {
+    //   let height = $(".msg-content").css("height");
+    //   $("body> div").css("opacity","0.3");
+    //   $("body> div").css("pointer-events","none");
+    //   $(".msg-content").css("opacity","1");
+    //   $(".msg-content").css("pointer-events","painted");
+    //   $(".msg-content .msg-txt").html(msg);
+    //   $(".msg-content").css("height",0);
+    //   $(".msg-content").css("display","block");
+    //   $(".msg-content").css("height",height);
+    // }
+    // function closeMessage() {
+    //   let height = $(".msg-content").css("height");
+    //   $(".msg-content").css("height",0);
+    //   $("body> div").css("opacity","1");
+    //   $("body> div").css("pointer-events","painted");
+    //   $(".msg-content").css("display","none");
+    //   $(".msg-content").css("height",height);
+    // }
 
 </script>
-
+<%--验证码--%>
 <script>
     var code_now = ["1","2","3","a","A"];//存放验证码
-    function getCodeImg() {
-        for(i=0;i<5;i++){
-            code_now[i]=i
-        }
-        drawCode();
-    }
     var colors = ["slateblue",
         "teal",
         "tomato",
@@ -1079,7 +1239,24 @@
             cs.scale(1/x,1/y);
         }
     }
-    drawCode();
+    <%--//获取验证码--%>
+    function getCodeImg() {
+        $.ajax({
+            type: "post",                //数据提交方式（post）
+            url: "${pageContext.request.contextPath}/go/getCode", //提交的数据
+            dataType: "json",           //返回的数据类型格式
+            success: function (data) {
+                if (  data.msg == "succeed") {
+                    code_now = data.val.split('');
+                    drawCode();
+                }
+                else{alert("验证码获取失败了：数据连接异常！")}
+            }
+        });
+    }
+
+    getCodeImg();
+    // drawCode();
 </script>
 <%--login--%>
 <script type="text/javascript">
@@ -1226,8 +1403,7 @@
     }
     read();
 </script>
-
-//文本
+<%--//文本--%>
 <script>
     var value_rows =[[
         '大','丈','夫','生','于','天','地','之','间','岂','能','郁','郁','久','居','人','下',' '
@@ -1316,5 +1492,6 @@
     // });
     setInterval('draw()',50);
 </script>
+
 </body>
 </html>

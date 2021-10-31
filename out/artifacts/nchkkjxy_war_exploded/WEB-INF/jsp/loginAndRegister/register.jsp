@@ -392,7 +392,38 @@
                 border:2px solid var(--sub_color);
                 box-shadow: 0 0 10px var(--sub_color);
             }
+            .flex-btn::before {
+                background-color: var(--sub_color);
+                -webkit-animation: anim-effect-sonar 0.3s ease-out forwards;
+                animation: anim-effect-sonar 0.3s ease-out forwards;
+            }
 
+            @-webkit-keyframes anim-effect-sonar {
+                0% {
+                    opacity: 1;
+                    -webkit-transform: scale3d(0.9, 0.9, 1);
+                    transform: scale3d(0.9, 0.9, 1);
+                }
+
+                to {
+                    opacity: 0;
+                    -webkit-transform: scale3d(1.4, 1.4, 1);
+                    transform: scale3d(1.4, 1.4, 1);
+                }
+            }
+            @keyframes anim-effect-sonar {
+                0% {
+                    opacity: 1;
+                    -webkit-transform: scale3d(0.9, 0.9, 1);
+                    transform: scale3d(0.9, 0.9, 1);
+                }
+
+                to {
+                    opacity: 0;
+                    -webkit-transform: scale3d(1.4, 1.4, 1);
+                    transform: scale3d(1.4, 1.4, 1);
+                }
+            }
         </style>
         <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myRadioButton.css">
         <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myLayer.css">
@@ -463,6 +494,8 @@
                 <button class="cancen">取消</button>
             </div>
         </div>
+
+
         <div class="login-btn forbiden_txt" >
             <a href="${pageContext.request.contextPath}/index.jsp">去登录</a>
         </div>

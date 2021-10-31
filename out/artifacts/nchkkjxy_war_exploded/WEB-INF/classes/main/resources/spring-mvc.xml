@@ -23,11 +23,20 @@
 
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>
+<!--    <mvc:resources mapping="/create-card-css/" location="/staticRes/css/icCardCreate/**"/>-->
+<!--    <mvc:resources mapping="/create-card-icon/" location="/staticRes/icon/icCardCreate/**"/>-->
+<!--    <mvc:resources mapping="/create-card-js/" location="/staticRes/js/icCardCreate/**"/>-->
+    <mvc:resources mapping="/staticRes/css/icCardCreate/" location="/staticRes/css/icCardCreate/**"/>
+    <mvc:resources mapping="/staticRes/icon/icCardCreate/" location="/staticRes/icon/icCardCreate/**"/>
+    <mvc:resources mapping="/staticRes/js/icCardCreate/" location="/staticRes/js/icCardCreate/**"/>
+
+
     <mvc:resources mapping="/theame/css/" location="theame/css/**"/>
     <mvc:resources mapping="/theame/js/" location="theame/js/**"/>
-    <mvc:resources mapping="/static/js/" location="static/js/"/>
+<!--    <mvc:resources mapping="/static/js/" location="staticRes/js/"/>-->
     <mvc:resources mapping="/theame/img/" location="theame/img/**"/>
-    <mvc:resources mapping="/pic/" location="pic/*"/>
+    <mvc:resources mapping="/pic/card/" location="pic/card/**"/>
+<!--    <mvc:resources mapping="/pic/createCardType/" location="pic/createCardType/**"/>-->
 <!--    <mvc:resources mapping="/css/" location="/WEB-INF/static/"/>-->
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

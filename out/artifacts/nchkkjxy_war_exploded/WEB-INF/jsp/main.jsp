@@ -31,7 +31,7 @@
     <style>
         .top-contain{
             width: 100%;
-            height: 30%;
+            height: 15%;
             background-color: rgb(255, 113, 87);
         }
         .top-contain .top{
@@ -55,7 +55,7 @@
         }
         .top-contain .top .left ul li{
             text-align: center;
-            width: 100px;
+            width: 150px;
             /* height: 30px; */
             margin-top: 5px;
             margin-bottom: 10px;
@@ -85,14 +85,23 @@
         }
 
         .top-contain .bottom{
+            /*position: relative;*/
+            /*!* background-color: #2a3fff; *!*/
+            /*width: 80%;*/
+            /*height: 30px;*/
+            /*top: 100%;*/
+            /*left: 50%;*/
+            /*margin-top: 20px;*/
+            /*transform: translate(-50%,-20%);*/
+
             position: relative;
-            /* background-color: #2a3fff; */
+            /*background-color: #2a3fff;*/
             width: 80%;
             height: 30px;
-            top: 100%;
+            /* top: 50%; */
             left: 50%;
-            margin-top: 20px;
-            transform: translate(-50%,-20%);
+            margin-top: 40px;
+            transform: translate(-50%);
         }
         #searching{
             /* position: absolute; */
@@ -133,7 +142,10 @@
             border-left: 0px solid var(--sub_color);
             font-size: 14px;
             padding-left: 5px;
-
+            transition: width 0.8s;
+        }
+        #search-btn:focus{
+            width: 400px;
         }
         #seach-lab{
             height: 28px;
@@ -746,18 +758,41 @@
 <%--//导航栏--%>
 <script>
     var lis = $(".top-contain .top .left ul").children();
-    console.log(lis);
+    // console.log(lis);
     // for(i=0;i<lis.length;i++){
     //     mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];
     //     mySelect.dataGruid($(lis[i]),'菜单'+i,mySelect.list);
     // }
-    var titles=['菜单1','菜单2','菜单3','菜单4','菜单5'];
+    var titles=[
+        {txt:'主   页',font:'icon-shouye'},
+        {txt:'个人消费',font:'icon-gouwuche'},
+        {txt:'业务办理',font:'icon-bumengaikuang'},
+        {txt:'我   的',font:'icon-chanxueyanhezuo'},
+        {txt:'系   统',font:'icon-shezhi'}];
     var lists=[
-        [{url:"#",title:"选项1"},{url:"#",title:"选项2"}],
-        [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}],
-        [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"}],
-        [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}],
-        [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"}]
+        [],
+        [
+            {url:"#",title:"余额",    font:"icon-wodezijin"},
+            {url:"#",title:"消费记录",font:"icon-shouxinxiangqing-xiaofeijilu"},
+            {url:"#",title:"充值提现", font:"icon-chongzhi"}
+        ]
+        ,
+        [
+            {url:"http://localhost:8080/nchkkjxy/createCard/toCreateCard",title:"IC卡申领",font:"icon-kexuejishu"},
+            {url:"#",title:"IC卡挂失",font:"icon-301guashishenqing-lv"},
+            {url:"#",title:"IC卡注销",font:"icon-chonghong-21"},
+            {url:"#",title:"业务记录",font:"icon-shouxinxiangqing-xiaofeijilu"}],
+        [
+            {url:"#",title:"个人信息",font:"icon-xueshengziliao"},
+            {url:"#",title:"登录选项",font:"icon-huidaodingbu"},
+            {url:"#",title:"退出系统",   font:"icon-tuichudenglu"}
+            ],
+        [
+            {url:"#",title:"关于我们",font:"icon-dollar-symbol"},
+            {url:"#",title:"使用手册",font:"icon-shiyongshouce_icon"},
+            {url:"#",title:"开发者", font:"icon-kaifazhe"},
+            {url:"#",title:"法律",font:"icon-falvshengmingfalv"}
+        ]
     ]
     mySelect.dataGruidAll(lis,titles,lists);
 
