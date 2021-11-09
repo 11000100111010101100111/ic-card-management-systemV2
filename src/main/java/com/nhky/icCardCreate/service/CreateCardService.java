@@ -2,6 +2,8 @@ package com.nhky.icCardCreate.service;
 
 import com.nhky.pojo.CardOfUser;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -11,5 +13,10 @@ import java.util.List;
  * Time: 13:53
  **/
 public interface CreateCardService {
-    String getUsersCards();
+
+    //查看名下全部卡
+    String getUsersCards(String cardType, HttpSession session);
+
+    //创建卡
+    String create(String cardType, HttpSession session);
 }

@@ -4,10 +4,13 @@ import com.alibaba.fastjson.JSON;
 import com.nhky.icCardCreate.dao.CreateCardDao;
 import com.nhky.icCardCreate.service.CreateCardService;
 import com.nhky.pojo.CardOfUser;
+import com.nhky.utils.StringUtil;
 import com.nhky.utils.UserVO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,12 +29,15 @@ public class CreateCardServiceImpl implements CreateCardService {
     CreateCardDao createCard;
 
     @Override
-    public String getUsersCards() {
+    public String getUsersCards(String cardType, HttpSession session) {
 
+        cardType = StringUtil.getPamterString(cardType );
+        String uid = StringUtil.getPamterString(session.getAttribute("userAccount"));
+//        System.out.println(cardType+"=="+uid);
         Map<String,Object> result = new HashMap<>();
 
-        Long uid = UserVO.getUID();
-        if(null==uid){
+
+        if(null==uid || uid.trim().equals("") ){
             //session失效了
             result.put("single","404");
             return JSON.toJSONString(result);
@@ -70,14 +76,24 @@ public class CreateCardServiceImpl implements CreateCardService {
             }
             msg.append(guashi>0||zuxiao>0||zhengchang>0?"<font style='color:var(--sub__color);font-weight:600;'>暂时不能申请</font>":"");
 
-            result.put("single",msg);
+            result.put("single",guashi>0||zuxiao>0||zhengchang>0?"200":"0");
+            result.put("msg",msg);
         }catch (Exception e){
             //数据库访问异常
-            result.put("single","数据库访问异常");
+            result.put("single","500");
+            result.put("msg","数据库访问异常");
             return JSON.toJSONString(result);
         }
 
 //        result.put("single","succeed");
-        return "cardList";
+        return JSON.toJSONString(result);
+    }
+
+    @Override
+    public String create(String cardType, HttpSession session) {
+        Map<String,Object> result = new HashMap<>();
+        result.put("single","200");
+        result.put("msg","succeed");
+        return JSON.toJSONString(result);
     }
 }

@@ -45,12 +45,15 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
 
                 if(easyUser.getPassword().trim().equals(pwd)){
                     model.addAttribute("userId",id);
-                    session.setAttribute("userId",id);
+
+                    session.setAttribute("userId",easyUser.getId());//用户id
+                    session.setAttribute("userAccount",id);//用户账号
+                    session.setAttribute("userIdentify",easyUser.getIndentify());//用户身份
 
                     LogUtil.logInfo("--用户："+id+"已登录");
 
                     //获取当前登录用户id
-                    UserVO.setUID(easyUser.getId());
+//                    UserVO.setUID(easyUser.getId());
 
 //                    try {
 //                        Thread.sleep(0xbb8);

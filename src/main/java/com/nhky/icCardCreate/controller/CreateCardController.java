@@ -1,12 +1,18 @@
 package com.nhky.icCardCreate.controller;
 
+import com.nhky.annotation.AjaxConnect;
+import com.nhky.annotation.NeedSecurity;
+import com.nhky.emun.Security;
 import com.nhky.icCardCreate.service.CreateCardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,12 +34,17 @@ public class CreateCardController {
 
     @ResponseBody
     @RequestMapping("/hasCard")
-    public String hasCard(){
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return createCardService.getUsersCards();
+    @NeedSecurity(security = Security.ADMIN)
+    @AjaxConnect(time = 2000)
+    public String hasCard(@RequestParam("cardType")String cardType, HttpSession session){
+        return createCardService.getUsersCards(cardType,session);
+    }
+
+    @ResponseBody
+    @RequestMapping("/create")
+    @NeedSecurity(security = Security.ADMIN)
+    @AjaxConnect(time = 2000)
+    public String create(@RequestParam("cardType")String cardType, HttpSession session){
+        return createCardService.create(cardType,session);
     }
 }

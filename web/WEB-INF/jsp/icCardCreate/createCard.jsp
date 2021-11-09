@@ -425,6 +425,7 @@
                 type: "post",                //数据提交方式（post）
                 url: "${pageContext.request.contextPath}/createCard/hasCard", //提交的数据
                 dataType: "json",           //返回的数据类型格式
+                data:{cardType:getFoucsCard().txt},
                 beforeSend:function(XMLHttpRequest){
                     //发起连接前开启等待动画
                     my_layer.open();
@@ -434,16 +435,16 @@
                     my_layer.close();
 
                     if(data.single === "404"){
-                        layerUrl="http://localhost:8080/nchkkjxy/";
+                        layerUrl="http://localhost:8080/nchkkjxy/go/toLogin";
                         //session失效了
                         showMessage_myLayer("登录过期，请在重新登录后申请！","http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/认证失败.png");
                     }else if(data.single === "200"){
                         layerUrl="#";
                         // 不满足申请条件
-                        showMessage_myLayer(data.single+"<br/><font style='color:var(--sub_color);'>现在去查看吗</font>？" ,"http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/已有数据.png");
+                        showMessage_myLayer(data.msg+"<br/><font style='color:var(--sub_color);'>现在去查看吗</font>？" ,"http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/已有数据.png");
                     }else if(data.single == "500"){
                         layerUrl="#";
-                        showMessage_myLayer(data.single,"http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/404页面丢失.png");
+                        showMessage_myLayer(data.msg,"http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/404页面丢失.png");
                     }
                     else{
                         // 满足申请条件
@@ -452,6 +453,7 @@
                     }
                 },
                 error:function () {
+                    my_layer.close();
                     layerUrl="#";
                     showMessage_myLayer("网络断开了，连接异常！","http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/加载失败.png");
                 }
@@ -501,11 +503,41 @@
         }
         $(".appover-box").addClass("hasSureCard");
         $(".appover-box .sure-btn-box .sure_this_card").css("display","none");
+
+        createCard(_card_type.txt);
     }
     var layerUrl ="";
     function beSure() {
         // window.location.reload();
         self.location.href=layerUrl;
+    }
+
+    function createCard(cardType) {
+        $.ajax({
+            type: "post",                //数据提交方式（post）
+            url: "${pageContext.request.contextPath}/createCard/create", //提交的数据
+            dataType: "json",           //返回的数据类型格式
+            data:{cardType:cardType},
+            beforeSend:function(XMLHttpRequest){
+                //发起连接前开启等待动画
+                my_layer.open();
+            },
+            success: function (data) {
+                //获得http回复后终止等待动画
+                my_layer.close();
+                if(data.single === "200") {
+                    showMessage_myLayer("申请成功！是否前往我的主页查看？", "http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/已有数据.png");
+                }else{
+                    showMessage_myLayer("网络繁忙...");
+                }
+            },
+            error:function () {
+                my_layer.close();
+                layerUrl="#";
+                showMessage_myLayer("网络断开了，连接异常！","http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/加载失败.png");
+            }
+        });
+
     }
 </script>
 </body>

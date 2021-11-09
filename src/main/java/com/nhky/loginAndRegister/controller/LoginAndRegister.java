@@ -1,6 +1,7 @@
 package com.nhky.loginAndRegister.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.nhky.annotation.AjaxConnect;
 import com.nhky.loginAndRegister.service.LoginAndRegisterService;
 import com.nhky.utils.LogUtil;
 import com.nhky.utils.StringUtil;
@@ -46,12 +47,14 @@ public class LoginAndRegister {
         return "loginAndRegister/register";
     }
 
+    @AjaxConnect()
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(HttpServletRequest request, Model model,HttpSession session){
         LogUtil.logInfo("--登录");
         return loginAndRegisterService.login(request,model,session);
     }
 
+    @AjaxConnect(time = 2000)
     @ResponseBody
     @RequestMapping(value = "/register",method = {RequestMethod.POST})
     public String register(HttpServletRequest request, Model model){
@@ -69,6 +72,7 @@ public class LoginAndRegister {
 
     @ResponseBody
     @RequestMapping("/getCode")
+    @AjaxConnect(time = 500)
     public String getCode(HttpSession session){
         Map<String ,Object> data = new HashMap<String,Object>();
         String code = loginAndRegisterService.getCode(6);

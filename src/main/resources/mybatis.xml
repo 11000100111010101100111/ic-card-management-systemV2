@@ -15,6 +15,7 @@
 
     <mappers>
         <mapper resource="/mappers/loginAndRegisterMapper.xml"/>
+        <mapper resource="/mappers/createCardMapper.xml"/>
     </mappers>
 
 </configuration>

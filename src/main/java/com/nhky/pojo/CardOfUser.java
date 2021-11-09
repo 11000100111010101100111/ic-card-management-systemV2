@@ -12,10 +12,8 @@ public class CardOfUser {
 
     private Long id;
     private Long card_id;
-    private  Long user_id;
-
-//   卡状态： -3失效卡，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
-    private Integer status;
+    private Long user_id;
+    private Integer status;//   卡状态： -3失效卡，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
 
     public CardOfUser() {
     }

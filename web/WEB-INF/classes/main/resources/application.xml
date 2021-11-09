@@ -10,9 +10,9 @@
  * Date: 2021/9/19
  * Time: 20:58
 -->
-
     <context:component-scan base-package="com.nhky">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+        <context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
     </context:component-scan>
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
