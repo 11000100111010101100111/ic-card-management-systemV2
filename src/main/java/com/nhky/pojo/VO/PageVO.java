@@ -13,6 +13,15 @@ public class PageVO<T> {
     Integer off;//开始页
     Integer end;//结束页
     List<T> data;//页内数据集
+    Integer total;//共多少条
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
 
     public PageVO(int items, int index){
         this.off = items * (index -1);

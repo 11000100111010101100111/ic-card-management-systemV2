@@ -1,8 +1,12 @@
 package com.nhky.personalInformation.service;
 
+import com.nhky.personalInformation.pojo.FundVO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,4 +32,10 @@ public interface FundService {
     //return : 充值时间、充值人名称、充值金额、充值类型、充值卡id
 
     public String add( String uid,Float money);
+
+    //获取账户余额
+    public String getAccountBlance(Long uid);
+
+    //获取卡余额
+    public String getCardBlance(Long uid);
 }

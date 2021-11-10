@@ -6,7 +6,7 @@ bin-release/
 .idea/
 out/
 web/WEB-INF/classes/
-
+target/
 
 #svn
 .svn/
@@ -26,6 +26,7 @@ svn.ico
 *.air
 *.ipa
 *.apk
+*.jar
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important

@@ -1,5 +1,7 @@
 package com.nhky.personalInformation.dao;
 
+import com.nhky.pojo.User;
+import com.nhky.utils.UserVO;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,5 +12,4 @@ import org.springframework.stereotype.Repository;
  **/
 @Repository
 public interface PersonalDao {
-
 }

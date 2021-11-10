@@ -18,4 +18,11 @@ public interface FundDao {
     //index:第几页
     //items:每页多少条
     public List<FundVO> getPageInfo(@Param("start") Integer start,@Param("end") Integer end,@Param("uid") Long uid);
+
+    //签到、充值
+    public Integer addMoney(@Param("uid") Long uid,@Param("money") String money);
+    //获取账户余额
+    public String getAccountBlance(@Param("uid") Long uid);
+    //获取卡余额
+    public String getCardBlance(@Param("uid") Long uid);
 }

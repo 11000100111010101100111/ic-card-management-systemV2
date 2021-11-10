@@ -7,93 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="add a main page for user when he or she has logined,this modul create by XioaJiaHai.">
-      <change afterPath="$PROJECT_DIR$/debug.log2021-10-31.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/AjaxConnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/NeedSecurity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/AjaxAop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/emun/Security.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersoanlAccountChangeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersoanlLoseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalAccountSafeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalCardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalCardLogoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalConsumeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/AccountChangeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/AccountSafeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/FundDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersoanlCardsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersoanlConsumeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalCardLogoutDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalCardLoseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalInformationDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/pojo/FundVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/AccountChangeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/AccountSafeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/FundService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersoanlCardsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersoanlConsumeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersonalCardLogoutService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersonalCardLoseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersonalInformationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersonalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/AccountChangeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/AccountSafeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/FundServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersoanlCardsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersoanlConsumeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalCardLogoutServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalCardLoseServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/PageVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/AnnotationUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/personalFund.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/personalPage.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/mine.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/my-tip.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/emun/CommonCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/ICommonCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/ResultVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/CustomizeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/ExceptionCatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/ResultUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/PersonalInformation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/spring-cloud-starter-alibaba-sentinel-2021.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/mappers/loginAndRegisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/mappers/loginAndRegisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/jsp/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/icCardCreate/controller/CreateCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/icCardCreate/controller/CreateCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/icCardCreate/dao/CreateCardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/icCardCreate/dao/CreateCardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/icCardCreate/service/CreateCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/icCardCreate/service/CreateCardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/icCardCreate/service/serviceImpl/CreateCardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/icCardCreate/service/serviceImpl/CreateCardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/CardOfUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/CardOfUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/utils/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/UserVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/createCardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/createCardMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/loginAndRegisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/main/resources/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/main/resources/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/main/resources/mappers/loginAndRegisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/main/resources/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/main/resources/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/mappers/loginAndRegisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/icCardCreate/createCard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/icCardCreate/createCard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/staticRes/css/icCardCreate/createCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/staticRes/css/icCardCreate/createCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/theame/css/baseCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/css/baseCss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/theame/css/myLayer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/css/myLayer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/theame/js/myLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/js/myLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/FundDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/FundDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalInformationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalInformationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/FundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/FundService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersonalInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersonalInformationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/PageVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/PageVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/utils/LogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/LogUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/personalFund.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/personalFund.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/mine.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +94,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -175,19 +108,19 @@
     <property name="settings.editor.selected.configurable" value="vcs.Subversion.Presentation" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\personalInformation\service\serviceImpl" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\personalInformation\service" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\web\staticRes\icon\icCardCreate" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\web\staticRes\css\icCardCreate" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\web\static\icon\icCardCreate" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\myFile\javaEE\nchkkjxy\web" />
       <recent name="D:\myFile\javaEE\nchkkjxy\web\pic\main_page" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\pojo\VO" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\emun" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\utils" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\personalInformation\service\serviceImpl" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\personalInformation\service" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.nhky.personalInformation.controller in nchkkjxy">
+  <component name="RunManager" selected="Tomcat Server.nhky">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="nchkkjxy" />
@@ -228,6 +161,7 @@
     <configuration name="nhky" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.35" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="update-resources" />
       <deployment>
         <artifact name="nchkkjxy:war exploded">
           <settings>
@@ -398,7 +332,10 @@
       <workItem from="1636260457833" duration="20625000" />
       <workItem from="1636333326209" duration="422000" />
       <workItem from="1636374679982" duration="6091000" />
-      <workItem from="1636419371788" duration="339000" />
+      <workItem from="1636419371788" duration="522000" />
+      <workItem from="1636458942258" duration="6882000" />
+      <workItem from="1636506103198" duration="87000" />
+      <workItem from="1636549457349" duration="6514000" />
     </task>
     <task id="LOCAL-00001" summary="delete">
       <created>1635218295900</created>
@@ -471,18 +408,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="91" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1632056431839" />
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636181132992">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636466874700">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1636181132992" />
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1636466874700" />
     <state x="493" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1635320680351">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="493" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1635320680351" />
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1636380177708">
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1636554039695">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1636380177708" />
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1636554039695" />
     <state x="447" y="357" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1634986315518">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

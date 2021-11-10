@@ -18,4 +18,22 @@
     <select id="getPageInfo" resultType="com.nhky.personalInformation.pojo.FundVO">
         select * from db where uid = #{uid} order by create_time ASC limit #{start},#{end}
     </select>
+
+<!--    //签到、充值-->
+<!--    public Integer addMoney(@Param("uid") Long uid,@Param("money") String money);-->
+    <update id="addMoney">
+        UPDATE ic_main_user SET money_balance = FORMAT(money_balance + #{money},2) WHERE easy_id = #{uid}
+    </update>
+
+<!--    //获取账户余额-->
+<!--    public String getAccountBlance(@Param("uid") Long uid);-->
+    <select id="getAccountBlance" parameterType="java.lang.Long" resultType="java.lang.String">
+        select money_balance from ic_main_user where easy_id = #{uid}
+    </select>
+
+<!--    //获取卡余额-->
+<!--    public String getCardBlance(@Param("uid") Long uid);-->
+    <select id="getCardBlance" parameterType="java.lang.Long" resultType="map">
+        setlect icem.id AS id,FORMAT(blance,2) AS blance from ic_card_easy_msg as icem where icem.id in (select card_id from ic_card_msg as icm where icm.user_id =#{uid} and icm.status = 1) and card_status = '1'
+    </select>
 </mapper>
