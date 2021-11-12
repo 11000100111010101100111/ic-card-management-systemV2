@@ -6,9 +6,7 @@ import com.nhky.loginAndRegister.service.LoginAndRegisterService;
 import com.nhky.pojo.EasyUser;
 import com.nhky.pojo.User;
 import com.nhky.utils.LogUtil;
-import com.nhky.utils.MapUtil;
 import com.nhky.utils.StringUtil;
-import com.nhky.utils.UserVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -50,7 +48,7 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
                     session.setAttribute("userAccount",id);//用户账号
                     session.setAttribute("userIdentify",easyUser.getIndentify());//用户身份
 
-                    LogUtil.logInfo("--用户："+id+"已登录");
+                    LogUtil.info("--用户："+id+"已登录");
 
                     //获取当前登录用户id
 //                    UserVO.setUID(easyUser.getId());

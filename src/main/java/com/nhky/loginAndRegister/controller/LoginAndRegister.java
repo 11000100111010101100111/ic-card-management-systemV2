@@ -29,13 +29,13 @@ public class LoginAndRegister {
     //去主页
     @RequestMapping(value = "/home",method = {RequestMethod.POST,RequestMethod.GET})
     public String home(){
-        LogUtil.logInfo("--去登录");
+        LogUtil.info("--去登录");
         return "main";
     }
     //去登录
     @RequestMapping("/toLogin")
     public String toLogin(){
-        LogUtil.logInfo("--去登录");
+        LogUtil.info("--去登录");
         return "loginAndRegister/login";
     }
 
@@ -43,14 +43,14 @@ public class LoginAndRegister {
     //去注册
     @RequestMapping( "/toRegister")
     public String toRegister(){
-        LogUtil.logInfo("--去注册");
+        LogUtil.info("--去注册");
         return "loginAndRegister/register";
     }
 
     @AjaxConnect()
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(HttpServletRequest request, Model model,HttpSession session){
-        LogUtil.logInfo("--登录");
+        LogUtil.info("--登录");
         return loginAndRegisterService.login(request,model,session);
     }
 
@@ -66,7 +66,7 @@ public class LoginAndRegister {
             e.printStackTrace();
         }
 
-        LogUtil.logInfo("--注册");
+        LogUtil.info("--注册");
         return loginAndRegisterService.register(request);
     }
 
@@ -79,7 +79,7 @@ public class LoginAndRegister {
         data.put("val",code);
         data.put("msg","succeed");
         session.setAttribute("code",code);
-        LogUtil.logInfo("--获取到验证码："+code);
+        LogUtil.info("--获取到验证码："+code);
         return JSON.toJSONString(data);
     }
 }

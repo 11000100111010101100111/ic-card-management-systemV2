@@ -16,7 +16,7 @@
 <!--    public List<FundVO> getPageInfo(@Param("start") Integer start,@Param("end") Integer end,@Param("uid") Long uid);-->
 
     <select id="getPageInfo" resultType="com.nhky.personalInformation.pojo.FundVO">
-        select * from db where uid = #{uid} order by create_time ASC limit #{start},#{end}
+--         select * from db where uid = #{uid} order by create_time ASC limit #{start},#{end}
     </select>
 
 <!--    //签到、充值-->

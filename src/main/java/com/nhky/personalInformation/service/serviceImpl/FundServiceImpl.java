@@ -42,4 +42,14 @@ public class FundServiceImpl implements FundService {
     public String add(String uid, Float money) {
         return null;
     }
+
+    @Override
+    public String getAccountBlance(Long uid) {
+        return null;
+    }
+
+    @Override
+    public String getCardBlance(Long uid) {
+        return null;
+    }
 }

@@ -7,26 +7,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="add a main page for user when he or she has logined,this modul create by XioaJiaHai.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/emun/CommonCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/ICommonCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/ResultVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/CustomizeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/ExceptionCatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/ResultUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/PersonalInformation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/spring-cloud-starter-alibaba-sentinel-2021.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/icCardLoss/cardLoss.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/my-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/FundDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/FundDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalInformationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersonalInformationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/FundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/FundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersonalInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersonalInformationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/PageVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/PageVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/utils/LogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/LogUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log2021-10-23.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log2021-10-24.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log2021-10-25.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log2021-10-26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log2021-10-27.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log2021-10-29.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log2021-10-30.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log2021-10-31.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/utils/LogUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/utils/LogUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/baseCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/baseCss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/myLayer.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/myLayer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/js/myLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/js/myLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/FundServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/FundServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/personalFund.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/personalFund.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/mine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/utils/LogUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/utils/LogUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/loginAndRegister/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/loginAndRegister/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +73,10 @@
         <option value="JavaScript File" />
         <option value="AnnotationType" />
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
         <option value="mapper" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -108,16 +123,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Subversion.Presentation" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myFile\javaEE\nchkkjxy\web" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\web\pic\main_page" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\pojo\VO" />
       <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\emun" />
       <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\utils" />
       <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\personalInformation\service\serviceImpl" />
       <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\personalInformation\service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myFile\javaEE\nchkkjxy\web" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\web\pic\main_page" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.nhky">
@@ -336,6 +351,10 @@
       <workItem from="1636458942258" duration="6882000" />
       <workItem from="1636506103198" duration="87000" />
       <workItem from="1636549457349" duration="6514000" />
+      <workItem from="1636592518128" duration="577000" />
+      <workItem from="1636635318601" duration="7178000" />
+      <workItem from="1636679630111" duration="46000" />
+      <workItem from="1636683253946" duration="9721000" />
     </task>
     <task id="LOCAL-00001" summary="delete">
       <created>1635218295900</created>
@@ -416,10 +435,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="493" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1635320680351" />
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1636554039695">
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1636636165472">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1636554039695" />
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1636636165472" />
     <state x="447" y="357" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1634986315518">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -436,70 +455,70 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1635670850808" />
-    <state width="1493" height="456" key="GridCell.Tab.0.bottom" timestamp="1636381396527">
+    <state width="1231" height="454" key="GridCell.Tab.0.bottom" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="456" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636381396527" />
-    <state width="1493" height="456" key="GridCell.Tab.0.center" timestamp="1636381396527">
+    <state width="1231" height="454" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.0.center" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="456" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1636381396527" />
-    <state width="1493" height="456" key="GridCell.Tab.0.left" timestamp="1636381396527">
+    <state width="1231" height="454" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.0.left" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="456" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1636381396527" />
-    <state width="1493" height="456" key="GridCell.Tab.0.right" timestamp="1636381396527">
+    <state width="1231" height="454" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.0.right" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="456" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1636381396527" />
-    <state width="1493" height="456" key="GridCell.Tab.1.bottom" timestamp="1636381396527">
+    <state width="1231" height="454" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.1.bottom" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="456" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636381396527" />
-    <state width="1493" height="456" key="GridCell.Tab.1.center" timestamp="1636381396527">
+    <state width="1231" height="454" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.1.center" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="456" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1636381396527" />
-    <state width="1493" height="456" key="GridCell.Tab.1.left" timestamp="1636381396527">
+    <state width="1231" height="454" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.1.left" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="456" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1636381396527" />
-    <state width="1493" height="456" key="GridCell.Tab.1.right" timestamp="1636381396527">
+    <state width="1231" height="454" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.1.right" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="456" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1636381396527" />
-    <state width="1231" height="410" key="GridCell.Tab.2.bottom" timestamp="1636212229337">
+    <state width="1231" height="454" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.2.bottom" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1231" height="410" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636212229337" />
-    <state width="1231" height="410" key="GridCell.Tab.2.center" timestamp="1636212229337">
+    <state width="1231" height="454" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.2.center" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1231" height="410" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1636212229337" />
-    <state width="1231" height="410" key="GridCell.Tab.2.left" timestamp="1636212229337">
+    <state width="1231" height="454" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.2.left" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1231" height="410" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1636212229337" />
-    <state width="1231" height="410" key="GridCell.Tab.2.right" timestamp="1636212229337">
+    <state width="1231" height="454" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.2.right" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1231" height="410" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1636212229337" />
-    <state width="1231" height="410" key="GridCell.Tab.3.bottom" timestamp="1636212229337">
+    <state width="1231" height="454" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.3.bottom" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1231" height="410" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636212229337" />
-    <state width="1231" height="410" key="GridCell.Tab.3.center" timestamp="1636212229337">
+    <state width="1231" height="454" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.3.center" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1231" height="410" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1636212229337" />
-    <state width="1231" height="410" key="GridCell.Tab.3.left" timestamp="1636212229337">
+    <state width="1231" height="454" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.3.left" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1231" height="410" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1636212229337" />
-    <state width="1231" height="410" key="GridCell.Tab.3.right" timestamp="1636212229337">
+    <state width="1231" height="454" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
+    <state width="1231" height="454" key="GridCell.Tab.3.right" timestamp="1636642574048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1231" height="410" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1636212229337" />
+    <state width="1231" height="454" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1636642574048" />
     <state x="399" y="137" key="NewModule_or_Project.wizard" timestamp="1633853500348">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -524,10 +543,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1635562082301" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1635066090151">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1636691535017">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1635066090151" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1636691535017" />
     <state x="449" y="115" key="spring file set editor" timestamp="1633852254314">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -540,36 +559,5 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="599" y="223" key="svn.repositoryBrowser/0.0.1536.864@0.0.1536.864" timestamp="1635228392134" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -33,7 +33,7 @@ public class PersonalFundController {
     //分页查询余额明细列表
     //index:第几页
     //items:每页多少条
-    @RequestMapping("page")
+    @RequestMapping("/page")
     @ResponseBody
     public String getPage(
             @RequestParam("index") Integer index,
@@ -44,7 +44,7 @@ public class PersonalFundController {
     }
 
     //每日签到
-    @RequestMapping("page")
+    @RequestMapping("/daily")
     @ResponseBody
     public String daily(@RequestParam("uid") String uid){
 
@@ -55,7 +55,7 @@ public class PersonalFundController {
     //uid : 充值人id
     //money : 充值金额
     //return : 充值时间、充值人名称、充值金额、充值类型、充值卡id
-    @RequestMapping("add")
+    @RequestMapping("/add")
     @ResponseBody
     public String add(@RequestParam("uid") String uid,@RequestParam("money") Float money){
 

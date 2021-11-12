@@ -28,6 +28,19 @@ svn.ico
 *.apk
 *.jar
 
+
+.idea/
+.idea
+debug/
+debug
+*.jar
+out
+out/
+
+class/
+/class/
+*.class
+
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.

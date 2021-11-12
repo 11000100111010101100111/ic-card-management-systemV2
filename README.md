@@ -58,3 +58,10 @@
 ### 1、异步访问的Loading动画：
 ![异步访问的Loading动画](https://images.gitee.com/uploads/images/2021/1027/152330_11a10ecb_8091913.jpeg "loading.jpg")
 视频展示位置： :heart:  **/file/loading.mp4** 
+
+### 2、表格模板
+
+--------------------------2021/11/12-13:30---------------------------------
+
+![](D:\桌面\课程设计\design\表格模板案例.jpg)
+

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格模板</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <style>
+        /* 禁止文字选中 */
+        .forbiden_txt,h1,
+        h2,h3,h4,h5,p,font,label{
+            -o-user-select: none;
+            -moz-user-select: none; /*火狐 firefox*/
+            -webkit-user-select: none; /*webkit浏览器*/
+            -ms-user-select: none; /*IE10+*/
+            -khtml-user-select :none; /*早期的浏览器*/
+            user-select: none;
+        }
+
+        body{
+            overflow-x:hidden;
+            overflow-y:hidden;
+            /* 登录按钮长宽 */
+            --login_WH:100px;/*20%;*/
+
+            /* 主题色 */
+            --main_color:#2a3fff;
+            /* 次主题色 */
+            --sub_color: rgb(4, 167, 140);
+            /* 主要字体色 */
+            --main-font-color:#000;
+            /* 次要字体色 */
+            --sub-font-color:#666;
+            /* 淡灰色 */
+            --sub-color:#aaa;
+            --cir_shadow:rgb(255, 113, 87);
+
+            /* 动画延时快 */
+            --transform_qukily:0.3s;
+            /* 动画延时慢 */
+            --transform_slowily:0.5s;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            transition: opacity var(--transform_slowily);
+        }
+
+        /*/////////////////////////////////滚动条样式///////////////////////////////////*/
+        /* 设置滚动条的样式 */
+        *::-webkit-scrollbar {
+            width:10px;
+            border-radius: 20px;
+        }
+        /* 滚动槽 */
+        *::-webkit-scrollbar-track {
+            background-color: #fff;
+            -webkit-box-shadow: var(--sub_color);
+            border-radius:10px;
+        }
+        /* 滚动条滑块 */
+        *::-webkit-scrollbar-thumb {
+            background: var(--sub_color);
+            border-radius: 20px;
+        }
+        *::-webkit-scrollbar-thumb:window-inactive {
+            background:rgba(255,0,0,0.4);
+        }
+        *::-webkit-scrollbar {
+            /*display: none;*/
+        }
+
+        input,textarea{
+            caret-color: var(--sub_color);
+            border-radius: 2px;
+            border: 1px solid var(--sub_color);
+        }
+        input:focus,textarea:focus{
+            outline: 2px solid var(--sub_color);
+            /*box-shadow: 0 0 8px var(--sub_color);*/
+        }
+        input:hover,textarea:hover{
+            box-shadow: 0 0 6px var(--sub_color);
+        }
+
+
+
+        .my_tip{
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            font-size: 14px;
+            transform: translate(-50%,-50%);
+            background-color: rgba(4, 167, 140,0.6);
+            /*display: inline-block;*/
+            padding: 5px 15px;
+            border-radius:2px;
+            opacity: 0;
+            z-index: 99;
+        }
+
+        .my_tip span{
+            padding: 2px;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+    <style>
+        body{
+            /*position: relative;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+        }
+        .content{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .my-table-template{
+            position: relative;
+            width: 90%;
+            height: 90%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+            border-radius: 5px;
+            box-shadow: 0 0 8px #aaa;
+            padding: 5px;
+            /*background-color: #c7254e;*/
+        }
+        /*//表格操作*/
+        .operator-tab{
+            /*position: relative;*/
+            /*width: 90%;*/
+            /*height: 10%;*/
+            /*left: 50%;*/
+            /*transform: translateX(-50%);*/
+            /*background-color: #4e65c7;*/
+            padding: 5px;
+        }
+        .operator-tab input[type='button']:focus{
+            outline: none;
+            border: 0;
+        }
+        .operator-tab input[type='button']:hover{
+            font-weight: 800;
+        }
+        /*//普通按钮*/
+        .operator-tab .normal{
+            background-color: var(--sub_color);
+            color: #fff;
+            transition: all var(--transform_slowily);
+            border: 0;
+        }
+        .operator-tab .normal:hover{
+            box-shadow: 0 0 8px var(--sub_color);
+        }
+        /*警示按钮*/
+        .operator-tab .alter{
+            background-color: #c7254e;
+            color: #fff;
+            transition: all var(--transform_slowily);
+            border: 0;
+        }
+        .operator-tab .alter:hover{
+            box-shadow: 0 0 8px #c7254e;
+        }
+        /*信息按钮*/
+        .operator-tab .msg{
+            background-color: #4e65c7;
+            color: #fff;
+            transition: all var(--transform_slowily);
+            border: 0;
+        }
+        .operator-tab .msg:hover{
+            box-shadow: 0 0 8px #4e65c7;
+        }
+
+        .my-table{
+            width: 100%;
+            height: calc(100% - 40px);
+            max-height: calc(100% - 40px);
+            min-height: calc(100% - 40px);
+        }
+        .my-table .my_th{
+            background-color: var(--sub_color);
+            color: #fff;
+        }
+        .my-table tbody tr{
+            display: table;
+            border-bottom: 1px #666 solid;
+            table-layout: fixed;
+            transition: all var(--transform_slowily);
+        }
+        .my-table tbody tr:hover {
+            background-color: #ccc;
+            /*color:var(--sub_color);*/
+            font-weight: 800;
+        }
+        .my-table .my-td,
+        .my-table .my-th{
+            text-align: center;
+            font-size: 16px;
+            padding-top: 10px;
+        }
+        .my-table .my-tb{
+            position: relative;
+            display: block;
+            height: 100%;
+            /*height: 300px;*/
+            overflow-y: scroll;
+            border-bottom: 1px solid var(--sub_color);
+            border-top: 1px solid var(--sub_color);
+        }
+        .my-table .my-tr{
+            display: table;
+            width: 100%;
+            height: 40px;
+            table-layout: fixed;/*重要  表格固定算法*/
+        }
+        .my-table .my-tf{
+            /*display: block;*/
+            bottom: 0;
+            border-top: 1px solid var(--sub_color);
+            /*background-color: #c7254e;*/
+        }
+        .inlineBlock{
+            display: inline-block;
+        }
+        .rodPage{
+            cursor: pointer;
+            background-color: var(--sub_color);
+            color: #fff;
+            padding: 4px;
+            border-radius: 2px;
+        }
+
+
+        .my-table input[type='checkbox']{
+            width: 20px;
+            height: 20px;
+            /*border: 1px solid var(--sub_color);*/
+        }
+        .my-table input[type='checkbox']:focus{
+            border: 0;
+            outline: none;
+        }
+        /*//行操作栏*/
+        .tab-operator,
+        .operator-btn{
+            width: 80px;
+            height: 30px;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .operator-div{
+            align-items: center;
+        }
+        .operator-div div{
+            width: 100%;
+            height: 100%;
+                /*align-items: center;*/
+        }
+        .operator-div .tab-modify{
+            background-color: #4e65c7;
+        }
+        .operator-div .tab-modify:hover{
+            box-shadow: 0 0 10px #4e65c7;
+        }
+        .operator-div .tab-modify:focus{
+            outline: 1px solid #4e65c7;
+        }
+        .operator-div .tab-remove{
+            background-color: #c7254e;
+            border: 1px solid #c7254e;
+        }
+        .operator-div .tab-remove:hover{
+            box-shadow:0 0 10px #c7254e;
+        }
+        .operator-div .tab-remove:focus{
+            outline: 1px solid #c7254e;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="my-table-template">
+        <div class="operator-tab">
+            <input type="button" class="inlineBlock normal operator-btn" value="添加">
+            <input type="button" class="inlineBlock normal operator-btn" value="打印">
+            <input type="button" class="inlineBlock normal operator-btn" value="导入">
+            <input type="button" class="inlineBlock normal operator-btn" value="导出">
+            <input type="button" class="inlineBlock alter operator-btn" value="移除">
+            <input type="button" class="inlineBlock msg operator-btn" value="刷新">
+        </div>
+        <table class="my-table">
+        <thead class="my_th">
+            <tr class="my-tr">
+                <th class="my-th" width="50">
+                    <input type="checkbox" name="checkedAll checked">
+                </th>
+                <th class="my-th" width="50">序号</th>
+                <th class="my-th">学号</th>
+                <th class="my-th">姓名</th>
+                <th class="my-th">班级</th>
+                <th class="my-th">备注</th>
+                <th class="my-th">操作</th>
+            </tr>
+        </thead>
+        <tfoot class="my-tf">
+            <tr class="my-tr">
+                <td class="my-td" width="200">
+                   每页
+                    <select name="" id="page-pices">
+                        <option value="1">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                    条/共
+                    <span id="pages">10</span>
+                    条
+                </td>
+                <td class="my-td"></td>
+                <td class="my-td"></td>
+                <td class="my-td"></td>
+                <td class="my-td"></td>
+                <td class="my-td"></td>
+                <td class="my-td" width="200">
+                    <div class="inlineBlock rodPage again">上一页</div>
+                    <span class="inlineBlock">1</span>/<span class="inlineBlock">2</span>
+                    <div class="inlineBlock rodPage after">下一页</div>
+                </td>
+            </tr>
+        </tfoot>
+        <tbody class="my-tb">
+            <tr class="my-tr">
+                <td class="my-td" width="50">
+                    <input type="checkbox" name="checked">
+                </td>
+                <td class="my-td" width="50">1</td>
+                <td class="my-td">188207201</td>
+                <td class="my-td">张三</td>
+                <td class="my-td">1882072</td>
+                <td class="my-td">hello</td>
+                <td class="my-td operator-div">
+                    <div>
+                        <input type="button" value="修改" class="tab-modify tab-operator">
+                        <input type="button" value="移除" class="tab-remove tab-operator">
+                    </div>
+                </td>
+            </tr>
+            <tr class="my-tr">
+                <td class="my-td" width="50">
+                    <input type="checkbox" name="checked">
+                </td>
+                <td class="my-td" width="50">2</td>
+                <td class="my-td">188207201</td>
+                <td class="my-td">李四</td>
+                <td class="my-td">1882072</td>
+                <td class="my-td">wu</td>
+                <td class="my-td operator-div">
+                    <div>
+                        <input type="button" value="修改" class="tab-modify tab-operator">
+                        <input type="button" value="移除" class="tab-remove tab-operator">
+                    </div>
+                </td>
+            </tr>
+            <tr class="my-tr">
+                <td class="my-td" width="50">
+                    <input type="checkbox" name="checked">
+                </td>
+                <td class="my-td" width="50">3</td>
+                <td class="my-td">188207201</td>
+                <td class="my-td">王五</td>
+                <td class="my-td">1882072</td>
+                <td class="my-td">ok</td>
+                <td class="my-td operator-div">
+                    <div>
+                        <input type="button" value="修改" class="tab-modify tab-operator">
+                        <input type="button" value="移除" class="tab-remove tab-operator">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+</body>
+</html>

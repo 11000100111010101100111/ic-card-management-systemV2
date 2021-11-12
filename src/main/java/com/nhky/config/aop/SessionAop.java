@@ -43,11 +43,11 @@ public class SessionAop {
             userIdentify = StringUtil.getPamterString(session.getAttribute("userIdentify"));
 
             if(null == userId || userId.equals("")){
-                LogUtil.logInfo("用户未登录...拦截成功...");
+                LogUtil.info("用户未登录...拦截成功...");
                 return "/go/toLogin";
             }
             if(loginAndRegisterDao.hasID(userId) <= 0){
-                LogUtil.logInfo("用户账号失效...拦截成功...");
+                LogUtil.info("用户账号失效...拦截成功...");
                 return "/go/toLogin";
             }
 
@@ -65,12 +65,12 @@ public class SessionAop {
 
             //判断用户权限级别是否大于方法的访问级别
             if(userGrade < security.getGrade()){
-                LogUtil.logInfo("用户操作未获得权限...级别低于"+security.getCode()+"...拦截成功...");
+                LogUtil.info("用户操作未获得权限...级别低于"+security.getCode()+"...拦截成功...");
                 return null;
             }
         }
         catch (Exception e){
-            LogUtil.logInfo("用户未登录...拦截成功...");
+            LogUtil.info("用户未登录...拦截成功...");
             return "/go/toLogin";
         }
 
