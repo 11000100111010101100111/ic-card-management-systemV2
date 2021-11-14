@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4973195",
+      "name": "问号",
+      "font_class": "wenhao",
+      "unicode": "e6d7",
+      "unicode_decimal": 59095
+    },
+    {
+      "icon_id": "8237166",
+      "name": "ico",
+      "font_class": "ico",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "12600728",
+      "name": "icma",
+      "font_class": "icma",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
       "icon_id": "782338",
       "name": "勾",
       "font_class": "gou",

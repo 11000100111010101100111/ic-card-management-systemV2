@@ -1,9 +1,13 @@
 package com.nhky.personalInformation.service.serviceImpl;
 
 import com.alibaba.fastjson.JSON;
+import com.nhky.emun.CommonCode;
 import com.nhky.personalInformation.dao.PersonalInformationDao;
 import com.nhky.personalInformation.service.PersonalInformationService;
 import com.nhky.pojo.User;
+import com.nhky.pojo.VO.ICommonCode;
+import com.nhky.pojo.VO.ResultVO;
+import com.nhky.utils.ResultUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
 
@@ -24,18 +28,12 @@ public class PersonalInformationServiceImpl implements PersonalInformationServic
 
     @Override
     public String findUserById(String id) {
-
-        Map<String,Object> result = new HashMap<>();
-        Long uid ;
         try {
-            uid = Long.parseLong(StringUtil.getPamterString(id));
-            result.put("user",personalInformationDao.findUserById(uid));
-            result.put("single","succeed");
+            Long uid = Long.parseLong(StringUtil.getPamterString(id));
+            return JSON.toJSONString(ResultUtil.succeed(personalInformationDao.findUserById(uid)));
         }catch (Exception e){
-            result.put("single","error");
+            return JSON.toJSONString(ResultUtil.error(CommonCode.SELECT_ERROR));
         }
-
-        return JSON.toJSONString(result);
     }
 
     @Override

@@ -783,7 +783,7 @@
             {url:"#",title:"IC卡注销",font:"icon-chonghong-21"},
             {url:"#",title:"业务记录",font:"icon-shouxinxiangqing-xiaofeijilu"}],
         [
-            {url:"#",title:"个人信息",font:"icon-xueshengziliao"},
+            {url:"http://localhost:8080/nchkkjxy/balance/go",title:"个人信息",font:"icon-xueshengziliao"},
             {url:"#",title:"登录选项",font:"icon-huidaodingbu"},
             {url:"http://localhost:8080/nchkkjxy/go/toLogin",title:"退出系统",   font:"icon-tuichudenglu"}
             ],

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,9 +27,10 @@ public class PersonalInformationController {
 
     //根据用户id获取用户信息
     //return JSON 字符串
-    @RequestMapping(value = "/get",method = {RequestMethod.GET,RequestMethod.POST})
+    @RequestMapping(value = "/get")
     @ResponseBody
-    public String getPersonalInformation(@RequestParam("uid") String uid){
+    public String getPersonalInformation(HttpServletRequest request, HttpSession session){
+        String uid = StringUtil.getPamterString(session.getAttribute("userId"));
         return personalInformationService.findUserById(uid);
     }
 

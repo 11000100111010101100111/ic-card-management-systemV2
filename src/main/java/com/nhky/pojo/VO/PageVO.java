@@ -10,10 +10,45 @@ import java.util.List;
  * 分页结果存储集
  **/
 public class PageVO<T> {
-    Integer off;//开始页
+    Integer off = 0;//开始页
     Integer end;//结束页
-    List<T> data;//页内数据集
+    Integer pageItem;//页内数
+    Integer indexPage;//当前页
+    List<T> list;//页内数据集
     Integer total;//共多少条
+    Integer totalPage;//总页数
+    String msg;
+
+    public PageVO(int items, int index){
+        this.pageItem = items;
+        this.indexPage = index;
+        this.off = items * (index -1);
+//        this.end = items * index - 1;
+        this.end = items;
+    }
+    public Integer getPageItem() {
+        return pageItem;
+    }
+
+    public void setPageItem(Integer pageItem) {
+        this.pageItem = pageItem;
+    }
+
+    public Integer getIndexPage() {
+        return indexPage;
+    }
+
+    public void setIndexPage(Integer indexPage) {
+        this.indexPage = indexPage;
+    }
+
+    public List<T> getList() {
+        return list;
+    }
+
+    public void setList(List<T> list) {
+        this.list = list;
+    }
 
     public Integer getTotal() {
         return total;
@@ -23,10 +58,6 @@ public class PageVO<T> {
         this.total = total;
     }
 
-    public PageVO(int items, int index){
-        this.off = items * (index -1);
-        this.end = items * index - 1;
-    }
 
     public Integer getOff() {
         return off;
@@ -44,11 +75,18 @@ public class PageVO<T> {
         this.end = end;
     }
 
-    public List<T> getData() {
-        return data;
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+    public String getMsg() {
+        return this.msg;
     }
 
-    public void setData(List<T> data) {
-        this.data = data;
+    public Integer getTotalPage() {
+        return totalPage;
+    }
+
+    public void setTotalPage(Integer totalPage) {
+        this.totalPage = totalPage;
     }
 }

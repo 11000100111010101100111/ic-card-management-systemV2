@@ -425,9 +425,9 @@
                 }
             }
         </style>
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myRadioButton.css">
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myLayer.css">
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/waitting-layer.css">
+<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myRadioButton.css">--%>
+<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myLayer.css">--%>
+<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/waitting-layer.css">--%>
 <%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/backJs.css">--%>
     </head>
     <body>

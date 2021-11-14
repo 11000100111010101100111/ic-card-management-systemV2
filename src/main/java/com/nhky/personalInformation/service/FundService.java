@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -24,7 +25,7 @@ public interface FundService {
     public String getPage(Integer index,Integer items,String  uid);
 
     //每日签到
-    public String daily(String uid);
+    String daily(String uid,String money, HttpServletRequest request);
 
     //充值
     //uid : 充值人id

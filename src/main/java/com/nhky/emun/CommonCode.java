@@ -15,7 +15,11 @@ public enum CommonCode implements ICommonCode {
     FORM_VALIDATION_ERROR(false,10001,  "表单验证错误"       ),
     // 用户登录方面错误码
     LOGIN_ERROR(          false,101001, "你未登陆,请登陆"    ),
-    TOKEN_ERROR(          false,101002, "登录过期，请重新登录");
+    TOKEN_ERROR(          false,101002, "登录过期，请重新登录"),
+    UPDATE_ERROR(          false,101003, "数据更新异常"),
+    SELECT_ERROR(          false,101004, "数据查询异常"),
+    INSERT_ERROR(false,101005, "数据增加异常"),
+    INSERT_SUCCEED(true,101006, "添加加成功");
     //...
     //可向下增加更多类型
 

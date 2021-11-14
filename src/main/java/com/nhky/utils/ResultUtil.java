@@ -16,7 +16,9 @@ public class ResultUtil {
     public static ResultVO succeed(Object data) {
         return new ResultVO(CommonCode.SUCCESS,data);
     }
-
+    public static ResultVO succeed(ICommonCode commonCode) {
+        return new ResultVO(commonCode);
+    }
     /**
      * 无结果，失败的返回对象
      * @Param: ErrCodeInterface

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhky.loginAndRegister.dao.LoginAndRegisterDao">
+    <!--
+ * Created by IntelliJ IDEA.
+ * User: 波罗的海
+ * Date: 2021/10/23
+ * Time: 17:17
+-->
+
+<!--    //    根据id获取登录账号信息-->
+<!--    public EasyUser getLoginUserById(String id);-->
+    <select id="getLoginUserById" parameterType="java.lang.String" resultType="com.nhky.pojo.EasyUser">
+        select id,easy_id,`password`,`indentify` from ic_main_easy_user where easy_id = #{easy_id}
+    </select>
+
+<!--    //    判断当前登录账号是否存在登录信息-->
+<!--    public int hasLoginUser(String id);-->
+    <select id="hasID" parameterType="java.lang.String" resultType="int">
+        select count(id) from ic_main_easy_user where easy_id = #{easy_id}
+    </select>
+<!--    //    注册普通用户信息到登录信息表-->
+<!--    public int registerLoginUser(EasyUser easyUser);-->
+    <insert id="registerLoginUser" parameterType="com.nhky.pojo.EasyUser" useGeneratedKeys="true" keyProperty="id">
+        insert into ic_main_easy_user (easy_id,`password`,`indentify`) values (#{easy_id},#{password},'普通用户')
+    </insert>
+
+<!--    //根据手机号后身份证号查询用户是否注册-->
+<!--    public int hasUser(@Param("phone") String phone,@Param("identify_card") String identifyCard);-->
+    <select id="hasUser" parameterType="java.lang.String" resultType="int">
+        select count(id) from ic_main_user where phone = #{phone} or identify_card = #{identify_card}
+    </select>
+
+<!--    //注册用户信息-->
+<!--    public int registerUser(User user);-->
+    <insert id="registerUser" useGeneratedKeys="true" parameterType="com.nhky.pojo.User" keyProperty="id" >
+        insert into ic_main_user
+        (
+            easy_id,
+            <if test="name != null and name !=''">
+                `name`,
+            </if>
+            identify_card,
+            <if test="email != null and email !=''">
+                email,
+            </if>
+            <if test="brithday != null and brithday !=''">
+                brithday,
+            </if>
+            <if test="sex != null and sex !=''">
+                sex,
+            </if>
+            <if test="head_url != null and head_url !=''">
+                head_url,
+            </if>
+            <if test="single != null and single !=''">
+                single,
+            </if>
+            <if test="register_identify != null and register_identify !=''">
+                register_identify,
+            </if>
+            <if test="user_status != null and user_status !=''">
+                user_status,
+            </if>
+            <if test="money_balance != null and money_balance !=''">
+                money_balance,
+            </if>
+            <if test="node_status != null and node_status !=''">
+                node_status,
+            </if>
+            phone
+        )
+        values
+        (
+            #{easy_id},
+            <if test="name != null and name !=''">
+                #{name},
+            </if>
+            #{identify_card},
+            <if test="email != null and email !=''">
+                #{email},
+            </if>
+            <if test="brithday != null and brithday !=''">
+                #{brithday},
+            </if>
+            <if test="sex != null and sex !=''">
+                #{sex},
+            </if>
+            <if test="head_url != null and head_url !=''">
+                #{head_url},
+            </if>
+            <if test="single != null and single !=''">
+                #{single},
+            </if>
+            <if test="register_identify != null and register_identify !=''">
+                #{register_identify},
+            </if>
+            <if test="user_status != null and user_status !=''">
+                #{user_status},
+            </if>
+            <if test="money_balance != null and money_balance !=''">
+                #{money_balance},
+            </if>
+            <if test="node_status != null and node_status !=''">
+                #{node_status},
+            </if>
+            #{phone}
+        )
+    </insert>
+</mapper>
