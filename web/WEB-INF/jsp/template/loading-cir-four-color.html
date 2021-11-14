@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <title>loading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .my-loading {
+            /*display: inline-block;*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /*margin: 100px;*/
+            width: 50px;
+            height: 50px;
+            border: 5px dashed #aaa;
+            border-radius: 50%;
+            border-bottom-color: blue;
+            border-top-color: rgb(4, 167, 140);
+            border-right-color: crimson;
+            border-left-color: #e3ff4f;
+            animation-name: my-loading;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            /*transform-origin: 50% 50%;*/
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .my-loading .loading-point{
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: blue;
+            animation: my-loading-loading-point 2s infinite linear;
+        }
+        @keyframes my-loading-loading-point {
+            0%{background-color: blue;transform: scale(1);box-shadow: 0 0 0 crimson;}
+            25%{background-color: rgb(4, 167, 140);transform: scale(1.4);}
+            50%{background-color: crimson;transform: scale(1.8);box-shadow: 0 0 10px crimson;}
+            75%{background-color: #e3ff4f;transform: scale(1.4);}
+            100%{background-color: blue;transform: scale(1);box-shadow: 0 0 0 crimson;}
+        }
+        @keyframes my-loading {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<input type="button" onclick="load();"  value="开始">
+<input type="button" onclick="over();" id="test" value="结束">
+<!--<div class="my-loading">-->
+<!--    <div class="loading-point"></div>-->
+<!--</div>-->
+<script>
+    var loading_cir = {
+        loading:function (elem) {
+            if(typeof ( $( $(elem).find(".my-loading") ).html()) == "undefined"){
+                $(elem).append("<div class='my-loading'><div class='loading-point'></div></div>");
+            }
+            $("*").css("cursor","no-drop");
+            $("body *").css("opacity","0.4");
+            $("body *").css("pointer-events","none");
+            $($(elem).find(".my-loading")).css("opacity","1");
+            $($(elem).find(".my-loading")).css("pointer-events","painted");
+            $($(elem).find(".my-loading")).find("*").css("opacity","1");
+            $("#test").css("cursor","default");
+            $("#test").css("opacity", "1");
+            $("#test").css("pointer-events", "painted");
+        },
+        loaded:function (elem) {
+            $("body *").css("cursor","default");
+            $("body *").css("opacity", "1");
+            $("body *").css("pointer-events", "painted");
+            if(typeof ( $( $(elem).find(".my-loading") )) != "undefined") {
+               $( $(elem).find(".my-loading")).remove();
+            }
+        }
+    }
+    function  load() {
+        loading_cir.loading("body");
+    }
+    function over() {
+        loading_cir.loaded("body");
+    }
+</script>
+</body>
+</html>
