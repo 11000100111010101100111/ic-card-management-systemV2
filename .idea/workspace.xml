@@ -7,50 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="add a main page for user when he or she has logined,this modul create by XioaJiaHai.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/UserBalanceLogVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/templete/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/AccessUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/template/loading-cir-four-color.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/template/tamplate-table.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/theame/js/baseJs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file/loading-2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/template/head_icon_show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pic/cursor_style/love.cur" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pic/cursor_style/love.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pic/head_icon/client_user_xjh_10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nchkkjxy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nchkkjxy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/com/nhky/utils/LogUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/WEB-INF/classes/main/resources/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/baseCss.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/css/myLayer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/nchkkjxy_war_exploded/theame/js/myLayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/emun/CommonCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/emun/CommonCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/FundDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/FundDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/pojo/FundVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/pojo/FundVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/FundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/FundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/FundServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/FundServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/PageVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/pojo/VO/PageVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/utils/ResultUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/ResultUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/personalFund.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/personalFund.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/loginAndRegister/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/loginAndRegister/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/loginAndRegister/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/loginAndRegister/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/mine.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/minePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/minePage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/static/my-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/my-table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/font/demo_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/font/demo_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/font/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/font/iconfont.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/font/iconfont.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/font/iconfont.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/font/iconfont.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/font/iconfont.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/font/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/font/iconfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/font/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/font/iconfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/font/iconfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/web/font/iconfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/application.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/mappers/PersonalInformation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/mappers/createCardMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/mappers/loginAndRegisterMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/mappers/personalFund.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/mappers/personalPage.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/mybatis.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/spring-mvc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/theame/css/baseCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/css/baseCss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/theame/js/baseJs.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/js/baseJs.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +95,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mappers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/file" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -132,16 +109,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Subversion.Presentation" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\pojo\VO" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\emun" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\utils" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\personalInformation\service\serviceImpl" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\personalInformation\service" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\myFile\javaEE\nchkkjxy\web" />
       <recent name="D:\myFile\javaEE\nchkkjxy\web\pic\main_page" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myFile\javaEE\nchkkjxy\file" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\web\pic\head_icon" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\pojo\VO" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\emun" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\utils" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.nhky">
@@ -303,7 +280,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -471,82 +448,82 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="895" height="515" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1636869070163" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1636739897267">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1636939115660">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1636739897267" />
-    <state width="1264" height="376" key="GridCell.Tab.0.bottom" timestamp="1636902437617">
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1636939115660" />
+    <state width="1264" height="376" key="GridCell.Tab.0.bottom" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.0.center" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.0.center" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.0.left" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.0.left" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.0.right" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.0.right" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.1.bottom" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.1.bottom" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.1.center" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.1.center" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.1.left" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.1.left" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.1.right" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.1.right" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.2.bottom" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.2.bottom" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.2.center" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.2.center" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.2.left" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.2.left" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.2.right" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.2.right" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.3.bottom" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.3.bottom" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.3.center" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.3.center" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.3.left" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.3.left" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
-    <state width="1264" height="376" key="GridCell.Tab.3.right" timestamp="1636902437617">
+    <state width="1264" height="376" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
+    <state width="1264" height="376" key="GridCell.Tab.3.right" timestamp="1636955117330">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="376" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1636902437617" />
+    <state width="1264" height="376" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1636955117330" />
     <state x="399" y="137" key="NewModule_or_Project.wizard" timestamp="1636739784907">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="399" y="137" key="NewModule_or_Project.wizard/0.0.1536.864@0.0.1536.864" timestamp="1636739784907" />
-    <state x="240" y="14" key="SettingsEditor" timestamp="1636740450811">
+    <state x="240" y="14" key="SettingsEditor" timestamp="1636946633877">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="240" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1636740450811" />
+    <state x="240" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1636946633877" />
     <state width="775" height="439" key="XDebugger.FullValuePopup" timestamp="1636868173410">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

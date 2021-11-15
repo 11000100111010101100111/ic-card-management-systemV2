@@ -485,6 +485,47 @@
         #new-msg-sex .my-radio label input + span{
             margin-bottom: 0 !important;
         }
+
+        #msg-headIcon,
+        #new-msg-headIcon{
+            border-radius: 50%;width: 100px;height: 100px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 8px #666;
+            transition: all 0.8s;
+            transform: translateY(-40px);
+            cursor: url('http://localhost:8080/nchkkjxy/pic/cursor_style/love.cur'),auto;
+        }
+        #msg-headIcon:hover,
+        #new-msg-headIcon:hover{
+
+            transform: scale(1.1) translateY(5px) translateZ(5px);
+        }
+
+        #msg-single,
+        #new-msg-single{
+            text-align: center;
+            color: #333;
+            display: inherit;
+            transform: translateY(-20px);
+        }
+        #msg-headIcon:hover #msg-single,
+        #new-msg-headIcon:hover #new-msg-single{
+            transform: translateY(10px);
+        }
+        /*.head-bigger-to-view{*/
+        /*    position: absolute;*/
+        /*    display: inline-block;*/
+        /*    width: 400px;*/
+        /*    height: 400px;*/
+        /*    top:50%;*/
+        /*    left: 50%;*/
+        /*    transform: translate(-50%,-50%);*/
+        /*    border: 5px solid #fff;*/
+        /*    background-position: center;*/
+        /*    background-repeat: no-repeat;*/
+        /*    background-size: 100% 100%;*/
+        /*    z-index: 20;*/
+        /*}*/
     </style>
     <!--    sub-2-->
     <style>
@@ -604,37 +645,37 @@
                     </tr>
                     </tfoot>
                     <tr style="padding-bottom: 0;background-color: var(--sub_color);">
-                        <td align="center" colspan="4" style="padding-bottom: 0;margin-bottom: 0;">
+                        <td align="center" colspan="4" style="padding-bottom: 0;margin-bottom: 0;height: 100px;">
                             <img src="D:/桌面/课程设计/UI/img/defult_man.png" id="new-msg-headIcon">
                             <span style="text-align: center;border-bottom: 1px solid #aaa;" id="new-msg-single">hello!!!</span>
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">姓名：</td>
+                        <td align="right" width="25%">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
                         <td align="left" width="25%">
                             <input type="text" name="uName" value="" id="new-msg-name" class="new-msg">
                         </td>
-                        <td align="right" width="25%">性别：</td>
+                        <td align="right" width="25%">性&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
                         <td align="left" width="25%" id="new-msg-sex"><div class="my-radio"></div></td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">手机：</td>
+                        <td align="right" width="25%">手&nbsp;&nbsp;&nbsp;&nbsp;机：</td>
                         <td align="left" width="25%">
                             <input type="tel" id="new-msg-phone" value="" class="new-msg">
                         </td>
-                        <td align="right" width="25%">邮箱：</td>
+                        <td align="right" width="25%">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</td>
                         <td align="left" width="25%">
                             <input type="email" id="new-msg-email" value="" class="new-msg">
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">身份证：</td>
+                        <td align="right" width="25%">身份证件：</td>
                         <td align="left" width="25%" colspan="3">
                             <input type="text" id="new-msg-identify" value="" class="new-msg">
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">生日：</td>
+                        <td align="right" width="25%">生&nbsp;&nbsp;&nbsp;&nbsp;日：</td>
                         <td align="left" width="25%" colspan="3">
                             <input type="date" id="new-msg-brithday" value="" class="new-msg">
                         </td>
@@ -658,29 +699,29 @@
                     </tr>
                     </tfoot>
                     <tr style="padding-bottom: 0;background-color: var(--sub_color);">
-                        <td align="center" colspan="4" style="padding-bottom: 0;margin-bottom: 0;">
+                        <td align="center" colspan="4" style="padding-bottom: 0;margin-bottom: 0;height: 100px;">
                             <img src="D:/桌面/课程设计/UI/img/defult_man.png" id="msg-headIcon">
                             <span style="text-align: center;border-bottom: 1px solid #aaa;" id="msg-single">hello!!!</span>
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">姓名：</td>
+                        <td align="right" width="25%">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
                         <td align="left" width="25%" id="msg-name"></td>
-                        <td align="right" width="25%">性别：</td>
+                        <td align="right" width="25%">性&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
                         <td align="left" width="25%" id="msg-sex"><div class="my-radio"></div></td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">手机：</td>
+                        <td align="right" width="25%">手&nbsp;&nbsp;&nbsp;&nbsp;机：</td>
                         <td align="left" width="25%" id="msg-phone" ></td>
-                        <td align="right" width="25%">邮箱：</td>
+                        <td align="right" width="25%">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</td>
                         <td align="left" width="25%" id="msg-email"></td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">身份证：</td>
+                        <td align="right" width="25%">身份证件：</td>
                         <td align="left" width="25%" colspan="3" id="msg-identify"></td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">生日：</td>
+                        <td align="right" width="25%">生&nbsp;&nbsp;&nbsp;&nbsp;日：</td>
                         <td align="left" width="25%" colspan="3" id="msg-brithday"></td>
                     </tr>
                     <tr>
@@ -937,12 +978,19 @@
 <!--sub-1-->
 <script>
     $("#modify-user-ack").click(function () {
+        $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","0");
         $(".mine-box .mine-right .content .modify-panel").css("display","none");
+
+        //异步提交
         my_tip.tip("修改成功！",1,'.sub-1',[{cssName:'opcaity',cssValue:'0.8'}]);
     });
     $("#modify-user").click(function () {
+        $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","0");
         $(".mine-box .mine-right .content .modify-panel").css("display","table");
     });
+    $("#msg-headIcon,#new-msg-headIcon").click(function () {
+        head_bigger_to_view.show("body",$(this).attr("src"));
+    })
 </script>
 <!--sub-2-->
 <script>

@@ -719,4 +719,51 @@ var loading_cir = {
     }
 }
 
+//大头像查看========================================================================================
+var head_bigger_to_view = {
+    show : function (elem,url) {
+        let _html = "<div class='head-bigger-to-view'><div class='close'>叉</div></div>";
+        $(elem).append(_html);
+        $($(elem).find(".head-bigger-to-view")).css("background-image","url('"+url+"'");
+        $($(elem).find(".head-bigger-to-view .close")[0]).focus();
+
+        $($(elem).find(".head-bigger-to-view .close")[0]).click(function () {
+            $(this).parent(".head-bigger-to-view").remove();
+        });
+        $(document).mousedown(function(e){
+            var elems = $(".head-bigger-to-view")[0];
+            if( typeof ($(elems) ) == "undefined"){
+                return 0;
+            }
+            var t = $(elems).css("top");
+            var h = $(elems).css("height");
+
+            var l = $(elems).css("left");
+            var w = $(elems).css("width");
+
+            console.log(l+"-"+t+"=="+w+"-"+h);
+            t = t.substr(0,t.length-2);
+            h = h.substr(0,h.length-2);
+            l = l.substr(0,l.length-2);
+            w = w.substr(0,w.length-2);
+
+            //鼠标指针此时的位置
+            var x = e.pageX;
+            var y = e.pageY;
+
+            //当前窗口top位置：top - 1/2高度 - 边框
+            //当前窗口bottom位置：top + 1/2高度 + 边框
+            //当前窗口left位置：left - 1/2宽度 - 边框
+            //当前窗口right位置：left + 1/2宽度 - 边框
+            if(    x<parseFloat(l)-parseFloat(w)/2 -5
+                || x>parseFloat(l) + parseFloat(w)/2 + 5
+                || y<parseFloat(t) -parseFloat(h)/2 -5
+                || y>parseFloat(t)+parseFloat(h)/2+ 5
+            ){
+                $(elems).remove();
+            }
+        });
+    }
+};
+
 

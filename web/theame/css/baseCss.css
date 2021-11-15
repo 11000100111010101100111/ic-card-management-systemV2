@@ -426,3 +426,58 @@ input:hover,textarea:hover{
         transform: rotate(360deg);
     }
 }
+
+/*//大头像查看==================================================================================================================*/
+.head-bigger-to-view{
+    position: absolute;
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*background-color: #4e65c7;*/
+    border-radius: 5px;
+    background-size: 100% 100%;
+    box-shadow: 0 0 10px #666;
+    z-index: 20;
+    animation: start_head_bigger_to_view 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    cursor: url('http://localhost:8080/nchkkjxy/pic/cursor_style/love.cur'),auto;
+}
+.head-bigger-to-view .close{
+    display: flex;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    color: #c7254e;
+    background: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.head-bigger-to-view .close:hover{
+
+    transition: all 0.8s;
+    animation: rolateClose 1s ease-in;
+    animation-fill-mode: forwards;
+    color: #fff;
+    background: #c7254e;
+}
+@keyframes start_head_bigger_to_view {
+    from{width: 0;height: 0;top:0;}
+    to{width: 400px;height: 400px;top: 50%;}
+}
+@keyframes rolateClose {
+    form{}
+    50%{transform: rotate(360deg);}
+    to{transform: rotate(-360deg);}
+}
