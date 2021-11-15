@@ -854,12 +854,11 @@
 
                 let name = $("#uname").val();
 
-                let selector = document.getElementsByName('sex');
-                let sex = $(selector).val();
+                let sex = elemUtil.getRadioVal("sex");
                 // console.log(sex);
                 let data = document.getElementById("brithday").value;
                 // let data = $("#brithday").val();
-                console.log(data+"---"+sex);
+                // console.log(data+"---"+sex);
                 let email = $("#email").val();
                 let single = $("#single").val();
                 let headImg = "http://localhost:8080/nchkkjxy/pic/head_icon/defult_"+(sex==="男"?"":"wo")+"man.png";

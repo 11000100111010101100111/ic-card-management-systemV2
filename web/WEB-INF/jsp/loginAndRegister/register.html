@@ -14,6 +14,371 @@
                 transform: rotateY(90deg);
             }
         </style>
+<!--        <style>-->
+<!--            body{-->
+<!--                /*position: relative;*/-->
+<!--                margin: 0;-->
+<!--                min-height: 180vh;-->
+<!--                background-color: var(&#45;&#45;sub_color);-->
+<!--            }-->
+<!--            body::before,body::after{-->
+<!--                content: '';-->
+<!--                position: absolute;-->
+<!--                left:50%;-->
+<!--                transform: translate(-50%,0) rotateZ(0);-->
+<!--                min-height: 300vw;-->
+<!--                min-width: 300vw;-->
+<!--                border-radius: 45%;-->
+<!--                background-color: #fff;-->
+<!--                bottom: 15vh;-->
+<!--                animation: fun 10s linear infinite;-->
+<!--            }-->
+<!--            body::after{-->
+<!--                bottom: 12vh;-->
+<!--                opacity: 0.5;-->
+<!--                border-radius: 47%;-->
+<!--            }-->
+<!--            @keyframes fun {-->
+<!--                0%{-->
+<!--                    transform: translate(-50%,0) rotateZ(0);-->
+<!--                }-->
+<!--                50%{-->
+<!--                    transform: translate(-50%,2%) rotateZ(180deg);-->
+<!--                }-->
+<!--                100%{-->
+<!--                    transform: translate(-50%,0) rotateZ(360deg);-->
+<!--                }-->
+<!--            }-->
+<!--        </style>-->
+        <style>
+            *{margin: 0;padding: 0;}
+            body{
+                overflow-x:hidden;
+                overflow-y:hidden;
+                /* 登录按钮长宽 */
+                --login_WH:100px;/*20%;*/
+
+                /* 主题色 */
+                --main_color:#2a3fff;
+                /* 次主题色 */
+                --sub_color: rgb(4, 167, 140);
+                /* 主要字体色 */
+                --main-font-color:#000;
+                /* 次要字体色 */
+                --sub-font-color:#666;
+                /* 淡灰色 */
+                --sub-color:#aaa;
+                --cir_shadow:rgb(255, 113, 87);
+
+                /* 动画延时快 */
+                --transform_qukily:0.3s;
+                /* 动画延时慢 */
+                --transform_slowily:0.5s;
+            }
+            /* 禁止文字选中 */
+            .forbiden_txt{
+                -o-user-select: none;
+                -moz-user-select: none; /*火狐 firefox*/
+                -webkit-user-select: none; /*webkit浏览器*/
+                -ms-user-select: none; /*IE10+*/
+                -khtml-user-select :none; /*早期的浏览器*/
+                user-select: none;
+            }
+
+            .flex_center{
+                display: flex;
+                flex-direction:row;
+                justify-content:space-around;
+                /* align-items:center; */
+            }
+        </style>
+        <style>
+            .register-contain{
+                position: absolute;
+                width: 60%;/*80%*/
+                height: 90%;/*90%*/
+                margin-top: 3%;
+                margin-left: 20%;
+                /* background-color: var(--main_color); */
+                /*background-color: #ccc;*/
+                border-radius: 5px;
+                z-index: 10;
+            }
+
+            .form-contain{
+                position: relative;
+                width: 100%;
+                height: 70%;
+                /*background-color: #aaa;*/
+            }
+            .flex-btn{
+                position: fixed;
+                flex-direction: column;
+                background-color: var(--sub_color);
+                width: 32px;
+                height: 60px;
+                cursor: pointer;
+                z-index: 99 !important;
+                opacity: 1 !important;
+            }
+            #before{
+                border-radius: 0 5px 5px 0;
+                top: 50%;
+                transform: translateY(-50%);
+                /*top: 240px;*/
+                /*float: left;*/
+                /*left: 388px;*/
+                display: none;
+            }
+            #next{
+                border-radius: 5px 0 0 5px;
+                top: 50%;
+                left: 100%;
+                transform: translate(-100%,-50%);
+                /*top: 240px;*/
+                /*float: right;*/
+                /*left: 1078px;*/
+            }
+
+            .form-contain .panel-contain-sub{
+                position: absolute;
+                width: 80%;
+                height: 88%;
+                top: 50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                border-radius: 5px;
+                border:2px dashed var(--sub_color);
+                background-color: #fff;
+                /*z-index: 1;*/
+            }
+            .form-contain .setting{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                z-index: 1;
+            }
+
+            .form-contain .count-set{
+                z-index: 2;
+            }
+            .form-contain .pesonal-set,
+            .form-contain .pwd-setting,
+            .form-contain .pesonal-set *,
+            .form-contain .pwd-setting *{
+                z-index: 1;
+                opacity: 0;
+            }
+            .form-contain .pesonal-set .self-icon{
+                position: absolute;
+                float: right;
+                width: 128px;
+                height: 128px;
+                margin-top: 10px;
+                margin-left: 50px;
+                background: url('http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png') center no-repeat;
+                background-size: 100% 100%;
+                /*border-radius: 50%;*/
+                /*box-shadow: 0 1px 1px var(--sub_color);*/
+            }
+
+
+            .form-contain .h-title{
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                padding-bottom: 20px;
+            }
+            .form-contain table{
+                width: 100%;
+                padding-bottom: 10px;
+            }
+            .form-contain table input{
+                width: 200px;
+                height: 30px;
+                font-size: 14px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .form-contain .table-left{
+                width: 35%;
+                font-size: 14px;
+                text-align: right;
+            }
+            .form-contain .table-right{
+                width: 50%;
+                text-align: left;
+            }
+
+            .form-bur{
+                width: 100%;
+                height: 30%;
+
+                /* border-top: 1px solid var(--sub-color); */
+            }
+            .form-bur > span{
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                border-radius: 1px;
+                background-color:var(--sub-color);
+            }
+
+            .form-bur .cir-box{
+                position: absolute;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 20px;
+            }
+            .form-bur .cir-box .cir{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border-radius: 20px;
+                /*border:0;*/
+                background-color: var(--sub_color);
+                cursor: pointer;
+                transition: all var(--transform_slowily);
+
+                text-align: center;
+                line-height: 20px;
+                font-weight: bold;
+                font-size:16px;
+                color:#fff;
+                border : 5px solid rgba(0,0,0,0);
+            }
+            .form-bur .cir-box .cir_0{
+                box-shadow: 0 0 20px var(--cir_shadow);
+                border :5px solid #fff;
+            }
+            .form-bur .cir-box .cir:hover{
+                cursor: pointer;
+                transform: translateY(-3px) translateZ(-3px) scale(1.1);
+                box-shadow:0 7px 14px var(--sub_color);
+            }
+
+
+            .form-bur .arc-box{
+                transform: translateY(-27px);
+            }
+            .form-bur .arc-box .arc *{
+                display: inline-block;
+            }
+            .form-bur .arc-box .arc .point{
+                width: 5px;
+                height: 5px;
+                background-color: var(--sub-font-color);
+                margin-right: 3px;
+                border-radius: 5px;
+            }
+            .form-bur .arc-box .arc .arc-point{
+                /* width: 15px;
+                height: 15px; */
+                transform: translateY(12px);
+                /* background-color: var(--sub_color); */
+
+                width:0px;
+                height:0px;
+                border-width:15px;
+                border-style:solid;
+                border-color:rgba(0,0,0,0)  rgba(0,0,0,0)  rgba(0,0,0,0) var(--sub_color);
+            }
+
+
+
+            .form-bur .txt-box{
+                margin-top: -10px;
+            }
+            .form-bur .txt-box .txt{
+                position: relative;
+                font-size: 16px;
+                color:var(--sub-color);
+                text-align: center;
+                cursor: pointer;
+            }
+            .form-bur .txt-box .txt:hover{
+                animation-delay: var(--transform_slowily);
+                color: var(--sub_color);
+            }
+            .form-bur .txt-box .txt span{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 1px;
+                background-color: var(--sub_color);
+            }
+            .form-bur .txt-box .txt:hover span{
+                animation: grow var(--transform_slowily);
+                animation-fill-mode :forwards;
+            }
+            @keyframes grow{
+                0%{
+                    width: 0;
+                    box-shadow: 0 0 1px var(--sub_color);
+                }
+                100%{
+                    width: 100%;
+                    box-shadow: 0 6px 10px var(--sub_color);
+                }
+            }
+
+
+            .form-bur #submit{
+                position: absolute;
+                width: 80px;
+                height: 40px;
+
+                right: 115px;
+                margin-top: 50px;
+                font-size: 12px;
+                background-color: var(--main_color);
+                border:2px solid #fff;
+                color: #fff;
+
+                border-radius: 5px;
+
+                cursor: pointer;
+                transition: all var(--transform_slowily);
+            }
+            .form-bur #submit:hover{
+                border:2px solid var(--sub_color);
+                box-shadow: 0 0 10px var(--sub_color);
+            }
+            .flex-btn::before {
+                background-color: var(--sub_color);
+                -webkit-animation: anim-effect-sonar 0.3s ease-out forwards;
+                animation: anim-effect-sonar 0.3s ease-out forwards;
+            }
+
+            @-webkit-keyframes anim-effect-sonar {
+                0% {
+                    opacity: 1;
+                    -webkit-transform: scale3d(0.9, 0.9, 1);
+                    transform: scale3d(0.9, 0.9, 1);
+                }
+
+                to {
+                    opacity: 0;
+                    -webkit-transform: scale3d(1.4, 1.4, 1);
+                    transform: scale3d(1.4, 1.4, 1);
+                }
+            }
+            @keyframes anim-effect-sonar {
+                0% {
+                    opacity: 1;
+                    -webkit-transform: scale3d(0.9, 0.9, 1);
+                    transform: scale3d(0.9, 0.9, 1);
+                }
+
+                to {
+                    opacity: 0;
+                    -webkit-transform: scale3d(1.4, 1.4, 1);
+                    transform: scale3d(1.4, 1.4, 1);
+                }
+            }
+        </style>
     </head>
     <body>
         <div class="login-btn" >去登录</div>
@@ -22,5 +387,40 @@
             <div class="form-contain"></div>
             <div class="form-bur"></div>
         </div>
+
+    <div>
+        <div class="my-radio">
+            <label for="man" >
+                <input type="radio" name="sex" value="男" id="man" checked>
+                <span>
+                  <svg t="1635051158257" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5451" width="16" height="16" style="font-weight: 800;"><path d="M575.943755 0C328.967874 0 127.987501 200.980373 127.987501 447.956254c0 109.689288 39.696123 210.379455 105.389708 288.271849l-54.194707 54.194707-87.991407-87.991407c-14.998535-14.998535-39.296162-14.998535-54.294698 0s-14.998535 39.296162 0 54.294698l88.091397 87.991407L11.298897 958.406406c-14.998535 14.998535-14.998535 39.296162 0 54.294697 7.499268 7.499268 17.298311 11.298897 27.197344 11.298897 9.799043 0 19.598086-3.799629 27.097353-11.298897l113.688898-113.688897 87.991407 87.991407c7.499268 7.499268 17.298311 11.298897 27.197344 11.298897 9.799043 0 19.598086-3.799629 27.097354-11.298897 14.998535-14.998535 14.998535-39.296162 0-54.294698l-87.991407-87.991407 54.194707-54.194707C365.5643 856.216385 466.254467 895.912509 575.943755 895.912509c246.975881 0 447.956254-200.980373 447.956255-447.956255S822.919637 0 575.943755 0z m0 819.120008c-204.680012 0-371.163754-166.483742-371.163753-371.163754S371.263744 76.792501 575.943755 76.792501 947.107509 243.276243 947.107509 447.956254 780.623767 819.120008 575.943755 819.120008z" fill="#27D0D8" p-id="5452"></path></svg>
+               </span>
+            </label>
+            <label for="woman" class="sex-lab" id="woman-lab">
+                <input type="radio" name="sex" value="女" id="woman">
+                <span>
+                <svg t="1635051266858" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7132" width="16" height="16" style="font-weight: 800;"><path d="M945.2 0H748.3c-21.7 0-39.4 17.6-39.4 39.4s17.6 39.4 39.4 39.4h141.2L755.2 213.1C675.2 145.7 572 105 459.5 105 206.1 105 0 311.2 0 564.5S206.1 1024 459.5 1024 919 817.9 919 564.5c0-112.5-40.7-215.7-108.1-295.7l134.3-134.3v141.2c0 21.8 17.6 39.4 39.4 39.4s39.4-17.6 39.4-39.4V78.8C1024 35.3 988.7 0 945.2 0zM459.5 945.2c-209.9 0-380.7-170.8-380.7-380.7s170.8-380.7 380.7-380.7 380.7 170.8 380.7 380.7-170.8 380.7-380.7 380.7z" fill="#e89abe" p-id="7133"></path></svg>
+                </span>
+            </label>
+        </div>
+    </div>
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <button id="btn">确定</button>
+    <script>
+        $("#btn").click(function () {
+
+            console.log(getRadioVal("sex"));
+            // alert(document.getElementsByName("sex"));
+        });
+        function getRadioVal(radioName) {
+            let rads = document.getElementsByName(radioName);
+            for(let radsIndex = 0;radsIndex<rads.length;radsIndex++)//checked
+            {
+                if($(rads[radsIndex]).prop("checked") == true){
+                    return $(rads[radsIndex]).val();
+                }
+            }
+        }
+    </script>
     </body>
 </html>

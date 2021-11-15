@@ -2,6 +2,8 @@ package com.nhky.personalInformation.service;
 
 import com.nhky.pojo.User;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by IntelliJ IDEA.
  * User: 波罗的海
@@ -13,5 +15,5 @@ public interface PersonalInformationService {
     public String findUserById(String uid);
 
     //修改用户信息
-    public String modifyUser(User user);
+    public String modifyUser(HttpServletRequest request,String uid);
 }

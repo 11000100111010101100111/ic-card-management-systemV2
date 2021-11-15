@@ -36,9 +36,11 @@ public class PersonalInformationController {
 
     //根据用户id修改信息
     //return JSON 字符串
-    @RequestMapping(value = "/update",method = {RequestMethod.GET,RequestMethod.POST})
+    @RequestMapping(value = "/update")
     @ResponseBody
-    public String updatePersonalInformation(@RequestBody User user){
-        return personalInformationService.modifyUser(user);
+    public String updatePersonalInformation(HttpServletRequest request,HttpSession session){
+//        System.out.println("-----send---a--love----package-------mmd..."+user.toString());
+        String uid = StringUtil.getPamterString(session.getAttribute("userId"));
+        return personalInformationService.modifyUser(request,uid);
     }
 }

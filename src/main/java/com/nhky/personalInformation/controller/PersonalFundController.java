@@ -49,7 +49,7 @@ public class PersonalFundController {
             @RequestParam("indexPage")Integer indexPage,
             @RequestParam("uid") String  uid){
         try {
-            Thread.sleep(Math.round(1000)+3000);
+            Thread.sleep(Math.round(1000)+1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

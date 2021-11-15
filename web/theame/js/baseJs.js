@@ -766,4 +766,65 @@ var head_bigger_to_view = {
     }
 };
 
+//自定义下拉框======================================================================================
+var mySelect = {
+    list:{url:'',title:''},
+    open: function () {
+
+    },
+    dataGruid: function (parentNode,elem_id,title,list,isSelection) {
+        elem_id = typeof (elem_id)!="undefined"&&elem_id.substr(0,1)=="#"?elem_id.substr(1,elem_id.length-1):elem_id;
+        $(parentNode).append("<div class='my-select' "+(typeof (elem_id)!="undefined"&&elem_id!=""?"id='"+elem_id+"'":"")+"></div>");
+        if(typeof(title)=="undefined") {
+            title = '按钮';
+        }
+        var select = $(parentNode).children("#"+elem_id);
+        $(select).append("<div class='select-main'>" +
+            title +
+            "</div>" +
+            "<div class='select-menu'>" +
+            "</div>");
+        var menu = $(select).children(".select-menu");
+
+
+        for(i=0;i<list.length;i++){
+
+            $(menu).append("<a" +
+                (typeof (list[i].url) !='undefined' && list[i].url != '' ?" href='" + list[i].url+ "'>":">") +
+                list[i].title+
+                "</a>");
+        }
+        if(typeof (isSelection) != "undefined" && isSelection == true){
+            $(menu).find("a").click(function () {
+                $( $(this).parent().prev()).html($(this).html());
+            });
+        }
+    },
+    dataGruidAll:function(parentNodes,parentNodeIds,titles,lists){
+        for(let j=0;j<$(parentNodes).length;j++){
+            // mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];
+            this.dataGruid($(parentNodes)[j],parentNodeIds[j],titles[j],lists[j]);
+        }
+    },
+    valByParent:function (parent) {
+        return $( $(parent).find(".my-select .select-main")[0]).html();
+    },
+    val:function (elemId) {
+        elemId = elemId.substr(0,1)=="#"?elemId:"#"+elemId;
+        return $(elemId+" .select-main").html();
+    }
+};
+
+//根据单选框name获取选中的值
+var elemUtil = {
+    getRadioVal:function getRadioVal(radioName) {
+        let rads = document.getElementsByName(radioName);
+        for (let radsIndex = 0; radsIndex < rads.length; radsIndex++)//checked
+        {
+            if ($(rads[radsIndex]).prop("checked") == true) {
+                return $(rads[radsIndex]).val();
+            }
+        }
+    }
+};
 

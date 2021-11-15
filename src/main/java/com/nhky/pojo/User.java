@@ -26,7 +26,19 @@ public class User {
     public User() {
     }
 
-    public User(Long easy_id,String name, String identify_card, String phone, String email, String brithday, String sex, String head_url, String single, String register_identify, String user_status, String money_balance, String node_status) {
+    public User(Long easy_id, String name, String identify_card, String phone, String email, String brithday, String sex, String head_url, String single) {
+        this.easy_id = easy_id;
+        this.name = name;
+        this.identify_card = identify_card;
+        this.phone = phone;
+        this.email = email;
+        this.brithday = brithday;
+        this.sex = sex;
+        this.head_url = head_url;
+        this.single = single;
+    }
+
+    public User(Long easy_id, String name, String identify_card, String phone, String email, String brithday, String sex, String head_url, String single, String register_identify, String user_status, String money_balance, String node_status) {
         this.easy_id = easy_id;
         this.name = name;
         this.identify_card = identify_card;

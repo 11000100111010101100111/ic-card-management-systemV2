@@ -453,9 +453,9 @@
         }
 
         .mine-box .mine-right .content .person-msg td,
-        .mine-box .mine-right .content .modify-pane td{
-            font-size: 14px;
-            border-bottom: 1px solid #666;
+        .mine-box .mine-right .content .modify-panel td{
+            font-size: 15px;
+            border-bottom: 1px solid #aaa;
         }
         #modify-user,
         #modify-user-ack{
@@ -476,6 +476,27 @@
             background-color: var(--sub_color);
             color: #fff;
         }
+        #modify-user-cancel{
+            background-color: #c7254e;
+            color: white;
+            margin-right: 20px;
+            width: 100px;
+            height: 30px;
+            /*margin-top: 10px;*/
+            /*margin-bottom: 20px;*/
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
+            transition: all var(--transform_slowily);
+            border: 0;
+        }
+        #modify-user-cancel:hover{
+            box-shadow: 0 0 8px #c7254e;
+        }
+        #modify-user-cancel:focus{
+            border: 0;
+            outline: none;
+        }
 
         #msg-sex .my-radio label,
         #new-msg-sex .my-radio label{
@@ -494,6 +515,7 @@
             transition: all 0.8s;
             transform: translateY(-40px);
             cursor: url('http://localhost:8080/nchkkjxy/pic/cursor_style/love.cur'),auto;
+            z-index: 5;
         }
         #msg-headIcon:hover,
         #new-msg-headIcon:hover{
@@ -504,28 +526,36 @@
         #msg-single,
         #new-msg-single{
             text-align: center;
-            color: #333;
+            color: #fff;
             display: inherit;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            padding: 2px 5px;
             transform: translateY(-20px);
+            max-width: 400px;
+            min-width: 50px;
+            word-wrap: break-word;
         }
         #msg-headIcon:hover #msg-single,
         #new-msg-headIcon:hover #new-msg-single{
-            transform: translateY(10px);
+            /*transform: translateY(-20px);*/
         }
-        /*.head-bigger-to-view{*/
-        /*    position: absolute;*/
-        /*    display: inline-block;*/
-        /*    width: 400px;*/
-        /*    height: 400px;*/
-        /*    top:50%;*/
-        /*    left: 50%;*/
-        /*    transform: translate(-50%,-50%);*/
-        /*    border: 5px solid #fff;*/
-        /*    background-position: center;*/
-        /*    background-repeat: no-repeat;*/
-        /*    background-size: 100% 100%;*/
-        /*    z-index: 20;*/
-        /*}*/
+
+        /*#new-msg-headIcon,*/
+        /*#new-msg-single,*/
+        #new-msg-name,
+        /*#new-msg-sex,*/
+        #new-msg-phone,
+        #new-msg-email,
+        #new-msg-identify,
+        #new-msg-brithday,
+        #new-msg-userType{
+            width: 250px;
+            height: 30px;
+            font-size: 15px;
+            padding-left:5px;
+            color:var(--sub_color);
+        }
     </style>
     <!--    sub-2-->
     <style>
@@ -606,7 +636,7 @@
                 <a href="#sub-2" target="_self" title="账户余额">账户余额</a>
             </li>
             <li id="a_3">
-                <a href="#sub-3" target="_self" title="卡片中心">管理卡</a>
+                <a href="#sub-3" target="_self" title="卡片中心">卡片中心</a>
             </li>
             <li id="a_4">
                 <a href="#sub-4" target="_self" title="我的消费">我的消费</a>
@@ -634,63 +664,64 @@
         </div>
         <div class="content">
             <div class="sub-content sub-1" name="sub-1">
-                <table class="modify-panel">
+                <table class="modify-panel" border="0" cellpadding="0" cellspacing="0">
                     <tfoot>
-                    <tr>
-                        <td colspan="4" align="left" style="outline: none;border-bottom: 0;">
-                                <span  style="background-color: #c7254e;border-radius: 5px;border: 2px solid #fff;color: #fff;padding: 2px 1px;">
-                                    Modify
-                                </span>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td colspan="4" align="left" style="outline: none;border-bottom: 0;">
+                                    <span  style="background-color: #c7254e;border-radius: 5px;border: 2px solid #fff;color: #fff;padding: 2px 1px;">
+                                        Modify
+                                    </span>
+                            </td>
+                        </tr>
                     </tfoot>
                     <tr style="padding-bottom: 0;background-color: var(--sub_color);">
                         <td align="center" colspan="4" style="padding-bottom: 0;margin-bottom: 0;height: 100px;">
                             <img src="D:/桌面/课程设计/UI/img/defult_man.png" id="new-msg-headIcon">
-                            <span style="text-align: center;border-bottom: 1px solid #aaa;" id="new-msg-single">hello!!!</span>
+                            <span id="new-msg-single">hello!!!</span>
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
-                        <td align="left" width="25%">
+                        <td align="right" width="20%">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+                        <td align="left" width="30%">
                             <input type="text" name="uName" value="" id="new-msg-name" class="new-msg">
                         </td>
-                        <td align="right" width="25%">性&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
-                        <td align="left" width="25%" id="new-msg-sex"><div class="my-radio"></div></td>
+                        <td align="right" width="20%">性&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
+                        <td align="left" width="30%" id="new-msg-sex"><div class="my-radio"></div></td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">手&nbsp;&nbsp;&nbsp;&nbsp;机：</td>
-                        <td align="left" width="25%">
+                        <td align="right" width="20%">手&nbsp;&nbsp;&nbsp;&nbsp;机：</td>
+                        <td align="left" width="30%">
                             <input type="tel" id="new-msg-phone" value="" class="new-msg">
                         </td>
-                        <td align="right" width="25%">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</td>
-                        <td align="left" width="25%">
+                        <td align="right" width="20%">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</td>
+                        <td align="left" width="30%">
                             <input type="email" id="new-msg-email" value="" class="new-msg">
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">身份证件：</td>
-                        <td align="left" width="25%" colspan="3">
+                        <td align="right" width="20%">身份证件：</td>
+                        <td align="left" width="30%" colspan="3">
                             <input type="text" id="new-msg-identify" value="" class="new-msg">
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">生&nbsp;&nbsp;&nbsp;&nbsp;日：</td>
-                        <td align="left" width="25%" colspan="3">
+                        <td align="right" width="20%">生&nbsp;&nbsp;&nbsp;&nbsp;日：</td>
+                        <td align="left" width="30%" colspan="3">
                             <input type="date" id="new-msg-brithday" value="" class="new-msg">
                         </td>
                     </tr>
                     <tr>
-                        <td align="right" width="25%">用户类型：</td>
-                        <td align="left" width="25%" colspan="3" id="new-msg-userType"></td>
+                        <td align="right" width="20%">用户类型：</td>
+                        <td align="left" width="30%" colspan="3" id="new-msg-userType" style="padding: 15px 5px;"></td>
                     </tr>
                     <tr>
                         <td colspan="4" align="right" style=" border-bottom: 0px solid #666;">
+                            <input type="button" value="返    回" id="modify-user-cancel" style="background-color: #c7254e;color: white">
                             <input type="button" value="确    认" id="modify-user-ack">
                         </td>
                     </tr>
                 </table>
-                <table class="person-msg">
+                <table class="person-msg" border="0" cellpadding="0" cellspacing="0">
                     <tfoot>
                     <tr>
                         <td colspan="4" align="left" style="outline: none;border-bottom: 0;">
@@ -701,7 +732,7 @@
                     <tr style="padding-bottom: 0;background-color: var(--sub_color);">
                         <td align="center" colspan="4" style="padding-bottom: 0;margin-bottom: 0;height: 100px;">
                             <img src="D:/桌面/课程设计/UI/img/defult_man.png" id="msg-headIcon">
-                            <span style="text-align: center;border-bottom: 1px solid #aaa;" id="msg-single">hello!!!</span>
+                            <span  id="msg-single">hello!!!</span>
                         </td>
                     </tr>
                     <tr>
@@ -758,7 +789,9 @@
                     <div class="balance-items"></div>
                 </div>
             </div>
-            <div class="sub-content sub-3" name="sub-3"></div>
+            <div class="sub-content sub-3" name="sub-3">
+
+            </div>
             <div class="sub-content sub-4" name="sub-4"></div>
             <div class="sub-content sub-5" name="sub-5"></div>
             <div class="sub-content sub-6" name="sub-6"></div>
@@ -836,6 +869,7 @@
                 loading_cir.loaded("body");
             },
             error:function () {
+                loading_cir.loaded("body");
             }
         });
         //展示信息面板===========================
@@ -878,15 +912,15 @@
         $("#msg-name").html(uInfo.name);//姓名
         let _sex_html = "";
         if(uInfo.sex == "男"){
-            _sex_html = "<label for='msg-man' >" +
-                        "        <input type='radio' name='sex' value='男' id='msg-man' checked>" +
+            _sex_html = "<label for='msg-man' id='man-lab'>" +
+                        "        <input type='radio' name='msg-sex' value='男' id='msg-man' checked>" +
                         "        <span>" +
                         "           <svg t='1635051158257' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='5451' width='16' height='16' style='font-weight: 800;'><path d='M575.943755 0C328.967874 0 127.987501 200.980373 127.987501 447.956254c0 109.689288 39.696123 210.379455 105.389708 288.271849l-54.194707 54.194707-87.991407-87.991407c-14.998535-14.998535-39.296162-14.998535-54.294698 0s-14.998535 39.296162 0 54.294698l88.091397 87.991407L11.298897 958.406406c-14.998535 14.998535-14.998535 39.296162 0 54.294697 7.499268 7.499268 17.298311 11.298897 27.197344 11.298897 9.799043 0 19.598086-3.799629 27.097353-11.298897l113.688898-113.688897 87.991407 87.991407c7.499268 7.499268 17.298311 11.298897 27.197344 11.298897 9.799043 0 19.598086-3.799629 27.097354-11.298897 14.998535-14.998535 14.998535-39.296162 0-54.294698l-87.991407-87.991407 54.194707-54.194707C365.5643 856.216385 466.254467 895.912509 575.943755 895.912509c246.975881 0 447.956254-200.980373 447.956255-447.956255S822.919637 0 575.943755 0z m0 819.120008c-204.680012 0-371.163754-166.483742-371.163753-371.163754S371.263744 76.792501 575.943755 76.792501 947.107509 243.276243 947.107509 447.956254 780.623767 819.120008 575.943755 819.120008z' fill='#27D0D8' p-id='5452'></path></svg>" +
                         "        </span>" +
                         "</label>";
         }else if(uInfo.sex == "女"){
             _sex_html = "<label for='msg-woman' class='sex-lab' id='woman-lab'>" +
-                        "        <input type='radio' name='sex' value='女' id='msg-woman' checked>" +
+                        "        <input type='radio' name='msg-sex' value='女' id='msg-woman' checked>" +
                         "        <span>" +
                         "            <svg t='1635051266858' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='7132' width='16' height='16' style='font-weight: 800;'><path d='M945.2 0H748.3c-21.7 0-39.4 17.6-39.4 39.4s17.6 39.4 39.4 39.4h141.2L755.2 213.1C675.2 145.7 572 105 459.5 105 206.1 105 0 311.2 0 564.5S206.1 1024 459.5 1024 919 817.9 919 564.5c0-112.5-40.7-215.7-108.1-295.7l134.3-134.3v141.2c0 21.8 17.6 39.4 39.4 39.4s39.4-17.6 39.4-39.4V78.8C1024 35.3 988.7 0 945.2 0zM459.5 945.2c-209.9 0-380.7-170.8-380.7-380.7s170.8-380.7 380.7-380.7 380.7 170.8 380.7 380.7-170.8 380.7-380.7 380.7z' fill='#e89abe' p-id='7133'></path></svg>" +
                         "        </span>" +
@@ -903,18 +937,18 @@
         $("#msg-userType").html(uInfo.register_identify);//用户类型（不可再此处修改）
 //======================================================================================================================================
         $("#new-msg-headIcon").prop("src",uInfo.head_url);//:修改头像
-        $("#new-msg-single").val(uInfo.single);//:签名
+        $("#new-msg-single").html(uInfo.single);//:签名
         $("#new-msg-name").val(uInfo.name);//姓名
 
-        let _new_msg_sex_html = "<label for='msg-man' >" +
-                                "        <input type='radio' name='sex' value='男' id='msg-man'"+
+        let _new_msg_sex_html = "<label for='new-msg-man' id='new-man-lab'>" +
+                                "        <input type='radio' name='new-sex' value='男' id='new-msg-man'"+
                                 ((uInfo.sex == "男")?" checked >":">") +
                                 "        <span>" +
                                 "           <svg t='1635051158257' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='5451' width='16' height='16' style='font-weight: 800;'><path d='M575.943755 0C328.967874 0 127.987501 200.980373 127.987501 447.956254c0 109.689288 39.696123 210.379455 105.389708 288.271849l-54.194707 54.194707-87.991407-87.991407c-14.998535-14.998535-39.296162-14.998535-54.294698 0s-14.998535 39.296162 0 54.294698l88.091397 87.991407L11.298897 958.406406c-14.998535 14.998535-14.998535 39.296162 0 54.294697 7.499268 7.499268 17.298311 11.298897 27.197344 11.298897 9.799043 0 19.598086-3.799629 27.097353-11.298897l113.688898-113.688897 87.991407 87.991407c7.499268 7.499268 17.298311 11.298897 27.197344 11.298897 9.799043 0 19.598086-3.799629 27.097354-11.298897 14.998535-14.998535 14.998535-39.296162 0-54.294698l-87.991407-87.991407 54.194707-54.194707C365.5643 856.216385 466.254467 895.912509 575.943755 895.912509c246.975881 0 447.956254-200.980373 447.956255-447.956255S822.919637 0 575.943755 0z m0 819.120008c-204.680012 0-371.163754-166.483742-371.163753-371.163754S371.263744 76.792501 575.943755 76.792501 947.107509 243.276243 947.107509 447.956254 780.623767 819.120008 575.943755 819.120008z' fill='#27D0D8' p-id='5452'></path></svg>" +
                                 "        </span>" +
                                 "</label>"+
-                                "<label for='msg-woman' class='sex-lab' id='woman-lab'>" +
-                                "        <input type='radio' name='sex' value='女' id='msg-woman' "+
+                                "<label for='new-msg-woman' class='sex-lab' id='new-woman-lab'>" +
+                                "        <input type='radio' name='new-sex' value='女' id='new-msg-woman' "+
                                 ((uInfo.sex == "女")?" checked>":">") +
                                 "        <span>" +
                                 "            <svg t='1635051266858' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='7132' width='16' height='16' style='font-weight: 800;'><path d='M945.2 0H748.3c-21.7 0-39.4 17.6-39.4 39.4s17.6 39.4 39.4 39.4h141.2L755.2 213.1C675.2 145.7 572 105 459.5 105 206.1 105 0 311.2 0 564.5S206.1 1024 459.5 1024 919 817.9 919 564.5c0-112.5-40.7-215.7-108.1-295.7l134.3-134.3v141.2c0 21.8 17.6 39.4 39.4 39.4s39.4-17.6 39.4-39.4V78.8C1024 35.3 988.7 0 945.2 0zM459.5 945.2c-209.9 0-380.7-170.8-380.7-380.7s170.8-380.7 380.7-380.7 380.7 170.8 380.7 380.7-170.8 380.7-380.7 380.7z' fill='#e89abe' p-id='7133'></path></svg>" +
@@ -925,19 +959,26 @@
         $("#new-msg-email"   ).val(uInfo.email);//邮箱
         $("#new-msg-identify").val(uInfo.identify_card);//身份证
         $("#new-msg-brithday").val(uInfo.brithday);//生日
-        $("#new-msg-userType").html(uInfo.register_identify + "<font class='iconfont icon-wenhao' style='width: 5px;height: 5px;border-radius: 50%;background-color: #c7254e;color: #fff;'></font>");//用户类型（不可再此处修改）
+        $("#new-msg-userType").html(""+uInfo.register_identify +
+            "<span style='color:#888;font-size:12px;border-raduis:5px;padding:5px 2px;'>" +
+            "(用户类型不能修改)" +
+            "    <font class='iconfont icon-wenhao' " +
+            "     style='width: 5px;height: 5px;border-radius: 50%;background-color: #c7254e;color: #fff;cursor:help; ' title='请前往账号变更中心申请！'>" +
+            "    </font>" +
+            "</span>");//用户类型（不可再此处修改）
     }
     function getUserInfo() {
-
+        // let selector = document.getElementsByName('new-sex');
+        // let sex = $(selector).val();
         return  userInfo = {
-            head_url:$("#new-msg-headIcon").html(),//:修改头像
+            head_url:"http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
             single:$("#new-msg-single").html(),//:签名
-            name:$("#new-msg-name").html(),//：修改姓名
-            sex:$("#new-msg-sex").html(),//:修改性别
-            phone:$("#new-msg-phone").html(),//:修改手机号
-            email:$("#new-msg-email").html(),//:修改邮箱
-            identify_card:$("#new-msg-identify").html(),//:修改身份证
-            brithday:$("#new-msg-brithday").html(),//:修改生日
+            name:$("#new-msg-name").val(),//：修改姓名
+            sex:$(document.getElementsByName('new-sex')).val(),//:修改性别
+            phone:$("#new-msg-phone").val(),//:修改手机号
+            email:$("#new-msg-email").val(),//:修改邮箱
+            identify_card:$("#new-msg-identify").val(),//:修改身份证
+            brithday:$("#new-msg-brithday").val(),//:修改生日
             //register_identify:$("#new-msg-userType").html(),//:用户类型（不可再此处修改）
         };
 
@@ -978,19 +1019,75 @@
 <!--sub-1-->
 <script>
     $("#modify-user-ack").click(function () {
-        $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","0");
-        $(".mine-box .mine-right .content .modify-panel").css("display","none");
+
+        let userList = {
+            id:"",
+            easy_id:"",
+            name:"",
+            identify_card:"",
+            phone:"",
+            email:"",
+            brithday:"",
+            sex:"",
+            head_url:"",
+            single:"",
+            register_identify:"",
+            user_status:"",
+            money_balance:"",
+            node_status:"",
+        };
 
         //异步提交
-        my_tip.tip("修改成功！",1,'.sub-1',[{cssName:'opcaity',cssValue:'0.8'}]);
+        sureModify();
     });
     $("#modify-user").click(function () {
         $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","0");
         $(".mine-box .mine-right .content .modify-panel").css("display","table");
     });
     $("#msg-headIcon,#new-msg-headIcon").click(function () {
-        head_bigger_to_view.show("body",$(this).attr("src"));
-    })
+        head_bigger_to_view.show(".sub-1",$(this).attr("src"));
+    });
+    function sureModify() {
+        console.log($(document.getElementsByName('new-sex')).val());
+            $.ajax({
+                url:"http://localhost:8080/nchkkjxy/personalInformation/update",
+                method:"post",
+                dataType:"json",
+                data:{
+                    head_url:"http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
+                    single:$("#new-msg-single").html(),//:签名
+                    name:$("#new-msg-name").val(),//：修改姓名
+                    sex: elemUtil.getRadioVal("new-sex"),//:修改性别
+                    phone:$("#new-msg-phone").val(),//:修改手机号
+                    email:$("#new-msg-email").val(),//:修改邮箱
+                    identify_card:$("#new-msg-identify").val(),//:修改身份证
+                    brithday:$("#new-msg-brithday").val(),//:修改生日
+                    //register_identify:$("#new-msg-userType").html(),//:用户类型（不可再此处修改）
+                },
+                beforeSend:function(){
+                    loading_cir.loading("body");
+                },
+                success:function (data) {
+                    loading_cir.loaded("body");
+
+                    $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","1");
+                    $(".mine-box .mine-right .content .modify-panel").css("display","none");
+                    my_tip.tip("修改成功！",1,'.sub-1',[{cssName:'opcaity',cssValue:'0.8'}]);
+
+                    //刷新个人信息
+                    toMyMessage();
+                },
+                error:function () {
+                    loading_cir.loaded("body");
+                    $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","1");
+                    $(".mine-box .mine-right .content .modify-panel").css("display","none");
+                    my_tip.tip("访问异常！",1,'.sub-1',[
+                        {cssName:'opcaity',cssValue:'0.8'},
+                        {cssName: 'background-color',cssValue:'#c7254e'}
+                        ]);
+                },
+            });
+    }
 </script>
 <!--sub-2-->
 <script>
@@ -1025,6 +1122,7 @@
                 $(".daliy-point").css("pointer-events","painted");
             },
             error:function () {
+                loading_cir.loaded("body");
             }
         })
     });

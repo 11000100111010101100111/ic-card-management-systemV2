@@ -12,6 +12,7 @@ import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,7 +38,25 @@ public class PersonalInformationServiceImpl implements PersonalInformationServic
     }
 
     @Override
-    public String modifyUser(User user) {
+    public String modifyUser(HttpServletRequest request,String uid) {
+        String head_url = request.getParameter("head_url");
+        String single = request.getParameter("single");
+        String name = request.getParameter("name");
+        String sex = request.getParameter("sex");
+        String phone = request.getParameter("phone");
+        String email = request.getParameter("email");
+        String identify_card = request.getParameter("identify_card");
+        String brithday = request.getParameter("brithday");
+        User user = new User(Long.parseLong(uid),
+                    name,
+                    identify_card,
+                    phone,
+                    email,
+                    brithday,
+                    sex,
+                    head_url,
+                    single);
+
         Map<String,Object> result = new HashMap<>();
         if (null == user){
             result.put("single","no user");
