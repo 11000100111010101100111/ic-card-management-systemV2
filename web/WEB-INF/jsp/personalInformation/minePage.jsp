@@ -1018,31 +1018,15 @@
 </script>
 <!--sub-1-->
 <script>
+    $("#modify-user-cancel").click(function () {
+        show_msg_panel();
+    });
     $("#modify-user-ack").click(function () {
-
-        let userList = {
-            id:"",
-            easy_id:"",
-            name:"",
-            identify_card:"",
-            phone:"",
-            email:"",
-            brithday:"",
-            sex:"",
-            head_url:"",
-            single:"",
-            register_identify:"",
-            user_status:"",
-            money_balance:"",
-            node_status:"",
-        };
-
         //异步提交
         sureModify();
     });
     $("#modify-user").click(function () {
-        $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","0");
-        $(".mine-box .mine-right .content .modify-panel").css("display","table");
+        show_modify_msg_panel();
     });
     $("#msg-headIcon,#new-msg-headIcon").click(function () {
         head_bigger_to_view.show(".sub-1",$(this).attr("src"));
@@ -1069,9 +1053,7 @@
                 },
                 success:function (data) {
                     loading_cir.loaded("body");
-
-                    $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","1");
-                    $(".mine-box .mine-right .content .modify-panel").css("display","none");
+                    show_msg_panel();
                     my_tip.tip("修改成功！",1,'.sub-1',[{cssName:'opcaity',cssValue:'0.8'}]);
 
                     //刷新个人信息
@@ -1079,14 +1061,26 @@
                 },
                 error:function () {
                     loading_cir.loaded("body");
-                    $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","1");
-                    $(".mine-box .mine-right .content .modify-panel").css("display","none");
+                    show_msg_panel();
                     my_tip.tip("访问异常！",1,'.sub-1',[
                         {cssName:'opcaity',cssValue:'0.8'},
                         {cssName: 'background-color',cssValue:'#c7254e'}
                         ]);
                 },
             });
+    }
+    //打卡信息面板
+    function show_msg_panel() {
+        // $(".mine-box .mine-right .content .person-msg").find("*").css("opacity","1");
+        $(".mine-box .mine-right .content .person-msg").animate({opacity:"1"},400);
+        $(".mine-box .mine-right .content .modify-panel").animate({opacity: '0'},400);
+        $(".mine-box .mine-right .content .modify-panel").css("display","none");
+    }
+    // 打开修改信息面板
+    function show_modify_msg_panel() {
+        $(".mine-box .mine-right .content .person-msg").animate({opacity:"0"},400);
+        $(".mine-box .mine-right .content .modify-panel").animate({opacity: '1'},400);
+        $(".mine-box .mine-right .content .modify-panel").css("display","table");
     }
 </script>
 <!--sub-2-->
