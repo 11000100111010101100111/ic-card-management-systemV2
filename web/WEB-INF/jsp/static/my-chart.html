@@ -82,6 +82,38 @@
     <div class="border-box box-bottom box-right box-bottom-right"></div>
 </div>
 <script type="text/javascript">
+    (function (root, factory) {
+        if (typeof define === 'function' && define.amd) {
+            // AMD. Register as an anonymous module.
+            define(['exports', 'echarts'], factory);
+        } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
+            // CommonJS
+            factory(exports, require('echarts'));
+        } else {
+            // Browser globals
+            factory({}, root.echarts);
+        }
+    }(this, function (exports, echarts) {
+        var log = function (msg) {
+            if (typeof console !== 'undefined') {
+                console && console.error && console.error(msg);
+            }
+        };
+        if (!echarts) {
+            log('ECharts is not Loaded');
+            return;
+        }
+        var colorPalette = ['#d87c7c','#919e8b', '#d7ab82',  '#6e7074','#61a0a8','#efa18d', '#787464', '#cc7e63', '#724e58', '#4b565b'];
+        echarts.registerTheme('vintage', {
+            color: colorPalette,
+            backgroundColor: '#fef8ef',
+            graph: {
+                color: colorPalette
+            }
+        });
+    }));
+
+
     var myChart = echarts.init(document.querySelector(".my-chart"));
     var colors = ['#5793f3','#d14a61','#675bba','rgb(4, 167, 140)'];
     var option = {
@@ -113,13 +145,20 @@
                 id: 'pie',
                 radius: '30%',
                 center: ['50%', '25%'],
-                label: {
-                    formatter: '{b}: {@2012} ({d}%)'
-                },
-                encode: {
-                    itemName: '年度',
-                    value: '2012',
-                    tooltip: '2012'
+                // label: {
+                //     formatter: '{b}: {@2012} ({d}%)'
+                // },
+                // encode: {
+                //     itemName: '年度',
+                //     value: '2012',
+                //     tooltip: '2012'
+                // },
+                roseType:'angle',
+                itemStyle:{
+                    normal:{
+                        shadowBlur:200,
+                        shadowColor: colors[3]
+                    }
                 }
             }
         ]

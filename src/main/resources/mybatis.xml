@@ -19,6 +19,7 @@
         <mapper resource="/mappers/personalFund.xml"/>
         <mapper resource="/mappers/PersonalInformation.xml"/>
         <mapper resource="/mappers/personalPage.xml"/>
+        <mapper resource="/mappers/personalConsume.xml"/>
     </mappers>
 
 </configuration>

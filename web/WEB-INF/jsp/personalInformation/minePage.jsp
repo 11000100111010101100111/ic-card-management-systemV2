@@ -14,6 +14,8 @@
     <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
     <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
     <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+<%--    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>--%>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/echarts.min.js"></script>
     <style>
         *{
             margin: 0;
@@ -610,6 +612,68 @@
         /*}*/
 
     </style>
+
+<%--    sub-4--%>
+    <style>
+        .sub-4{
+            overflow-x:hidden;
+            overflow-y:hidden;
+            /*height: 100%;*/
+            /*width: 100%;*/
+            /*padding: 0;*/
+            /*margin: 0;*/
+        }
+        .sub-4 .chart-panel{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sub-4 .chart-panel .border-box{
+            position: absolute;
+            width: 15%;
+            height: 35%;
+            background-color: rgb(4, 167, 140);
+        }
+        .sub-4 .chart-panel .box-left{
+            left: 0;
+        }
+        .sub-4 .chart-panel .box-right{
+            right: 0;
+        }
+        .sub-4 .chart-panel .box-top{
+            top: 0;
+        }
+        .sub-4 .chart-panel .box-top-left{
+            border-radius: 0 0 10px 0;
+        }
+        .sub-4 .chart-panel .box-top-right{
+            border-radius: 0 0 0 10px;
+        }
+        .sub-4 .chart-panel .box-bottom-left{
+            border-radius: 0 10px 0 0;
+        }
+        .sub-4 .chart-panel .box-bottom-right{
+            border-radius: 10px 0 0 0;
+        }
+        .sub-4 .chart-panel .box-bottom{
+            bottom: 0;
+        }
+        .sub-4 .chart-panel .my-chart {
+            /*width: 600px;*/
+            /*height: 600px;*/
+            width: 70%;
+            height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 5;
+        }
+
+    </style>
 </head>
 <body>
 <div class="mine-box">
@@ -792,7 +856,15 @@
             <div class="sub-content sub-3" name="sub-3">
 
             </div>
-            <div class="sub-content sub-4" name="sub-4"></div>
+            <div class="sub-content sub-4" name="sub-4">
+                <div class="chart-panel">
+                    <div class="border-box box-top box-left box-top-left"></div>
+                    <div class="border-box box-top box-right box-top-right"></div>
+                    <div class="my-chart"></div>
+                    <div class="border-box box-bottom box-left box-bottom-left"></div>
+                    <div class="border-box box-bottom box-right box-bottom-right"></div>
+                </div>
+            </div>
             <div class="sub-content sub-5" name="sub-5"></div>
             <div class="sub-content sub-6" name="sub-6"></div>
             <div class="sub-content sub-7" name="sub-7"></div>
@@ -993,7 +1065,7 @@
     }
     //查看我的消费
     function toMyConmue() {
-
+        showMyCoume();
     }
     //查看我的挂失记录
     function toLossCardDetial() {
@@ -1201,6 +1273,119 @@
 </script>
 <!--sub-3-->
 <!--sub-4-->
+<script>
+    // $.getJSON('http://localhost:8080/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {
+    // echarts.registerTheme('wonderland.project', themeJSON);
+    // var myChart = echarts.init(dom, 'wonderland');
+    // var myChart = echarts.init(document.querySelector(".my-chart"));//,'wonderland.project');
+    // myChart.showLoading();  // 开启 loading 效果
+    // $.get('http://localhost:8080/nchkkjxy/test/eChartValue', function (data) {
+    //     myChart.hideLoading();  // 隐藏 loading 效果
+    //     myChart.setOption({
+    //         series : [
+    //             {
+    //                 name: 'name',
+    //                 type: 'pie',    // 设置图表类型为饼图
+    //                 radius: '55%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+    //                 data: data
+    //             },
+    //         ]
+    //     })
+    // }, 'json');
+
+
+    // });
+</script>
+<script type="text/javascript">
+    function showMyCoume() {
+        $(".sub-4 .my-chart").remove();
+<%--        $.getJSON('http://localhost:8080/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {--%>
+<%--            echarts.registerTheme('wonderland.project', themeJSON);--%>
+<%--            // var myChart = echarts.init(dom, 'wonderland');--%>
+        var myChart = echarts.init(document.querySelector(".sub-4 .my-chart"),'wonderland.project');
+        // myChart.showLoading();  // 开启 loading 效果
+        $.ajax({
+         url:"http://localhost:8080/nchkkjxy/test/eChartValue",
+         dataType:"json",
+         method:"post",
+        beforeSend:function () {
+            loading_cir.loading(".sub-4");
+        },
+         success:function (data) {
+             // myChart.hideLoading();
+             loading_cir.loaded(".sub-4");
+             var colors = ['#5793f3','#d14a61','#675bba','rgb(4, 167, 140)'];
+             var option = {
+                 legend: {},
+                 color: colors,
+                 tooltip: {
+                     trigger: 'axis',
+                     showContent: false
+                 },
+                 dataset: {
+                     source: data
+                     //     [
+                     //     ['年度', '2012', '2013', '2014', '2015', '2016', '2017'],
+                     //     ['收入', 41.1, 30.4, 65.1, 53.3, 83.8, 98.7],
+                     //     ['支出', 86.5, 92.1, 85.7, 83.1, 73.4, 55.1],
+                     //     ['来款', 24.1, 67.2, 79.5, 86.4, 65.2, 82.5],
+                     //     ['外借', 55.2, 67.1, 69.2, 72.4, 53.9, 39.1]
+                     // ]
+                 },
+                 xAxis: {type: 'category'},
+                 yAxis: {gridIndex: 0},
+                 grid: {top: '55%'},
+                 series: [
+                     {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                     {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                     {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                     {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                     {
+                         type: 'pie',
+                         id: 'pie',
+                         radius: '30%',
+                         center: ['50%', '25%'],
+                         label: {
+                             formatter: '{b}: {@一月份} ({d}%)'
+                         },
+                         encode: {
+                             itemName: '月份',
+                             value: '一月份',
+                             tooltip: '一月份'
+                         }
+                     }
+                 ]
+             };
+
+             myChart.on('updateAxisPointer', function (event) {
+                 var xAxisInfo = event.axesInfo[0];
+                 if (xAxisInfo) {
+                     var dimension = xAxisInfo.value + 1;
+                     myChart.setOption({
+                         series: {
+                             id: 'pie',
+                             label: {
+                                 formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                             },
+                             encode: {
+                                 value: dimension,
+                                 tooltip: dimension
+                             }
+                         }
+                     });
+                 }
+             });
+             myChart.setOption(option);
+
+         },
+         error:function () {
+             // myChart.hideLoading();
+             loading_cir.loaded(".sub-4");
+         }
+     });
+    }
+
+</script>
 <!--sub-5-->
 <!--sub-6-->
 <!--sub-7-->

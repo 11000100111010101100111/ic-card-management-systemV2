@@ -7,12 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="add a main page for user when he or she has logined,this modul create by XioaJiaHai.">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/chart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/my-chart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/theame/js/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/personalConsume.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/system/authors.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/theame/js/wonderland.project.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nchkkjxy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nchkkjxy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalConsumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalConsumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersoanlConsumeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/dao/PersoanlConsumeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersoanlConsumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/PersoanlConsumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersoanlConsumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersoanlConsumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/templete/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/templete/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/minePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/minePage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/static/my-chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/static/my-chart.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +50,11 @@
         <option value="AnnotationType" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="mapper" />
         <option value="JavaScript File" />
         <option value="Class" />
         <option value="Jsp File" />
         <option value="HTML File" />
+        <option value="mapper" />
       </list>
     </option>
   </component>
@@ -94,16 +101,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Subversion.Presentation" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myFile\javaEE\nchkkjxy\web" />
+      <recent name="D:\myFile\javaEE\nchkkjxy\web\pic\main_page" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\myFile\javaEE\nchkkjxy\web\theame\js" />
       <recent name="D:\myFile\javaEE\nchkkjxy\web\WEB-INF\jsp\static" />
       <recent name="D:\myFile\javaEE\nchkkjxy\file" />
       <recent name="D:\myFile\javaEE\nchkkjxy\web\pic\head_icon" />
       <recent name="D:\myFile\javaEE\nchkkjxy\src\main\java\com\nhky\pojo\VO" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myFile\javaEE\nchkkjxy\web" />
-      <recent name="D:\myFile\javaEE\nchkkjxy\web\pic\main_page" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.nhky">
@@ -139,6 +146,20 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.nhky.personalInformation.controller" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.nhky.templete in nchkkjxy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nchkkjxy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhky.templete.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nhky.templete" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -242,9 +263,11 @@
       <item itemvalue="JUnit.UserVO.fun" />
       <item itemvalue="JUnit.com.nhky.personalInformation.controller in nchkkjxy" />
       <item itemvalue="Tomcat Server.nhky" />
+      <item itemvalue="JUnit.com.nhky.templete in nchkkjxy" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.nhky.templete in nchkkjxy" />
         <item itemvalue="JUnit.com.nhky.personalInformation.controller in nchkkjxy" />
         <item itemvalue="JUnit.UserVO.fun" />
         <item itemvalue="Application.Test" />
@@ -265,7 +288,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -332,6 +355,7 @@
       <workItem from="1636977938244" duration="12532000" />
       <workItem from="1637024260719" duration="1836000" />
       <workItem from="1637026956455" duration="7719000" />
+      <workItem from="1637065505157" duration="11087000" />
     </task>
     <task id="LOCAL-00001" summary="delete">
       <created>1635218295900</created>
@@ -412,10 +436,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="493" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1635320680351" />
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1636986328176">
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1637074019947">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1636986328176" />
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1637074019947" />
     <state x="614" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1636701820002">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -440,70 +464,70 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1636939115660" />
-    <state width="1264" height="438" key="GridCell.Tab.0.bottom" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.0.bottom" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.0.center" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.0.center" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.0.left" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.0.left" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.0.right" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.0.right" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.1.bottom" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.1.bottom" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.1.center" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.1.center" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.1.left" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.1.left" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.1.right" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.1.right" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.2.bottom" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.2.bottom" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.2.center" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.2.center" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.2.left" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.2.left" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.2.right" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.2.right" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.3.bottom" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.3.bottom" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.3.center" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.3.center" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.3.left" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.3.left" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
-    <state width="1264" height="438" key="GridCell.Tab.3.right" timestamp="1637055132968">
+    <state width="1264" height="438" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
+    <state width="1264" height="438" key="GridCell.Tab.3.right" timestamp="1637073698502">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="438" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1637055132968" />
+    <state width="1264" height="438" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1637073698502" />
     <state x="399" y="137" key="NewModule_or_Project.wizard" timestamp="1636739784907">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -559,5 +583,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/nchkkjxy$com_nhky_templete_in_nchkkjxy.ic" NAME="com.nhky.templete in nchkkjxy Coverage Results" MODIFIED="1637069632451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.nhky.templete.*</FILTER>
+    </SUITE>
   </component>
 </project>
