@@ -6,7 +6,7 @@
         this.parentNode = 'body';
         this.css = [];//[{cssName:'',cssValue:''}]
         this.showFun =function (arg) {
-            var uuid = (Math.random()*10000000).toString(16).substr(0,4)+'-'+(new Date()).getTime()+'-'+Math.random().toString().substr(2,5);
+            let uuid = (Math.random()*10000000).toString(16).substr(0,4)+'-'+(new Date()).getTime()+'-'+Math.random().toString().substr(2,5);
             if(typeof (this.parentNode) == "undefined" || typeof ($(this.parentNode))=="undefined"){
                 // console.log($('body').find(".my_tip").length)
                 //
@@ -93,7 +93,7 @@
 
 var my_tip = {
         tip: function show(msg,location,parentNode,css) {
-            var action =new $.show_tip();
+            let action =new $.show_tip();
             action.setMsg(msg);
             action.setLocation( location);
             action.setParentNode(parentNode);
@@ -154,9 +154,9 @@ var dataGrid = {
         addEvent(elem,obj);
     },
     getSelection: function (elem,columnIndex) {
-        var _trs = $(elem).find("table tbody tr");
-        var _tr_len = _trs.length;
-        var values=new Array();
+        let _trs = $(elem).find("table tbody tr");
+        let _tr_len = _trs.length;
+        let values=new Array();
 
         if(typeof (columnIndex) != "undefined") {
             let _th_len = $($(elem).find("table thead td")).length;
@@ -181,13 +181,13 @@ var dataGrid = {
     }
 }
 function ajaxData(elem,obj) {
-    var url = obj.ajac.url ;
-    var method = obj.ajac.method;
-    var data = getAjaxValue(elem); //obj.ajac.data;
+    let url = obj.ajac.url ;
+    let method = obj.ajac.method;
+    let data = getAjaxValue(elem); //obj.ajac.data;
     $.extend(true,data,obj.ajac.data);
     // console.log(data);
-    var sendBefore = function (){obj.ajac.beforeSend();};
-    var overSend = function(){obj.ajac.overSend();};
+    let sendBefore = function (){obj.ajac.beforeSend();};
+    let overSend = function(){obj.ajac.overSend();};
     $.ajax({
         method: method,
         url:url,
@@ -206,7 +206,7 @@ function ajaxData(elem,obj) {
             // pagevo.indexPage = data.indexPage;
             // pagevo.pageItem  = data.pageItem;
             // pagevo.msg       = data.msg;
-            var values={
+            let values={
                 indexPage:data.indexPage,//当前页码
                 total:    data.total,//总记录数
                 pageItem: data.pageItem,//每页记录数
@@ -223,7 +223,7 @@ function ajaxData(elem,obj) {
 }
 function buildElem(elem,obj){
     $(elem).html("");
-    var _table_html = "<div class='my-table-template'>";
+    let _table_html = "<div class='my-table-template'>";
     _table_html+="<div class='operator-tab'>";
 
     //添加操作按钮
@@ -305,7 +305,7 @@ function buildElem(elem,obj){
         "条" +
         "</td>" ;
     //填充底部行中间缺少的单元格
-    var _td_len =obj.pages.length-obj.columnId?2:1;
+    let _td_len =obj.pages.length-obj.columnId?2:1;
     for (let i=0;i < _td_len;i++){
         _table_html += "<td class='my-td'></td>";
     }
@@ -367,8 +367,8 @@ function addEvent(elem,obj) {
     });
 
     if(typeof (obj.btns) != "undefined") {
-        var _nav_btns_len = obj.btns.length;
-        for (var _nav_btns_index = 0; _nav_btns_index < _nav_btns_len; _nav_btns_index++) {
+        let _nav_btns_len = obj.btns.length;
+        for (let _nav_btns_index = 0; _nav_btns_index < _nav_btns_len; _nav_btns_index++) {
             console.log($(elem).find("." + obj.btns[_nav_btns_index].name));
             $($(elem).find("." + obj.btns[_nav_btns_index].name)[0]).click(
                 obj.btns[_nav_btns_index].myclick()
@@ -414,6 +414,7 @@ function buildData(elem,obj,values) {
 
 
     $($(elem).find(".data-grid-elem")).html("");
+    console.log(values)
     for (let rowIndex=0; rowIndex < values.list.length; rowIndex++) {
         let row = "<tr class='my-tr'>";
         row += "<td class='my-td' width='5' ><input type='checkbox' align='center' name='checked'></td>";
@@ -580,7 +581,7 @@ function closeMessage() {
         this.parentNode = 'body';
         this.css = [];//[{cssName:'',cssValue:''}]
         this.showFun =function (arg) {
-            var uuid = (Math.random()*10000000).toString(16).substr(0,4)+'-'+(new Date()).getTime()+'-'+Math.random().toString().substr(2,5);
+            let uuid = (Math.random()*10000000).toString(16).substr(0,4)+'-'+(new Date()).getTime()+'-'+Math.random().toString().substr(2,5);
             if(typeof (this.parentNode) == "undefined" || typeof ($(this.parentNode))=="undefined"){
                 // console.log($('body').find(".my_tip").length)
                 //
@@ -665,7 +666,7 @@ function closeMessage() {
 })(jQuery);
 var my_tip = {
     tip: function show(msg,location,parentNode,css) {
-        var action =new $.show_tip();
+        let action =new $.show_tip();
         action.setMsg(msg);
         action.setLocation( location);
         action.setParentNode(parentNode);
@@ -731,15 +732,15 @@ var head_bigger_to_view = {
             $(this).parent(".head-bigger-to-view").remove();
         });
         $(document).mousedown(function(e){
-            var elems = $(".head-bigger-to-view")[0];
+            let elems = $(".head-bigger-to-view")[0];
             if( typeof ($(elems) ) == "undefined"){
                 return 0;
             }
-            var t = $(elems).css("top");
-            var h = $(elems).css("height");
+            let t = $(elems).css("top");
+            let h = $(elems).css("height");
 
-            var l = $(elems).css("left");
-            var w = $(elems).css("width");
+            let l = $(elems).css("left");
+            let w = $(elems).css("width");
 
             console.log(l+"-"+t+"=="+w+"-"+h);
             t = t.substr(0,t.length-2);
@@ -748,8 +749,8 @@ var head_bigger_to_view = {
             w = w.substr(0,w.length-2);
 
             //鼠标指针此时的位置
-            var x = e.pageX;
-            var y = e.pageY;
+            let x = e.pageX;
+            let y = e.pageY;
 
             //当前窗口top位置：top - 1/2高度 - 边框
             //当前窗口bottom位置：top + 1/2高度 + 边框
@@ -773,26 +774,38 @@ var mySelect = {
 
     },
     dataGruid: function (parentNode,elem_id,title,list,isSelection) {
+        // console.log(elem_id)
         elem_id = typeof (elem_id)!="undefined"&&elem_id.substr(0,1)=="#"?elem_id.substr(1,elem_id.length-1):elem_id;
         $(parentNode).append("<div class='my-select' "+(typeof (elem_id)!="undefined"&&elem_id!=""?"id='"+elem_id+"'":"")+"></div>");
+
         if(typeof(title)=="undefined") {
-            title = '按钮';
+            title.title = '按钮';
+            title.icon="icon-dollar-symbol";
         }
-        var select = $(parentNode).children("#"+elem_id);
-        $(select).append("<div class='select-main'>" +
-            title +
+        let select = $(parentNode).children("#"+elem_id);
+        $(select).append("<div class='select-main" +
+            ((typeof (title.icon) !="undefined" && title.icon != "")?" "+title.icon+" ":"") +
+            "'>" +
+            title.title +
             "</div>" +
             "<div class='select-menu'>" +
             "</div>");
-        var menu = $(select).children(".select-menu");
+        let menu = $(select).children(".select-menu");
 
 
         for(i=0;i<list.length;i++){
-
-            $(menu).append("<a" +
-                (typeof (list[i].url) !='undefined' && list[i].url != '' ?" href='" + list[i].url+ "'>":">") +
-                list[i].title+
-                "</a>");
+            let _select_html = (typeof (list[i].url) !='undefined' && list[i].url != '' ?
+                    "<a" +" href='" + list[i].url+ "' class='"+
+                    ((typeof (list[i].icon)!='undefined' && list[i].icon!="")?" "+list[i].icon+" '>":"'>")+
+                    list[i].title+
+                    "</a>"
+                    :
+                    "<span class='"+
+                    ((typeof (list[i].icon)!='undefined' && list[i].icon!="")?" "+list[i].icon+" '>":"'>")+
+                    list[i].title+
+                    "</span>"
+            );
+            menu.append(_select_html);
         }
         if(typeof (isSelection) != "undefined" && isSelection == true){
             $(menu).find("a").click(function () {
@@ -800,10 +813,11 @@ var mySelect = {
             });
         }
     },
-    dataGruidAll:function(parentNodes,parentNodeIds,titles,lists){
-        for(let j=0;j<$(parentNodes).length;j++){
-            // mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];
-            this.dataGruid($(parentNodes)[j],parentNodeIds[j],titles[j],lists[j]);
+    //（父节点集合，需要绑定的子节点的id，需要显示的标题，每个下拉框对应的数据，是否是选择框（选择框不能跳转页面，选中后改变标题文字为选择的文字））
+    dataGruidAll:function(parentNodes,sub_elem_ids,titles,lists,isSelection){
+        // console.log(titles)
+        for(let j=0;j<parentNodes.length;j++){
+            this.dataGruid($(parentNodes[j]),sub_elem_ids[j],titles[j],lists[j],isSelection);
         }
     },
     valByParent:function (parent) {

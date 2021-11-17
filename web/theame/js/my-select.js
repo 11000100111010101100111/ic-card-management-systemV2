@@ -6,12 +6,12 @@ var mySelect = {
     dataGruid: function (obj,title,list) {
         $(obj).append("<div class='my-select'></div>");
         if(typeof(title)=="undefined") {
-            title.txt = '按钮';
-            title.font="icon-dollar-symbol";
+            title.title = '按钮';
+            title.icon="icon-dollar-symbol";
         }
         var select = $(obj).find(".my-select");
         $(select).append("<div class='iconfont  select-main " +
-            title.font +
+            title.icon +
             "'>" +title.txt + "</div>");
 
         if(list.length<=0){
@@ -20,17 +20,17 @@ var mySelect = {
         $(select).append("<div class='select-menu'></div>");
         var menu = $(select).find(".select-menu");
         for(i=0;i<list.length;i++){
-            if(typeof (list[i].font) =="undefined" || typeof (list[i].font)==""){
-                list[i].font = "icon-xiaoyuanredian";
+            if(typeof (list[i].icon) =="undefined" || typeof (list[i].icon)==""){
+                list[i].icon = "icon-xiaoyuanredian";
             }
             $(menu).append("<a href='" +
                 list[i].url+
                 "'  class='iconfont  " +
-                list[i].font+
+                list[i].icon+
                 "'>" +
                 list[i].title+
                 "</a>");
-            $(menu).find("a span").addClass(list[i].font);
+            $(menu).find("a span").addClass(list[i].icon);
             // console.log(list[i].font);
         }
     },

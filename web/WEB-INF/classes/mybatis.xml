@@ -16,6 +16,11 @@
     <mappers>
         <mapper resource="/mappers/loginAndRegisterMapper.xml"/>
         <mapper resource="/mappers/createCardMapper.xml"/>
+        <mapper resource="/mappers/personalFund.xml"/>
+        <mapper resource="/mappers/PersonalInformation.xml"/>
+        <mapper resource="/mappers/personalPage.xml"/>
+        <mapper resource="/mappers/personalConsume.xml"/>
+        <mapper resource="/mappers/navigationMapper.xml"/>
     </mappers>
 
 </configuration>

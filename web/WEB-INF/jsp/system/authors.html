@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/chart/animate-css.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+    </style>
+    <style>
+        .authors-txt{
+            display: inline-block;
+            float: left;
+            z-index:99;
+            animation-delay: 2s;
+            background-color: white;
+        }
+        .authors-txt .my-element {
+            margin: 0 0.5rem;
+            background-color:rgba(0,0,0,0);
+            animation: bounce; /* referring directly to the animation's @keyframe declaration */
+            animation-duration: 2s; /* don't forget to set a duration! */
+        }
+    </style>
+</head>
+<body style="height: 100%; margin: 0">
+<div class="authors-txt">
+    <div><h1 class="animate__animated animate__bounce my-element">An animated element</h1></div>
+    <div><h1 class="animate__animated animate__bounce my-element">An animated element</h1></div>
+    <div><h1 class="animate__animated animate__bounce my-element">An animated element</h1></div>
+    <div><h1 class="animate__animated animate__bounce my-element">An animated element</h1></div>
+    <div><h1 class="animate__animated animate__bounce my-element">An animated element</h1></div>
+</div>
+<script type="text/javascript" src="http://localhost:8080/nchkkjxy/theame/chart/echarts-5.2.2.min.js"></script>
+<script type="text/javascript" src="http://localhost:8080/nchkkjxy/theame/chart/dataTool-5.2.2.min.js"></script>
+<script type="text/javascript" src="http://localhost:8080/nchkkjxy/theame/chart/echarts-gl-2.min.js"></script>
+<script type="text/javascript" src="http://localhost:8080/nchkkjxy/theame/chart/ecStat.min.js"></script>
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>-->
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/extension/dataTool.min.js"></script>-->
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>-->
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>-->
+<div id="container" style="height: 100%;height: 100%;">
+</div>
+<script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    var ROOT_PATH =
+        'http://localhost:8080/nchkkjxy/theame/chart';
+    var option;
+
+
+
+    option = {
+        backgroundColor: '#000',
+        globe: {
+            baseTexture: ROOT_PATH +   '/world.topo.bathy.200401.jpg',
+            heightTexture: ROOT_PATH + '/world.topo.bathy.200401.jpg',
+            displacementScale: 0.04,
+            shading: 'realistic',
+            environment: ROOT_PATH + '/starfield.jpg',
+            realisticMaterial: {
+                roughness: 0.9
+            },
+            postEffect: {
+                enable: true
+            },
+            light: {
+                main: {
+                    intensity: 5,
+                    shadow: true
+                },
+                ambientCubemap: {
+                    texture: ROOT_PATH + '/pisa.hdr',
+                    diffuseIntensity: 0.2
+                }
+            }
+        }
+    };
+
+
+    if (option && typeof option === 'object') {
+        myChart.setOption(option);
+    }
+
+</script>
+
+
+
+</body>
+</html>

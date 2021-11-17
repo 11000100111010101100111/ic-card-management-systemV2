@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/mySelect.css">
-    <script src="http://localhost:8080/nchkkjxy/theame/js/my-select.js"></script>
     <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
     <title>主页</title>
     <style>
         body{
@@ -757,44 +757,74 @@
 
 <%--//导航栏--%>
 <script>
-    var lis = $(".top-contain .top .left ul").children();
+
     // console.log(lis);
     // for(i=0;i<lis.length;i++){
     //     mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];
     //     mySelect.dataGruid($(lis[i]),'菜单'+i,mySelect.list);
     // }
-    var titles=[
-        {txt:'主   页',font:'icon-shouye'},
-        {txt:'个人消费',font:'icon-gouwuche'},
-        {txt:'业务办理',font:'icon-bumengaikuang'},
-        {txt:'我   的',font:'icon-chanxueyanhezuo'},
-        {txt:'系   统',font:'icon-shezhi'}];
-    var lists=[
-        [],
-        [
-            {url:"#",title:"余额",    font:"icon-wodezijin"},
-            {url:"#",title:"消费记录",font:"icon-shouxinxiangqing-xiaofeijilu"},
-            {url:"#",title:"充值提现", font:"icon-chongzhi"}
-        ]
-        ,
-        [
-            {url:"http://localhost:8080/nchkkjxy/createCard/toCreateCard",title:"IC卡申领",font:"icon-kexuejishu"},
-            {url:"#",title:"IC卡挂失",font:"icon-301guashishenqing-lv"},
-            {url:"#",title:"IC卡注销",font:"icon-chonghong-21"},
-            {url:"#",title:"业务记录",font:"icon-shouxinxiangqing-xiaofeijilu"}],
-        [
-            {url:"http://localhost:8080/nchkkjxy/balance/go",title:"个人信息",font:"icon-xueshengziliao"},
-            {url:"#",title:"登录选项",font:"icon-huidaodingbu"},
-            {url:"http://localhost:8080/nchkkjxy/go/toLogin",title:"退出系统",   font:"icon-tuichudenglu"}
-            ],
-        [
-            {url:"#",title:"关于我们",font:"icon-dollar-symbol"},
-            {url:"#",title:"使用手册",font:"icon-shiyongshouce_icon"},
-            {url:"#",title:"开发者", font:"icon-kaifazhe"},
-            {url:"#",title:"法律",font:"icon-falvshengmingfalv"}
-        ]
-    ]
-    mySelect.dataGruidAll(lis,titles,lists);
+    // var titles=[
+    //     {title:'主   页',icon:'icon-shouye'},
+    //     {title:'个人消费',icon:'icon-gouwuche'},
+    //     {title:'业务办理',icon:'icon-bumengaikuang'},
+    //     {title:'我   的',icon:'icon-chanxueyanhezuo'},
+    //     {title:'系   统',icon:'icon-shezhi'}];
+    // var lists=[
+    //     [],
+    //     [
+    //         {url:"#",title:"余额",    icon:"icon-wodezijin"},
+    //         {url:"#",title:"消费记录",icon:"icon-shouxinxiangqing-xiaofeijilu"},
+    //         {url:"#",title:"充值提现", icon:"icon-chongzhi"}
+    //     ]
+    //     ,
+    //     [
+    //         {url:"http://localhost:8080/nchkkjxy/createCard/toCreateCard",title:"IC卡申领",icon:"icon-kexuejishu"},
+    //         {url:"#",title:"IC卡挂失",icon:"icon-301guashishenqing-lv"},
+    //         {url:"#",title:"IC卡注销",icon:"icon-chonghong-21"},
+    //         {url:"#",title:"业务记录",icon:"icon-shouxinxiangqing-xiaofeijilu"}],
+    //     [
+    //         {url:"http://localhost:8080/nchkkjxy/balance/go",title:"个人信息",icon:"icon-xueshengziliao"},
+    //         {url:"#",title:"登录选项",font:"icon-huidaodingbu"},
+    //         {url:"http://localhost:8080/nchkkjxy/go/toLogin",title:"退出系统",   icon:"icon-tuichudenglu"}
+    //         ],
+    //     [
+    //         {url:"#",title:"关于我们",icon:"icon-dollar-symbol"},
+    //         {url:"#",title:"使用手册",icon:"icon-shiyongshouce_icon"},
+    //         {url:"#",title:"开发者", icon:"icon-kaifazhe"},
+    //         {url:"#",title:"法律",icon:"icon-falvshengmingfalv"}
+    //     ]
+    // ];
+    // mySelect.dataGruidAll(lis,data.data.titles,data.data.lists);
+    $.ajax({
+        url:"http://localhost:8080/nchkkjxy/getNav",
+        method:"post",
+        dataType:"json",
+        data:{router_type:"主页"},
+        beforeSend:function () {
+            // loading_cir.loading('body');
+        },
+        success:function (data) {
+            if(data.succeed  == true){
+
+                $(".top-contain .top .left ul li").remove();
+                let sub_ids = new Array();
+                for (let ul_index = 0;ul_index<data.data.titles.length;ul_index++){
+                    $(".top-contain .top .left ul").append("<li></li>");
+                    sub_ids.push("ul_sub_"+ul_index);
+                }
+                var lis = $(".top-contain .top .left ul").children();
+                mySelect.dataGruidAll(lis,sub_ids,data.data.titles,data.data.lists,false);
+            }else{
+                my_tip.tip("导航栏加载失败...（数据异常）");
+            }
+            // loading_cir.loaded('body');
+        },
+        error:function () {
+            // loading_cir.loaded('body');
+            my_tip.tip("导航栏加载失败...（网络繁忙）",1,"body",[{cssName:"opacity",cssValue:"1"}]);
+        }
+    });
+
 
 </script>
 </body>

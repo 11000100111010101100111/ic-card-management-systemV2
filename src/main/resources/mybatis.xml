@@ -20,6 +20,7 @@
         <mapper resource="/mappers/PersonalInformation.xml"/>
         <mapper resource="/mappers/personalPage.xml"/>
         <mapper resource="/mappers/personalConsume.xml"/>
+        <mapper resource="/mappers/navigationMapper.xml"/>
     </mappers>
 
 </configuration>

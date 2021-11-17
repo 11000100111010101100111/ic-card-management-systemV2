@@ -31,6 +31,7 @@
     <mvc:resources mapping="/staticRes/js/icCardCreate/" location="/staticRes/js/icCardCreate/**"/>
 
 
+    <mvc:resources mapping="/theame/chart/" location="theame/chart/**"/>
     <mvc:resources mapping="/theame/css/" location="theame/css/**"/>
     <mvc:resources mapping="/theame/js/" location="theame/js/**"/>
 <!--    <mvc:resources mapping="/static/js/" location="staticRes/js/"/>-->

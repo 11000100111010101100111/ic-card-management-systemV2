@@ -10,7 +10,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,6 +17,7 @@ import java.util.List;
  * User: 波罗的海
  * Date: 2021/11/8
  * Time: 20:56
+ * 用户消费管理模块
  **/
 @Service("persoanlConsumeServiceImpl")
 public class PersoanlConsumeServiceImpl implements PersoanlConsumeService {
@@ -32,7 +32,8 @@ public class PersoanlConsumeServiceImpl implements PersoanlConsumeService {
         List<List<Object>> data = new ArrayList<>();
         List<Object> consumeTypes = new ArrayList<>();
         consumeTypes.add("消费类型");
-        consumeTypes.addAll(consumeDao.getConsumeTypes(uid));
+//        consumeTypes.addAll(consumeDao.getConsumeTypes(uid));
+        consumeTypes.addAll(consumeDao.getConsumeTypes(null));
         data.add(consumeTypes);
 
         for (int consumeTypeIndex = 1;consumeTypeIndex<consumeTypes.size();consumeTypeIndex++) {

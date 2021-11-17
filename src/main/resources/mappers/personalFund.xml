@@ -24,7 +24,7 @@
             `status`,
             note
             FROM `ic_main_user_balance_log` WHERE user_id = #{uid} ORDER BY `time` DESC
-            <if test="off != null and off >= 0 and end >= 1">
+            <if test="null != off and off >= 0 and end >= 1">
                 LIMIT #{off},#{end}
             </if>
     </select>

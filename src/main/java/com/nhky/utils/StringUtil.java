@@ -1,6 +1,7 @@
 package com.nhky.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -44,4 +45,15 @@ public class StringUtil {
         return result;
     }
 
+    public static boolean isLong(Object str){
+//        2147483648～2147483647
+//        if ((Pattern.compile("[0-9]*")).matcher(getPamterString(str)).matches()){
+//            return
+//        }
+//        return false;
+       if(getPamterString(str).equals("")){
+           return false;
+       }
+        return (Pattern.compile("[0-9]*")).matcher(getPamterString(str)).matches();
+    }
 }

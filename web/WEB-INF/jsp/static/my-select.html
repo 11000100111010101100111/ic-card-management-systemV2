@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<!--    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>-->
+    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+
 <!--    //模板的css-->
     <style>
         .my-select *{
@@ -126,7 +128,7 @@
     </style>
 </head>
     <body>
-<!--        <div>-->
+        <div>
 <!--            <div class="box">-->
 <!--                <div class="my-select">-->
 <!--                    <div class="select-main">下拉菜单</div>-->
@@ -251,30 +253,90 @@
 <!--                    </div>-->
 <!--                </li>-->
 <!--            </ul>-->
-<!--        </div>-->
+        </div>
 
 <!--        <div>-->
 <!--            <div id="list" ></div>-->
 <!--        </div>-->
-        <button id="ok1" style="width: 100px">ok</button><button id="ok2" style="width: 100px">ok</button>
-        <div class="list"></div>
+        <button id="ok1" style="width: 100px">ok</button>
+<button id="ok2" style="width: 100px">ok</button>
+        <ul class="list">
+            <li class="list1"></li>
+            <li class="list2"></li>
+            <li class="list3"></li>
+            <li class="list4"></li>
+            <li class="list5"></li>
+        </ul>
     <script>
 
         // 控件绑定
+        // var mySelect = {
+        //     list:{url:'',title:''},
+        //     open: function () {
+        //
+        //     },
+        //     dataGruid: function (parentNode,elem_id,title,list,isSelection) {
+        //         elem_id = typeof (elem_id)!="undefined"&&elem_id.substr(0,1)=="#"?elem_id.substr(1,elem_id.length-1):elem_id;
+        //         $(parentNode).append("<div class='my-select' "+(typeof (elem_id)!="undefined"&&elem_id!=""?"id='"+elem_id+"'":"")+"></div>");
+        //         if(typeof(title)=="undefined") {
+        //             title = '按钮';
+        //         }
+        //         var select = $(parentNode).children("#"+elem_id);
+        //         $(select).append("<div class='select-main'>" +
+        //             title +
+        //             "</div>" +
+        //             "<div class='select-menu'>" +
+        //             "</div>");
+        //         var menu = $(select).children(".select-menu");
+        //
+        //
+        //         for(i=0;i<list.length;i++){
+        //
+        //             $(menu).append("<a" +
+        //                 (typeof (list[i].url) !='undefined' && list[i].url != '' ?" href='" + list[i].url+ "'>":">") +
+        //                 list[i].title+
+        //                 "</a>");
+        //         }
+        //         if(typeof (isSelection) != "undefined" && isSelection == true){
+        //             $(menu).find("a").click(function () {
+        //                 $( $(this).parent().prev()).html($(this).html());
+        //             });
+        //         }
+        //     },
+        //     dataGruidAll:function(parentNodes,parentNodeIds,titles,lists){
+        //         for(let j=0;j<$(parentNodes).length;j++){
+        //             // mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];
+        //             this.dataGruid($(parentNodes)[j],parentNodeIds[j],titles[j],lists[j]);
+        //         }
+        //     },
+        //     valByParent:function (parent) {
+        //         return $( $(parent).find(".my-select .select-main")[0]).html();
+        //     },
+        //     val:function (elemId) {
+        //         elemId = elemId.substr(0,1)=="#"?elemId:"#"+elemId;
+        //         return $(elemId+" .select-main").html();
+        //     }
+        // };
+
         var mySelect = {
             list:{url:'',title:''},
             open: function () {
 
             },
             dataGruid: function (parentNode,elem_id,title,list,isSelection) {
+                // console.log(elem_id)
                 elem_id = typeof (elem_id)!="undefined"&&elem_id.substr(0,1)=="#"?elem_id.substr(1,elem_id.length-1):elem_id;
                 $(parentNode).append("<div class='my-select' "+(typeof (elem_id)!="undefined"&&elem_id!=""?"id='"+elem_id+"'":"")+"></div>");
+
                 if(typeof(title)=="undefined") {
-                    title = '按钮';
+                    title.title = '按钮';
+                    title.icon="icon-dollar-symbol";
                 }
                 var select = $(parentNode).children("#"+elem_id);
-                $(select).append("<div class='select-main'>" +
-                    title +
+                $(select).append("<div class='select-main" +
+                    ((typeof (title.icon) !="undefined" && title.icon != "")?" "+title.icon+" ":"") +
+                    "'>" +
+                    title.title +
                     "</div>" +
                     "<div class='select-menu'>" +
                     "</div>");
@@ -282,11 +344,18 @@
 
 
                 for(i=0;i<list.length;i++){
-
-                    $(menu).append("<a" +
-                        (typeof (list[i].url) !='undefined' && list[i].url != '' ?" href='" + list[i].url+ "'>":">") +
-                        list[i].title+
-                        "</a>");
+                    let _select_html = (typeof (list[i].url) !='undefined' && list[i].url != '' ?
+                            "<a" +" href='" + list[i].url+ "' class='"+
+                                ((typeof (list[i].icon)!='undefined' && list[i].icon!="")?" "+list[i].icon+" '>":"'>")+
+                                list[i].title+
+                            "</a>"
+                            :
+                            "<span class='"+
+                            ((typeof (list[i].icon)!='undefined' && list[i].icon!="")?" "+list[i].icon+" '>":"'>")+
+                            list[i].title+
+                            "</span>"
+                    );
+                    menu.append(_select_html);
                 }
                 if(typeof (isSelection) != "undefined" && isSelection == true){
                     $(menu).find("a").click(function () {
@@ -294,10 +363,10 @@
                     });
                 }
             },
-            dataGruidAll:function(parentNodes,parentNodeIds,titles,lists){
-                for(let j=0;j<$(parentNodes).length;j++){
-                    // mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];
-                    this.dataGruid($(parentNodes)[j],parentNodeIds[j],titles[j],lists[j]);
+            dataGruidAll:function(parentNodes,sub_elem_ids,titles,lists,isSelection){
+                // console.log(titles)
+                for(let j=0;j<parentNodes.length;j++){
+                    this.dataGruid($(parentNodes[j]),sub_elem_ids[j],titles[j],lists[j],isSelection);
                 }
             },
             valByParent:function (parent) {
@@ -310,15 +379,250 @@
         };
     </script>
 
+<!--//data-->
+<script>
+    var data = {
+        "code": 0,
+        "data": {
+        "lists": [
+            [
 
+            ],
+            [
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:18:48",
+                    "icon": "icon-wodezijin",
+                    "id": 6,
+                    "leavel": 0,
+                    "parent_router": 2,
+                    "status": 1,
+                    "title": "??",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/personalConsume/balance"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:18:49",
+                    "icon": "icon-shouxinxiangqing-xiaofeijilu",
+                    "id": 7,
+                    "leavel": 0,
+                    "parent_router": 2,
+                    "status": 1,
+                    "title": "????",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/personalConsume/consumeNode"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:18:49",
+                    "icon": "icon-chongzhi",
+                    "id": 8,
+                    "leavel": 0,
+                    "parent_router": 2,
+                    "status": 1,
+                    "title": "????",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/personalConsume/resetDrawals"
+                }
+            ],
+            [
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:34:39",
+                    "icon": "icon-kexuejishu",
+                    "id": 9,
+                    "leavel": 0,
+                    "parent_router": 3,
+                    "status": 1,
+                    "title": "IC???",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/businessProcess/createIc"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:34:39",
+                    "icon": "icon-301guashishenqing-lv",
+                    "id": 10,
+                    "leavel": 0,
+                    "parent_router": 3,
+                    "status": 1,
+                    "title": "IC???",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/businessProcess/looseIc"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:34:39",
+                    "icon": "icon-chonghong-21",
+                    "id": 11,
+                    "leavel": 0,
+                    "parent_router": 3,
+                    "status": 1,
+                    "title": "IC???",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/businessProcess/logoutIc"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:34:39",
+                    "icon": "icon-shouxinxiangqing-xiaofeijilu",
+                    "id": 12,
+                    "leavel": 0,
+                    "parent_router": 3,
+                    "status": 1,
+                    "title": "????",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/businessProcess/businessNode"
+                }
+            ],
+            [
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:40:03",
+                    "icon": "icon-xueshengziliao",
+                    "id": 13,
+                    "leavel": 0,
+                    "parent_router": 4,
+                    "status": 1,
+                    "title": "????",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/mine/info"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:40:03",
+                    "icon": "icon-huidaodingbu",
+                    "id": 14,
+                    "leavel": 0,
+                    "parent_router": 4,
+                    "status": 1,
+                    "title": "????",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/mine/loginChiose"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:40:03",
+                    "icon": "icon-tuichudenglu",
+                    "id": 15,
+                    "leavel": 0,
+                    "parent_router": 4,
+                    "status": 1,
+                    "title": "????",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/mine/exit"
+                }
+            ],
+            [
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:40:03",
+                    "icon": "icon-dollar-symbol",
+                    "id": 16,
+                    "leavel": 0,
+                    "parent_router": 5,
+                    "status": 1,
+                    "title": "????",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/system/our"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:40:04",
+                    "icon": "icon-shiyongshouce_icon",
+                    "id": 17,
+                    "leavel": 0,
+                    "parent_router": 5,
+                    "status": 1,
+                    "title": "????",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/system/useBook"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:40:04",
+                    "icon": "icon-kaifazhe",
+                    "id": 18,
+                    "leavel": 0,
+                    "parent_router": 5,
+                    "status": 1,
+                    "title": "???",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/system/author"
+                },
+                {
+                    "create_personal": 10,
+                    "create_time": "2021-11-17 12:40:04",
+                    "icon": "icon-falvshengmingfalv",
+                    "id": 19,
+                    "leavel": 0,
+                    "parent_router": 5,
+                    "status": 1,
+                    "title": "??",
+                    "url": "http://localhost:8080/nchkkjxy?url=home/system/ligel"
+                }
+            ]
+        ],
+        "titles": [
+            {
+                "create_personal": 10,
+                "create_time": "2021-11-17 12:05:13",
+                "icon": "icon-shouye",
+                "id": 1,
+                "leavel": 0,
+                "parent_router": 0,
+                "status": 1,
+                "title": "? ?",
+                "url": "#"
+            },
+            {
+                "create_personal": 10,
+                "create_time": "2021-11-17 12:05:13",
+                "icon": "icon-gouwuche",
+                "id": 2,
+                "leavel": 0,
+                "parent_router": 0,
+                "status": 1,
+                "title": "????",
+                "url": "#"
+            },
+            {
+                "create_personal": 10,
+                "create_time": "2021-11-17 12:05:13",
+                "icon": "icon-bumengaikuang",
+                "id": 3,
+                "leavel": 0,
+                "parent_router": 0,
+                "status": 1,
+                "title": "????",
+                "url": "#"
+            },
+            {
+                "create_personal": 10,
+                "create_time": "2021-11-17 12:05:13",
+                "icon": "icon-chanxueyanhezuo",
+                "id": 4,
+                "leavel": 0,
+                "parent_router": 0,
+                "status": 1,
+                "title": "? ?",
+                "url": "#"
+            },
+            {
+                "create_personal": 10,
+                "create_time": "2021-11-17 12:05:13",
+                "icon": "icon-shezhi",
+                "id": 5,
+                "leavel": 0,
+                "parent_router": 0,
+                "status": 1,
+                "title": "? ?",
+                "url": "#"
+            }
+        ]
+    },
+        "msg": "????",
+        "succeed": true
+    }
+</script>
      <script>
+
         $("#ok1").click(function () {
-            mySelect.dataGruid(
-                $(".list"),
-                "selector_11111",
-                "hello",
-                [{url:'',title:'11'},{url:'#',title:'22'},{url:'#',title:'33'},{url:'#',title:'44'}],true);
-            console.log("ok");
+            mySelect.dataGruidAll(
+                [$(".list1"),$(".list2"),$(".list3"),$(".list4"),$(".list5")],
+                ["selector_1","selector_2","selector_3","selector_4","selector_5","selector_6"],
+                data.data.titles,
+                data.data.lists,
+                false);
+                console.log("ok");
         });
 
         $("#ok2").click(function () {
