@@ -75,7 +75,9 @@
             margin-right: 5px;
             border-radius: 50%;
             cursor: pointer;
-            background: url('http://localhost:8080/nchkkjxy/pic/main_page/defult_man.png') center no-repeat;
+            background-image: url('http://localhost:8080/nchkkjxy/pic/login/no_login.png');
+            background-repeat: no-repeat;
+            background-position: center;
             background-size: 100% 100%;
             border: 2px solid #fff;
         }
@@ -358,147 +360,6 @@
             margin-top: 5px;
         }
     </style>
-
-    <!-- 自定义下拉列表 -->
-<%--    <style>--%>
-
-<%--        .my-select *{--%>
-<%--            transition: all 0.3s;--%>
-<%--        }--%>
-<%--        .my-select {--%>
-
-<%--            position: relative;--%>
-<%--            min-width: 100px;--%>
-<%--            max-width: 200px;--%>
-<%--            /* background-color: rgba(4, 167, 140,0.1); */--%>
-
-<%--            /* color: rgb(4, 167, 140); */--%>
-<%--            color: #fff;--%>
-
-
-<%--            font-size: 16px;--%>
-
-<%--            border: none;--%>
-
-
-<%--            cursor: pointer;--%>
-
-<%--        }--%>
-
-<%--        .my-select >.select-main {--%>
-
-<%--            position: relative;--%>
-<%--            padding: 10px;--%>
-<%--            display: inline-block;--%>
-<%--            /* left: 50%;--%>
-<%--            transform: translateX(-50%); */--%>
-<%--            font-weight: bold;--%>
-<%--            text-align: center;--%>
-<%--        }--%>
-
-<%--        .my-select>.select-menu {--%>
-
-<%--            display: none;--%>
-
-<%--            position: absolute;--%>
-
-<%--            min-width: 100px;--%>
-<%--            max-width: 200px;--%>
-<%--            left: 50%;--%>
-<%--            transform: translateX(-50%);--%>
-<%--            margin-top: 0;--%>
-<%--            background-color: #f9f9f9;--%>
-
-<%--            width: calc(100% - 2px);--%>
-
-<%--            border-radius: 0 0 5px 5px;--%>
-<%--            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);--%>
-
-<%--            border-left: 1px solid rgb(4, 167, 140);--%>
-<%--            border-right: 1px solid rgb(4, 167, 140);--%>
-<%--            border-bottom: 1px solid rgb(4, 167, 140);--%>
-<%--            z-index: 99;--%>
-
-<%--        }--%>
-
-<%--        .my-select>.select-menu>a {--%>
-
-<%--            color: rgb(4, 167, 140);--%>
-
-<%--            padding: 12px 5px;--%>
-
-<%--            text-decoration: none;--%>
-<%--            overflow:hidden;--%>
-<%--            white-space:nowrap;--%>
-<%--            text-overflow:ellipsis;--%>
-<%--            display: block;--%>
-<%--            /*text-align: center;*/--%>
-<%--        }--%>
-<%--        .my-select>.select-menu>a:last-child{--%>
-<%--            border-radius: 0 0 5px 5px;--%>
-<%--        }--%>
-<%--        .my-select>.select-menu>a:hover {--%>
-<%--            color: #fff;--%>
-<%--            font-weight: bold;--%>
-<%--            background-color: rgb(4, 167, 140) ;--%>
-
-<%--        }--%>
-<%--        .my-select:hover .select-menu {--%>
-
-<%--            animation: unfold_menu 0.5s ease-out;--%>
-<%--            display: block;--%>
-
-
-<%--        }--%>
-<%--        .my-select:hover{--%>
-<%--            background-color: rgb(4, 167, 140);--%>
-<%--            color: #fff;--%>
-<%--        }--%>
-<%--        .my-select:hover .select-main {--%>
-
-<%--            /*background-color: #3e8e41;*/--%>
-
-<%--        }--%>
-<%--        @keyframes unfold_menu {--%>
-<%--            0%{opacity: 0;}--%>
-<%--            100%{opacity: 0.8;}--%>
-<%--        }--%>
-<%--    </style>--%>
-<%--    <script>--%>
-<%--        var mySelect = {--%>
-<%--            list:[{url:'',title:''}],--%>
-<%--            open: function () {--%>
-
-<%--            },--%>
-<%--            dataGruid: function (obj,title,list) {--%>
-<%--                $(obj).append("<div class='my-select'></div>");--%>
-<%--                if(typeof(title)=="undefined") {--%>
-<%--                    title = '按钮';--%>
-<%--                }--%>
-<%--                var select = $(obj).find(".my-select");--%>
-<%--                $(select).append("<div class='select-main'>" +--%>
-<%--                    title +--%>
-<%--                    "</div>" +--%>
-<%--                    "<div class='select-menu'>" +--%>
-<%--                    "</div>");--%>
-<%--                var menu = $(select).find(".select-menu");--%>
-<%--                for(let i=0;i<list.length;i++){--%>
-<%--                    $(menu).append("<a href='" +--%>
-<%--                        list[i].url+--%>
-<%--                        "'>" +--%>
-<%--                        list[i].title+--%>
-<%--                        "</a>");--%>
-<%--                }--%>
-<%--            },--%>
-<%--            dataGruidAll:function(obj,titles,lists){--%>
-<%--                for(let j=0;j<$(obj).length;j++){--%>
-<%--                    // mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];--%>
-<%--                    this.dataGruid($(obj)[j],titles[j],lists[j]);--%>
-<%--                }--%>
-<%--            }--%>
-<%--        };--%>
-<%--    </script>--%>
-
 </head>
 <body>
 <div class="top-contain">
@@ -523,7 +384,94 @@
             --><label for="searching" class="iconfont icon-sousuo" id="seach-lab"></label><!--
         --></div>
 </div>
+<%--//导航栏--%>
+<script>
 
+    // console.log(lis);
+    // for(i=0;i<lis.length;i++){
+    //     mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];
+    //     mySelect.dataGruid($(lis[i]),'菜单'+i,mySelect.list);
+    // }
+    // var titles=[
+    //     {title:'主   页',icon:'icon-shouye'},
+    //     {title:'个人消费',icon:'icon-gouwuche'},
+    //     {title:'业务办理',icon:'icon-bumengaikuang'},
+    //     {title:'我   的',icon:'icon-chanxueyanhezuo'},
+    //     {title:'系   统',icon:'icon-shezhi'}];
+    // var lists=[
+    //     [],
+    //     [
+    //         {url:"#",title:"余额",    icon:"icon-wodezijin"},
+    //         {url:"#",title:"消费记录",icon:"icon-shouxinxiangqing-xiaofeijilu"},
+    //         {url:"#",title:"充值提现", icon:"icon-chongzhi"}
+    //     ]
+    //     ,
+    //     [
+    //         {url:"http://localhost:8080/nchkkjxy/createCard/toCreateCard",title:"IC卡申领",icon:"icon-kexuejishu"},
+    //         {url:"#",title:"IC卡挂失",icon:"icon-301guashishenqing-lv"},
+    //         {url:"#",title:"IC卡注销",icon:"icon-chonghong-21"},
+    //         {url:"#",title:"业务记录",icon:"icon-shouxinxiangqing-xiaofeijilu"}],
+    //     [
+    //         {url:"http://localhost:8080/nchkkjxy/balance/go",title:"个人信息",icon:"icon-xueshengziliao"},
+    //         {url:"#",title:"登录选项",font:"icon-huidaodingbu"},
+    //         {url:"http://localhost:8080/nchkkjxy/go/toLogin",title:"退出系统",   icon:"icon-tuichudenglu"}
+    //         ],
+    //     [
+    //         {url:"#",title:"关于我们",icon:"icon-dollar-symbol"},
+    //         {url:"#",title:"使用手册",icon:"icon-shiyongshouce_icon"},
+    //         {url:"#",title:"开发者", icon:"icon-kaifazhe"},
+    //         {url:"#",title:"法律",icon:"icon-falvshengmingfalv"}
+    //     ]
+    // ];
+    // mySelect.dataGruidAll(lis,data.data.titles,data.data.lists);
+    $.ajax({
+        url:"http://localhost:8080/nchkkjxy/getNav",
+        method:"post",
+        dataType:"json",
+        data:{router_type:"主页"},
+        beforeSend:function () {
+            // loading_cir.loading('body');
+        },
+        success:function (data) {
+            if(data.succeed  == true){
+
+                $(".top-contain .top .left ul li").remove();
+                let sub_ids = new Array();
+                for (let ul_index = 0;ul_index<data.data.titles.length;ul_index++){
+                    $(".top-contain .top .left ul").append("<li></li>");
+                    sub_ids.push("ul_sub_"+ul_index);
+                }
+                var lis = $(".top-contain .top .left ul").children();
+                mySelect.dataGruidAll(lis,sub_ids,data.data.titles,data.data.lists,false);
+            }else{
+                my_tip.tip("导航栏加载失败...（数据异常）");
+            }
+            // loading_cir.loaded('body');
+        },
+        error:function () {
+            // loading_cir.loaded('body');
+            my_tip.tip("导航栏加载失败...（网络繁忙）",1,"body",[{cssName:"opacity",cssValue:"1"}]);
+        }
+    });
+    $.ajax({
+        url:"http://localhost:8080/nchkkjxy/getLoginUser",
+        method:"post",
+        dataType:"json",
+        data:{},
+        success:function (data) {
+            if(data.succeed  != true){
+                $(".top-contain .top .right .head-img").attr("title",data.msg);
+            }else {
+                $(".top-contain .top .right .head-img").attr("title","");
+            }
+            $(".top-contain .top .right .head-img").css("background-image","url('"+data.data.head_url+"')");
+            // background: url('http://localhost:8080/nchkkjxy/pic/login/no_login.png') center no-repeat;
+        },error:function () {
+            $(".top-contain .top .right .head-img").prop("title","没有登录信息");
+            my_tip.tip("获取登录信息失败，网络瘫痪...",1,"body",[{cssName:"opacity",cssValue:"1"}]);
+        }
+    });
+</script>
 <div class="bottom-contain">
     <div class="box">
         <div class="top">
@@ -754,78 +702,5 @@
         </div>
     </div>
 </div>
-
-<%--//导航栏--%>
-<script>
-
-    // console.log(lis);
-    // for(i=0;i<lis.length;i++){
-    //     mySelect.list = [{url:"#",title:"选项1"},{url:"#",title:"选项2"},{url:"#",title:"选项3"},{url:"#",title:"选项4"}];
-    //     mySelect.dataGruid($(lis[i]),'菜单'+i,mySelect.list);
-    // }
-    // var titles=[
-    //     {title:'主   页',icon:'icon-shouye'},
-    //     {title:'个人消费',icon:'icon-gouwuche'},
-    //     {title:'业务办理',icon:'icon-bumengaikuang'},
-    //     {title:'我   的',icon:'icon-chanxueyanhezuo'},
-    //     {title:'系   统',icon:'icon-shezhi'}];
-    // var lists=[
-    //     [],
-    //     [
-    //         {url:"#",title:"余额",    icon:"icon-wodezijin"},
-    //         {url:"#",title:"消费记录",icon:"icon-shouxinxiangqing-xiaofeijilu"},
-    //         {url:"#",title:"充值提现", icon:"icon-chongzhi"}
-    //     ]
-    //     ,
-    //     [
-    //         {url:"http://localhost:8080/nchkkjxy/createCard/toCreateCard",title:"IC卡申领",icon:"icon-kexuejishu"},
-    //         {url:"#",title:"IC卡挂失",icon:"icon-301guashishenqing-lv"},
-    //         {url:"#",title:"IC卡注销",icon:"icon-chonghong-21"},
-    //         {url:"#",title:"业务记录",icon:"icon-shouxinxiangqing-xiaofeijilu"}],
-    //     [
-    //         {url:"http://localhost:8080/nchkkjxy/balance/go",title:"个人信息",icon:"icon-xueshengziliao"},
-    //         {url:"#",title:"登录选项",font:"icon-huidaodingbu"},
-    //         {url:"http://localhost:8080/nchkkjxy/go/toLogin",title:"退出系统",   icon:"icon-tuichudenglu"}
-    //         ],
-    //     [
-    //         {url:"#",title:"关于我们",icon:"icon-dollar-symbol"},
-    //         {url:"#",title:"使用手册",icon:"icon-shiyongshouce_icon"},
-    //         {url:"#",title:"开发者", icon:"icon-kaifazhe"},
-    //         {url:"#",title:"法律",icon:"icon-falvshengmingfalv"}
-    //     ]
-    // ];
-    // mySelect.dataGruidAll(lis,data.data.titles,data.data.lists);
-    $.ajax({
-        url:"http://localhost:8080/nchkkjxy/getNav",
-        method:"post",
-        dataType:"json",
-        data:{router_type:"主页"},
-        beforeSend:function () {
-            // loading_cir.loading('body');
-        },
-        success:function (data) {
-            if(data.succeed  == true){
-
-                $(".top-contain .top .left ul li").remove();
-                let sub_ids = new Array();
-                for (let ul_index = 0;ul_index<data.data.titles.length;ul_index++){
-                    $(".top-contain .top .left ul").append("<li></li>");
-                    sub_ids.push("ul_sub_"+ul_index);
-                }
-                var lis = $(".top-contain .top .left ul").children();
-                mySelect.dataGruidAll(lis,sub_ids,data.data.titles,data.data.lists,false);
-            }else{
-                my_tip.tip("导航栏加载失败...（数据异常）");
-            }
-            // loading_cir.loaded('body');
-        },
-        error:function () {
-            // loading_cir.loaded('body');
-            my_tip.tip("导航栏加载失败...（网络繁忙）",1,"body",[{cssName:"opacity",cssValue:"1"}]);
-        }
-    });
-
-
-</script>
 </body>
 </html>

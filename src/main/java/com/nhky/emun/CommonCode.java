@@ -19,7 +19,8 @@ public enum CommonCode implements ICommonCode {
     UPDATE_ERROR(          false,101003, "数据更新异常"),
     SELECT_ERROR(          false,101004, "数据查询异常"),
     INSERT_ERROR(false,101005, "数据增加异常"),
-    INSERT_SUCCEED(true,101006, "添加加成功");
+    INSERT_SUCCEED(true,101006, "添加加成功"),
+    NO_LOGIN(false,101007,"没有登录，请先登录");
     //...
     //可向下增加更多类型
 

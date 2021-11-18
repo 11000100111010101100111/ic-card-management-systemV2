@@ -497,7 +497,7 @@
 
 
         <div class="login-btn forbiden_txt" >
-            <a href="${pageContext.request.contextPath}/go/toRegister">去登录</a>
+            <a href="http://localhost:8080/nchkkjxy/navTo?url=toLogin">去登录</a>
         </div>
         <div class="register-contain">
 

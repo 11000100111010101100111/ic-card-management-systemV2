@@ -1,6 +1,7 @@
 package com.nhky.route.home;
 
 import com.nhky.pojo.Router;
+import com.nhky.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,7 @@ import java.util.Map;
  * Time: 10:40
  **/
 public interface NavigationService {
-    public String seachPage(HttpServletRequest request);
+    public String seachPage(HttpServletRequest request,HttpSession session);
     public Map<String ,Object> navigationList(HttpServletRequest request, HttpSession session);
+    public User getLoginUser(HttpServletRequest request,HttpSession session);
 }

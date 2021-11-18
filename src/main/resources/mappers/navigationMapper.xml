@@ -18,11 +18,20 @@
             <if test="uid != null || uid > 0">
                 OR `leavel` &lt;= (
                     SELECT `leavel` FROM `ic_user_leavel` WHERE `user_type` = (
-                            SELECT `register_identify` FROM `ic_main_user` WHERE `easy_id` = #{uid}
+                            SELECT `register_identify` FROM `ic_main_user` WHERE
+                                `easy_id` = #{uid}
+                                AND `node_status` = '1'
+                                AND `user_status` = '1'
                     )
                 )
             </if>
             AND `router_type` = #{router_type}
             AND `status` = 1 ORDER BY `parent_router`
+    </select>
+
+<!--    //获取当前登录用户信息-->
+<!--    public User getUser(@Param("uid") Long uid);-->
+    <select id="getUser" resultType="com.nhky.pojo.User" parameterType="java.lang.Long">
+        SELECT * FROM `ic_main_user` WHERE `easy_id` = #{uid} AND `node_status` = '1' AND `user_status` = '1'
     </select>
 </mapper>

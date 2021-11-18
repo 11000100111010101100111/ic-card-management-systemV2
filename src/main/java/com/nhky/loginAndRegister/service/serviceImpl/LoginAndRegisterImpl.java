@@ -59,7 +59,7 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
 //                        e.printStackTrace();
 //                    }
                     //进入主页
-                    return "/main";
+                    return "redirect:/";
                 }
                 msg = "tip:账号或密码输入有误--> "  + id +  "  [code:" + code + "]";
             }else {
@@ -72,7 +72,7 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
         model.addAttribute("icon","/pic/login/error.png");
 
 
-        return "loginAndRegister/error";
+        return "redirect:loginAndRegister/error";
     }
     //    phone:phone,
 //    identify:identify,

@@ -1,16 +1,14 @@
 package com.nhky.route.home;
 
 import com.nhky.pojo.Router;
+import com.nhky.pojo.User;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,7 +22,7 @@ public class NavigationServiceImpl implements NavigationService {
     RouterNavigationDao routerNavigationDao;
 
     @Override
-    public String seachPage(HttpServletRequest request) {
+    public String seachPage(HttpServletRequest request,HttpSession session) {
         String pageName = StringUtil.getPamterString(request.getParameter("url"));
         switch (pageName){
             case "home/personalConsume/balance":
@@ -54,7 +52,13 @@ public class NavigationServiceImpl implements NavigationService {
             case "home/mine/loginChiose":
                 pageName = "/loginAndRegister/loginSetting";
                 break;//登录选项
-            case "home/mine/exit":
+            case "home/mine/exit":;
+            case "toLogin":
+                Enumeration em = request.getSession().getAttributeNames();
+                while(em.hasMoreElements()){
+                    request.getSession().removeAttribute(em.nextElement().toString());
+                }
+                session.invalidate();
                 pageName = "/loginAndRegister/login";
                 break;//退出系统
             case "home/system/our":
@@ -93,6 +97,9 @@ public class NavigationServiceImpl implements NavigationService {
             }
             titles.add(routers.get(index));
         }
+        if(uid==-1l){
+            routers.forEach(router -> {if(router.getTitle().equals("退出系统")) {router.setTitle("去登录");}});
+        }
         //子菜单（二级菜单）集合
         List<List<Router>> items = new ArrayList<>();
         titles.forEach(itemtitle->{
@@ -109,5 +116,21 @@ public class NavigationServiceImpl implements NavigationService {
         result.put("titles",titles);
         result.put("lists",items);
         return result;
+    }
+
+    @Override
+    public User getLoginUser(HttpServletRequest request, HttpSession session) {
+        String id = StringUtil.getPamterString(session.getAttribute("userId"));
+        User u = new User();
+        u.setHead_url("http://localhost:8080/nchkkjxy/pic/login/no_login.png");
+        if(null != id && !id.equals("")) {
+            if(StringUtil.isLong(id)) {
+                return routerNavigationDao.getUser(Long.parseLong(id));
+            }else{
+                return u;
+            }
+        }else{
+            return u;
+        }
     }
 }

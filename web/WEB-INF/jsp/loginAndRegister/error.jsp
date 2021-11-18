@@ -39,8 +39,9 @@
             left: 50%;
             transform: translate(-50%,-50%);
             border-radius: 100%;
-            background-color: rgba(0,0,0,0.3);
+            background-color: rgba(4, 167, 140,0.6) ;/*rgba(0,0,0,0.3);*/
             z-index: 1;
+             filter: blur(10px);
         }
 
         .msg-panel{
@@ -52,7 +53,7 @@
             transform: translate(-50%, -50%);
             border-radius: 5px;
             /* box-shadow: 0 0 12px #2b92d4; */
-            border:2px dashed #2b92d4;
+            border:2px dashed rgb(4, 167, 140) ;/*#2b92d4;*/
 
             background-color: rgba(255,255,255,0.78);
             z-index: 99;
@@ -65,7 +66,7 @@
             padding: 1px 2px 1px 2px;
             border-radius: 5px;
             /*border: 1px solid #fff;*/
-            background-color: #2b92d4;
+            background-color: rgb(4, 167, 140);/*#2b92d4;*/
             color: #fff;
             font-weight: 800;
         }
@@ -75,6 +76,7 @@
         }
         .msg-panel>h1{
             text-align: center;
+            color: rgb(4, 167, 140);
         }
         .msg-panel>span{
             position:absolute;
@@ -95,7 +97,7 @@
             background-size: cover;
         }
         .msg-panel>p{
-            color: red;
+            color: crimson;
             font-weight: bold;
             text-align: center;
             margin: 1px;
@@ -104,12 +106,12 @@
         {
             width:8px;
             height:8px;
-            background:#2b92d4;
+            background:rgb(4, 167, 140);/*#2b92d4;*/
             border-radius:4px;
             left:50%;
             top:50%;
             transform: translate(-50%,-50%);
-            box-shadow: 0 0 10px #2b92d4;
+            box-shadow: 0 0 10px  rgb(4, 167, 140);/*#2b92d4;*/
             position:absolute;
             -webkit-animation:action 20s linear infinite;
         }
@@ -135,28 +137,28 @@
 </div>
 </body>
 <script>
-    var canvas = document.getElementById("canvas")
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-    var ctx = canvas.getContext("2d")
-    var particlesArray = []
-    var count = parseInt(1.5*canvas.height / 100 * canvas.width / 100)
+    var canvas = document.getElementById("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var ctx = canvas.getContext("2d");
+    var particlesArray = [];
+    var count = parseInt(1.5*canvas.height / 100 * canvas.width / 100);
     class Particle {
         constructor(x, y) {
-            this.x = x
-            this.y = y
-            this.directionY = 0.5 - Math.random()
-            this.directionX = 0.5 - Math.random()
+            this.x = x;
+            this.y = y;
+            this.directionY = 0.5 - Math.random();
+            this.directionX = 0.5 - Math.random();
         }
         update() {
-            this.y += this.directionY
-            this.x += this.directionX
+            this.y += this.directionY;
+            this.x += this.directionX;
         }
         draw() {
-            ctx.beginPath()
-            ctx.arc(this.x, this.y, 2, 0, Math.PI * 2)
-            ctx.fillStyle = "#666";//randomColor();
-            ctx.fill()
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgb(4, 167, 140)';//"#666";//randomColor();
+            ctx.fill();
         }
     }
 
@@ -164,51 +166,49 @@
     function randomColor(){
         var colors="#";
         for(var i=0;i<6;i++){
-            colors+=Math.floor(Math.random()*16).toString(16)
+            colors+=Math.floor(Math.random()*16).toString(16);
         }
-        return colors
+        return colors;
     }
 
     function createParticle() {
-        var x = Math.random() * canvas.width
-        var y = Math.random() * canvas.height
-        particlesArray.push(new Particle(x, y))
+        var x = Math.random() * canvas.width;
+        var y = Math.random() * canvas.height;
+        particlesArray.push(new Particle(x, y));
     }
 
     function handleParticle() {
         for (var i = 0; i < particlesArray.length; i++) {
-            var particle = particlesArray[i]
-            particle.update()
-            particle.draw()
+            var particle = particlesArray[i];
+            particle.update();
+            particle.draw();
             if (particle.x < 0 || particle.x > canvas.width || particle.y < 0 || particle.y > canvas.height) {
-                particlesArray.splice(i, 1)
+                particlesArray.splice(i, 1);
             }
             for (var j = i; j < particlesArray.length; j++) {
-                dx = particlesArray[i].x - particlesArray[j].x
-                dy = particlesArray[i].y - particlesArray[j].y
-                long = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2))
+                dx = particlesArray[i].x - particlesArray[j].x;
+                dy = particlesArray[i].y - particlesArray[j].y;
+                long = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
                 if (long < 100) {
-                    ctx.beginPath()
-                    ctx.strokeStyle = "rgba(105,105,105," + (1 - long / 200) + ")"
-                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y)
-                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y)
-                    ctx.lineWidth = 1
-                    ctx.stroke()
+                    ctx.beginPath();
+                    ctx.strokeStyle = 'rgba(4, 167, 140,0.5)';//"rgba(105,105,105," + (1 - long / 200) + ")"
+                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
                 }
             }
         }
     }
 
     function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         if (particlesArray.length < count) {
-            createParticle()
+            createParticle();
         }
-        handleParticle()
+        handleParticle();
     }
-    setInterval(() => {
-        draw(),1
-    })
+    setInterval(() => {draw(),1});
 
 </script>
 </html>

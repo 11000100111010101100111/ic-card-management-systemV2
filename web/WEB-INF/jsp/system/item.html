@@ -140,20 +140,22 @@
         .di-qiu{animation: move-di 12s infinite linear;animation-delay: 2.2s;}
         .huo-xin{animation: move-huo 9.8s infinite linear;animation-delay: 2.3s;}
         .shui-xi{animation: move-shui 11.2s infinite linear;animation-delay: 2.4s;}
+	   .jing-xin >.xin{
+			transform: translate(calc(-50% - 3px),-50%);
+            animation: move-moon 3s infinite linear;
+            animation-delay: 2.1s;
+		}
         .moon{
             border-radius: 50%;
+			top:50%;
+			left:-50%;
+			transform: translate(-100%,-50%);
             position: absolute;
             top:50%;left: -50%;
-            transform: translate(-100%,-50%);
-            animation: move-moon 6s infinite linear;
-            animation-delay: 2.1s;
         }
         @keyframes move-moon {
-            0%{top:50%;left: -50%;transform: translate(-100%,-50%);}
-            25%{top:-50%;left: 50%;transform: translate(-50%,-100%);}
-            50%{top:50%;left: 150%;transform: translate(0%,-50%);}
-            75%{top:150%;left: 50%;transform: translate(-50%,0%);}
-            100%{top:50%;left: -50%;transform: translate(-100%,-50%);}
+            0%{transform: translate(calc(-50% - 3px),-50%) rotate(0);}
+            100%{transform: translate(calc(-50% - 3px),-50%) rotate(360deg);}
         }
     </style>
 </head>
