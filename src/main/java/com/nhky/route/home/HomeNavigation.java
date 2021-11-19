@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,5 +43,11 @@ public class HomeNavigation {
                         ResultUtil.result(CommonCode.NO_LOGIN,user)
                         :ResultUtil.succeed(user)
         );
+    }
+    @ResponseBody
+    @RequestMapping("/getAuthors")
+    public String getAuthors(){
+        List<User> authors = navigation.getAuthors();
+        return JSON.toJSONString(ResultUtil.succeed(authors));
     }
 }

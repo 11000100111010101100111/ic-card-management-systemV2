@@ -11,6 +11,8 @@
     <title>开发者团队</title>
     <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
     <style>
         * {
             margin: 0;
@@ -62,7 +64,7 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
-        .hot-area .span{
+        .author-area .span{
             position: relative;
             z-index: 10;
             display: flex;
@@ -150,7 +152,7 @@
         /*    background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);*/
         /*}*/
 
-        .wrapper {
+        .author-list {
             position: absolute;
             display: flex;
             top: 50%;
@@ -163,13 +165,13 @@
             -webkit-backdrop-filter: blur(0px);
             z-index: 20;
         }
-        .wrapper *{
+        .author-list *{
             backdrop-filter: blur(0px);
             -webkit-backdrop-filter: blur(0px);
             z-index: 20;
         }
 
-        .wrapper .hot-area .card {
+        .author-list .author-area .card {
             background: #fff;
             width: 430px;
             display: flex;
@@ -185,7 +187,7 @@
             animation-delay: calc(2s * var(--delay));
         }
 
-        .wrapper .hot-area{
+        .author-list .author-area{
             /* border : 3px solid blue; */
             width: 500px;
             height: 500px;
@@ -195,11 +197,11 @@
 
         }
 
-        .wrapper .hot-area:hover .card{
+        .author-list .author-area:hover .card{
             animation-play-state: paused;
         }
 
-        .wrapper .card:last-child{
+        .author-list .card:last-child{
             animation-delay: calc(-2s * var(--delay) );
         }
 
@@ -255,7 +257,7 @@
             background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
         }
 
-        .wrapper .card .img {
+        .author-list .card .img {
             height: 90px;
             width: 90px;
             position: absolute;
@@ -294,80 +296,66 @@
 <body>
 
 <div class="body"></div>
-<div class="wrapper">
+<div class="author-list">
     <span class="title">开发者团队</span>
-    <div class="hot-area">
-        <span class="span">开发者</span>
-        <!-- 01 card -->
-        <div class="card" style="--delay:-1;">
-            <div class="content">
-                <div class="img">
-                    <img src="http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png" alt="">
-                </div>
-                <div class="details">
-
-                    <span class="name">郑子豪</span>
-                    <p>没有个性也是一种个性!</p>
-                </div>
-            </div>
-            <a href="#">1</a>
-        </div>
-        <!-- 02 card -->
-        <div class="card" style="--delay:0;">
-            <div class="content">
-                <div class="img">
-                    <img src="http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png" alt="">
-                </div>
-                <div class="details">
-
-                    <span class="name">项若颖</span>
-                    <p>没有个性也是一种个性!</p>
-                </div>
-            </div>
-            <a href="#">1</a>
-        </div>
-        <!-- 03 card -->
-        <div class="card" style="--delay:1;">
-            <div class="content">
-                <div class="img">
-                    <img src="http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png" alt="">
-                </div>
-                <div class="details">
-
-                    <span class="name">卢正豪</span>
-                    <p>没有个性也是一种个性!</p>
-                </div>
-            </div>
-            <a href="#">1</a>
-        </div>
-        <!-- 04 card -->
-        <div class="card" style="--delay:2;">
-            <div class="content">
-                <div class="img">
-                    <img src="http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png" alt="">
-                </div>
-                <div class="details">
-
-                    <span class="name">晏慧君</span>
-                    <p>没有个性也是一种个性!</p>
-                </div>
-            </div>
-            <a href="#">1</a>
-        </div>
-        <div class="card" style="--delay:2;">
-            <div class="content">
-                <div class="img">
-                    <img src="http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png" alt="">
-                </div>
-                <div class="details">
-
-                    <span class="name">肖家海</span>
-                    <p>没有个性也是一种个性!</p>
-                </div>
-            </div>
-            <a href="#">1</a>
-        </div>
+    <div class="author-area">
     </div>
 </div>
+<script>
+    function appendOneAuthor(parentNode,author,index) {
+        if(typeof (parentNode) == "undefined" || typeof (author) == "undefined"){
+            return -1;
+        }
+        let _html_author_card =
+            " <div class='card' style='--delay:" +
+            parseInt( typeof (index) == "undefined" || isNaN(index)?-1:index ) + ";'>" +
+            "            <div class='content'>" +
+            "                <div class='img'>" +
+            "                    <img src='" +
+            author.head_url +"' alt=''>" +
+            "                </div>" +
+            "                <div class='details'>" +
+            "                    <span class='name'>" +
+            author.name + "</span>" +
+            "                    <p>" +
+            author.single + "</p>" +
+            "                </div>" +
+            "            </div>" +
+            "            <a href='" +
+            author.easy_id+"' class='iconfont go'></a>" +
+            "        </div>";
+        $(parentNode).append(_html_author_card);
+    }
+    function appendAllAuthors(parentNode,authors) {
+        if(typeof (parentNode) == "undefined" || typeof (authors) == "undefined" || authors.length<=0){
+            return -1;
+        }
+        $(parentNode).empty();
+        $(parentNode).append("<span class='span'>开发者</span>");
+        let _authors_len = authors.length;
+        let _start_index = -1;
+        for (let index = 0; index < _authors_len ; index++){
+            authors[index].easy_id = "#";
+            appendOneAuthor(parentNode,authors[index],_start_index);
+            _start_index += ((index >= _authors_len - 2)?0:1);
+        }
+    }
+    $.ajax({
+        url:"http://localhost:8080/nchkkjxy/getAuthors",
+        method:"post",
+        dataType:"json",
+        data:{},
+        success:function (data) {
+            if(data.succeed == true){
+                appendAllAuthors('.author-list>.author-area',data.data)
+            }else{
+                my_tip.tip("开发者列表获取失败",1,'body',[{cssName:"opacity",cssValue:"1"}]);
+            }
+        },
+        error:function () {
+
+        }
+    });
+</script>
 </body>
 </html>

@@ -72,9 +72,9 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
         model.addAttribute("icon","/pic/login/error.png");
 
 
-        return "redirect:loginAndRegister/error";
+        return "/loginAndRegister/error";
     }
-    //    phone:phone,
+//    phone:phone,
 //    identify:identify,
 //    name:name,
 //    sex:sex,

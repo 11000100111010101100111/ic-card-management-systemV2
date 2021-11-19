@@ -34,4 +34,10 @@
     <select id="getUser" resultType="com.nhky.pojo.User" parameterType="java.lang.Long">
         SELECT * FROM `ic_main_user` WHERE `easy_id` = #{uid} AND `node_status` = '1' AND `user_status` = '1'
     </select>
+
+<!--    //获取开发者列表-->
+<!--    public List<User> getAuthors();-->
+    <select id="getAuthors" resultType="com.nhky.pojo.User">
+        SELECT * FROM `ic_main_user` WHERE `register_identify` = '开发者' AND `node_status` = 1 AND `user_status` = 1
+    </select>
 </mapper>

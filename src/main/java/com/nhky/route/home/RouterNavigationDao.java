@@ -22,4 +22,7 @@ public interface RouterNavigationDao {
 
     //获取当前登录用户信息
     public User getUser(@Param("uid") Long uid);
+
+    //获取开发者列表
+    public List<User> getAuthors();
 }

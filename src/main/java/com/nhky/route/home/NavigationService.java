@@ -19,4 +19,7 @@ public interface NavigationService {
     public String seachPage(HttpServletRequest request,HttpSession session);
     public Map<String ,Object> navigationList(HttpServletRequest request, HttpSession session);
     public User getLoginUser(HttpServletRequest request,HttpSession session);
+
+    //获取开发者列表
+    public List<User> getAuthors();
 }

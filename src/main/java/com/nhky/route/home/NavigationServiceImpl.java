@@ -133,4 +133,9 @@ public class NavigationServiceImpl implements NavigationService {
             return u;
         }
     }
+
+    @Override
+    public List<User> getAuthors() {
+        return routerNavigationDao.getAuthors();
+    }
 }
