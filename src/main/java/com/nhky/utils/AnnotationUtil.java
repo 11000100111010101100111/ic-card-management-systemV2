@@ -1,11 +1,8 @@
 package com.nhky.utils;
 
-import com.nhky.annotation.AjaxConnect;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.aop.ProxyMethodInvocation;
 import org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint;
-
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 
 /**
@@ -20,12 +17,11 @@ public class AnnotationUtil {
     //Class annotationClz 待获取注解的class
     public static Object getMethodAnnotation(ProceedingJoinPoint pjp,Class annotationClz)
             throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-
         MethodInvocationProceedingJoinPoint methodPjp = (MethodInvocationProceedingJoinPoint) pjp;
         Field field = methodPjp.getClass().getDeclaredField("methodInvocation");
         field.setAccessible(true);
         ProxyMethodInvocation invocation = (ProxyMethodInvocation) field.get(methodPjp);
-        Annotation media = (Annotation) invocation.getMethod().getAnnotation(annotationClz);
-        return media;
+        Object annotation = (Object) invocation.getMethod().getAnnotation(annotationClz);
+        return annotation;
     }
 }

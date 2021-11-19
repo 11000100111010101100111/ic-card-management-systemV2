@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  * 此注解标记得执行方法需要安全验证，安全级别为枚举参数所示
  **/
 
-//@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface NeedSecurity {
     Security security() default Security.NOMAL;

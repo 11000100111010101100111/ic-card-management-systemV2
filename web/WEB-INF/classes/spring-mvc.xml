@@ -3,18 +3,25 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/mvc
             http://www.springframework.org/schema/mvc/spring-mvc.xsd
             http://www.springframework.org/schema/context
-            http://www.springframework.org/schema/context/spring-context.xsd">
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!--
  * Created by IntelliJ IDEA.
  * User: 波罗的海
  * Date: 2021/9/19
  * Time: 20:58
 -->
+    <!-- 扫描aop，该类对应自己定义的注解类-->
+    <context:component-scan base-package="com.nhky.config.aop" />
+    <!--启动对AspectJ注解的支持，proxy-target-class等于true是强制使用cglib代理-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <context:component-scan base-package="com.nhky" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -31,6 +38,7 @@
     <mvc:resources mapping="/staticRes/js/icCardCreate/" location="/staticRes/js/icCardCreate/**"/>
 
 
+    <mvc:resources mapping="/theame/chart/" location="theame/chart/**"/>
     <mvc:resources mapping="/theame/css/" location="theame/css/**"/>
     <mvc:resources mapping="/theame/js/" location="theame/js/**"/>
 <!--    <mvc:resources mapping="/static/js/" location="staticRes/js/"/>-->

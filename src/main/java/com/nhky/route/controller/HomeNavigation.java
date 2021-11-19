@@ -1,8 +1,12 @@
-package com.nhky.route.home;
+package com.nhky.route.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.nhky.annotation.AjaxConnect;
+import com.nhky.annotation.NeedSecurity;
 import com.nhky.emun.CommonCode;
+import com.nhky.emun.Security;
 import com.nhky.pojo.User;
+import com.nhky.route.home.NavigationService;
 import com.nhky.utils.ResultUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +27,9 @@ import java.util.List;
 public class HomeNavigation {
     @Resource(name = "navigationServiceImpl")
     NavigationService navigation;
+
+    @NeedSecurity(security = Security.NOMAL)
+    @AjaxConnect()
     @RequestMapping("/navTo")
     public String to(HttpServletRequest request,HttpSession session){
         return navigation.seachPage(request,session);

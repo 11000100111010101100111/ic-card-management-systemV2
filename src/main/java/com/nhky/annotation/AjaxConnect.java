@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  * ajax连接，模拟等待时间，参数time默认1000ms
  **/
 
-//@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface AjaxConnect{
     int time() default 1000;

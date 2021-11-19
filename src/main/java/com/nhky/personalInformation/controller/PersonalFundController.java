@@ -1,7 +1,10 @@
 package com.nhky.personalInformation.controller;
 
+import com.nhky.annotation.AjaxConnect;
 import com.nhky.personalInformation.service.FundService;
 import com.nhky.personalInformation.service.serviceImpl.FundServiceImpl;
+import com.nhky.pojo.VO.ICommonCode;
+import com.nhky.utils.ResultUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,14 +47,15 @@ public class PersonalFundController {
     //items:每页多少条
     @RequestMapping("/page")
     @ResponseBody
+    @AjaxConnect(time = 2000)
     public String getPage(
             @RequestParam("pageItem")Integer pageitems,
             @RequestParam("indexPage")Integer indexPage,
-            @RequestParam("uid") String  uid){
-        try {
-            Thread.sleep(Math.round(1000)+1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            HttpServletRequest request){
+        String uid= StringUtil.getPamterString(request.getSession().getAttribute("userId"));
+
+        if (!StringUtil.isLong(uid)){
+           return null;
         }
         String val = fundService.getPage(indexPage,pageitems,uid);
         return val;

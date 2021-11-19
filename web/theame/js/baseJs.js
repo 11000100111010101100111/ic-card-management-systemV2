@@ -1,3 +1,4 @@
+
 // <%--提示框--%>
 (function ($) {
     $.show_tip = function (arg) {
@@ -89,6 +90,73 @@
     };
 
 })(jQuery);
+
+
+//封装ajax，每次ajax自动打包token提交
+var tokenUtil = {
+    saveToken:function (token,times) {
+        // 本地存入token
+        window.localStorage.setItem('access_token',token);
+    },
+    removeToken:function () {
+        window.localStorage.removeItem("access_token");
+    },
+    getToken:function () {
+        return window.localStorage.getItem("access_token");
+    }
+}
+var HttpRequest = function (options) {
+    var defaults = {
+        type: 'get',
+        headers: {},
+        data: {},
+        dataType: 'json',
+        async: true,
+        cache: false,
+        beforeSend: null,
+        success: null,
+        complete: null
+    };
+    var o = $.extend({}, defaults, options);
+    $.ajax({
+        url: o.url,
+        type: o.type,
+        headers: {
+            'Content-Type': o.contentType,
+            'access_token': o.token
+        },
+        data: o.data,
+        dataType: o.dataType,
+        async: o.async,
+        beforeSend: function () {
+            o.beforeSend && o.beforeSend();
+        },
+        success: function (res) {
+            o.success && o.success(res);
+        },
+        complete: function () {
+            o.complete && o.complete();
+        }
+    });
+}
+
+var normalHttp = function (options) {
+    // 登入页无需携带token
+    // 后台如果要求 Content-Type
+    if (options.type == 'post') {
+        options.contentType = 'application/x-www-form-urlencoded';
+    }
+    HttpRequest(options);
+}
+var my_ajax = function (options) {
+    if (options.type == 'post') {
+        options.contentType = 'application/x-www-form-urlencoded';
+    }
+    // 每次请求携带token
+    options.token = localStorage.getItem('access_token');
+    HttpRequest(options);
+}
+
 
 
 var my_tip = {

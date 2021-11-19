@@ -28,28 +28,30 @@ public class SessionAop {
     @Resource
     LoginAndRegisterDao loginAndRegisterDao;
 
-    @Pointcut("@target(com.nhky.annotation.NeedSecurity)")
+    @Pointcut("@annotation(com.nhky.annotation.NeedSecurity)")
     public void pointCut(){}
 
+    //execution(* com.nhky.*.controller.*(..)) &&
+//    @Around(value = "@annotation(com.nhky.annotation.NeedSecurity)")
     @Around("pointCut()")
     public Object trackInfo(ProceedingJoinPoint pjp) throws Throwable {
-        String userId = null;
+        Long userId = null;
         String userIdentify = null;
         try {
             //获取当前Session,并判断当前访问是否处于登录状态，若位处于登录状态，则立刻跳转去登录
             ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
             HttpSession session=attr.getRequest().getSession(true);
-            userId = StringUtil.getPamterString(session.getAttribute("userId"));
-            userIdentify = StringUtil.getPamterString(session.getAttribute("userIdentify"));
+            userId = (Long) session.getAttribute("userId");
+            userIdentify = (String) session.getAttribute("userIdentify");
 
             if(null == userId || userId.equals("")){
                 LogUtil.info("用户未登录...拦截成功...");
-                return "/go/toLogin";
+                return "/loginAndRegister/login";
             }
-            if(loginAndRegisterDao.hasID(userId) <= 0){
-                LogUtil.info("用户账号失效...拦截成功...");
-                return "/go/toLogin";
-            }
+//            if(loginAndRegisterDao.hasID(userId) <= 0){
+//                LogUtil.info("用户账号失效...拦截成功...");
+//                return "/loginAndRegister/login";
+//            }
 
             //获取用户权限级别
             int userGrade = 0;
@@ -71,7 +73,7 @@ public class SessionAop {
         }
         catch (Exception e){
             LogUtil.info("用户未登录...拦截成功...");
-            return "/go/toLogin";
+            return "/loginAndRegister/login";
         }
 
         return pjp.proceed();

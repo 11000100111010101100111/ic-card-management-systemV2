@@ -19,8 +19,8 @@ import org.springframework.stereotype.Component;
 public class AjaxAop {
 
     //此切面插入到所有被AjaxConnect标记的方法，作用执行方法前等待一定时间，时间问注解值time
-    @Pointcut("@target(com.nhky.annotation.AjaxConnect)")
-    public void pointCut(){}
+//    @Pointcut("@target(com.nhky.annotation.AjaxConnect)")
+//    public void pointCut(){}
 
 //    private AjaxConnect getMethodAnnotation(ProceedingJoinPoint pjp)
 //            throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -39,7 +39,10 @@ public class AjaxAop {
 //        Method targetMethod = methodSignature.getMethod();
 //    }
 
-    @Around("pointCut()")
+
+//execution(* *.*(..)) &&
+    @Around(value = " @annotation(com.nhky.annotation.AjaxConnect)")
+//    @Around("pointCut()")
     public Object trackInfo(ProceedingJoinPoint pjp) throws Throwable {
         //获取方法注解的值
         int time = ( (AjaxConnect)AnnotationUtil.getMethodAnnotation(pjp,AjaxConnect.class) ).time();

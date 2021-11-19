@@ -8,14 +8,34 @@
   <component name="ChangeListManager">
     <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="add a main page for user when he or she has logined,this modul create by XioaJiaHai.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/AjaxConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/AjaxConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/NeedSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/NeedSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/AjaxAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/AjaxAop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/LoginAndRegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/LoginAndRegisterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/HomeNavigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/HomeNavigation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/NavigationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/NavigationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/NavigationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/NavigationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/RouterNavigationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/RouterNavigationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/navigationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/navigationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/HomeNavigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/route/controller/HomeNavigation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/utils/AnnotationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/AnnotationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/PersonalInformation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/PersonalInformation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/loginAndRegisterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/application.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/LoginAndRegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/LoginAndRegisterService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/system/authors.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/system/authors.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/mappers/loginAndRegisterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/minePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/minePage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/application.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/mappers/PersonalInformation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/mappers/loginAndRegisterMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/classes/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/theame/js/baseJs.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/js/baseJs.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,6 +381,7 @@
       <workItem from="1637237400612" duration="3601000" />
       <workItem from="1637242824833" duration="5329000" />
       <workItem from="1637283510845" duration="5264000" />
+      <workItem from="1637304081852" duration="10142000" />
     </task>
     <task id="LOCAL-00001" summary="delete">
       <created>1635218295900</created>
@@ -461,78 +482,78 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="372" y="26" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1635572079310" />
-    <state width="895" height="515" key="DebuggerActiveHint" timestamp="1637155295740">
+    <state width="895" height="515" key="DebuggerActiveHint" timestamp="1637309820969">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="895" height="515" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1637155295740" />
+    <state width="895" height="515" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1637309820969" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1637113403080">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1637113403080" />
-    <state width="1264" height="419" key="GridCell.Tab.0.bottom" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.0.bottom" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.0.center" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.0.center" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.0.left" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.0.left" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.0.right" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.0.right" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.1.bottom" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.1.bottom" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.1.center" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.1.center" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.1.left" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.1.left" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.1.right" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.1.right" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.2.bottom" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.2.bottom" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.2.center" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.2.center" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.2.left" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.2.left" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.2.right" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.2.right" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.3.bottom" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.3.bottom" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.3.center" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.3.center" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.3.left" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.3.left" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
-    <state width="1264" height="419" key="GridCell.Tab.3.right" timestamp="1637290838883">
+    <state width="1264" height="378" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
+    <state width="1264" height="378" key="GridCell.Tab.3.right" timestamp="1637314285128">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1264" height="419" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1637290838883" />
+    <state width="1264" height="378" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1637314285128" />
     <state x="399" y="137" key="NewModule_or_Project.wizard" timestamp="1636739784907">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -565,10 +586,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1637119297300" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1637285651542">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1637306566001">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1637285651542" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1637306566001" />
     <state x="449" y="115" key="spring file set editor" timestamp="1636740140648">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -619,6 +640,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalConsumeController.java</url>
           <line>29</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

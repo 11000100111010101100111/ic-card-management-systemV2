@@ -17,7 +17,7 @@ public interface LoginAndRegisterDao {
     public EasyUser getLoginUserById(String id);
 
 //    判断当账号是否存在登录信息
-    public int hasID(@Param("easy_id") String easyId);
+    public int hasID(@Param("uid") String uid);
 //    注册普通用户信息到登录信息表
     public int registerLoginUser(EasyUser easyUser);
 

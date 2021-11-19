@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +30,7 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
     @Resource
     LoginAndRegisterDao loginAndRegisterDao;
     @Override
-    public String login(HttpServletRequest request, Model model, HttpSession session) {
+    public String login(HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response) {
 
         String code = StringUtil.getPamterString(request.getParameter("code")).toUpperCase().trim();
         String session_code = StringUtil.getPamterString(session.getAttribute("code")).toUpperCase().trim();
@@ -47,6 +48,10 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
                     session.setAttribute("userId",easyUser.getId());//用户id
                     session.setAttribute("userAccount",id);//用户账号
                     session.setAttribute("userIdentify",easyUser.getIndentify());//用户身份
+
+                    request.getSession().setAttribute("userId",easyUser.getId());
+                    request.getSession().setAttribute("userAccount",id);
+                    request.getSession().setAttribute("userIdentify",easyUser.getIndentify());
 
                     LogUtil.info("--用户："+id+"已登录");
 

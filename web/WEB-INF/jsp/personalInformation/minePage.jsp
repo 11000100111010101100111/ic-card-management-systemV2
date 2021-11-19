@@ -978,7 +978,7 @@
     //     "succeed":true
     // }
     function setUserInfo(uInfo) {
-        console.log(uInfo);
+        // console.log(uInfo);
         $("#msg-headIcon").prop("src",uInfo.head_url);//:修改头像
         $("#msg-single").html(uInfo.single);//:签名
         $("#msg-name").html(uInfo.name);//姓名
@@ -1104,13 +1104,13 @@
         head_bigger_to_view.show(".sub-1",$(this).attr("src"));
     });
     function sureModify() {
-        console.log($(document.getElementsByName('new-sex')).val());
+        // console.log($(document.getElementsByName('new-sex')).val());
             $.ajax({
                 url:"http://localhost:8080/nchkkjxy/personalInformation/update",
                 method:"post",
                 dataType:"json",
                 data:{
-                    head_url:"http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
+                    head_url:$("#new-msg-headIcon").prop("src"),//"http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
                     single:$("#new-msg-single").html(),//:签名
                     name:$("#new-msg-name").val(),//：修改姓名
                     sex: elemUtil.getRadioVal("new-sex"),//:修改性别
@@ -1224,9 +1224,9 @@
 
             },
             success:function (data) {
-                console.log(data);
+                // console.log(data);
                 if(data.succeed == true){
-                    console.log(data);
+                    // console.log(data);
                     $("#money-balance").html(data.data);
                 }
             },
@@ -1236,7 +1236,7 @@
     }
     //数据绑定
 
-    var uid = "10";
+    var uid = window.localStorage.getItem("userId");
     var sub2_gridData = {
         ajac: {
             url: "http://localhost:8080/nchkkjxy/balance/page",//请求地址

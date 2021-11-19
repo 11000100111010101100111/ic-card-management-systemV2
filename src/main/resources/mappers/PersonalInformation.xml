@@ -24,7 +24,7 @@
             <if test="identify_card != null">,identify_card=#{identify_card}</if>
             <if test="phone != null">,phone=#{phone}</if>
             <if test="email != null">,email=#{email}</if>
-            <if test="brithday != brithday">,brithday=#{brithday}</if>
+            <if test="brithday != null">,brithday=#{brithday}</if>
             <if test="sex != null">,sex=#{sex}</if>
             <if test="head_url != null">,head_url=#{head_url}</if>
             <if test="single != null">,single=#{single}</if>

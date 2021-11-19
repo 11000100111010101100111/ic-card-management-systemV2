@@ -10,10 +10,20 @@
  * Date: 2021/9/19
  * Time: 20:58
 -->
-    <context:component-scan base-package="com.nhky">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-        <context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
-    </context:component-scan>
+<!--    <context:component-scan base-package="com.nhky">-->
+<!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+<!--    </context:component-scan>-->
+    <context:component-scan base-package="com.nhky.icCardCreate"/>
+    <context:component-scan base-package="com.nhky.icCardConsume"/>
+    <context:component-scan base-package="com.nhky.icCardLoss"/>
+    <context:component-scan base-package="com.nhky.icCardLogout"/>
+    <context:component-scan base-package="com.nhky.icCardRecharge"/>
+    <context:component-scan base-package="com.nhky.loginAndRegister"/>
+    <context:component-scan base-package="com.nhky.route"/>
+    <context:component-scan base-package="com.nhky.personalInformation"/>
+
+
+
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -38,5 +48,5 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <!--    //开启事务注解-->
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <tx:annotation-driven/>
 </beans>

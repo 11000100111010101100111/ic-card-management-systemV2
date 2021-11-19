@@ -19,7 +19,7 @@
 <!--    //    判断当前登录账号是否存在登录信息-->
 <!--    public int hasLoginUser(String id);-->
     <select id="hasID" parameterType="java.lang.String" resultType="int">
-        select count(id) from ic_main_easy_user where easy_id = #{easy_id}
+        select count(id) from ic_main_easy_user where easy_id = #{uid}
     </select>
 <!--    //    注册普通用户信息到登录信息表-->
 <!--    public int registerLoginUser(EasyUser easyUser);-->
