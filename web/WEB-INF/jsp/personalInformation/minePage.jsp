@@ -612,7 +612,160 @@
         /*}*/
 
     </style>
+<%--sub-3--%>
+    <style>
+        .sub-3 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .sub-3 .con{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+        .sub-3 .left{
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #fff;
 
+            animation-delay: 1.2s;
+            animation-fill-mode: forwards;
+        }
+        .sub-3 .top{
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 0;
+            top:0;
+            left: 0;
+            background-color: #4e65c7;
+
+            animation-delay: 1.2s;
+            animation-fill-mode: forwards;
+        }
+        .sub-3 .bottom{
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 0;
+            top:100%;
+            left: 0;
+
+            animation-fill-mode: forwards;
+            background-color: var(--sub_color);
+        }
+        .sub-3 .bottom .card{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 5px;
+            background-color: white;
+            background-image: url("http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png");
+            background-position: 100% 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border:2px solid #fff;
+            -webkit-animation-name:rubberBand;
+            animation:rubberBand 2s infinite linear;
+            animation-delay: 2s;
+        }
+        .sub-3 .bottom .card:hover{
+            animation:none;
+        }
+        .sub-3 .bottom .card-name{
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            border-radius: 5px;
+            border:2px solid #fff;
+            background-color: #4e65c7;
+            font-size: 24px;
+            color: #fff;
+            font-weight: 800;
+            padding: 3px 5px;
+        }
+        @keyframes bottom_star {
+            0%{
+                width: 100%;
+                height: 0;
+                top:100%;
+                left: 0;
+            }
+            50%{
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            70%{}
+            100%{
+                width: 50%;
+                height: 50%;
+                top:50%;
+                left: 50%;
+                /*transform: translate(-50%,-50%);*/
+            }
+        }
+        @keyframes move_left {
+            from{
+                top: 0;
+                width: 0;
+                height: 100%;
+            }
+            to{
+                width: 50%;
+                top: 0;
+                left: 0;
+            }
+        }
+        @keyframes move_top {
+            from{
+            }
+            to{
+                width: 50%;
+                height: 50%;
+                top:0;
+                left: 50%;
+            }
+        }
+        @keyframes rubberBand{
+            0%{
+                -webkit-transform:translate(-50%,-50%) scaleX(1);
+                transform:translate(-50%,-50%) scaleX(1)
+            }
+            30%{
+                -webkit-transform:translate(-50%,-50%) scale3d(1.15,.75,1);
+                transform:translate(-50%,-50%) scale3d(1.15,.75,1)
+            }
+            40%{
+                -webkit-transform:translate(-50%,-50%) scale3d(.75,1.15,1);
+                transform:translate(-50%,-50%) scale3d(.75,1.15,1)
+            }
+            50%{
+                -webkit-transform:translate(-50%,-50%) scale3d(1.15,.85,1);
+                transform:translate(-50%,-50%) scale3d(1.15,.85,1)
+            }
+            65%{
+                -webkit-transform:translate(-50%,-50%) scale3d(.95,1.05,1);
+                transform:translate(-50%,-50%) scale3d(.95,1.05,1)
+            }
+            75%{
+                -webkit-transform:translate(-50%,-50%) scale3d(1.05,.95,1);
+                transform:translate(-50%,-50%) scale3d(1.05,.95,1)
+            }
+            to{
+                -webkit-transform:translate(-50%,-50%) scaleX(1);transform:translate(-50%,-50%) scaleX(1)
+            }
+        }
+    </style>
 <%--    sub-4--%>
     <style>
         .sub-4{
@@ -854,7 +1007,14 @@
                 </div>
             </div>
             <div class="sub-content sub-3" name="sub-3">
-
+                <div class="con">
+                    <div class="left"></div>
+                    <div class="top"></div>
+                    <div class="bottom">
+                        <span class="card-name">普通卡</span>
+                        <div class="card"></div>
+                    </div>
+                </div>
             </div>
             <div class="sub-content sub-4" name="sub-4">
                 <div class="chart-panel">
@@ -1061,6 +1221,68 @@
     }
     //管理我的ic卡
     function toManageCard() {
+        $(".sub-3 .top").animate({
+            width: '100%',
+            height: '0',
+            top:'0',
+            left: '0',
+        },1);
+        $(".sub-3 .left").animate({
+            top: '0',
+            width:'0',
+            height: '100%',
+        },1);
+        $(".sub-3 .bottom").animate({
+            width: '100%',
+            height: '0',
+            top:'100%',
+            left: '0',
+        },1);
+        $(".sub-3 .bottom .card").animate({
+            top: '50%',
+            left: '50%',
+            width: '50%',
+            height: '50%',
+            transform: 'translate(-50%,-50%)'
+        },1);
+
+
+        $(".sub-3 .bottom").animate(
+            {
+                width: '100%',
+                height: '100%',
+                top: 0,
+                left: 0,
+            },
+            {
+                duration:1000,
+                complete:function () {
+                    $(".sub-3 .bottom").animate({},{
+                       duration:400,
+                       complete:function () {
+                           $(".sub-3 .bottom").animate(
+                               {
+                                   width: '50%',
+                                   height: '50%',
+                                   top:'50%',
+                                   left: '50%',
+                               },600);
+                           $(".sub-3 .left").animate({
+                               width: '50%',
+                               top: 0,
+                               left: 0,
+                           },800);
+                           $(".sub-3 .top").animate({
+                               width: '50%' ,
+                               height: '50%',
+                               top:0,
+                               left: '50%',
+                           },800);
+                       }
+                    });
+                }
+            }
+        );
 
     }
     //查看我的消费

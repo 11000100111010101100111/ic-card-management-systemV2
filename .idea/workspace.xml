@@ -7,35 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f64378a4-b294-47a0-82f7-b4225450a14e" name="Default Changelist" comment="add a main page for user when he or she has logined,this modul create by XioaJiaHai.">
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/csss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/my_card.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/AjaxConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/AjaxConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/NeedSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/annotation/NeedSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/AjaxAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/AjaxAop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/config/aop/SessionAop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/controller/LoginAndRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/LoginAndRegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/LoginAndRegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalFundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/route/home/HomeNavigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/route/controller/HomeNavigation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhky/utils/AnnotationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhky/utils/AnnotationUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/PersonalInformation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/PersonalInformation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/loginAndRegisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/application.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/controller/LoginAndRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/dao/LoginAndRegisterDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/LoginAndRegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/LoginAndRegisterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/nhky/loginAndRegister/service/serviceImpl/LoginAndRegisterImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/mappers/loginAndRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/mappers/loginAndRegisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/minePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/personalInformation/minePage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/classes/application.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/classes/mappers/PersonalInformation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/classes/mappers/loginAndRegisterMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/classes/spring-mvc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/theame/js/baseJs.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/theame/js/baseJs.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +37,6 @@
         <option value="applicationContext" />
         <option value="Servlet" />
         <option value="myBatis" />
-        <option value="CSS File" />
         <option value="AnnotationType" />
         <option value="Enum" />
         <option value="JavaScript File" />
@@ -71,6 +45,7 @@
         <option value="mapper" />
         <option value="Jsp File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -306,7 +281,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -382,6 +357,7 @@
       <workItem from="1637242824833" duration="5329000" />
       <workItem from="1637283510845" duration="5264000" />
       <workItem from="1637304081852" duration="10142000" />
+      <workItem from="1637325882418" duration="10315000" />
     </task>
     <task id="LOCAL-00001" summary="delete">
       <created>1635218295900</created>
@@ -454,10 +430,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="91" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1636740023707" />
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637286009095">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637336224761">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1637286009095" />
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1637336224761" />
     <state x="493" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1635320680351">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -607,11 +583,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersoanlConsumeServiceImpl.java</url>
           <line>32</line>
           <option name="timeStamp" value="3" />
@@ -640,31 +611,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalConsumeController.java</url>
           <line>29</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/controller/PersonalInformationController.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhky/personalInformation/service/serviceImpl/PersonalInformationServiceImpl.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
