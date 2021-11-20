@@ -4,6 +4,7 @@ import com.nhky.annotation.AjaxConnect;
 import com.nhky.personalInformation.service.FundService;
 import com.nhky.personalInformation.service.serviceImpl.FundServiceImpl;
 import com.nhky.pojo.VO.ICommonCode;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.ResultUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Controller;
@@ -37,8 +38,8 @@ public class PersonalFundController {
     //根据UID获取此人对应账户余额
     @RequestMapping("/getBalance")
     @ResponseBody
-    public String getBalance(HttpSession session){
-        String uid = StringUtil.getPamterString(session.getAttribute("userId"));
+    public String getBalance(){
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
         return fundService.getBalance(uid);
     }
 
@@ -50,9 +51,8 @@ public class PersonalFundController {
     @AjaxConnect(time = 2000)
     public String getPage(
             @RequestParam("pageItem")Integer pageitems,
-            @RequestParam("indexPage")Integer indexPage,
-            HttpServletRequest request){
-        String uid= StringUtil.getPamterString(request.getSession().getAttribute("userId"));
+            @RequestParam("indexPage")Integer indexPage){
+        String uid= StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
 
         if (!StringUtil.isLong(uid)){
            return null;
@@ -64,8 +64,8 @@ public class PersonalFundController {
     //每日签到
     @RequestMapping("/daily")
     @ResponseBody
-    public String daily(HttpSession session, HttpServletRequest request){
-        String uid = StringUtil.getPamterString(session.getAttribute("userId"));
+    public String daily(){
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
 
         //操作异常阻塞一段时间，避免过度签到导致数据异常
         try {
@@ -73,7 +73,7 @@ public class PersonalFundController {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return fundService.daily(uid,"0.01",request);
+        return fundService.daily(uid,"0.01");
     }
 
     //充值

@@ -13,6 +13,6 @@
 <!--    //查询当前登录用户有多少张卡，-3失效卡，-2正在注销中，-1正在挂失中，0申请恢复中，1正常-->
 <!--    List<CardOfUser> getUsersCards(Long uid);-->
     <select id="getUsersCards" parameterType="java.lang.String" resultType="com.nhky.pojo.CardOfUser">
-        select `id`,card_id,user_id,`status` from ic_card_msg where user_id = ( select `id` from ic_main_easy_user where easy_id = #{uid} )
+        select `id`,card_id,user_id,`status` from ic_card_msg where user_id =  #{uid} 
     </select>
 </mapper>

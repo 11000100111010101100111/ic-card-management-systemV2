@@ -15,5 +15,5 @@ public interface PersonalInformationService {
     public String findUserById(String uid);
 
     //修改用户信息
-    public String modifyUser(HttpServletRequest request,String uid);
+    public String modifyUser(String uid);
 }

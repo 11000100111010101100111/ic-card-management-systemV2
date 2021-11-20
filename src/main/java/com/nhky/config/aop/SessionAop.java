@@ -5,6 +5,7 @@ import com.nhky.emun.Security;
 import com.nhky.loginAndRegister.dao.LoginAndRegisterDao;
 import com.nhky.utils.AnnotationUtil;
 import com.nhky.utils.LogUtil;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -39,10 +40,10 @@ public class SessionAop {
         String userIdentify = null;
         try {
             //获取当前Session,并判断当前访问是否处于登录状态，若位处于登录状态，则立刻跳转去登录
-            ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
-            HttpSession session=attr.getRequest().getSession(true);
-            userId = (Long) session.getAttribute("userId");
-            userIdentify = (String) session.getAttribute("userIdentify");
+//            ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+//            HttpSession session=attr.getRequest().getSession(true);
+            userId = (Long) RequestUtil.getRequestSessionAttr("userId");
+            userIdentify = (String) RequestUtil.getRequestSessionAttr("userIdentify");
 
             if(null == userId || userId.equals("")){
                 LogUtil.info("用户未登录...拦截成功...");

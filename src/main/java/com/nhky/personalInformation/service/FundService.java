@@ -25,7 +25,7 @@ public interface FundService {
     public String getPage(Integer index,Integer items,String  uid);
 
     //每日签到
-    String daily(String uid,String money, HttpServletRequest request);
+    String daily(String uid,String money);
 
     //充值
     //uid : 充值人id

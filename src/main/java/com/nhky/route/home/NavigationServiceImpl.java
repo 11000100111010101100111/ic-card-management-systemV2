@@ -2,12 +2,11 @@ package com.nhky.route.home;
 
 import com.nhky.pojo.Router;
 import com.nhky.pojo.User;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
@@ -22,8 +21,8 @@ public class NavigationServiceImpl implements NavigationService {
     RouterNavigationDao routerNavigationDao;
 
     @Override
-    public String seachPage(HttpServletRequest request,HttpSession session) {
-        String pageName = StringUtil.getPamterString(request.getParameter("url"));
+    public String seachPage() {
+        String pageName = StringUtil.getPamterString(RequestUtil.getRequestParam("url"));
         switch (pageName){
             case "home/personalConsume/balance":
                 pageName = "/icCardRecharge/banlanceOfMine";
@@ -54,11 +53,7 @@ public class NavigationServiceImpl implements NavigationService {
                 break;//登录选项
             case "home/mine/exit":;
             case "toLogin":
-                Enumeration em = request.getSession().getAttributeNames();
-                while(em.hasMoreElements()){
-                    request.getSession().removeAttribute(em.nextElement().toString());
-                }
-                session.invalidate();
+                RequestUtil.destroySession();
                 pageName = "/loginAndRegister/login";
                 break;//退出系统
             case "home/system/our":
@@ -83,9 +78,9 @@ public class NavigationServiceImpl implements NavigationService {
     }
 
     @Override
-    public Map<String ,Object> navigationList(HttpServletRequest request, HttpSession session) {
-        String routerType = StringUtil.getPamterString(request.getParameter("router_type"));
-        String id = StringUtil.getPamterString(session.getAttribute("userId"));
+    public Map<String ,Object> navigationList() {
+        String routerType = StringUtil.getPamterString(RequestUtil.getRequestParam("router_type"));
+        String id = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
         Long uid = StringUtil.isLong(id)?Long.parseLong(id):-1l;
 
         List<Router> routers = routerNavigationDao.navigationList(uid,routerType);
@@ -119,8 +114,8 @@ public class NavigationServiceImpl implements NavigationService {
     }
 
     @Override
-    public User getLoginUser(HttpServletRequest request, HttpSession session) {
-        String id = StringUtil.getPamterString(session.getAttribute("userId"));
+    public User getLoginUser() {
+        String id = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
         User u = new User();
         u.setHead_url("http://localhost:8080/nchkkjxy/pic/login/no_login.png");
         if(null != id && !id.equals("")) {

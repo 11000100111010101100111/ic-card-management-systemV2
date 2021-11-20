@@ -15,8 +15,8 @@ import java.util.List;
 public interface CreateCardService {
 
     //查看名下全部卡
-    String getUsersCards(String cardType, HttpSession session);
+    String getUsersCards(String cardType);
 
     //创建卡
-    String create(String cardType, HttpSession session);
+    String create(String cardType);
 }

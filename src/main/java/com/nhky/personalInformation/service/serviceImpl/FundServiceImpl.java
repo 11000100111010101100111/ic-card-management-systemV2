@@ -8,6 +8,7 @@ import com.nhky.pojo.UserBalanceLogVO;
 import com.nhky.pojo.VO.PageVO;
 import com.nhky.utils.AccessUtil;
 import com.nhky.utils.LogUtil;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.ResultUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -73,13 +74,13 @@ public class FundServiceImpl implements FundService {
 
     @Override
     @Transactional
-    public String daily(String uid, String money, HttpServletRequest request) {
+    public String daily(String uid, String money) {
         UserBalanceLogVO userBalanceLogVO = new UserBalanceLogVO(
                 Long.parseLong(uid),
                 money,
                 "签到",
                 uid,
-                AccessUtil.getRemoteHost(request),//"192.168.102.1"
+                AccessUtil.getRemoteHost(RequestUtil.getRequest()),//"192.168.102.1"
                 1,
                 "日常签到");
             Integer result = fundDao.addBalanceLog(userBalanceLogVO);

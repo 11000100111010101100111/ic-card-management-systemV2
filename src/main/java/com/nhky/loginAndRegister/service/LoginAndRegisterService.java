@@ -14,7 +14,7 @@ import java.util.Map;
  * Time: 21:16
  **/
 public interface LoginAndRegisterService {
-    public String login(HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response);
-    public String register(HttpServletRequest request);
+    public String login(Model model);
+    public String register();
     public String getCode(int size);
 }

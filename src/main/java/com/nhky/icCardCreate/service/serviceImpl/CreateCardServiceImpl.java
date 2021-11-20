@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.nhky.icCardCreate.dao.CreateCardDao;
 import com.nhky.icCardCreate.service.CreateCardService;
 import com.nhky.pojo.CardOfUser;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
-import com.nhky.utils.UserVO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,10 +29,10 @@ public class CreateCardServiceImpl implements CreateCardService {
     CreateCardDao createCard;
 
     @Override
-    public String getUsersCards(String cardType, HttpSession session) {
+    public String getUsersCards(String cardType) {
 
         cardType = StringUtil.getPamterString(cardType );
-        String uid = StringUtil.getPamterString(session.getAttribute("userAccount"));
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
 //        System.out.println(cardType+"=="+uid);
         Map<String,Object> result = new HashMap<>();
 
@@ -45,7 +45,7 @@ public class CreateCardServiceImpl implements CreateCardService {
 
 
         try {
-            List<CardOfUser> cardList = createCard.getUsersCards(uid);
+            List<CardOfUser> cardList = createCard.getUsersCards(Long.parseLong(uid));
 
             int guashi = 0;
             int zuxiao = 0;
@@ -90,7 +90,7 @@ public class CreateCardServiceImpl implements CreateCardService {
     }
 
     @Override
-    public String create(String cardType, HttpSession session) {
+    public String create(String cardType) {
         Map<String,Object> result = new HashMap<>();
         result.put("single","200");
         result.put("msg","succeed");

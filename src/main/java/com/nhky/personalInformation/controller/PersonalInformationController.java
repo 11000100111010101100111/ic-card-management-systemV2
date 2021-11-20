@@ -3,6 +3,7 @@ package com.nhky.personalInformation.controller;
 import com.nhky.personalInformation.service.PersonalInformationService;
 import com.nhky.personalInformation.service.serviceImpl.PersonalInformationServiceImpl;
 import com.nhky.pojo.User;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +30,8 @@ public class PersonalInformationController {
     //return JSON 字符串
     @RequestMapping(value = "/get")
     @ResponseBody
-    public String getPersonalInformation(HttpServletRequest request, HttpSession session){
-        String uid = StringUtil.getPamterString(session.getAttribute("userId"));
+    public String getPersonalInformation(){
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
         return personalInformationService.findUserById(uid);
     }
 
@@ -38,9 +39,9 @@ public class PersonalInformationController {
     //return JSON 字符串
     @RequestMapping(value = "/update")
     @ResponseBody
-    public String updatePersonalInformation(HttpServletRequest request,HttpSession session){
+    public String updatePersonalInformation(HttpServletRequest request){
 //        System.out.println("-----send---a--love----package-------mmd..."+user.toString());
-        String uid = StringUtil.getPamterString(session.getAttribute("userId"));
-        return personalInformationService.modifyUser(request,uid);
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
+        return personalInformationService.modifyUser(uid);
     }
 }

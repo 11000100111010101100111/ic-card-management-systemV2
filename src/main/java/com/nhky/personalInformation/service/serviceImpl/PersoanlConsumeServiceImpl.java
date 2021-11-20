@@ -2,6 +2,7 @@ package com.nhky.personalInformation.service.serviceImpl;
 
 import com.nhky.personalInformation.dao.PersoanlConsumeDao;
 import com.nhky.personalInformation.service.PersoanlConsumeService;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,8 +27,8 @@ public class PersoanlConsumeServiceImpl implements PersoanlConsumeService {
 
     @Transactional
     @Override
-    public List<List<Object>> getChartData(HttpServletRequest request, HttpSession session) {
-        Long uid = Long.parseLong(StringUtil.getPamterString(session.getAttribute("userId")));
+    public List<List<Object>> getChartData() {
+        Long uid = Long.parseLong(StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId")));
 
         List<List<Object>> data = new ArrayList<>();
         List<Object> consumeTypes = new ArrayList<>();

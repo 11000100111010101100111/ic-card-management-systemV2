@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -31,20 +29,20 @@ public class HomeNavigation {
     @NeedSecurity(security = Security.NOMAL)
     @AjaxConnect()
     @RequestMapping("/navTo")
-    public String to(HttpServletRequest request,HttpSession session){
-        return navigation.seachPage(request,session);
+    public String to(){
+        return navigation.seachPage();
     }
 
     @ResponseBody
     @RequestMapping("/getNav")
-    public String get(HttpServletRequest request, HttpSession session){
-        return JSON.toJSONString(ResultUtil.succeed(navigation.navigationList(request,session)));
+    public String get(){
+        return JSON.toJSONString(ResultUtil.succeed(navigation.navigationList()));
     }
 
     @ResponseBody
     @RequestMapping("/getLoginUser")
-    public String getUser(HttpServletRequest request,HttpSession session){
-        User user = navigation.getLoginUser(request,session);
+    public String getUser(){
+        User user = navigation.getLoginUser();
         return JSON.toJSONString(
                 null==user.getId()||user.getId()<=0?
                         ResultUtil.result(CommonCode.NO_LOGIN,user)

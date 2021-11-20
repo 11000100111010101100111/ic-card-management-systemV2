@@ -50,15 +50,15 @@ public class LoginAndRegister {
 
     @AjaxConnect()
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(HttpServletRequest request, Model model,HttpSession session, HttpServletResponse response){
+    public String login(Model model){
         LogUtil.info("--登录");
-        return loginAndRegisterService.login(request,model,session,response);
+        return loginAndRegisterService.login(model);
     }
 
     @AjaxConnect(time = 2000)
     @ResponseBody
     @RequestMapping(value = "/register",method = {RequestMethod.POST})
-    public String register(HttpServletRequest request, Model model){
+    public String register(){
 
         //模拟真实网络环境，给用户一种细致的等待体验，满足用户需求
         try {
@@ -68,7 +68,7 @@ public class LoginAndRegister {
         }
 
         LogUtil.info("--注册");
-        return loginAndRegisterService.register(request);
+        return loginAndRegisterService.register();
     }
 
     @ResponseBody

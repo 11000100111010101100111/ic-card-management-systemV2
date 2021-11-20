@@ -6,6 +6,7 @@ import com.nhky.loginAndRegister.service.LoginAndRegisterService;
 import com.nhky.pojo.EasyUser;
 import com.nhky.pojo.User;
 import com.nhky.utils.LogUtil;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,28 +31,28 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
     @Resource
     LoginAndRegisterDao loginAndRegisterDao;
     @Override
-    public String login(HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response) {
+    public String login(Model model) {
 
-        String code = StringUtil.getPamterString(request.getParameter("code")).toUpperCase().trim();
-        String session_code = StringUtil.getPamterString(session.getAttribute("code")).toUpperCase().trim();
+        String code = StringUtil.getPamterString(RequestUtil.getRequestParam("code")).toUpperCase().trim();
+        String session_code = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("code")).toUpperCase().trim();
 
         String msg =  "tip:验证码输入不正确 " ;
         if( session_code.equals(code)){
-            String id = StringUtil.convertEncodingFormat(StringUtil.getPamterString(request.getParameter("easy_id")), "iso-8859-1", "UTF-8");
-            String pwd = StringUtil.getPamterString(request.getParameter("password")).trim();
+            String id = StringUtil.convertEncodingFormat(StringUtil.getPamterString(RequestUtil.getRequestParam("easy_id")), "iso-8859-1", "UTF-8");
+            String pwd = StringUtil.getPamterString(RequestUtil.getRequestParam("password")).trim();
             if(loginAndRegisterDao.hasID(id)>0) {
                 EasyUser easyUser = loginAndRegisterDao.getLoginUserById(id);
 
                 if(easyUser.getPassword().trim().equals(pwd)){
-                    model.addAttribute("userId",id);
+//                    model.addAttribute("userId",id);
 
-                    session.setAttribute("userId",easyUser.getId());//用户id
-                    session.setAttribute("userAccount",id);//用户账号
-                    session.setAttribute("userIdentify",easyUser.getIndentify());//用户身份
+//                    session.setAttribute("userId",easyUser.getId());//用户id
+//                    session.setAttribute("userAccount",id);//用户账号
+//                    session.setAttribute("userIdentify",easyUser.getIndentify());//用户身份
 
-                    request.getSession().setAttribute("userId",easyUser.getId());
-                    request.getSession().setAttribute("userAccount",id);
-                    request.getSession().setAttribute("userIdentify",easyUser.getIndentify());
+                    RequestUtil.setRequestSessionAttr("userId",easyUser.getId());
+                    RequestUtil.setRequestSessionAttr("userAccount",id);
+                    RequestUtil.setRequestSessionAttr("userIdentify",easyUser.getIndentify());
 
                     LogUtil.info("--用户："+id+"已登录");
 
@@ -90,12 +91,12 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
 //    pwd:pwd
     @Override
     @Transactional
-    public String register(HttpServletRequest request) {
+    public String register() {
         Map<String,Object> result = new HashMap<>();
         String msg      = "error";
-        request.toString();
-        String phone    = StringUtil.getPamterString(request.getParameter("phone"    )).trim();
-        String identify = StringUtil.getPamterString(request.getParameter("identify" )).trim();
+
+        String phone    = StringUtil.getPamterString(RequestUtil.getRequestParam("phone"    )).trim();
+        String identify = StringUtil.getPamterString(RequestUtil.getRequestParam("identify" )).trim();
         if(phone.equals("")||identify.equals("")){
             result.put("single","信息输入不完整!");
             result.put("val",msg);
@@ -109,13 +110,13 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
             return JSON.toJSONString(result);
         }
 
-        String name      = StringUtil.getPamterString(request.getParameter("name"    )).trim();
-        String sex       = StringUtil.getPamterString(request.getParameter("sex"     )).trim();
-        String brithday  = StringUtil.getPamterString(request.getParameter("birthday")).trim();
-        String email     = StringUtil.getPamterString(request.getParameter("email"   )).trim();
-        String single    = StringUtil.getPamterString(request.getParameter("single"  )).trim();
-        String headImg   = StringUtil.getPamterString(request.getParameter("headImg" )).trim();
-        String pwd       = StringUtil.getPamterString(request.getParameter("pwd"     )).trim();
+        String name      = StringUtil.getPamterString(RequestUtil.getRequestParam("name"    )).trim();
+        String sex       = StringUtil.getPamterString(RequestUtil.getRequestParam("sex"     )).trim();
+        String brithday  = StringUtil.getPamterString(RequestUtil.getRequestParam("birthday")).trim();
+        String email     = StringUtil.getPamterString(RequestUtil.getRequestParam("email"   )).trim();
+        String single    = StringUtil.getPamterString(RequestUtil.getRequestParam("single"  )).trim();
+        String headImg   = StringUtil.getPamterString(RequestUtil.getRequestParam("headImg" )).trim();
+        String pwd       = StringUtil.getPamterString(RequestUtil.getRequestParam("pwd"     )).trim();
 //        easy_id,`name`,identify_card,phone,email,brithday,sex,head_url,single,register_identify,user_status,money_balance
         StringBuffer val = new StringBuffer();
         val.append("用户账号：<font style='color: crimson;font-size: 14px;'>"+phone+"</font></br>登录类型：<font style='color: crimson;font-size: 14px;'>普通用户</font></br>");

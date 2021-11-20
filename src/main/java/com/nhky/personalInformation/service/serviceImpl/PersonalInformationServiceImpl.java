@@ -7,6 +7,7 @@ import com.nhky.personalInformation.service.PersonalInformationService;
 import com.nhky.pojo.User;
 import com.nhky.pojo.VO.ICommonCode;
 import com.nhky.pojo.VO.ResultVO;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.ResultUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
@@ -38,15 +39,15 @@ public class PersonalInformationServiceImpl implements PersonalInformationServic
     }
 
     @Override
-    public String modifyUser(HttpServletRequest request,String uid) {
-        String head_url = request.getParameter("head_url");
-        String single = request.getParameter("single");
-        String name = request.getParameter("name");
-        String sex = request.getParameter("sex");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
-        String identify_card = request.getParameter("identify_card");
-        String brithday = request.getParameter("brithday");
+    public String modifyUser(String uid) {
+        String head_url = (String) RequestUtil.getRequestParam("head_url");
+        String single = (String) RequestUtil.getRequestParam("single");
+        String name = (String) RequestUtil.getRequestParam("name");
+        String sex = (String) RequestUtil.getRequestParam("sex");
+        String phone = (String) RequestUtil.getRequestParam("phone");
+        String email = (String) RequestUtil.getRequestParam("email");
+        String identify_card = (String) RequestUtil.getRequestParam("identify_card");
+        String brithday = (String) RequestUtil.getRequestParam("brithday");
         User user = new User(Long.parseLong(uid),
                     name,
                     identify_card,

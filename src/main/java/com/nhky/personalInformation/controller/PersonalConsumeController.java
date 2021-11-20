@@ -25,8 +25,8 @@ public class PersonalConsumeController {
     PersoanlConsumeService consumeService;
     @ResponseBody
     @RequestMapping("/getChartData")
-    public String getChartData(HttpServletRequest request, HttpSession session){
-        List<List<Object>> val = consumeService.getChartData(request,session);
+    public String getChartData(){
+        List<List<Object>> val = consumeService.getChartData();
         return JSON.toJSONString(val);
     }
 }

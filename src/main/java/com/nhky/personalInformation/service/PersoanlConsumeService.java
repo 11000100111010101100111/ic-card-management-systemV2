@@ -14,5 +14,5 @@ import java.util.List;
  **/
 
 public interface PersoanlConsumeService {
-    public List<List<Object>> getChartData(HttpServletRequest request, HttpSession session);
+    public List<List<Object>> getChartData();
 }

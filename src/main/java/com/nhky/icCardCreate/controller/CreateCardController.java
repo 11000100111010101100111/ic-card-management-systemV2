@@ -37,7 +37,7 @@ public class CreateCardController {
     @NeedSecurity(security = Security.ADMIN)
     @AjaxConnect(time = 2000)
     public String hasCard(@RequestParam("cardType")String cardType, HttpSession session){
-        return createCardService.getUsersCards(cardType,session);
+        return createCardService.getUsersCards(cardType);
     }
 
     @ResponseBody
@@ -45,6 +45,6 @@ public class CreateCardController {
     @NeedSecurity(security = Security.ADMIN)
     @AjaxConnect(time = 2000)
     public String create(@RequestParam("cardType")String cardType, HttpSession session){
-        return createCardService.create(cardType,session);
+        return createCardService.create(cardType);
     }
 }

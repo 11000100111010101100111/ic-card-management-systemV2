@@ -16,9 +16,9 @@ import java.util.Map;
  * Time: 10:40
  **/
 public interface NavigationService {
-    public String seachPage(HttpServletRequest request,HttpSession session);
-    public Map<String ,Object> navigationList(HttpServletRequest request, HttpSession session);
-    public User getLoginUser(HttpServletRequest request,HttpSession session);
+    public String seachPage();
+    public Map<String ,Object> navigationList();
+    public User getLoginUser();
 
     //获取开发者列表
     public List<User> getAuthors();
