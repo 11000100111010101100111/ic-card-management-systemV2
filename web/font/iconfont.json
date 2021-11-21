@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "5278055",
+      "name": "航空航天-aerospace-太阳系-s",
+      "font_class": "hangkonghangtian-aerospace-taiyangxi-s",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
       "icon_id": "4973195",
       "name": "问号",
       "font_class": "wenhao",

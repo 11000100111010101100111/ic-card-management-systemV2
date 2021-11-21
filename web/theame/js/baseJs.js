@@ -227,13 +227,13 @@ var dataGrid = {
         let values=new Array();
 
         if(typeof (columnIndex) != "undefined") {
-            let _th_len = $($(elem).find("table thead td")).length;
+            let _th_len = $($(elem).find("table thead th")).length;
             if (parseInt(columnIndex) >= _th_len || parseInt(columnIndex) < 0) {
                 console.error("无法获取到索引为[" + columnIndex + "]的项...");
             }
         }
         for(let index=0;index<_tr_len;index++){
-            if($(_trs[index]).find("input[type='checkbox']").attr("checked") == "checked"){
+            if($(_trs[index]).find("input[type='checkbox']").prop("checked") == true){
                 if(typeof (columnIndex) != "undefined"){
                     let _val_td = $( $($(elem).find("tbody tr")[index]).find("td")[columnIndex] ).html();
                     values.push(_val_td);
@@ -262,11 +262,11 @@ function ajaxData(elem,obj) {
         data: data,
         dataType:"json",
         beforeSend:function(XMLHttpRequest){
-            loading_cir.loading("body");
+            loading_cir.loading(elem);
             sendBefore();
         },
         success: function (data) {
-            loading_cir.loaded("body");
+            loading_cir.loaded(elem);
             // console.log(data);
             overSend();
             // pagevo.data      = data.list;
@@ -314,6 +314,10 @@ function buildElem(elem,obj){
                 _table_html += " btn_" + i + " ";
             }
             _table_html += "' ";
+
+            if(typeof (obj.btns[i].id)!="undefined"){
+                _table_html += " id='"+obj.btns[i].id+"' ";
+            }
             if (typeof (obj.btns[i].txt) == "undefined") {
                 console.info("warning:表格上的第" + i + "个按钮没有文本");
                 _table_html += "value=''>";
@@ -356,8 +360,10 @@ function buildElem(elem,obj){
         "            </thead>" +
         "<tbody class='my-tb data-grid-elem'></tbody>" +
         "            <tfoot class='my-tf'>" +
-        "            <tr class='my-tr'>" +
-        "                <td class='my-td' align='left'>" +// width='200'
+        "            <tr class='my-tr'>"+
+        "                <td class='my-td' colspan='" +
+        obj.columns.length+ "'>" +
+        "<div class='inlineBlock' style='float: left;'>" +// width='200'
         "                    每页" +
         "<div class='page-list-box inlineBlock pagenum'>"+
         "<span class='page-items' style='border: 2px solid #666; border-radius: 5px ;padding: 2px 5px;'>*</span>"+
@@ -371,13 +377,13 @@ function buildElem(elem,obj){
     _table_html += "条/共" +
         "   <span class='total'>0</span>" +
         "条" +
-        "</td>" ;
+        "</div>" ;
     //填充底部行中间缺少的单元格
-    let _td_len =obj.pages.length-obj.columnId?2:1;
-    for (let i=0;i < _td_len;i++){
-        _table_html += "<td class='my-td'></td>";
-    }
-    _table_html += "<td class='my-td' align='right'>" +// width='200'
+    // let _td_len =obj.pages.length-obj.columnId?2:1;
+    // for (let i=0;i < _td_len;i++){
+    //     _table_html += "<td class='my-td'></td>";
+    // }
+    _table_html += "<div class='inlineBlock' style='float: right;'>" +// width='200'
         "<div class='inlineBlock rodPage again pageAgo'>上一页</div>" +
         "<div class='inlineBlock page-list-box pageNO'>"+
         "<div class='page-list'>"+
@@ -388,7 +394,7 @@ function buildElem(elem,obj){
         "<span class='inlineBlock currentPage'>1</span>/<span class='inlineBlock totalPage'>0</span>"+
         "</div>"+
         "<div class='inlineBlock rodPage after pageAfter'>下一页</div>" +
-        "</td>" +
+        "</div></td>" +
         "</tr>" +
         "</tfoot>" +
         "</table>" +
@@ -434,15 +440,15 @@ function addEvent(elem,obj) {
         }
     });
 
-    if(typeof (obj.btns) != "undefined") {
-        let _nav_btns_len = obj.btns.length;
-        for (let _nav_btns_index = 0; _nav_btns_index < _nav_btns_len; _nav_btns_index++) {
-            console.log($(elem).find("." + obj.btns[_nav_btns_index].name));
-            $($(elem).find("." + obj.btns[_nav_btns_index].name)[0]).click(
-                obj.btns[_nav_btns_index].myclick()
-            )
-        }
-    }
+    // if(typeof (obj.btns) != "undefined") {
+    //     let _nav_btns_len = obj.btns.length;
+    //     for (let _nav_btns_index = 0; _nav_btns_index < _nav_btns_len; _nav_btns_index++) {
+    //         console.log($(elem).find("." + obj.btns[_nav_btns_index].name));
+    //         $($(elem).find("." + obj.btns[_nav_btns_index].name)[0]).click(
+    //             obj.btns[_nav_btns_index].myclick()
+    //         )
+    //     }
+    // }
 }
 
 //数据绑定
@@ -462,15 +468,7 @@ function buildData(elem,obj,values) {
     //     return -1;
     // }
     //var totalPages = ( (values.total % parseInt( values.pageItem) ) > 0 ? 1 : 0) + values.total / parseInt(values.pageItem)
-
-    // console.log($($(elem).find(".page-items")[0]));
-    // console.log($(elem).find(".page-items")[0]);
-    // console.log($(elem).find(".page-items"));
-    // console.log($($(elem).find(".page-items")));
     $($(elem).find(".page-items")[0]).html(values.pageItem>0?values.pageItem:"-");
-    // console.log(values);
-    // console.log("bbb"+values.total);
-    // console.log($("#total"));
     $($(elem).find(".total")).html(""+values.total);
     $($(elem).find(".currentPage")).html(""+values.indexPage);
     $($(elem).find(".totalPage")).html(""+values.totalPage);
@@ -482,7 +480,7 @@ function buildData(elem,obj,values) {
 
 
     $($(elem).find(".data-grid-elem")).html("");
-    console.log(values)
+    // console.log(values)
     for (let rowIndex=0; rowIndex < values.list.length; rowIndex++) {
         let row = "<tr class='my-tr'>";
         row += "<td class='my-td' width='5' ><input type='checkbox' align='center' name='checked'></td>";
@@ -567,7 +565,7 @@ function judgeCheckbox(elem) {
     let checkboxs = $(elem).find("table>tbody input[type='checkbox']");
     let len = checkboxs.length;
     for(let index=0;index<len;index++){
-        if($(checkboxs[index]).attr("checked") != "checked"){
+        if($(checkboxs[index]).prop("checked") != true){
             $( $(elem).find("table>thead input[type='checkbox']") ).prop("checked",false);
             return false;
         }
@@ -576,7 +574,7 @@ function judgeCheckbox(elem) {
 }
 //全选、全不选
 function changeAllCheckbox(elem,changeto,operator) {
-    console.log(changeto);
+    // console.log(changeto);
     // if(typeof (elem) == "undefined" || typeof (changeto) !="undefined" || changeto != "checked"){
     //     console.error("尝试改变表格中的行选择状态，但传入参数不符合规则，终止...");
     //     return -1;
@@ -596,7 +594,7 @@ function changeAllCheckbox(elem,changeto,operator) {
         }
     }
     if(typeof (operator) != "undefined")
-        my_tip.tip(typeof (changeto) == "undefined"?"已取消全选" :"已全选" +  changeto);
+        my_tip.tip(typeof (changeto) == "undefined"?"已取消全选" :"已全选");
 }
 
 
@@ -810,7 +808,7 @@ var head_bigger_to_view = {
             let l = $(elems).css("left");
             let w = $(elems).css("width");
 
-            console.log(l+"-"+t+"=="+w+"-"+h);
+            // console.log(l+"-"+t+"=="+w+"-"+h);
             t = t.substr(0,t.length-2);
             h = h.substr(0,h.length-2);
             l = l.substr(0,l.length-2);

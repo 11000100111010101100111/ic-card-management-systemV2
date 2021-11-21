@@ -15,4 +15,8 @@ public class DateUtil {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年mm月dd日 HH时MM分ss秒");
         return sdf.format(new Date());
     }
+    public static String simpleDataString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy_mm_dd_HH_MM_ss");
+        return sdf.format(new Date());
+    }
 }

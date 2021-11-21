@@ -4,9 +4,11 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 .idea/
+/.idea/
 out/
 web/WEB-INF/classes/
 target/
+./.idea/workspace.xml
 
 #svn
 .svn/

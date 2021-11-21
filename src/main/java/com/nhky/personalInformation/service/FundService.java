@@ -22,17 +22,17 @@ public interface FundService {
     //分页查询余额明细列表
     //index:第几页
     //items:每页多少条
-    public String getPage(Integer index,Integer items,String  uid);
+    public String getPage(Integer index, Integer items, String uid);
 
     //每日签到
-    String daily(String uid,String money);
+    String daily(String uid, String money);
 
     //充值
     //uid : 充值人id
     //money : 充值金额
     //return : 充值时间、充值人名称、充值金额、充值类型、充值卡id
 
-    public String add( String uid,Float money);
+    public String add(String uid, Float money);
 
     //获取账户余额
     public String getAccountBlance(Long uid);

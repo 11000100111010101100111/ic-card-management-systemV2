@@ -170,4 +170,9 @@ public class TestController {
 
         return JSON.toJSONString(list);
     }
+
+    @RequestMapping("/file")
+    public String file(){
+        return "/template/fileTemplate";
+    }
 }

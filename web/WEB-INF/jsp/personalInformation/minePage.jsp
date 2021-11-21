@@ -16,817 +16,7 @@
     <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
 <%--    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>--%>
     <script src="http://localhost:8080/nchkkjxy/theame/js/echarts.min.js"></script>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            -o-user-select: none;
-            -moz-user-select: none; /*火狐 firefox*/
-            -webkit-user-select: none; /*webkit浏览器*/
-            -ms-user-select: none; /*IE10+*/
-            -khtml-user-select :none; /*早期的浏览器*/
-            user-select: none;
-        }
-        .mine-box{
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        .mine-top{
-            background-color: #c7254e;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 15%;
-        }
-        .mine-left,
-        .mine-right{
-            height: 85%;
-            top: 15%;
-        }
-        .mine-left{
-            width: 10%;
-            background-color: #fff;
-            top: 15%;
-            position: fixed;
-            display: inline-block;
-        }
-
-        .mine-left ul{
-            width: 100%;
-            height: 10%;
-            list-style: none;
-        }
-        .mine-left ul li{
-            position: relative;
-            width: 100%;
-            /*height: 100%;*/
-            padding-top: 20px;
-            padding-bottom: 20px;
-            font-size: 14px;
-
-            background-color: #fff;
-            color: var(--sub_color);
-            cursor: pointer;
-            text-align: left;
-            transition: all 0.8s;
-        }
-        .mine-left ul li:hover{
-
-            background-color: var(--sub_color);
-            color: #fff;
-            /*text-align: center;*/
-        }
-        .mine-left ul li a{
-            color: var(--sub_color);
-            margin-left: 10px;
-            outline: none;
-            text-decoration: none;
-        }
-        .mine-left ul li:hover a{
-            animation:move_center 0.5s ease-in;
-            animation-fill-mode: forwards;
-            color: #fff;
-        }
-
-        @keyframes move_center {
-            0%{}
-            100%{
-                margin-left: 40px;
-                font-weight: 800;
-            }
-        }
-
-        .mine-right{
-            width: 90%;
-            left: 10%;
-            background-color: #fff;
-            position: fixed;
-            display: inline-block;
-            /*border-left: 1px solid #aaa;*/
-        }
-        .mine-right .content{
-            width: 100%;
-            height: 100%;
-            overflow-y: scroll;
-            background-color: white;
-            z-index: 20;
-        }
-        .mine-right .content{
-            overflow: hidden;
-        }
-        /* 设置滚动条的样式 */
-        .mine-right .content::-webkit-scrollbar {
-            /*width:10px;*/
-            /*border-radius: 20px;*/
-
-            display: none !important;
-        }
-        /* 滚动槽 */
-        .mine-right .content::-webkit-scrollbar-track {
-            background-color: #fff;
-            -webkit-box-shadow: var(--sub_color);
-            border-radius:10px;
-            display: none;
-        }
-        /* 滚动条滑块 */
-        .mine-right .content::-webkit-scrollbar-thumb {
-            background:var(--sub_color);
-            border-radius: 20px;
-            display: none;
-        }
-        .mine-right .content::-webkit-scrollbar-thumb:window-inactive {
-            background:rgba(255,0,0,0.4);
-            display: none;
-        }
-
-
-
-
-        .mine-right .content .sub-content{
-            width: 100%;
-            height: 100%;
-        }
-        .mine-right .content .sub-1{
-            border-left: 2px solid #c77a03;
-            /*background-color: #c74c19;*/
-        }
-        .mine-right .content .sub-2{
-            border-left: 2px solid #c72631;
-            /*background-color: #c7c22f;*/
-        }
-        .mine-right .content .sub-3{
-            border-left: 2px solid #c73ab2;
-            /*background-color: #7cc726;*/
-        }
-        .mine-right .content .sub-4{
-            border-left: 2px solid #932ec7;
-            /*background-color: #23c762;*/
-        }
-        .mine-right .content .sub-5{
-            border-left: 2px solid #4e65c7;
-            /*background-color: #33c6c7;*/
-        }
-        .mine-right .content .sub-6{
-            border-left: 2px solid #25aac7;
-            /*background-color: #345fc7;*/
-        }
-        .mine-right .content .sub-7{
-            border-left: 2px solid #1bc779;
-            /*background-color: #723fc7;*/
-        }
-        .mine-right .content .sub-8{
-            border-left: 2px solid #7ec731;
-            /*background-color: #c73a93;*/
-        }
-    </style>
-<%--    //顶部横栏--%>
-    <style>
-        .bruce {
-            height: 100%;
-            /*height: 100%;*/
-            /*background-image: linear-gradient(270deg, #8146b4, #6990f6);*/
-            background-image: linear-gradient(270deg, var(--sub_color), #93bcc7);
-        }
-
-        .bubble-bgwall {
-            overflow: hidden;
-            position: relative;
-            margin: 0 auto;
-            /*width: 1200px;*/
-            width: 120px;
-            height: 100%;
-            float:right;
-            /*margin-right:10px;*/
-        }
-        .bubble-bgwall li {
-            display: flex;
-            position: absolute;
-            bottom: -20px;
-            /*justify-content: center;*/
-            justify-content: right;
-            align-items: right ;
-            border-radius: 100%;
-            width: 5px;
-            height: 5px;
-            /*width: 50px;*/
-            /*height: 50px;*/
-            /*background-color: rgba(0, 0, 0, 1);*/
-            background-color: #fff;
-            color: #ccc;
-            animation: bubble 5s infinite;
-        }
-        .bubble-bgwall li:nth-child(1) {
-            left: 10%;
-        }
-        .bubble-bgwall li:nth-child(2) {
-            left: 20%;
-            /*width: 90px;
-            height: 90px;*/
-            width: 9px;
-            height: 9px;
-            animation-duration: 7s;
-            animation-delay: 2s;
-        }
-        .bubble-bgwall li:nth-child(3) {
-            left: 25%;
-            animation-delay: 4s;
-        }
-        .bubble-bgwall li:nth-child(4) {
-            left: 40%;
-            /*width: 60px;
-            height: 60px;*/
-            width: 6px;
-            height: 6px;
-            /*background-color: rgba(255, 255, 255, 0.3);*/
-            background-color: #fff;
-            animation-duration: 8s;
-        }
-        .bubble-bgwall li:nth-child(5) {
-            left: 70%;
-        }
-        .bubble-bgwall li:nth-child(6) {
-            left: 80%;
-            width: 12px;
-            height: 12px;
-            /*width: 120px;
-            height: 120px;*/
-            /*background-color: rgba(255, 255, 255, 0.2);*/
-            background-color: #fff;
-            animation-delay: 3s;
-        }
-        .bubble-bgwall li:nth-child(7) {
-            left: 32%;
-            /*width: 160px;
-            height: 160px;*/
-            width: 16px;
-            height: 16px;
-            animation-delay: 2s;
-        }
-        .bubble-bgwall li:nth-child(8) {
-            left: 55%;
-            /*width: 40px;
-            height: 40px;*/
-            width: 4px;
-            height: 4px;
-            font-size: 12px;
-            animation-duration: 15s;
-            animation-delay: 4s;
-        }
-        .bubble-bgwall li:nth-child(9) {
-            left: 25%;
-            /*width: 40px;
-            height: 40px;*/
-            width: 4px;
-            height: 4px;
-            /*background-color: rgba(255, 255, 255, 0.3);*/
-            background-color: #fff;
-            font-size: 12px;
-            animation-duration: 12s;
-            animation-delay: 2s;
-        }
-        .bubble-bgwall li:nth-child(10) {
-            left: 85%;
-            /*width: 160px;
-            height: 160px;*/
-            width: 16px;
-            height: 16px;
-            animation-delay: 5s;
-        }
-
-        @keyframes bubble {
-            0% {
-                opacity: 0.5;
-                transform: translateY(0) rotate(45deg) scale(1.0);
-                border-radius: 100%;
-            }
-            /*25% {
-              opacity: 0.75;
-              transform: translateY(-40px) rotate(90deg) scale(1.2);
-            }
-            50% {
-              opacity: 1;
-              transform: translateY(-60px) rotate(135deg) scale(1.6);
-            }*/
-            100% {
-                opacity: 0;
-                transform: translateY(-100px) rotate(180deg) scale(2.2);
-                border-radius: 100%;
-            }
-        }
-
-        .bruce .logo {
-            float:left;
-            color: #fff;
-            font-family: Helvetica, Arial, sans-serif;
-            font-size: 2em;
-            margin: 2em 0.5em 0 10px;
-        }
-        .bruce .logo .box-outer {
-            border-radius:5px;
-            display: inline-block;
-            animation: shift 4.5s 1s steps(3, start) backwards;
-            /*animation-iteration-count: infinite;*/
-        }
-        .bruce .logo .box-inner {
-            display: inline-block;
-            width: .74em;
-            height: .74em;
-            background-color: #fff;
-            animation-name: roll;
-            animation-duration: 2s;
-            animation-delay: 2s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            transform-origin: bottom right;
-            border-radius:5px;
-        }
-
-        @keyframes roll {
-            from{
-                box-shadow: 5px 0 5px var(--sub_color);
-                transform: translateX(-300%);
-            }
-            10% {
-                opacity: 1;
-                transform: translateX(-100%);
-                animation-timing-function: ease-in-out;
-            }
-            20% {
-                transform: translateX(-100%) skewX(15deg);
-            }
-            28% {
-                transform: translateX(-100%) skewX(0deg);
-                animation-timing-function: ease-out;
-            }
-            45% {
-                box-shadow: 4px 6px 5px var(--sub_color);
-                transform: translateX(-100%) skewX(-5deg) rotate(20deg) scale(1.1);
-                animation-timing-function: ease-in-out;
-            }
-            50% {
-                box-shadow: 2px 5px 5px var(--sub_color);
-                transform: translateX(-100%) skewX(-5deg) rotate(45deg) scale(1.1);
-                animation-timing-function: ease-in;
-            }
-            60% {
-                transform: translateX(-100%) rotate(90deg);
-                box-shadow: 0 5px 5px var(--sub_color);
-            }
-            65% {
-                transform: translateX(-100%) rotate(90deg) skewX(10deg);
-                box-shadow: -5px 0px 5px var(--sub_color);
-            }
-            70% {
-                transform: translateX(-100%) rotate(90deg) skewX(0deg);
-                box-shadow: 0 5px 5px var(--sub_color);
-            }
-            90%{
-                border-radius: 50%;
-                opacity: 1;
-                box-shadow: 0 0 5px var(--sub_color);
-                color: var(--sub_color);
-            }
-            to {
-
-                transform: translateX(-100%) rotate(90deg);
-                /*box-shadow: 0 0 5px var(--sub_color);*/
-                color: #c7254e;
-                opacity: 0;
-            }
-        }
-        @keyframes shift {
-            from {
-                transform: translateX(-200%);
-            }
-        }
-        .bruce .logo .logo-box{
-            border-right: 2px solid #ccc;
-        }
-        .bruce .logo .logo-box,
-        .bruce .logo .logo-model{
-            border-bottom: 2px solid #ccc;
-        }
-    </style>
-    <style type="text/css">
-        .progressBar {
-            margin-top:0;
-            width:100%;
-            height:1px;
-            background: #ffffff;
-            border-radius:0px;
-        }
-        .barContent {
-            width: 12.5%;
-            height: 1px;
-            background: rgb(4, 167, 140);
-            border-radius: 0;
-            transition: width 1s;
-        }
-    </style>
-    <!--    sub-1-->
-    <style>
-        #person-img,
-        #person-img-new{
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: var(--sub_color);
-        }
-        .sub-1{
-            position: relative;
-        }
-        .mine-box .mine-right .content .person-msg,
-        .mine-box .mine-right .content .modify-panel{
-            position: absolute;
-            width: 80%;
-            height: 80%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            z-index: 5;
-        }
-
-        /*修改面板*/
-        .mine-box .mine-right .content .modify-panel{
-            display: none;
-            background-color: #fff;
-            z-index: 10;
-        }
-
-        .mine-box .mine-right .content .person-msg td,
-        .mine-box .mine-right .content .modify-panel td{
-            font-size: 15px;
-            border-bottom: 1px solid #aaa;
-        }
-        #modify-user,
-        #modify-user-ack{
-            margin-right: 20px;
-            width: 100px;
-            height: 30px;
-            /*margin-top: 10px;*/
-            /*margin-bottom: 20px;*/
-            color: var(--sub_color);
-            background-color: #fff;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 400;
-            transition: all var(--transform_slowily);
-        }
-        #modify-user:hover,
-        #modify-user-ack:hover{
-            background-color: var(--sub_color);
-            color: #fff;
-        }
-        #modify-user-cancel{
-            background-color: #c7254e;
-            color: white;
-            margin-right: 20px;
-            width: 100px;
-            height: 30px;
-            /*margin-top: 10px;*/
-            /*margin-bottom: 20px;*/
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 400;
-            transition: all var(--transform_slowily);
-            border: 0;
-        }
-        #modify-user-cancel:hover{
-            box-shadow: 0 0 8px #c7254e;
-        }
-        #modify-user-cancel:focus{
-            border: 0;
-            outline: none;
-        }
-
-        #msg-sex .my-radio label,
-        #new-msg-sex .my-radio label{
-            margin:  0 5px  !important;
-        }
-        #msg-sex .my-radio label input + span,
-        #new-msg-sex .my-radio label input + span{
-            margin-bottom: 0 !important;
-        }
-
-        #msg-headIcon,
-        #new-msg-headIcon{
-            border-radius: 50%;width: 100px;height: 100px;
-            border: 5px solid #fff;
-            box-shadow: 0 0 8px #666;
-            transition: all 0.8s;
-            transform: translateY(-40px);
-            cursor: url('http://localhost:8080/nchkkjxy/pic/cursor_style/love.cur'),auto;
-            z-index: 5;
-        }
-        #msg-headIcon:hover,
-        #new-msg-headIcon:hover{
-
-            transform: scale(1.1) translateY(5px) translateZ(5px);
-        }
-
-        #msg-single,
-        #new-msg-single{
-            text-align: center;
-            color: #fff;
-            display: inherit;
-            border-radius: 5px;
-            border: 2px solid #fff;
-            padding: 2px 5px;
-            transform: translateY(-20px);
-            max-width: 400px;
-            min-width: 50px;
-            word-wrap: break-word;
-        }
-        #msg-headIcon:hover #msg-single,
-        #new-msg-headIcon:hover #new-msg-single{
-            /*transform: translateY(-20px);*/
-        }
-
-        /*#new-msg-headIcon,*/
-        /*#new-msg-single,*/
-        #new-msg-name,
-        /*#new-msg-sex,*/
-        #new-msg-phone,
-        #new-msg-email,
-        #new-msg-identify,
-        #new-msg-brithday,
-        #new-msg-userType{
-            width: 250px;
-            height: 30px;
-            font-size: 15px;
-            padding-left:5px;
-            color:var(--sub_color);
-        }
-    </style>
-    <!--    sub-2-->
-    <style>
-        .inline_block{
-            display: inline-block;
-        }
-        .float_right{
-            float: right;
-        }
-        .sub-2{
-            position: relative;
-        }
-        .sub-2 .balance-box{
-            position: absolute;
-            width: 90%;
-            height: 90%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-        }
-        .sub-2 .balance-tab{
-            width: 100%;
-            height: 100px;
-            background-color: var(--sub_color);border-radius: 5px;box-shadow: 0 0 10px var(--sub_color);
-        }
-        .sub-2 .balance-items{
-            width: 100%;
-            height: calc(100% - 100px);
-            overflow: scroll;
-            max-height: calc(100% - 100px);
-            min-height: calc(100% - 100px);
-        }
-
-
-        /*.sub-2 .balance-items tbody {*/
-        /*    display: block;*/
-        /*    height: 300px;*/
-        /*    overflow-y: scroll;*/
-        /*    border-bottom: 1px solid var(--sub_color);*/
-        /*    border-top: 1px solid var(--sub_color);*/
-        /*}*/
-
-        /*.sub-2 .balance-items tr {*/
-        /*    display: table;*/
-        /*    width: 100%;*/
-        /*    height: 40px;*/
-        /*    table-layout: fixed;!*重要  表格固定算法*!*/
-        /*}*/
-
-        /*.sub-2 .balance-items thead {!*留出滚动条的位置*!*/
-        /*    width: calc(100% - 1em)*/
-        /*}*/
-
-    </style>
-<%--sub-3--%>
-    <style>
-        .sub-3 {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        .sub-3 .con{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-        }
-        .sub-3 .left{
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            width: 0;
-            height: 100%;
-            background-color: #fff;
-
-            animation-delay: 1.2s;
-            animation-fill-mode: forwards;
-        }
-        .sub-3 .top{
-            display: inline-block;
-            position: absolute;
-            width: 100%;
-            height: 0;
-            top:0;
-            left: 0;
-            background-color: #4e65c7;
-
-            animation-delay: 1.2s;
-            animation-fill-mode: forwards;
-        }
-        .sub-3 .bottom{
-            display: inline-block;
-            position: absolute;
-            width: 100%;
-            height: 0;
-            top:100%;
-            left: 0;
-
-            animation-fill-mode: forwards;
-            background-color: var(--sub_color);
-        }
-        .sub-3 .bottom .card{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 50%;
-            height: 50%;
-            transform: translate(-50%,-50%);
-            border-radius: 5px;
-            background-color: white;
-            background-image: url("http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png");
-            background-position: 100% 100%;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            border:2px solid #fff;
-            -webkit-animation-name:rubberBand;
-            animation:rubberBand 2s infinite linear;
-            animation-delay: 2s;
-        }
-        .sub-3 .bottom .card:hover{
-            animation:none;
-        }
-        .sub-3 .bottom .card-name{
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            border-radius: 5px;
-            border:2px solid #fff;
-            background-color: #4e65c7;
-            font-size: 24px;
-            color: #fff;
-            font-weight: 800;
-            padding: 3px 5px;
-        }
-        @keyframes bottom_star {
-            0%{
-                width: 100%;
-                height: 0;
-                top:100%;
-                left: 0;
-            }
-            50%{
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-            }
-            70%{}
-            100%{
-                width: 50%;
-                height: 50%;
-                top:50%;
-                left: 50%;
-                /*transform: translate(-50%,-50%);*/
-            }
-        }
-        @keyframes move_left {
-            from{
-                top: 0;
-                width: 0;
-                height: 100%;
-            }
-            to{
-                width: 50%;
-                top: 0;
-                left: 0;
-            }
-        }
-        @keyframes move_top {
-            from{
-            }
-            to{
-                width: 50%;
-                height: 50%;
-                top:0;
-                left: 50%;
-            }
-        }
-        @keyframes rubberBand{
-            0%{
-                -webkit-transform:translate(-50%,-50%) scaleX(1);
-                transform:translate(-50%,-50%) scaleX(1)
-            }
-            30%{
-                -webkit-transform:translate(-50%,-50%) scale3d(1.15,.75,1);
-                transform:translate(-50%,-50%) scale3d(1.15,.75,1)
-            }
-            40%{
-                -webkit-transform:translate(-50%,-50%) scale3d(.75,1.15,1);
-                transform:translate(-50%,-50%) scale3d(.75,1.15,1)
-            }
-            50%{
-                -webkit-transform:translate(-50%,-50%) scale3d(1.15,.85,1);
-                transform:translate(-50%,-50%) scale3d(1.15,.85,1)
-            }
-            65%{
-                -webkit-transform:translate(-50%,-50%) scale3d(.95,1.05,1);
-                transform:translate(-50%,-50%) scale3d(.95,1.05,1)
-            }
-            75%{
-                -webkit-transform:translate(-50%,-50%) scale3d(1.05,.95,1);
-                transform:translate(-50%,-50%) scale3d(1.05,.95,1)
-            }
-            to{
-                -webkit-transform:translate(-50%,-50%) scaleX(1);transform:translate(-50%,-50%) scaleX(1)
-            }
-        }
-    </style>
-<%--    sub-4--%>
-    <style>
-        .sub-4{
-            overflow-x:hidden;
-            overflow-y:hidden;
-            /*height: 100%;*/
-            /*width: 100%;*/
-            /*padding: 0;*/
-            /*margin: 0;*/
-        }
-        .sub-4 .chart-panel{
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .sub-4 .chart-panel .border-box{
-            position: absolute;
-            width: 15%;
-            height: 35%;
-            background-color: rgb(4, 167, 140);
-        }
-        .sub-4 .chart-panel .box-left{
-            left: 0;
-        }
-        .sub-4 .chart-panel .box-right{
-            right: 0;
-        }
-        .sub-4 .chart-panel .box-top{
-            top: 0;
-        }
-        .sub-4 .chart-panel .box-top-left{
-            border-radius: 0 0 10px 0;
-        }
-        .sub-4 .chart-panel .box-top-right{
-            border-radius: 0 0 0 10px;
-        }
-        .sub-4 .chart-panel .box-bottom-left{
-            border-radius: 0 10px 0 0;
-        }
-        .sub-4 .chart-panel .box-bottom-right{
-            border-radius: 10px 0 0 0;
-        }
-        .sub-4 .chart-panel .box-bottom{
-            bottom: 0;
-        }
-        .sub-4 .chart-panel .my-chart {
-            /*width: 600px;*/
-            /*height: 600px;*/
-            width: 70%;
-            height: 80%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            z-index: 5;
-        }
-
-    </style>
+    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/theame/css/page-minePage.css">
 </head>
 <body>
 <div class="mine-box">
@@ -847,25 +37,25 @@
     <div class="mine-left">
         <ul>
             <li id="a_1">
-                <a href="#sub-1" target="_self" title="我的信息">我的信息</a>
+                <a href="#sub-1" target="_self" title="我的信息"><font class="iconfont a_font" style="color: #c7254e;"></font>我的信息</a>
             </li>
             <li id="a_2">
-                <a href="#sub-2" target="_self" title="账户余额">账户余额</a>
+                <a href="#sub-2" target="_self" title="账户余额"> <font class="iconfont a_font" style="color: #c7254e;"></font>账户余额</a>
             </li>
             <li id="a_3">
-                <a href="#sub-3" target="_self" title="卡片中心">卡片中心</a>
+                <a href="#sub-3" target="_self" title="卡片中心"> <font class="iconfont a_font" style="color: #c7254e;"></font>卡片中心</a>
             </li>
             <li id="a_4">
-                <a href="#sub-4" target="_self" title="我的消费">我的消费</a>
+                <a href="#sub-4" target="_self" title="我的消费"> <font class="iconfont a_font" style="color: #c7254e;"></font>我的消费</a>
             </li>
             <li id="a_5">
-                <a href="#sub-5" target="_self" title="挂失记录">挂失记录</a>
+                <a href="#sub-5" target="_self" title="挂失记录"> <font class="iconfont a_font" style="color: #c7254e;"></font>挂失记录</a>
             </li>
             <li id="a_6">
-                <a href="#sub-6" target="_self" title="注销记录">注销记录</a>
+                <a href="#sub-6" target="_self" title="注销记录"> <font class="iconfont a_font" style="color: #c7254e;"></font>注销记录</a>
             </li>
             <li id="a_7">
-                <a href="#sub-7" target="_self" title="账号变更">账号变更</a>
+                <a href="#sub-7" target="_self" title="账号变更"> <font class="iconfont a_font" style="color: #c7254e;"></font>账号变更</a>
             </li>
             <li id="a_8">
                 <a href="#sub-8" target="_self" title="账号登录及安全" target="_top" title="悬停文本">账号安全</a>
@@ -881,6 +71,21 @@
         </div>
         <div class="content">
             <div class="sub-content sub-1" name="sub-1">
+                <!--头像上传-->
+                <div class="file-temp">
+                    <div class="file-area">
+                        <div class="file-box">
+                            <input type="file"  name="upload-file" class="upload-file" style="opacity: 0;width: 100%;height: 100%;cursor: pointer;">
+                        </div>
+                        <div class="file-tip">
+                            <span>请从本地选择<font class="file-type">*.jpg</font>/<font class="file-type">*.png</font>作为头像！</span>
+                        </div>
+                    </div>
+                    <div class="but-area">
+                        <input type="button" value="取消" class="file-but file-cancel">
+                        <input type="button" value="确定" class="file-but file-sure">
+                    </div>
+                </div>
                 <table class="modify-panel" border="0" cellpadding="0" cellspacing="0">
                     <tfoot>
                         <tr>
@@ -892,9 +97,18 @@
                         </tr>
                     </tfoot>
                     <tr style="padding-bottom: 0;background-color: var(--sub_color);">
-                        <td align="center" colspan="4" style="padding-bottom: 0;margin-bottom: 0;height: 100px;">
-                            <img src="D:/桌面/课程设计/UI/img/defult_man.png" id="new-msg-headIcon">
-                            <span id="new-msg-single">hello!!!</span>
+                        <td align="center" colspan="4" style="position:relative;padding-bottom: 0;margin-bottom: 0;height: 100px;">
+                                <img src="D:/桌面/课程设计/UI/img/defult_man.png" id="new-msg-headIcon">
+                                <span id="new-msg-single">hello!!!</span>
+                                <div id="modify-single-panel">
+                                    <textarea name="new_single" id="new_single" type="text"οnchange="this.value=this.value.substring(0, 400)"
+                                              οnkeydοwn="this.value=this.value.substring(0, 400)"
+                                              οnkeyup="this.value=this.value.substring(0, 400)"></textarea>
+                                    <label class="label label-danger">字数不超过<font style="color: crimson;">200</font>字</label>
+                                    <div class="btn_s">
+                                        <input type="button" value="确定" class="sure_single single_btn"><input type="button" value="取消" class="cancel_single single_btn">
+                                    </div>
+                                </div>
                         </td>
                     </tr>
                     <tr>
@@ -917,8 +131,12 @@
                     </tr>
                     <tr>
                         <td align="right" width="20%">身份证件：</td>
-                        <td align="left" width="30%" colspan="3">
+                        <td align="left" width="30%">
                             <input type="text" id="new-msg-identify" value="" class="new-msg">
+                        </td>
+                        <td align="right" width="20%">修改头像：</td>
+                        <td align="left" width="30%">
+                            <div type="button" id="modify_head" value="" class="iconfont icon-bianji new-msg"></div>
                         </td>
                     </tr>
                     <tr>
@@ -1008,7 +226,12 @@
             </div>
             <div class="sub-content sub-3" name="sub-3">
                 <div class="con">
-                    <div class="left"></div>
+                    <div class="left">
+                        <div class="table-box">
+                            <div class="table-top"></div>
+                            <div class="table-bottom"></div>
+                        </div>
+                    </div>
                     <div class="top"></div>
                     <div class="bottom">
                         <span class="card-name">普通卡</span>
@@ -1025,10 +248,107 @@
                     <div class="border-box box-bottom box-right box-bottom-right"></div>
                 </div>
             </div>
-            <div class="sub-content sub-5" name="sub-5"></div>
-            <div class="sub-content sub-6" name="sub-6"></div>
-            <div class="sub-content sub-7" name="sub-7"></div>
-            <div class="sub-content sub-8" name="sub-8"></div>
+            <div class="sub-content sub-5" name="sub-5">
+                <div class="table-box">
+                    <div class="table-top"></div>
+                    <div class="table-bottom"></div>
+                </div>
+            </div>
+            <div class="sub-content sub-6" name="sub-6">
+                <div class="table-box">
+                    <div class="table-top"></div>
+                    <div class="table-bottom"></div>
+                </div>
+            </div>
+            <div class="sub-content sub-7" name="sub-7">
+                <div class="change-account">
+                    <div>
+                        <input type="button" class="app_btn" id="a">
+                    </div>
+                    <div class="bottom-btn">
+                        <input type="button" value="我的申请" class="app_btn show_my_app account_menu">
+                        <input type="button" value="已有身份" class="app_btn show_my_identify account_menu">
+                        <input type="button" value="申请流程" class="app_btn show_app_tip account_menu">
+                    </div>
+                </div>
+                <div class="change-tip">
+                    <span class="chang_title">账号变更申请流程</span>
+                    <div class="node approve">
+                        <span>提出申请</span>
+                    </div>
+                    <div class="node admin">
+                        <span>管理员审核</span>
+                    </div>
+                    <div class="node success">
+                        <span>成功通过</span>
+                    </div>
+                    <div class="node confuse">
+                        <span>不予通过</span>
+                    </div>
+                    <span class="line ap_ad"></span>
+                    <span class="line ad_su"></span>
+                    <span class="line ad_co"></span>
+                    <input class="sure_tip" type="button" value="我知道了">
+                </div>
+                <div class="sure_change">
+
+                    <div class="bottom-btn">
+                        <input type="button" value="关闭" class="app_btn close_app">
+                        <input type="button" value="确认" class="app_btn sure_my_app">
+                    </div>
+                </div>
+                <div class="my_approve">
+                    <div class="bottom-btn">
+                        <input type="button" value="关闭" class="app_btn close_app">
+                    </div>
+                </div>
+                <div class="my_identify">
+                    <div class="bottom-btn">
+                        <input type="button" value="关闭" class="app_btn close_app">
+                    </div>
+                </div>
+            </div>
+            <div class="sub-content sub-8" name="sub-8">
+                <div class="modify-pwd">
+                    <div class="modify-top">
+                        <span>修改登录密码</span>
+                        <table>
+                            <tr>
+                                <td align="right"><font class="modify_tip">新密码：</font></td>
+                                <td  align="left"><input type="password" class="pwd_ipt" name="new_pwd" id="new_pwd" autocomplete="off"></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><font class="modify_tip">确认密码：</font></td>
+                                <td align="left"><input type="password" class="pwd_ipt"  name="ack_new_pwd" id="ack_new_pwd" autocomplete="off"></td>
+                            </tr>
+                            <tr>
+                                <td width="'100"></td>
+                                <td align="right">
+                                    <div class="leave" id="pwdLevel_1"></div>
+                                    <div class="leave" id="pwdLevel_2"></div>
+                                    <div class="leave" id="pwdLevel_3"></div>
+                                    <div class="leave_color" id="levelText_1">弱</div>
+                                    <div class="leave_color" id="levelText_2">中</div>
+                                    <div class="leave_color" id="levelText_3">强</div>
+                                    <div class="leave_tip">
+                                        <span id="pwd_tip" style="color: #898989;">
+                                            <font style="color: #f00;">*</font>
+                                            6-16位，由字母(区分大小写)、数字、符号组成
+                                        </span>
+                                        <span id="pwd_err" style="color: #f00;display: none;">
+                                            6-16位，由字母(区分大小写)、数字、符号组成
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modify-bottom">
+                        <input type="button" value="确认" class="sure_modify_pwd">
+                        <input type="button" value="取消" class="confuse_modify_pwd">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -1070,6 +390,15 @@
                     case 6:toChangeAccountType();break;
                     case 7:toAccountSafe();break;
                 }
+
+                let _a = $(".mine-left>ul").find("li");
+                let _a_len = _a.length;
+                for(let index = 0;index <_a_len;index++){
+                    if(i == index){
+                        $(_a[index]).removeClass("hangkonghangtian-aerospace-taiyangxi-s");
+                    }
+                }
+                $(this).addClass("hangkonghangtian-aerospace-taiyangxi-s");
             });
         }
     });
@@ -1139,7 +468,7 @@
     // }
     function setUserInfo(uInfo) {
         // console.log(uInfo);
-        $("#msg-headIcon").prop("src",uInfo.head_url);//:修改头像
+        $("#msg-headIcon").attr("src",uInfo.head_url);//:修改头像
         $("#msg-single").html(uInfo.single);//:签名
         $("#msg-name").html(uInfo.name);//姓名
         let _sex_html = "";
@@ -1168,7 +497,7 @@
         $("#msg-brithday").html(uInfo.brithday);//生日
         $("#msg-userType").html(uInfo.register_identify);//用户类型（不可再此处修改）
 //======================================================================================================================================
-        $("#new-msg-headIcon").prop("src",uInfo.head_url);//:修改头像
+        $("#new-msg-headIcon").attr("src",uInfo.head_url);//:修改头像
         $("#new-msg-single").html(uInfo.single);//:签名
         $("#new-msg-name").val(uInfo.name);//姓名
 
@@ -1203,7 +532,7 @@
         // let selector = document.getElementsByName('new-sex');
         // let sex = $(selector).val();
         return  userInfo = {
-            head_url:"http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
+            head_url:$("#new-msg-headIcon").prop("src"),//$("#new-msg-headIcon").html(),//:修改头像
             single:$("#new-msg-single").html(),//:签名
             name:$("#new-msg-name").val(),//：修改姓名
             sex:$(document.getElementsByName('new-sex')).val(),//:修改性别
@@ -1232,6 +561,9 @@
             width:'0',
             height: '100%',
         },1);
+        $(".sub-3 .left .table-box").animate({
+            opacity:'0'
+        },0);
         $(".sub-3 .bottom").animate({
             width: '100%',
             height: '0',
@@ -1278,6 +610,9 @@
                                top:0,
                                left: '50%',
                            },800);
+                           $(".sub-3 .left .table-box").animate({
+                               opacity:'1'
+                           },1);
                        }
                     });
                 }
@@ -1298,8 +633,18 @@
 
     }
     // 进行我的账号变更
+    var _has_show_sub_7_tip = false;
     function toChangeAccountType() {
-
+        if(_has_show_sub_7_tip){
+            return;
+        }
+        $(".sub-7 .change-tip").addClass("change-tip_animation");
+        $(".sub-7 .change-tip").animate({
+            width:'500px',
+            height:'300px',
+            opacity:0
+        },800);
+        _has_show_sub_7_tip = true;
     }
     //账号安全管理
     function toAccountSafe() {
@@ -1310,7 +655,7 @@
         window.location.replace("http://localhost:8080/nchkkjxy/");
     }
 </script>
-<!--sub-1-->
+<!--sub-1我的信息-->
 <script>
     $("#modify-user-cancel").click(function () {
         show_msg_panel();
@@ -1332,7 +677,7 @@
                 method:"post",
                 dataType:"json",
                 data:{
-                    head_url:$("#new-msg-headIcon").prop("src"),//"http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
+                    head_url:$("#new-msg-headIcon").attr("src"),//"http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
                     single:$("#new-msg-single").html(),//:签名
                     name:$("#new-msg-name").val(),//：修改姓名
                     sex: elemUtil.getRadioVal("new-sex"),//:修改性别
@@ -1376,8 +721,181 @@
         $(".mine-box .mine-right .content .modify-panel").animate({opacity: '1'},400);
         $(".mine-box .mine-right .content .modify-panel").css("display","table");
     }
+
+    //头像上传
+    var file_judeg = {
+        supportFile : ["jpg","gif","bmp","png","jpeg"],
+        MaxNameLength : 100,
+        judge:function (fileNode,singleNode) {
+            let filePath = $(fileNode).val();
+            let fileName = filePath.substring(filePath.lastIndexOf( "\\" ) + 1, filePath.length);
+            if  ( typeof (fileName) !="undefined" && fileName !=  "" ) {
+                if(typeof (singleNode)!="undefined") {
+                    $(singleNode).css("border","3px solid var(--sub_color)");
+                }
+                //lastIndexOf如果没有搜索到则返回为-1
+                if  (fileName.lastIndexOf( "." ) != -1) {
+                    let  fileType = (fileName.substring(fileName.lastIndexOf( "." ) + 1, fileName.length)).toLowerCase();
+                    // console.log(fileType)
+                    for  (  let  i = 0; i < file_judeg.supportFile.length; i++) {
+                        if  (file_judeg.supportFile[i] == fileType) {
+                            if  (fileName.length > file_judeg.MaxNameLength) {
+                                // "文件名长度不能超过100字符" );
+                                $(fileNode).val("");
+                                my_tip.tip("文件名长度不能超过"+file_judeg.MaxNameLength+"字符",0,'body',[{cssName:"background-color",cssValue:'crimson'}]);
+                                return  -1 ;
+                            }
+                            return  1;
+                        }
+                    }
+                    my_tip.tip("文件格式无效",0,'body',[{cssName:"background-color",cssValue:'crimson'}]);
+                    return  -1 ;
+                }  else  {
+                    $(fileNode).val("");
+                    my_tip.tip("选择文件失败",0,'body',[{cssName:"background-color",cssValue:'crimson'}]);
+                    return  -1 ;
+                }
+            }
+            else{
+                if(typeof (singleNode)!="undefined") {
+                    $(singleNode).css("border","3px dashed var(--sub_color)");
+                }
+                return 0;
+            }
+        }
+    }
+    $(".file-temp .file-area .file-box .upload-file").change(function () {
+        let reg = file_judeg.judge($(this),$(".file-temp .file-area .file-box "));
+        if(reg == 1){
+            $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #16DC63");
+            $(".file-temp .file-area .file-box ").css("border-color", "#16DC63");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_succeed.png')");
+        }
+        else if(reg == -1){
+            $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px crimson");
+            $(".file-temp .file-area .file-box ").css("border-color", "crimson");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_error.png')");
+        }
+        else if(reg == 0){
+            $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #666");
+            $(".file-temp .file-area .file-box ").css("border-color", "#666");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png')");
+        }
+    });
+    var file_btn = $(".file-temp .file-area .file-box .upload-file");
+    //选择文件
+    $(".file-temp .file-area .file-box .upload-file").click(function () {
+        if( $(".file-temp .file-area .file-box .upload-file").val() !=  "" ) {
+            $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #666");
+            $(".file-temp .file-area .file-box ").css("border", "3px dashed #666");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png')");
+        }
+    });
+    //上传事件
+    $(".file-temp .but-area .file-sure").click(function () {
+        if ($(".file-temp .file-area .file-box .upload-file").val() == "") {
+            my_tip.tip("没有选择文件",0,'body',[{cssName:"background-color",cssValue:'crimson'}]);
+        } else {
+            //开始上传文件
+            let multipartFile = new FormData();
+            multipartFile.append("file", file_btn[0].files[0])
+            $.ajax({
+                url: "http://localhost:8080/nchkkjxy/file/upload",  //后台URL
+                type: "post",
+                data: multipartFile,
+                contentType: false,
+                cache: false,
+                processData: false,//必须false才会避开jQuery对 formdata 的默认处理,XMLHttpRequest会对 formdata 进行正确的处理
+                beforeSend:function(){
+                    loading_cir.loading('body');
+                },
+                success: function (data) {
+                    $("#new-msg-headIcon").attr("src",data.replace(/\"/g, ""));
+                    loading_cir.loaded('body');
+                    $('.sub-1 .file-temp').animate({
+                        width:'0',
+                        height:'0',
+                        top:'0',
+                        left:'0',
+                        opacity:'0'
+                    },800);
+                    // $('.sub-1 .file-temp').css('display','none');
+                    $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #666");
+                    $(".file-temp .file-area .file-box ").css("border", "3px dashed #666");
+                    $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png')");
+                },
+                error:function () {
+                    loading_cir.loaded('body');
+                }
+            });
+        }
+    });
+
+    //点击开始修改头像
+    // width: 500px;
+    // height: 300px;
+    // top: 50%;
+    // left: 50%;
+    $("#modify_head").click(function () {
+        // $('.sub-1 .file-temp').css('display','inline-block');
+        $('.sub-1 .file-temp').animate({
+            width:'500px',
+            height:'300px',
+            top:'50%',
+            left:'50%',
+            opacity:'1'
+        },800);
+    });
+    //关闭修改头像
+    $(".sub-1 .file-temp .but-area .file-cancel").click(function () {
+        $('.sub-1 .file-temp').animate({
+            width:'0',
+            height:'0',
+            top:'0',
+            left:'0',
+            opacity:'0'
+        },800);
+        // $('.sub-1 .file-temp').css('display','none');
+    });
+
+    //点击修改个性签名
+    $("#new-msg-single").click(function () {
+        $("#new_single").val(getSingleValue());
+        $('#modify-single-panel').animate({
+            width:'500px',
+            height:'250px',
+            top:'20%',
+            opacity:'1'
+        },800);
+    });
+    function setSingleValue(val){
+        $("#new-msg-single").html(val);
+    }
+    function getSingleValue(){
+        return $("#new-msg-single").html();
+    }
+    function closeNewSingle(){
+        $('#modify-single-panel').animate({
+            width:'0',
+            height:'0',
+            top:'-20%',
+            opacity:'0'
+        },800);
+    }
+    $("#modify-single-panel .btn_s .cancel_single").click(function () {
+        closeNewSingle();
+    });
+    $("#modify-single-panel .btn_s .sure_single").click(function () {
+        let single_val = $("#new_single").val();
+        if(single_val.length > 200){
+            my_tip.tip("内容写得不仅很多还比较烧气！",0,'#modify-single-panel',[{cssName:'background-color',cssValue:'crimson'}]);
+            return ;
+        }
+        setSingleValue(single_val);
+        closeNewSingle();
+    });
 </script>
-<!--sub-2-->
+<!--sub-2账户余额-->
 <script>
 
     $(".daliy-point").click(function () {
@@ -1493,8 +1011,41 @@
     // 获取账户余额
     getBalance();
 </script>
-<!--sub-3-->
-<!--sub-4-->
+<!--sub-3卡管理-->
+<script>
+    var sub3_gridData = {
+        ajac: {
+            url: "http://localhost:8080/nchkkjxy/balance/page",//请求地址
+            method: "post",//请求方法
+            data: {
+                uid:uid
+            },//请求条件
+            dataType: "json",
+            beforeSend:function () {
+                // my_layer.open();
+            },
+            overSend:function () {
+                // my_layer.close();
+            }
+        },
+        columnId:true,//显示列表序号（自增）
+        columns:[
+            {title:"id",      name:"id",width:"5",hidden:true,align:"center"},
+            {title:"变更类型", name:"type",       width:"15",hidden:false,align:"center"},
+            {title:"变更金额", name:"money", width:"10",hidden:false,align:"center"},
+            {title:"操作账号", name:"operatorUser",   width:"10",hidden:false,align:"center"},
+            {title:"余额",     name:"balance",   width:"10",hidden:false,align:"center"},
+            {title:"时间",     name:"time",   width:"20",hidden:false,align:"center"},
+            {title:"备注",     name:"note",    width:"25",hidden:false,align:"center"},
+        ],//数据集合
+        multi_select:true,//是否多选
+        pages:[5,10,20,50,100],//每页多少天，选项
+    };
+
+    //绑定把表格数据
+    dataGrid.grid($(".sub-3 .table-bottom"),sub3_gridData);
+</script>
+<!--sub-4我的消费-->
 <script>
     // $.getJSON('http://localhost:8080/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {
     // echarts.registerTheme('wonderland.project', themeJSON);
@@ -1608,10 +1159,376 @@
     }
 
 </script>
-<!--sub-5-->
-<!--sub-6-->
-<!--sub-7-->
-<!--sub-8-->
+<!--sub-5挂失-->
+<script>
+    var sub5_gridData = {
+        ajac: {
+            url: "http://localhost:8080/nchkkjxy/balance/page",//请求地址
+            method: "post",//请求方法
+            data: {
+                uid:uid
+            },//请求条件
+            dataType: "json",
+            beforeSend:function () {
+                // my_layer.open();
+            },
+            overSend:function () {
+                // my_layer.close();
+            }
+        },
+        columnId:true,//显示列表序号（自增）
+        columns:[
+            {title:"id",      name:"id",width:"5",hidden:true,align:"center"},
+            {title:"变更类型", name:"type",       width:"15",hidden:false,align:"center"},
+            {title:"变更金额", name:"money", width:"10",hidden:false,align:"center"},
+            {title:"操作账号", name:"operatorUser",   width:"10",hidden:false,align:"center"},
+            {title:"余额",     name:"balance",   width:"10",hidden:false,align:"center"},
+            {title:"时间",     name:"time",   width:"20",hidden:false,align:"center"},
+            {title:"备注",     name:"note",    width:"25",hidden:false,align:"center"},
+        ],//数据集合
+        multi_select:true,//是否多选
+        pages:[5,10,20,50,100],//每页多少天，选项
+    };
+
+    //绑定把表格数据
+    dataGrid.grid($(".sub-5 .table-bottom"),sub5_gridData);
+</script>
+<!--sub-6注销-->
+<script>
+    var sub6_gridData = {
+        ajac: {
+            url: "http://localhost:8080/nchkkjxy/balance/page",//请求地址
+            method: "post",//请求方法
+            data: {
+                uid:uid
+            },//请求条件
+            dataType: "json",
+            beforeSend:function () {
+                // my_layer.open();
+            },
+            overSend:function () {
+                // my_layer.close();
+            }
+        },
+        columnId:true,//显示列表序号（自增）
+        columns:[
+            {title:"id",      name:"id",width:"5",hidden:true,align:"center"},
+            {title:"变更类型", name:"type",       width:"15",hidden:false,align:"center"},
+            {title:"变更金额", name:"money", width:"10",hidden:false,align:"center"},
+            {title:"操作账号", name:"operatorUser",   width:"10",hidden:false,align:"center"},
+            {title:"余额",     name:"balance",   width:"10",hidden:false,align:"center"},
+            {title:"时间",     name:"time",   width:"20",hidden:false,align:"center"},
+            {title:"备注",     name:"note",    width:"25",hidden:false,align:"center"},
+        ],//数据集合
+        btns:[
+            {
+                id:"add_logout",
+                txt:"添加",
+                icon:"add-icon",
+                btn_style:"normal",//normal、alter、msg
+                click:function () {
+                    addRow();
+                }
+            },
+            {
+                id:'print_logout',
+                txt:"打印",
+                icon:"add-icon",
+                btn_style:"normal",//normal、alter、msg
+                click:function () {
+                    printData();
+                }
+            },
+            {
+                id:"import_logout",
+                txt:"导入",
+                icon:"add-icon",
+                btn_style:"normal",//normal、alter、msg
+                click:function () {
+                    importData();
+                }
+            },
+            {
+                id:'export_logout',
+                txt:"导出",
+                icon:"add-icon",
+                btn_style:"normal",//normal、alter、msg
+                click:function () {
+                    exportData();
+                }
+            },
+            {
+                id:'remove_logout',
+                txt:"移除",
+                icon:"add-icon",
+                btn_style:"alter",//normal、alter、msg
+                click:function () {
+
+                }
+            },
+            {
+                id:'reflush_logout',
+                txt:"刷新",
+                icon:"add-icon",
+                btn_style:"msg",//normal、alter、msg
+                click:function () {
+                    reloadData();
+                }
+            }
+        ],
+        multi_select:true,//是否多选
+        pages:[5,10,20,50,100],//每页多少天，选项
+    };
+
+    //绑定把表格数据
+    dataGrid.grid($(".sub-6 .table-bottom"),sub6_gridData);
+    $("#reflush_logout").click(function () {
+        dataGrid.reload($(".sub-6 .table-bottom"),sub6_gridData)
+        // alert(dataGrid.getSelection($(".sub-6 .table-bottom")));
+    });
+</script>
+<!--sub-7账号变更-->
+<script>
+    $("#a").click(function () {
+        $(".sub-7 .change-account").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".sub-7 .sure_change").animate({
+            opacity:'1',
+            width: '500px',
+            height: '400px'
+        },800);
+    });
+    $(".sub-7 .sure_tip").click(function () {
+        $(".sub-7 .change-tip").removeClass("change-tip_animation");
+        $(".sub-7 .change-tip").animate({
+            width:'0px',
+            height:'0px',
+            top:'-1000px',
+            opacity:'0'
+        },{duration:1000,complete:function () {
+                $(".sub-7 .change-tip").animate({
+                    width:'500px',
+                    height:'300px'
+                },1);
+            }});
+        $(".sub-7 .change-account").animate({
+            opacity:'1',
+            width: '80%',
+            height: '80%'
+        },800);
+    });
+    $(".sub-7 .show_app_tip").click(function () {
+        $(".sub-7 .change-account").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".sub-7 .change-tip").addClass("change-tip_animation");
+    });
+
+
+    $(".sub-7 .show_my_app").click(function () {
+        $(".sub-7 .change-account").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".sub-7 .my_approve").animate({
+            opacity:'1',
+            width: '500px',
+            height: '400px'
+        },800);
+    });
+
+
+    $(".sub-7 .show_my_identify").click(function () {
+        $(".sub-7 .change-account").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".sub-7 .my_identify").animate({
+            opacity:'1',
+            width: '500px',
+            height: '400px'
+        },800);
+    });
+
+
+    $(".sub-7 .close_app").click(function () {
+        $(this).parent("div").parent("div").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".sub-7 .change-account").animate({
+            opacity:'1',
+            width: '80%',
+            height: '80%'
+        },800);
+    });
+</script>
+<!--sub-8账号安全-->
+<script>
+    $(".sub-8 .modify-bottom .confuse_modify_pwd").click(function () {
+        $(".sub-8 .modify-top input[type='password']").val("");
+    });
+
+    var password_leavel = 0;
+    $(".sub-8 .modify-bottom .sure_modify_pwd").click(function () {
+        let _pwd_ = $("#new_pwd").val();
+        let _new_pwd_ = $("#ack_new_pwd").val();
+        if(typeof (_pwd_) == "undefined" || typeof (_new_pwd_) == "undefined"){
+            my_tip.tip("输入内容不完整！",1,'.sub-8',[{cssName:'background-color',cssValue:'crimson'},{cssName:'color',cssValue: '#fff'}]);
+            return;
+        }
+        if(password_leavel<2){
+            my_tip.tip("新密码不符合要求！",1,'.sub-8',[{cssName:'background-color',cssValue:'crimson'},{cssName:'color',cssValue: '#fff'}]);
+            return;
+        }
+        if(_pwd_ != _new_pwd_){
+            my_tip.tip("密码前后不一致！",1,'.sub-8',[{cssName:'background-color',cssValue:'crimson'},{cssName:'color',cssValue: '#fff'}]);
+            return;
+        }
+        // $.ajax();
+    });
+
+
+    $("#new_pwd").focus(function(){     //光标定位在密码框上绑定的事件
+        $("#pwdLevel_1").attr("class","red_line1");
+        $("#tbPassword").keyup();    //调用keyup()事件
+    });
+    $("#new_pwd").keyup(function(){      //为密码框绑定keyup事件
+        var _th=$(this);
+        if(!_th.val()){             //判断非空
+            console.log(_th.val());
+            $("#pwd_tip").hide();     //默认提示语隐藏
+            $("#pwd_err").show();     //错误信息显示
+            Primary();      //调用Primary(),改变密码强度条显示的样式
+            return;
+        }
+        if(_th.val().length<6){     //判断密码长度是否<6
+            $("#pwd_tip").hide();   //默认提示语隐藏
+            $("#pwd_err").show();   //错误信息显示
+            Weak();  //调用Weak(),改变密码强度条显示的样式
+            return;
+        }
+        var _r=checkPassword(_th);    //调用checkPassword(_th),验证密码格式，返回整数值(true和false相加后的值)，赋值给变量_r
+        if(_r<1){
+            $("#pwd_tip").hide();
+            $("#pwd_err").show();
+            Primary();   //调用Primary(),改变密码强度条显示的样式
+            return;
+        }
+        if(_r>0&&_r<2){
+            Weak();    //调用Weak(),改变 密码强度条显示的样式
+        }else if(_r>=2&&_r<4){
+            Medium();  //调用Medium(),改变密码强度条显示的样式
+        }else if(_r>=4){
+            Tough();   //调用Tough(),改变密码强度条显示的样式
+        }
+        $('#pwd_tip').hide();
+        $('#pwd_err').hide();
+    });
+    //"弱、中、强"对应的条为灰色
+    function Primary(){
+        $("#pwdLevel_1").attr("class","leave");
+        $("#pwdLevel_2").attr("class","leave");
+        $("#pwdLevel_3").attr("class","leave");
+        $("#levelText_1").css("display",'none');
+        $("#levelText_2").css("display",'none');
+        $("#levelText_3").css("display",'none');
+        password_leavel = 0;
+    }
+    //"弱"对应的条高亮
+    function Weak(){
+        $("#pwdLevel_1").addClass("red_line1");
+        $("#pwdLevel_2").attr("class","leave");
+        $("#pwdLevel_3").attr("class","leave");
+        $("#levelText_1").css("display",'inline-block');
+        $("#levelText_2").css("display",'none');
+        $("#levelText_3").css("display",'none');
+        password_leavel = 1;
+    }
+    //"弱、中"对应的条高亮
+    function Medium(){
+        $("#pwdLevel_1").addClass("red_line1");
+        $("#pwdLevel_2").addClass("red_line2");
+        $("#pwdLevel_3").attr("class","leave");
+        $("#levelText_1").css("display",'none');
+        $("#levelText_2").css("display",'inline-block');
+        $("#levelText_3").css("display",'none');
+        password_leavel = 2;
+    }
+    //"弱、中、强"对应的条高亮
+    function Tough(){
+        $("#pwdLevel_1").addClass("red_line1");
+        $("#pwdLevel_2").addClass("red_line2");
+        $("#pwdLevel_3").addClass("red_line3");
+        $("#levelText_1").css("display",'none');
+        $("#levelText_2").css("display",'none');
+        $("#levelText_3").css("display",'inline-block');
+        password_leavel = 3;
+    }
+    //验证密码格式
+    function checkPassword(pwdinput){
+        var maths,smalls,bigs,corps,cat,num;
+        var str=$(pwdinput).val();   //输入框密码值
+        var len=str.length;         //密码长度
+        var cat=/.{16}/g;            //匹配16个字符，除了换行和行结束符
+        if(len==0){                  //如果密码长度为0，返回1
+            return 1;
+        }
+        if(len>16){   //如果密码长度超过16位，则密码框内只显示前16位
+            $(pwdinput).val(str.match(cat)[0]);
+            console.log(str.match(cat)[0]);
+        }
+        cat=/.*[\u4e00-\u9fa5]+.*$/;   //匹配是否含有汉字
+        if(cat.test(str)){      //如果含有汉字，返回-1
+            return -1;
+        }
+        cat=/[0-9]/;    //匹配是否含有数字
+        maths=cat.test(str);
+        cat=/[a-z]/;  //匹配是否含有小写字母
+        smalls=cat.test(str);
+        cat=/[A-Z]/;   //匹配是否含有大写字母
+        bigs=cat.test(str);
+        corps=corpses(pwdinput);    //调用corpses(pwdinput)方法，验证密码框内的值是否同时含有数字、大小写字母
+        num = maths + smalls + bigs + corps;    //maths、smalls、bigs、corps为true或false,true表示1,false表示0
+        if(len<6){    //如果密码长度<6,返回1
+            return 1;
+        }
+        if(len>=6&&len<=8){   //如果密码长度>=6&&<=8
+            if(num==1 || num==2) return 1;   //如果值中包含数字、小写字母、大写字母、特殊符号中的1种或2种,则返回1
+            if(num==3 || num==4) return 2; //如果值中包含数字、小写字母、大写字母、特殊符号中的3种或4种,则返回2
+        }
+        if(len>8){
+            if(num==1) return 1;
+            if(num==2 || num==3) return 2;
+            if(num==4) return 4;
+        }
+    }
+    function corpses(pwdinput){     //该方法匹配字符串中是否包含特殊字符(即除去大小写字母和数字)
+        var cat=/./g;   //匹配单个字符，除了换行和行结束符
+        var str=$(pwdinput).val();   //获取密码框内的值
+        var sz=str.match(cat);    //匹配单个字符，除了换行和行结束符,返回结果为数组sz
+        for(var i=0;i<sz.length;i++){    //循环匹配数组中的每个字符，进行验证
+            cat=/[0-9]/;    //匹配是否含有数字
+            var maths_01=cat.test(sz[i]);
+            cat=/[a-z]/;  //匹配是否含有小写字母
+            var smalls_01=cat.test(sz[i]);
+            cat=/[A-Z]/;   //匹配是否含有大写字母
+            var bigs_01=cat.test(sz[i]);
+            if(!maths_01&&!smalls_01&&!bigs_01){   //如果匹配的字符串包含特殊字符，则返回true，否则返回false
+                return true;
+            }
+        }
+        return false;
+    }
+</script>
 <!--sub-9-->
 <script>
     (function ($) {

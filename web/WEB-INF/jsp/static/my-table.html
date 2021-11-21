@@ -636,7 +636,10 @@
             "<tbody class='my-tb' id='data-grid-elem'></tbody>" +
             "            <tfoot class='my-tf'>" +
             "            <tr class='my-tr'>" +
-            "                <td class='my-td' align='left'>" +// width='200'
+            "                <td class='my-td' colspan='" +
+                obj.columns.length+
+            "'>" +
+            "<div class='inlineBlock' style='float: left;'>" +// width='200'
             "                    每页" +
             "<div class='page-list-box inlineBlock'>"+
             "<span id='page-items' style='border: 2px solid #666; border-radius: 5px ;padding: 2px 5px;'>0</span>"+
@@ -650,13 +653,13 @@
         _table_html += "条/共" +
             "   <span id='total'>0</span>" +
             "条" +
-            "</td>" ;
+            "</div>" ;
         //填充底部行中间缺少的单元格
-        var _td_len =obj.pages.length-obj.columnId?2:1;
-        for (let i=0;i < _td_len;i++){
-            _table_html += "<td class='my-td'></td>";
-        }
-        _table_html += "<td class='my-td' align='right'>" +// width='200'
+        // var _td_len =obj.pages.length-obj.columnId?2:1;
+        // for (let i=0;i < _td_len;i++){
+        //     _table_html += "<td class='my-td'></td>";
+        // }
+        _table_html += "<div class='inlineBlock' style='float: right;'>" +// width='200'
             "<div class='inlineBlock rodPage again' id='pageAgo'>上一页</div>" +
             "<div class='inlineBlock page-list-box'>"+
             "<div class='page-list'>"+
@@ -667,7 +670,7 @@
             "<span class='inlineBlock' id='currentPage'>0</span>/<span class='inlineBlock' id='totalPage'>0</span>"+
             "</div>"+
             "<div class='inlineBlock rodPage after' id='pageAfter'>下一页</div>" +
-            "</td>" +
+            "</div></td>" +
             "</tr>" +
             "</tfoot>" +
             "</table>" +

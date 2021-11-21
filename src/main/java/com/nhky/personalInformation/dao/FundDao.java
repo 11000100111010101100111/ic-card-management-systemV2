@@ -23,16 +23,16 @@ public interface FundDao {
 
 
     //获取当前用户的账户余额记录
-    public List<UserBalanceLogVO> getBalanceLogs(@Param("off") Integer off,@Param("end") Integer end,@Param("uid") Long uid);
+    public List<UserBalanceLogVO> getBalanceLogs(@Param("off") Integer off, @Param("end") Integer end, @Param("uid") Long uid);
     public Integer getBalanceLogsTotal(@Param("uid") Long uid);
 
     //分页查询余额明细列表
     //index:第几页
     //items:每页多少条
-    public List<FundVO> getPageInfo(@Param("start") Integer start,@Param("end") Integer end,@Param("uid") String uid);
+    public List<FundVO> getPageInfo(@Param("start") Integer start, @Param("end") Integer end, @Param("uid") String uid);
     public Integer selectAllInfoCount(@Param("uid") String uid);
     //签到、充值
-    public Integer addBalance(@Param("uid") Long uid,@Param("money") String money);
+    public Integer addBalance(@Param("uid") Long uid, @Param("money") String money);
     //获取余额 =账户余额+卡余额
     public String getBalance(@Param("uid") Long uid);
     //获取账户余额

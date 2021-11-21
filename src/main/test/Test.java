@@ -1,3 +1,5 @@
+package main.test;
+
 /**
  * Created by IntelliJ IDEA.
  * User: 波罗的海

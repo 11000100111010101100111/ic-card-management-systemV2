@@ -45,7 +45,7 @@ public class AjaxAop {
 //    @Around("pointCut()")
     public Object trackInfo(ProceedingJoinPoint pjp) throws Throwable {
         //获取方法注解的值
-        int time = ( (AjaxConnect)AnnotationUtil.getMethodAnnotation(pjp,AjaxConnect.class) ).time();
+        int time = ( (AjaxConnect) AnnotationUtil.getMethodAnnotation(pjp,AjaxConnect.class) ).time();
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {

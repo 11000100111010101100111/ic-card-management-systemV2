@@ -28,7 +28,7 @@ public class LoginAndRegister {
     @Resource(name = "loginAndRegisterImpl")
     LoginAndRegisterService loginAndRegisterService;
     //去主页
-    @RequestMapping(value = "/home",method = {RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value = "/home")
     public String home(){
         LogUtil.info("--去登录");
         return "main";

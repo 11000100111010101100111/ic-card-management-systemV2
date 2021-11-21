@@ -14,5 +14,5 @@ import java.util.List;
 @Repository
 public interface PersoanlConsumeDao {
     public List<String> getConsumeTypes(@Param("uid") Long uid);
-    public List<String> getConsumeDataByConsumeType(@Param("uid") Long uid,@Param("consumeType") String consumeType);
+    public List<String> getConsumeDataByConsumeType(@Param("uid") Long uid, @Param("consumeType") String consumeType);
 }

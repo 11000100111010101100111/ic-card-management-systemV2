@@ -22,7 +22,7 @@ public interface LoginAndRegisterDao {
     public int registerLoginUser(EasyUser easyUser);
 
     //根据手机号后身份证号查询用户是否注册
-    public int hasUser(@Param("phone") String phone,@Param("identify_card") String identifyCard);
+    public int hasUser(@Param("phone") String phone, @Param("identify_card") String identifyCard);
 
     //注册用户信息
     public int registerUser(User user);

@@ -18,7 +18,7 @@ import java.util.List;
 @Repository
 public interface RouterNavigationDao {
     //在某个状态下，查询用户可访问路由集合（如：用户访问主页时，获取导航栏路由信息，此时路由状态就是主页，根据uid获取用户权限级别后查询可访问路由）
-    public List<Router> navigationList(@Param("uid") Long uid, @Param("router_type")String router_type);
+    public List<Router> navigationList(@Param("uid") Long uid, @Param("router_type") String router_type);
 
     //获取当前登录用户信息
     public User getUser(@Param("uid") Long uid);

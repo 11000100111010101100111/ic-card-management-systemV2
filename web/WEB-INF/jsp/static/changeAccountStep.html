@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更改账号类型流程步骤</title>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /*position: relative;*/
+            background-color: #a2aeb0;
+        }
+        .change-account{
+
+        }
+        .change-tip{
+            position: absolute;
+            width: 500px;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,50%);
+            height: 300px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 0 10px var(--sub_color);
+
+        }
+        .change-tip_animation{
+            width:500px;
+            height:300px;
+            top:50%;
+            opacity:1;
+            position: absolute;
+            -webkit-animation:show_change_tip 1s;
+            animation:show_change_tip 1s ;
+            animation-fill-mode: forwards;
+        }
+        @keyframes show_change_tip {
+            0%{
+                top:0;
+                left: 50%;
+                -webkit-transform:translateX(-50%) translateY(-100%) scale(.1);
+                transform:translateX(-50%) translateY(-100%) scale(.1);
+                opacity:.7;
+            }
+            80%{
+                top:50%;
+                left: 50%;
+                -webkit-transform:translateX(-50%) translateY(-50%) scale(.5);
+                transform:translateX(-50%) translateY(-50%) scale(.5);
+                opacity:.7;
+            }
+            to{
+                top:50%;
+                left: 50%;
+                -webkit-transform:translateX(-50%) translateY(-50%)  scale(1);
+                transform:translateX(-50%) translateY(-50%) scale(1);
+                opacity:1;
+            }
+        }
+
+        .change-tip::after{
+            content: '';
+            display: block;
+            position: fixed;
+            /*background-color: #04A78C;*/
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .change-tip *{
+            z-index: 2;
+
+        }
+        .chang_title{
+            position: absolute;
+            top:10px;
+            left: 10px;
+            padding: 3px 5px;
+            font-size: 16px;
+            color: var(--sub_color);
+            border-radius: 5px;
+            font-weight: 400;
+            border: 3px solid var(--sub_color);
+            background-color: #fff;
+        }
+
+        .node{
+            position: absolute;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--sub_color);
+            /*justify-items: center;*/
+            /*align-items: center;*/
+            z-index: 5;
+            animation-iteration-count: infinite ;
+            animation-duration: 1.5s;
+            -webkit-animation-timing-function:ease-in-out;
+            animation-timing-function:ease-in-out;
+
+        }
+        .node>span{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            background-color: var(--sub_color);
+            transform: translate(-50%,-50%);
+            width: 100px;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            font-width: 800;
+            /*width: auto;*/
+            text-align: center;
+            z-index: 10;
+            padding: 3px 5px;
+        }
+        .success,
+        .success>span{
+            background-color: #02ec7a;
+        }
+        .confuse,
+        .confuse>span{
+            background-color: #ec2749;
+        }
+        .line{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            display: inline-block;
+            width: 100px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: var(--sub_color);
+
+        }
+        .ap_ad{
+            width: 115px;
+            top:50%;
+            left:30%;
+            transform: translate(-50%,-50%);
+        }
+        .ad_su{
+            background-color: #02ec7a;
+            top: 40%;
+            left: 70%;
+            transform: translate(-58%,-50%) rotate(145deg);
+        }
+        .ad_co{
+            background: #ec2749;
+            top: 60%;
+            left: 65%;
+            transform: translate(-45%,-50%) rotate(35deg);
+        }
+        .co_ap{
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .approve{
+            top:50%;
+            left: 10%;
+            -webkit-animation-name:pulse_app;
+            animation-name:pulse_app;
+        }
+        @keyframes pulse_app{
+            0%{
+                -webkit-transform:translate(-10%,-50%) scaleX(1);
+                transform:translate(-10%,-50%) scaleX(1)
+            }
+            50%{
+                -webkit-transform:translate(-10%,-50%) scale3d(1.05,1.05,1.05);
+                transform:translate(-10%,-50%) scale3d(1.05,1.05,1.05)
+            }
+            to{
+                -webkit-transform:translate(-10%,-50%) scaleX(1);
+                transform:translate(-10%,-50%) scaleX(1)
+            }
+        }
+        .admin{
+            top:50%;
+            left: 50%;
+            -webkit-animation-name:pulse_adm;
+            animation-name:pulse_adm;
+        }
+        @keyframes pulse_adm{
+            0%{
+                -webkit-transform:translate(-50%,-50%) scaleX(1);
+                transform:translate(-50%,-50%) scaleX(1)
+            }
+            50%{
+                -webkit-transform:translate(-50%,-50%) scale3d(1.05,1.05,1.05);
+                transform:translate(-50%,-50%) scale3d(1.05,1.05,1.05)
+            }
+            to{
+                -webkit-transform:translate(-50%,-50%) scaleX(1);
+                transform:translate(-50%,-50%) scaleX(1)
+            }
+        }
+        .success{
+            top:25%;
+            left: 75%;
+            -webkit-animation-name:pulse_succ;
+            animation-name:pulse_succ;
+        }
+        @keyframes pulse_succ{
+            0%{
+                -webkit-transform:translate(-25%,-25%) scaleX(1);
+                transform:translate(-25%,-25%) scaleX(1)
+            }
+            50%{
+                -webkit-transform:translate(-25%,-25%) scale3d(1.05,1.05,1.05);
+                transform:translate(-25%,-25%) scale3d(1.05,1.05,1.05)
+            }
+            to{
+                -webkit-transform:translate(-25%,-25%) scaleX(1);
+                transform:translate(-25%,-25%) scaleX(1)
+            }
+        }
+        .confuse{
+            top:75%;
+            left: 75%;
+            -webkit-animation-name:pulse_con;
+            animation-name:pulse_con;
+        }
+        @keyframes pulse_con{
+            0%{
+                -webkit-transform:translate(-25%,-50%) scaleX(1);
+                transform:translate(-25%,-50%) scaleX(1)
+            }
+            50%{
+                -webkit-transform:translate(-25%,-50%) scale3d(1.05,1.05,1.05);
+                transform:translate(-25%,-50%) scale3d(1.05,1.05,1.05)
+            }
+            to{
+                -webkit-transform:translate(-25%,-50%) scaleX(1);
+                transform:translate(-25%,-50%) scaleX(1)
+            }
+        }
+
+        .sure_tip{
+            cursor: pointer;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 16px;
+            font-width: 400;
+            padding: 3px 5px;
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+            color: var(--sub_color);
+            border: 2px solid var(--sub_color);
+        }
+    </style>
+    <style>
+        .change-account{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 0;
+            height: 0;
+            border-radius: 10px;
+            background-color: var(--sub_color);
+            opacity: 0;
+        }
+        .bottom-btn{
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+        }
+
+        .app_btn{
+            width: 80px;
+            height: 30px;
+            color: var(--sub_color);
+            font-weight: 800;
+            font-size: 14px;
+            border-radius: 5px;
+            margin: 10px;
+            background-color: #fff;
+        }
+        .close_app{
+            color: #fff;
+            background-color: #c7254e;
+        }
+
+
+
+
+        .sure_change{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            /*width: 500px;*/
+            /*height: 400px;*/
+            width: 0;
+            height: 0;
+            border-radius: 5px;
+            background-color: var(--sub_color);
+            opacity: 0;
+        }
+
+
+        .my_approve{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            /*width: 500px;*/
+            /*height: 400px;*/
+            width: 0;
+            height: 0;
+            border-radius: 5px;
+            background-color: var(--sub_color);
+            opacity: 0;
+        }
+        .my_identify{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            /*width: 500px;*/
+            /*height: 400px;*/
+            width: 0;
+            height: 0;
+            border-radius: 5px;
+            background-color: var(--sub_color);
+            opacity: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="change-account">
+        <div>
+            <input type="button" class="app_btn" id="a">
+        </div>
+        <div class="bottom-btn">
+            <input type="button" value="我的申请" class="app_btn show_my_app account_menu">
+            <input type="button" value="已有身份" class="app_btn show_my_identify account_menu">
+            <input type="button" value="申请流程" class="app_btn show_app_tip account_menu">
+        </div>
+    </div>
+    <div class="change-tip change-tip_animation">
+        <span class="chang_title">账号变更申请流程</span>
+        <div class="node approve">
+            <span>提出申请</span>
+        </div>
+        <div class="node admin">
+            <span>管理员审核</span>
+        </div>
+        <div class="node success">
+            <span>成功通过</span>
+        </div>
+        <div class="node confuse">
+            <span>不予通过</span>
+        </div>
+        <span class="line ap_ad"></span>
+        <span class="line ad_su"></span>
+        <span class="line ad_co"></span>
+        <input class="sure_tip" type="button" value="我知道了">
+    </div>
+    <div class="sure_change">
+
+        <div class="bottom-btn">
+            <input type="button" value="关闭" class="app_btn close_app">
+            <input type="button" value="确认" class="app_btn sure_my_app">
+        </div>
+    </div>
+    <div class="my_approve">
+        <div class="bottom-btn">
+            <input type="button" value="关闭" class="app_btn close_app">
+        </div>
+    </div>
+    <div class="my_identify">
+        <div class="bottom-btn">
+            <input type="button" value="关闭" class="app_btn close_app">
+        </div>
+    </div>
+<script>
+    $("#a").click(function () {
+        $(".change-account").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".sure_change").animate({
+            opacity:'1',
+            width: '500px',
+            height: '400px'
+        },800);
+    });
+    $(".sure_tip").click(function () {
+        $(".change-tip").removeClass("change-tip_animation");
+        $(".change-tip").animate({
+            width:'0px',
+            height:'0px',
+            top:'-1000px',
+            opacity:'0'
+        },{duration:1000,complete:function () {
+                $(".change-tip").animate({
+                    width:'500px',
+                    height:'300px'
+                },1);
+            }});
+        $(".change-account").animate({
+            opacity:'1',
+            width: '80%',
+            height: '80%'
+        },800);
+    });
+    $(".show_app_tip").click(function () {
+        $(".change-account").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".change-tip").addClass("change-tip_animation");
+    });
+
+
+    $(".show_my_app").click(function () {
+        $(".change-account").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".my_approve").animate({
+            opacity:'1',
+            width: '500px',
+            height: '400px'
+        },800);
+    });
+
+
+    $(".show_my_identify").click(function () {
+        $(".change-account").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".my_identify").animate({
+            opacity:'1',
+            width: '500px',
+            height: '400px'
+        },800);
+    });
+
+
+    $(".close_app").click(function () {
+        $(this).parent("div").parent("div").animate({
+            opacity:'0',
+            width: '0',
+            height: '0'
+        },800);
+        $(".change-account").animate({
+            opacity:'1',
+            width: '80%',
+            height: '80%'
+        },800);
+    });
+</script>
+</body>
+</html>
