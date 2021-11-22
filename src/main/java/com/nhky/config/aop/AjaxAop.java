@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class AjaxAop {
 
-    //此切面插入到所有被AjaxConnect标记的方法，作用执行方法前等待一定时间，时间问注解值time
+//此切面插入到所有被AjaxConnect标记的方法，作用执行方法前等待一定时间，时间问注解值time
 //    @Pointcut("@target(com.nhky.annotation.AjaxConnect)")
 //    public void pointCut(){}
 

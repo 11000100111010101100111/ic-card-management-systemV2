@@ -626,6 +626,7 @@
 }
 #modify_head:hover{
     background-color: var(--sub_color);
+    box-shadow: 0 0 6px var(--sub_color);
     color: #fff;
 }
 

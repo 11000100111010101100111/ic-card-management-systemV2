@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhky.route.file.FileDao">
+    <!--
+ * Created by IntelliJ IDEA.
+ * User: 波罗的海
+ * Date: 2021/11/22
+ * Time: 9:25
+-->
+<!--    //上传文件信息-->
+<!--    public Integer uploadFile(FileVO fileVO);-->
+    <insert id="uploadFile" parameterType="com.nhky.pojo.FileVO"></insert>
+<!--    //获取文件信息-->
+<!--    public FileVO getFileById(Long fileId);-->
+    <select id="getFileById" parameterType="java.lang.Long" resultType="com.nhky.pojo.FileVO"></select>
+<!--    //删除文件信息-->
+<!--    public Integer delFile();-->
+    <update id="delFile" parameterType="java.lang.String">
+
+    </update>
+</mapper>
