@@ -1,6 +1,9 @@
 package com.nhky.route.file;
 
 import com.nhky.pojo.FileVO;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * Created by IntelliJ IDEA.
@@ -8,14 +11,18 @@ import com.nhky.pojo.FileVO;
  * Date: 2021/11/22
  * Time: 9:24
  **/
-public class FileServiceImpl implements FileDao {
+@Service("fileServiceImpl")
+public class FileServiceImpl implements FileService {
+    @Resource(name = "fileDao")
+    FileDao fileDao;
+
     @Override
-    public Integer uploadFile(FileVO fileVO) {
+    public Integer uploadFile() {
         return null;
     }
 
     @Override
-    public FileVO getFileById(Long fileId) {
+    public FileVO getFileById() {
         return null;
     }
 

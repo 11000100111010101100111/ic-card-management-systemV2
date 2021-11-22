@@ -6,25 +6,30 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- 加载systemInfo配置文件 -->
+<fmt:setBundle basename="args" var="global_args" />
+<!-- 读取配置值AppName，并赋值给变量appName -->
+<fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html lang="zh" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一键申卡</title>
-    <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
-    <script src="http://localhost:8080/nchkkjxy/staticRes/js/icCardCreate/modernizr-custom.js"></script>
-    <script src="http://localhost:8080/nchkkjxy/staticRes/js/icCardCreate/jquery-3.6.0.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/staticRes/css/icCardCreate/createCard.css">
+    <link rel="stylesheet" href="${global_url}font/iconfont.css">
+    <script src="${global_url}staticRes/js/icCardCreate/modernizr-custom.js"></script>
+    <script src="${global_url}staticRes/js/icCardCreate/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
+    <link rel="stylesheet" type="text/css" href="${global_url}staticRes/css/icCardCreate/createCard.css">
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myLayer.css">
-    <script src="http://localhost:8080/nchkkjxy/theame/js/myLayer.js"></script>
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/myLayer.css">
+    <script src="${global_url}theame/js/myLayer.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/waitting-layer.css">
-    <script src="http://localhost:8080/nchkkjxy/theame/js/waitting-layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/waitting-layer.css">
+    <script src="${global_url}theame/js/waitting-layer.js"></script>
     <style>
         .under-cir-panel{
             width: 0px;
@@ -180,42 +185,42 @@
         <h2 class="content__title">xjh</h2>
         <ul id="stack_mawar" class="stack stack--mawar">
             <li class="stack__item">
-                <img src="http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png" alt="Tree 8" />
+                <img src="${global_url}staticRes/icon/icCardCreate/nomal.png" alt="Tree 8" />
                 <span>普通卡</span>
                 <p>任何人都能申请！充多少用多少，开心使用每一天！</p>
                 <p>折扣：<font class="count" style="color: var(--sub_color);font-size: 14px;font-weight: 400;">1 </font>折起</p>
                 <p>使用限制&nbsp;&nbsp;<font style="color:crimson;font-size: 15px;">任何人</font></p>
             </li>
             <li class="stack__item">
-                <img src="http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/student.png" alt="Tree 2" />
+                <img src="${global_url}staticRes/icon/icCardCreate/student.png" alt="Tree 2" />
                 <span>学生卡</span>
                 <p>学生福利！祖国的花朵，家庭的未来，你们值得期待！</p>
                 <p>折扣：<font class="count" style="color: var(--sub_color);font-size: 14px;font-weight: 400;"> 0.6 </font>折起</p>
                 <p>使用限制&nbsp;&nbsp;<font style="color:crimson;font-size: 15px;">儿童、在校中小学生、大学生、研博生</font></p>
             </li>
             <li class="stack__item">
-                <img src="http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/军人卡.png" alt="Tree 4" />
+                <img src="${global_url}staticRes/icon/icCardCreate/军人卡.png" alt="Tree 4" />
                 <span>军人卡</span>
                 <p>从军国荣！军人优先！军人依法享受优惠政策！</p>
                 <p>折扣：<font class="count" style="color: var(--sub_color);font-size: 14px;font-weight: 400;">0.5 </font>折起</p>
                 <p>使用限制&nbsp;&nbsp;<font style="color:crimson;font-size: 15px;">参军及退伍在伍人员</font></p>
             </li>
             <li class="stack__item">
-                <img src="http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/残疾卡.png" alt="Tree 7" />
+                <img src="${global_url}staticRes/icon/icCardCreate/残疾卡.png" alt="Tree 7" />
                 <span>残疾卡</span>
                 <p>关爱弱势群体是我们每个人的社会责任！点点滴滴更暖心！</p>
                 <p>折扣：<font class="count" style="color: var(--sub_color);font-size: 14px;font-weight: 400;">0.6 </font>折起</p>
                 <p>使用限制&nbsp;&nbsp;<font style="color:crimson;font-size: 15px;">残疾人包括健康状况不佳的人</font></p>
             </li>
             <li class="stack__item">
-                <img src="http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/vip.png" alt="Tree 6" />
+                <img src="${global_url}staticRes/icon/icCardCreate/vip.png" alt="Tree 6" />
                 <span>VIP卡</span>
                 <p>Very Importent Personnel！您,是我们的上帝！</p>
                 <p>折扣：<font class="count" style="color: var(--sub_color);font-size: 14px;font-weight: 400;">0.8 </font>折起</p>
                 <p>使用限制&nbsp;&nbsp;<font style="color:crimson;font-size: 15px;">在平台办理了vip的客户</font></p>
             </li>
             <li class="stack__item">
-                <img src="http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/老人卡.png" alt="Tree 1" />
+                <img src="${global_url}staticRes/icon/icCardCreate/老人卡.png" alt="Tree 1" />
                 <span>老年卡</span>
                 <p>夕阳无限好，恰如当年青春时！</p>
                 <p>折扣：<font class="count" style="color: var(--sub_color);font-size: 14px;font-weight: 400;">0.6 </font>折起</p>
@@ -232,7 +237,7 @@
 <div class="under-cir-panel"></div>
 <div class="up-cir-panel"></div>
 <div class="bottom-cir-panel"></div>
-<script src="http://localhost:8080/nchkkjxy/staticRes/js/icCardCreate/classie.js"></script>
+<script src="${global_url}staticRes/js/icCardCreate/classie.js"></script>
 <script>
     // http://stackoverflow.com/a/11381730/989439
     function mobilecheck() {
@@ -275,11 +280,11 @@
         });
     })();
 </script>
-<%--<script src="http://localhost:8080/nchkkjxy/theame/js/dynamics.min.js"></script>--%>
+<%--<script src="${global_url}theame/js/dynamics.min.js"></script>--%>
 <%--<script src="http://localhost:8080/nchkkjxy/theame/js/createCard.js"></script>--%>
-<script src="http://localhost:8080/nchkkjxy/staticRes/js/icCardCreate/dynamics.min.js"></script>
+<script src="${global_url}staticRes/js/icCardCreate/dynamics.min.js"></script>
 
-<script src="http://localhost:8080/nchkkjxy/staticRes/js/icCardCreate/main.js"></script>
+<script src="${global_url}staticRes/js/icCardCreate/main.js"></script>
 <script>
 
     var card_index = 0;
@@ -435,27 +440,27 @@
                     my_layer.close();
 
                     if(data.single === "404"){
-                        layerUrl="http://localhost:8080/nchkkjxy/go/toLogin";
+                        layerUrl="${global_url}go/toLogin";
                         //session失效了
-                        showMessage_myLayer("登录过期，请在重新登录后申请！","http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/认证失败.png");
+                        showMessage_myLayer("登录过期，请在重新登录后申请！","${global_url}staticRes/icon/icCardCreate/认证失败.png");
                     }else if(data.single === "200"){
                         layerUrl="#";
                         // 不满足申请条件
-                        showMessage_myLayer(data.msg+"<br/><font style='color:var(--sub_color);'>现在去查看吗</font>？" ,"http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/已有数据.png");
+                        showMessage_myLayer(data.msg+"<br/><font style='color:var(--sub_color);'>现在去查看吗</font>？" ,"${global_url}staticRes/icon/icCardCreate/已有数据.png");
                     }else if(data.single == "500"){
                         layerUrl="#";
-                        showMessage_myLayer(data.msg,"http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/404页面丢失.png");
+                        showMessage_myLayer(data.msg,"${global_url}staticRes/icon/icCardCreate/404页面丢失.png");
                     }
                     else{
                         // 满足申请条件
-                        // showMessage_myLayer(msg,"http://localhost:8080/nchkkjxy/pic/login/"+(data.single === "succeed"?"注册成功":"404")+".png");
+                        // showMessage_myLayer(msg,"${global_url}pic/login/"+(data.single === "succeed"?"注册成功":"404")+".png");
                         sureThisCard();
                     }
                 },
                 error:function () {
                     my_layer.close();
                     layerUrl="#";
-                    showMessage_myLayer("网络断开了，连接异常！","http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/加载失败.png");
+                    showMessage_myLayer("网络断开了，连接异常！","${global_url}staticRes/icon/icCardCreate/加载失败.png");
                 }
             });
 
@@ -526,7 +531,7 @@
                 //获得http回复后终止等待动画
                 my_layer.close();
                 if(data.single === "200") {
-                    showMessage_myLayer("申请成功！是否前往我的主页查看？", "http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/已有数据.png");
+                    showMessage_myLayer("申请成功！是否前往我的主页查看？", "${global_url}staticRes/icon/icCardCreate/已有数据.png");
                 }else{
                     showMessage_myLayer("网络繁忙...");
                 }
@@ -534,7 +539,7 @@
             error:function () {
                 my_layer.close();
                 layerUrl="#";
-                showMessage_myLayer("网络断开了，连接异常！","http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/加载失败.png");
+                showMessage_myLayer("网络断开了，连接异常！","${global_url}staticRes/icon/icCardCreate/加载失败.png");
             }
         });
 

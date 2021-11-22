@@ -6,10 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- 加载systemInfo配置文件 -->
+<fmt:setBundle basename="args" var="global_args" />
+<!-- 读取配置值AppName，并赋值给变量appName -->
+<fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html>
     <head>
         <title>注册</title>
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+        <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
 <%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/inputCss.css">--%>
         <style>
             body{
@@ -223,7 +229,7 @@
                 height: 128px;
                 margin-top: 10px;
                 margin-left: 50px;
-                background: url('http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png') center no-repeat;
+                background: url('${global_url}pic/head_icon/defult_man.png') center no-repeat;
                 background-size: 100% 100%;
                 /*border-radius: 50%;*/
                 /*box-shadow: 0 1px 1px var(--sub_color);*/
@@ -497,7 +503,7 @@
 
 
         <div class="login-btn forbiden_txt" >
-            <a href="http://localhost:8080/nchkkjxy/navTo?url=toLogin">去登录</a>
+            <a href="${global_url}navTo?url=toLogin">去登录</a>
         </div>
         <div class="register-contain">
 
@@ -635,17 +641,17 @@
         </div>
         </div>
         </div>
-        <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
-        <script src="http://localhost:8080/nchkkjxy/theame/js/myLayer.js"></script>
-        <script src="http://localhost:8080/nchkkjxy/theame/js/waitting-layer.js"></script>
+        <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
+        <script src="${global_url}theame/js/myLayer.js"></script>
+        <script src="${global_url}theame/js/waitting-layer.js"></script>
 <%--        <script src="http://localhost:8080/nchkkjxy/theame/js/backJs.js"></script>--%>
         <script>
             // 切换头像
            $("#man").click(function () {
-                $(".pesonal-set .self-icon").css("background", "url('http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png') center no-repeat");
+                $(".pesonal-set .self-icon").css("background", "url('${global_url}pic/head_icon/defult_man.png') center no-repeat");
            });
             $("#woman").click(function () {
-                $(".pesonal-set .self-icon").css("background", "url('http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png') center no-repeat");
+                $(".pesonal-set .self-icon").css("background", "url('${global_url}pic/head_icon/defult_woman.png') center no-repeat");
             });
             <%--docume
            nt.getElementById("toLogin").onclick = function () {--%>
@@ -861,7 +867,7 @@
                 // console.log(data+"---"+sex);
                 let email = $("#email").val();
                 let single = $("#single").val();
-                let headImg = "http://localhost:8080/nchkkjxy/pic/head_icon/defult_"+(sex==="男"?"":"wo")+"man.png";
+                let headImg = "${global_url}pic/head_icon/defult_"+(sex==="男"?"":"wo")+"man.png";
 
                 let pwd = $("#upwd").val();
                 let pwd2 = $("#pwd-2").val();
@@ -921,7 +927,7 @@
             $("#submit").click(function () {
                 let result = judgeForm();
                 if(result.single !== -1){
-                    showMessage_myLayer(result.msg,"http://localhost:8080/nchkkjxy/pic/login/无数据.png");
+                    showMessage_myLayer(result.msg,"${global_url}pic/login/无数据.png");
                     routePanel(result.single);
                 }else {
                     // debugger;
@@ -962,10 +968,10 @@
 
                         let msg = data.val;
                         // debugger;
-                        showMessage_myLayer(msg,"http://localhost:8080/nchkkjxy/pic/login/"+(data.single === "succeed"?"注册成功":"404")+".png");
+                        showMessage_myLayer(msg,"${global_url}pic/login/"+(data.single === "succeed"?"注册成功":"404")+".png");
                     },
                     error:function () {
-                        showMessage_myLayer(msg,"http://localhost:8080/nchkkjxy/pic/login/404.png");
+                        showMessage_myLayer(msg,"${global_url}pic/login/404.png");
                     }
                 });
             }

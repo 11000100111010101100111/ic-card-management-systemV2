@@ -6,14 +6,20 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- 加载systemInfo配置文件 -->
+<fmt:setBundle basename="args" var="global_args" />
+<!-- 读取配置值AppName，并赋值给变量appName -->
+<fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html>
 <head>
     <title>文件模板</title>
     <meta charset="UTF-8">
-    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
-    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
-    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
-    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
+    <script src="${global_url}theame/js/baseJs.js"></script>
+    <link type="text/css" rel="stylesheet" href="${global_url}font/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="${global_url}theame/css/baseCss.css">
     <style>
         * {
             margin: 0;
@@ -112,7 +118,7 @@
             border-radius: 5px;
             transition: all var(--transform_slowily);
             cursor: pointer;
-            background-image: url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png');
+            background-image: url('${global_url}pic/main_page/file_add.png');
             background-size: 50% 50%;
             background-repeat: no-repeat;
             background-position: center;
@@ -172,7 +178,7 @@
         }
     </style>
 </head>
-<body style="padding: 10px"><form action="http://localhost:8080/nchkkjxy/file/upload" enctype="multipart/form-data" method="post">
+<body style="padding: 10px"><form action="${global_url}file/upload" enctype="multipart/form-data" method="post">
     <input type="file" name="file" id="file">
     <input type="submit"  value="下一步" name="" style="width:100px;height:30px;">
 </form>
@@ -252,17 +258,17 @@
         if(reg == 1){
             $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #16DC63");
             $(".file-temp .file-area .file-box ").css("border-color", "#16DC63");
-            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_succeed.png')");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_succeed.png')");
         }
         else if(reg == -1){
             $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px crimson");
             $(".file-temp .file-area .file-box ").css("border-color", "crimson");
-            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_error.png')");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_error.png')");
         }
         else if(reg == 0){
             $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #666");
             $(".file-temp .file-area .file-box ").css("border-color", "#666");
-            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png')");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_add.png')");
         }
     });
     var file_btn = $(".file-temp .file-area .file-box .upload-file");
@@ -271,7 +277,7 @@
         if( $(".file-temp .file-area .file-box .upload-file").val() !=  "" ) {
             $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #666");
             $(".file-temp .file-area .file-box ").css("border", "3px dashed #666");
-            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png')");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_add.png')");
         }
     });
     //上传事件
@@ -283,7 +289,7 @@
             let multipartFile = new FormData();
             multipartFile.append("file", file_btn[0].files[0])
             $.ajax({
-                url: "http://localhost:8080/nchkkjxy/file/upload",  //后台URL
+                url: "${global_url}file/upload",  //后台URL
                 type: "post",
                 data: multipartFile,
                 contentType: false,

@@ -6,16 +6,22 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- 加载systemInfo配置文件 -->
+<fmt:setBundle basename="args" var="global_args" />
+<!-- 读取配置值AppName，并赋值给变量appName -->
+<fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/mySelect.css">
-    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
-    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
+    <link rel="stylesheet" href="${global_url}font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/mySelect.css">
+    <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
+    <script src="${global_url}theame/js/baseJs.js"></script>
     <title>主页</title>
     <style>
         body{
@@ -75,7 +81,7 @@
             margin-right: 5px;
             border-radius: 50%;
             cursor: pointer;
-            background-image: url('http://localhost:8080/nchkkjxy/pic/login/no_login.png');
+            background-image: url('${global_url}pic/login/no_login.png');
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100% 100%;
@@ -240,7 +246,7 @@
             position: relative;
             width: 40%;
             height: 100%;
-            background: url('http://localhost:8080/nchkkjxy/pic/main_page/tuijian.jpg') center no-repeat;
+            background: url('${global_url}pic/main_page/tuijian.jpg') center no-repeat;
             background-size: 100% 100%;
             /* background-color: #666; */
         }
@@ -301,7 +307,7 @@
             width: 30%;
             height: 46%;
             /* background-color: yellowgreen; */
-            background: url('http://localhost:8080/nchkkjxy/pic/main_page/card.png') center no-repeat;
+            background: url('${global_url}pic/main_page/card.png') center no-repeat;
             background-size: 100% 100%;
         }
         .bottom-contain .box .ramdon-msg .tui-jian ul .bottom-li{
@@ -425,7 +431,7 @@
     // ];
     // mySelect.dataGruidAll(lis,data.data.titles,data.data.lists);
     $.ajax({
-        url:"http://localhost:8080/nchkkjxy/getNav",
+        url:"${global_url}getNav",
         method:"post",
         dataType:"json",
         data:{router_type:"主页"},
@@ -454,7 +460,7 @@
         }
     });
     $.ajax({
-        url:"http://localhost:8080/nchkkjxy/getLoginUser",
+        url:"${global_url}getLoginUser",
         method:"post",
         dataType:"json",
         data:{},

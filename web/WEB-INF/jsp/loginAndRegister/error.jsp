@@ -6,12 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- 加载systemInfo配置文件 -->
+<fmt:setBundle basename="args" var="global_args" />
+<!-- 读取配置值AppName，并赋值给变量appName -->
+<fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css"  href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <link rel="stylesheet" type="text/css"  href="${global_url}theame/css/baseCss.css">
     <title>${title}失败</title>
     <style>
         * {

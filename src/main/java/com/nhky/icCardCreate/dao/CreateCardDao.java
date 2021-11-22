@@ -19,5 +19,5 @@ public interface CreateCardDao {
     List<CardOfUser> getUsersCards(@Param("uid") Long uid);
 
     //创建卡
-    public Integer create(String cardType, Long uid);
+    public Integer create(@Param("cardType") String cardType, @Param("uid") Long uid);
 }

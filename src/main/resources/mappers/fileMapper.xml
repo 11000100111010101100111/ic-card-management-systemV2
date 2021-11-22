@@ -11,13 +11,17 @@
 -->
 <!--    //上传文件信息-->
 <!--    public Integer uploadFile(FileVO fileVO);-->
-    <insert id="uploadFile" parameterType="com.nhky.pojo.FileVO"></insert>
+    <insert id="uploadFile" parameterType="com.nhky.pojo.FileVO">
+        select * from ic_card_msg
+    </insert>
 <!--    //获取文件信息-->
 <!--    public FileVO getFileById(Long fileId);-->
-    <select id="getFileById" parameterType="java.lang.Long" resultType="com.nhky.pojo.FileVO"></select>
+    <select id="getFileById" parameterType="java.lang.Long" resultType="com.nhky.pojo.FileVO">
+        select * from ic_card_msg
+    </select>
 <!--    //删除文件信息-->
 <!--    public Integer delFile();-->
     <update id="delFile" parameterType="java.lang.String">
-
+        update ic_card_msg set `status` = 0
     </update>
 </mapper>

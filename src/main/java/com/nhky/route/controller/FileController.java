@@ -3,6 +3,7 @@ package com.nhky.route.controller;
 import com.alibaba.fastjson.JSON;
 import com.nhky.annotation.AjaxConnect;
 import com.nhky.annotation.NeedSecurity;
+import com.nhky.route.file.FileService;
 import com.nhky.utils.DateUtil;
 import com.nhky.utils.RequestUtil;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -27,6 +29,8 @@ import java.util.UUID;
 @RequestMapping("/file")
 public class FileController {
     private ServletContext servletContext;
+    @Resource(name = "fileServiceImpl")
+    FileService fileService;
 
     @RequestMapping("/upload")
     @ResponseBody

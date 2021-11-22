@@ -6,13 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- 加载systemInfo配置文件 -->
+<fmt:setBundle basename="args" var="global_args" />
+<!-- 读取配置值AppName，并赋值给变量appName -->
+<fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html>
 <head>
     <title>开发者团队</title>
-    <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
-    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
-    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
+    <link rel="stylesheet" href="${global_args}font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="${global_args}theame/css/baseCss.css">
+    <script src="${global_args}theame/js/jquery-3.6.0.js"></script>
+    <script src="${global_args}theame/js/baseJs.js"></script>
     <style>
         * {
             margin: 0;
@@ -341,7 +347,7 @@
         }
     }
     $.ajax({
-        url:"http://localhost:8080/nchkkjxy/getAuthors",
+        url:"${global_args}getAuthors",
         method:"post",
         dataType:"json",
         data:{},

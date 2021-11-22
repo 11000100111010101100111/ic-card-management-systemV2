@@ -1,13 +1,19 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- 加载systemInfo配置文件 -->
+<fmt:setBundle basename="args" var="global_args" />
+<!-- 读取配置值AppName，并赋值给变量appName -->
+<fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-    <link rel="icon shortcut" href="http://localhost:8080/nchkkjxy/theame/img/favicon.ico" type="img/x-icon">
-    <link rel="stylesheet" type="text/css" href="theame/css/ataticAll.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myLayer.css">
+    <link rel="icon shortcut" href="${global_url}theame/img/favicon.ico" type="img/x-icon">
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/ataticAll.css">
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/myLayer.css">
     <style>
         body{
             /* 主题色 */
@@ -880,8 +886,8 @@
     </div>
 </div>
 <%--<script href="${pageContext.request.contextPath}/theame/js/jquery-3.6.0.js"></script>--%>
-<script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
-<script src="http://localhost:8080/nchkkjxy/theame/js/myLayer.js"></script>
+<script src="${global_url}theame/js/jquery-3.6.0.js"></script>
+<script src="${global_url}theame/js/myLayer.js"></script>
 <%--清空输入框、忘记密码--%>
 <script>
     //重置

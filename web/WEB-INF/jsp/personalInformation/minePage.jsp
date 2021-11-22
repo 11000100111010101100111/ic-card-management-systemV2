@@ -6,17 +6,23 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- 加载systemInfo配置文件 -->
+<fmt:setBundle basename="args" var="global_args" />
+<!-- 读取配置值AppName，并赋值给变量appName -->
+<fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>我的主页</title>
-    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
-    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
-    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
-    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
+    <script src="${global_url}theame/js/baseJs.js"></script>
+    <link type="text/css" rel="stylesheet" href="${global_url}font/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="${global_url}theame/css/baseCss.css">
 <%--    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>--%>
-    <script src="http://localhost:8080/nchkkjxy/theame/js/echarts.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/theame/css/page-minePage.css">
+    <script src="${global_url}theame/js/echarts.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="${global_url}theame/css/page-minePage.css">
 </head>
 <body>
 <div class="mine-box">
@@ -415,7 +421,7 @@
         //new-msg-brithday:修改生日
         //new-msg-userType:用户类型（不可再此处修改）
         $.ajax({
-            url: "http://localhost:8080/nchkkjxy/personalInformation/get",
+            url: "${global_url}personalInformation/get",
             method: "post",
             dataType: "json",
             data:{},
@@ -652,7 +658,7 @@
     }
     //退出机返回主页
     function exitAndBackHome() {
-        window.location.replace("http://localhost:8080/nchkkjxy/");
+        window.location.replace("${global_url}");
     }
 </script>
 <!--sub-1我的信息-->
@@ -673,7 +679,7 @@
     function sureModify() {
         // console.log($(document.getElementsByName('new-sex')).val());
             $.ajax({
-                url:"http://localhost:8080/nchkkjxy/personalInformation/update",
+                url:"${global_url}personalInformation/update",
                 method:"post",
                 dataType:"json",
                 data:{
@@ -769,17 +775,17 @@
         if(reg == 1){
             $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #16DC63");
             $(".file-temp .file-area .file-box ").css("border-color", "#16DC63");
-            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_succeed.png')");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_succeed.png')");
         }
         else if(reg == -1){
             $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px crimson");
             $(".file-temp .file-area .file-box ").css("border-color", "crimson");
-            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_error.png')");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_error.png')");
         }
         else if(reg == 0){
             $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #666");
             $(".file-temp .file-area .file-box ").css("border-color", "#666");
-            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png')");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_add.png')");
         }
     });
     var file_btn = $(".file-temp .file-area .file-box .upload-file");
@@ -788,7 +794,7 @@
         if( $(".file-temp .file-area .file-box .upload-file").val() !=  "" ) {
             $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #666");
             $(".file-temp .file-area .file-box ").css("border", "3px dashed #666");
-            $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png')");
+            $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_add.png')");
         }
     });
     //上传事件
@@ -800,7 +806,7 @@
             let multipartFile = new FormData();
             multipartFile.append("file", file_btn[0].files[0])
             $.ajax({
-                url: "http://localhost:8080/nchkkjxy/file/upload",  //后台URL
+                url: "${global_url}file/upload",  //后台URL
                 type: "post",
                 data: multipartFile,
                 contentType: false,
@@ -822,7 +828,7 @@
                     // $('.sub-1 .file-temp').css('display','none');
                     $(".file-temp .file-area .file-box ").css("box-shadow", "0 0 8px #666");
                     $(".file-temp .file-area .file-box ").css("border", "3px dashed #666");
-                    $(".file-temp .file-area .file-box ").css("background-image", "url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png')");
+                    $(".file-temp .file-area .file-box ").css("background-image", "url('${global_url}pic/main_page/file_add.png')");
                 },
                 error:function () {
                     loading_cir.loaded('body');
@@ -906,7 +912,7 @@
         //     money_now+"</td><td align='center'>" +
         //     (new Date()).Format() +"</td></tr>");
         $.ajax({
-            url: "http://localhost:8080/nchkkjxy/balance/daily",
+            url: "${global_url}balance/daily",
             method: "post",
             dataType: "json",
             data:{},
@@ -956,7 +962,7 @@
     //获取余额
     function getBalance() {
         $.ajax({
-            url: "http://localhost:8080/nchkkjxy/balance/getBalance",
+            url: "${global_url}balance/getBalance",
             method: "post",
             dataType: "json",
             data:{},
@@ -979,7 +985,7 @@
     var uid = window.localStorage.getItem("userId");
     var sub2_gridData = {
         ajac: {
-            url: "http://localhost:8080/nchkkjxy/balance/page",//请求地址
+            url: "${global_url}balance/page",//请求地址
             method: "post",//请求方法
             data: {
                 uid:uid
@@ -1015,7 +1021,7 @@
 <script>
     var sub3_gridData = {
         ajac: {
-            url: "http://localhost:8080/nchkkjxy/balance/page",//请求地址
+            url: "${global_url}balance/page",//请求地址
             method: "post",//请求方法
             data: {
                 uid:uid
@@ -1078,7 +1084,7 @@
         var myChart = echarts.init(document.querySelector(".sub-4 .my-chart"),'wonderland.project');
         // myChart.showLoading();  // 开启 loading 效果
         $.ajax({
-         url:"http://localhost:8080/nchkkjxy/test/eChartValue",
+         url:"${global_url}test/eChartValue",
          dataType:"json",
          method:"post",
         beforeSend:function () {
@@ -1163,7 +1169,7 @@
 <script>
     var sub5_gridData = {
         ajac: {
-            url: "http://localhost:8080/nchkkjxy/balance/page",//请求地址
+            url: "${global_url}balance/page",//请求地址
             method: "post",//请求方法
             data: {
                 uid:uid
@@ -1197,7 +1203,7 @@
 <script>
     var sub6_gridData = {
         ajac: {
-            url: "http://localhost:8080/nchkkjxy/balance/page",//请求地址
+            url: "${global_url}balance/page",//请求地址
             method: "post",//请求方法
             data: {
                 uid:uid

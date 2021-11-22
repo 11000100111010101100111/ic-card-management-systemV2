@@ -15,4 +15,5 @@
     <select id="getUsersCards" parameterType="java.lang.String" resultType="com.nhky.pojo.CardOfUser">
         select `id`,card_id,user_id,`status` from ic_card_msg where user_id =  #{uid} 
     </select>
+    <insert id="create"></insert>
 </mapper>
