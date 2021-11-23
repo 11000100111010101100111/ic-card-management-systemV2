@@ -74,6 +74,7 @@
             float: right;
         }
         .top-contain .top .right .head-img{
+            position: absolute;
             width: 50px;
             height: 50px;
             background-color: var(--sub_color);
@@ -88,8 +89,8 @@
             border: 2px solid #fff;
         }
         .top-contain .top .right .head-img:hover{
-            transform: translateY(5px) translateZ(5px) scale(1.1);
-            transition: all var(--transform_slowily);
+            /*transform: translateY(5px) translateZ(5px) scale(1.1);*/
+            /*transition: all var(--transform_slowily);*/
         }
 
         .top-contain .bottom{
@@ -430,6 +431,8 @@
     //     ]
     // ];
     // mySelect.dataGruidAll(lis,data.data.titles,data.data.lists);
+    
+
     $.ajax({
         url:"${global_url}getNav",
         method:"post",
@@ -465,18 +468,34 @@
         dataType:"json",
         data:{},
         success:function (data) {
-            if(data.succeed  != true){
-                $(".top-contain .top .right .head-img").attr("title",data.msg);
-            }else {
-                $(".top-contain .top .right .head-img").attr("title","");
-            }
             $(".top-contain .top .right .head-img").css("background-image","url('"+data.data.head_url+"')");
+
+            user_name = data.data.name;
+            console.log(user_name+"=="+data.data.name)
             // background: url('http://localhost:8080/nchkkjxy/pic/login/no_login.png') center no-repeat;
         },error:function () {
             $(".top-contain .top .right .head-img").prop("title","没有登录信息");
             my_tip.tip("获取登录信息失败，网络瘫痪...",1,"body",[{cssName:"opacity",cssValue:"1"}]);
         }
     });
+
+    $(".top-contain .top .right .head-img").click(function () {
+       location.href = "${global_url}navTo?url=home/mine/info";
+    });
+
+    var user_name = "";
+    $(".top-contain .top .right .head-img").hover(function () {
+        console.log(user_name)
+        if(typeof (user_name) !='undefined' && user_name != ""){
+            elemTitle.title($(this),"你好,"+user_name+"!");
+        }else{
+            elemTitle.title($(this),"暂未登录!");
+        }
+    });
+
+    $(".top-contain .top .right .head-img").mouseleave(function () {
+        elemTitle.remove($(this));
+    })
 </script>
 <div class="bottom-contain">
     <div class="box">

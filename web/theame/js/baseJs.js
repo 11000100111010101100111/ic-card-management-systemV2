@@ -908,3 +908,29 @@ var elemUtil = {
     }
 };
 
+//dom结点提示文本==============================================================================
+var elemTitle={
+    title: function(element,tip){
+        $(element).append("<div class='elem-title'>"+tip+"</div>");
+        $(element).find('.elem-title').animate({
+            // width:'200%',
+            height: '20px',
+            padding: '5px 10px',
+            color:'#aaa'
+        },500);
+    },
+    remove: function(element){
+        if(typeof ($(element).find('.elem-title')) != "undefined"){
+            $(element).find('.elem-title').animate({
+                // width: 0,
+                height:0,
+                padding: '0 10px',
+                color:'rgba(0,0,0,0)'
+            },{duration:400,complete:function () {
+                    $($(element).find('.elem-title')).remove();
+                }});
+        }else{
+
+        }
+    }
+};

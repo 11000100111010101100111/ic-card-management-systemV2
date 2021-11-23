@@ -37,7 +37,7 @@ public class NavigationServiceImpl implements NavigationService {
                 pageName = "/icCardCreate/createCard";
                 break;//IC卡申领
             case "home/businessProcess/looseIc":
-                pageName = "/icCardLogout/looseIc";
+                pageName = "/icCardLoss/looseIc";
                 break;//IC卡挂失
             case "home/businessProcess/logoutIc":
                 pageName = "/icCardLogout/logoutIc";
