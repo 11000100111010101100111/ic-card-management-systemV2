@@ -14,6 +14,9 @@
 <fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>开发者团队</title>
     <link rel="stylesheet" href="${global_url}font/iconfont.css">
     <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
@@ -347,7 +350,7 @@
         }
     }
     $.ajax({
-        url:"${global_args}getAuthors",
+        url:"${global_url}getAuthors",
         method:"post",
         dataType:"json",
         data:{},
