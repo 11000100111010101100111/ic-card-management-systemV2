@@ -15,10 +15,10 @@
 <html>
 <head>
     <title>开发者团队</title>
-    <link rel="stylesheet" href="${global_args}font/iconfont.css">
-    <link rel="stylesheet" type="text/css" href="${global_args}theame/css/baseCss.css">
-    <script src="${global_args}theame/js/jquery-3.6.0.js"></script>
-    <script src="${global_args}theame/js/baseJs.js"></script>
+    <link rel="stylesheet" href="${global_url}font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
+    <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
+    <script src="${global_url}theame/js/baseJs.js"></script>
     <style>
         * {
             margin: 0;

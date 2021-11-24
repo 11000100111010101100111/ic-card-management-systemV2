@@ -29,7 +29,13 @@
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <mvc:default-servlet-handler/>
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven >
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8" />
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 <!--    <mvc:resources mapping="/create-card-css/" location="/staticRes/css/icCardCreate/**"/>-->
 <!--    <mvc:resources mapping="/create-card-icon/" location="/staticRes/icon/icCardCreate/**"/>-->
 <!--    <mvc:resources mapping="/create-card-js/" location="/staticRes/js/icCardCreate/**"/>-->

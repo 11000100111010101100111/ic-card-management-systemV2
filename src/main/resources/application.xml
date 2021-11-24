@@ -18,6 +18,19 @@
 <!--    <context:component-scan base-package="com.nhky">-->
 <!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
 <!--    </context:component-scan>-->
+    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:args.properties</value>
+                <value>classpath*:log4j.properties</value>
+                <value>classpath:bdConfig.properties</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="properties" ref="configProperties" />
+    </bean>
+
     <context:component-scan base-package="com.nhky.icCardCreate"/>
     <context:component-scan base-package="com.nhky.icCardConsume"/>
     <context:component-scan base-package="com.nhky.icCardLoss"/>
@@ -31,13 +44,13 @@
 
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/java_iccard_db?serverTimezone=UTC&amp;useSSL=true&amp;characterEncoding=utf-8"/>
-        <property name="username" value="root"/>
-        <property name="password" value="123456"/>
-        <property name="initialSize" value="10"/>
-        <property name="maxActive" value="20"/>
-        <property name="maxWait" value="60000"/>
+        <property name="driverClassName" value="${db.driverClassName}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="initialSize" value="${db.initialSize}"/>
+        <property name="maxActive" value="${db.maxActive}"/>
+        <property name="maxWait" value="${db.maxWait}"/>
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -65,5 +78,10 @@
         <property name="maxInMemorySize" value="10240"/><!-- 最大内存 10M -->
 <!--        <property name="uploadTempDir" value="/file/" />&lt;!&ndash; 上传的文件名字 &ndash;&gt;-->
         <property name="maxUploadSize" value="-1" /><!-- 最大文件，-1不限制 -->
+    </bean>
+
+
+    <bean id="fileClient" name="fileClient" class="java.lang.String" >
+        <constructor-arg index="0" value="${file_service}" type="java.lang.String"/>
     </bean>
 </beans>

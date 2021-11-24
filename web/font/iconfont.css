@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2893479 */
-  src: url('iconfont.woff2?t=1637385594311') format('woff2'),
-       url('iconfont.woff?t=1637385594311') format('woff'),
-       url('iconfont.ttf?t=1637385594311') format('truetype');
+  src: url('iconfont.woff2?t=1637731249946') format('woff2'),
+       url('iconfont.woff?t=1637731249946') format('woff'),
+       url('iconfont.ttf?t=1637731249946') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,46 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Upxiangshang22:before {
+  content: "\e6df";
+}
+
+.icon-xiangshang:before {
+  content: "\e694";
+}
+
+.icon-bangzhu:before {
+  content: "\fda9";
+}
+
+.icon-zichan:before {
+  content: "\fdbf";
+}
+
+.icon-jiaoyi:before {
+  content: "\fdc0";
+}
+
+.icon-gonglve:before {
+  content: "\fdc9";
+}
+
+.icon-tongji:before {
+  content: "\fe1a";
+}
+
+.icon-tixian:before {
+  content: "\fe22";
+}
+
+.icon-shenghuo1:before {
+  content: "\fef8";
+}
+
+.icon-xiugai:before {
+  content: "\e640";
 }
 
 .icon-hangkonghangtian-aerospace-taiyangxi-s:before {

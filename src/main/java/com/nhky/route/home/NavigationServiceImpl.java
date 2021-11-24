@@ -66,7 +66,7 @@ public class NavigationServiceImpl implements NavigationService {
                 pageName = "/system/authors";
                 break;//开发者
             case "home/system/ligel":
-                pageName = "law";
+                pageName = "/system/law";
                 break;//法律
             //...
             default:

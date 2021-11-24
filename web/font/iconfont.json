@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "14930145",
+      "name": "Up向上 (22)",
+      "font_class": "Upxiangshang22",
+      "unicode": "e6df",
+      "unicode_decimal": 59103
+    },
+    {
+      "icon_id": "18839646",
+      "name": "向上",
+      "font_class": "xiangshang",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "25670231",
+      "name": "帮助",
+      "font_class": "bangzhu",
+      "unicode": "fda9",
+      "unicode_decimal": 64937
+    },
+    {
+      "icon_id": "25670351",
+      "name": "资产",
+      "font_class": "zichan",
+      "unicode": "fdbf",
+      "unicode_decimal": 64959
+    },
+    {
+      "icon_id": "25670360",
+      "name": "交易",
+      "font_class": "jiaoyi",
+      "unicode": "fdc0",
+      "unicode_decimal": 64960
+    },
+    {
+      "icon_id": "25670383",
+      "name": "攻略",
+      "font_class": "gonglve",
+      "unicode": "fdc9",
+      "unicode_decimal": 64969
+    },
+    {
+      "icon_id": "25671408",
+      "name": "统计",
+      "font_class": "tongji",
+      "unicode": "fe1a",
+      "unicode_decimal": 65050
+    },
+    {
+      "icon_id": "25671442",
+      "name": "提现",
+      "font_class": "tixian",
+      "unicode": "fe22",
+      "unicode_decimal": 65058
+    },
+    {
+      "icon_id": "25672513",
+      "name": "生活",
+      "font_class": "shenghuo1",
+      "unicode": "fef8",
+      "unicode_decimal": 65272
+    },
+    {
+      "icon_id": "11121493",
+      "name": "修改",
+      "font_class": "xiugai",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
       "icon_id": "5278055",
       "name": "航空航天-aerospace-太阳系-s",
       "font_class": "hangkonghangtian-aerospace-taiyangxi-s",

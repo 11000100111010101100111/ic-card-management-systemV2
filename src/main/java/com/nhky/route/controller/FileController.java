@@ -6,6 +6,8 @@ import com.nhky.annotation.NeedSecurity;
 import com.nhky.route.file.FileService;
 import com.nhky.utils.DateUtil;
 import com.nhky.utils.RequestUtil;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.*;
@@ -27,17 +29,22 @@ import java.util.UUID;
  **/
 @Controller
 @RequestMapping("/file")
+@PropertySource("classpath:args.properties")
 public class FileController {
     private ServletContext servletContext;
     @Resource(name = "fileServiceImpl")
     FileService fileService;
+
+    @Resource(name = "fileClient")
+    public String fileClient ;
 
     @RequestMapping("/upload")
     @ResponseBody
     @NeedSecurity
     public String uploadFile(@RequestParam("file") MultipartFile uploadFile) throws IOException {
 
-        StringBuffer HTTP_PATH = new StringBuffer("http://localhost:8080/nchkkjxy");
+
+        StringBuffer HTTP_PATH = new StringBuffer(fileClient);
 
         //获取上传文件的文件名字
         String fileName = uploadFile.getOriginalFilename();
