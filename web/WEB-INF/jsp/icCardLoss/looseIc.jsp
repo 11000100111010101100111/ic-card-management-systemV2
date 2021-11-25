@@ -470,6 +470,37 @@
         .loss-msg .loss-operator-panel .loss-approve-panel{
             /*background-color: #a2aeb0;*/
         }
+        .loss-msg .loss-operator-panel .loss-approve-panel .loss-approve-msg{
+            width: 100%;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--sub_color);
+        }
+        .loss-msg .loss-operator-panel .loss-approve-panel .loss-approve-msg .loss-card{
+            width: 80px;
+            height: 30px;
+            background-color: var(--sub_color);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 400;
+            transition: all var(--transform_slowily);
+            cursor: pointer;
+        }
+        .loss-msg .loss-operator-panel .loss-approve-panel .loss-approve-msg .loss-card:hover{
+            color: var(--sub_color);
+            background-color: #fff;
+        }
+        .loss-msg .loss-operator-panel .loss-approve-panel .loss-approve-msg .loss-card-tip{
+            color: crimson;
+            background-color: #fff;
+            font-weight: 800;
+            font-size: 14px;
+            border-radius: 50%;
+            cursor: help;
+        }
+        .loss-msg .loss-operator-panel .loss-approve-panel .loss-approve-msg td{
+            padding-top: 10px;
+        }
         .loss-msg .loss-operator-panel .loss-ing-panel{
             /*background-color: #c7254e;*/
         }
@@ -477,9 +508,26 @@
             /*background-color: #4e65c7;*/
         }
         .loss-msg .loss-operator-panel .loss-tip-panel{
-            /*background-color: #4c8596;*/
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
-
+        .loss-msg .loss-operator-panel .loss-tip-panel ul{
+            position: absolute;
+            width: fit-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            list-style-type: none;
+        }
+        .loss-msg .loss-operator-panel .loss-tip-panel ul li{
+            border-left: 5px solid var(--sub_color);
+            font-size: 16px;
+            color: var(--sub_color);
+            font-weight: bold;
+            margin-top: 10px;
+            padding-left:5px;
+        }
         .loss-msg .loss-global{
             position: absolute;
             top: 100%;
@@ -511,6 +559,7 @@
             /*border-bottom: 2px solid var(--sub_color);*/
             box-shadow: 0 0px 5px var(--sub_color);
         }
+
     </style>
 </head>
 <body>
@@ -564,7 +613,40 @@
         <div class="loss-operator-panel">
             <!--申请挂失-->
             <div class="loss-approve-panel">
-
+                <table class="loss-approve-msg">
+                    <tfoot>
+                        <tr>
+                            <td align="center">
+                                <input type="button" value="一键挂失" class="inline_block loss-card">
+                                <span class="iconfont inline_block loss-card-tip icon-wenhao"></span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td align="center">
+                                <img src="${global_url}staticRes/icon/icCardCreate/nomal.png" style="position: inherit;margin-bottom:10px;opacity:1 !important;width: 200px;height: 100px;background-color: #4e65c7;border-radius: 5px;z-index: 5;">
+                        </tr>
+                        <tr>
+                            <td align="center">肖家海</td>
+                        </tr>
+                        <tr>
+                            <td align="center">11111</td>
+                        </tr>
+                        <tr>
+                            <td align="center">普通卡</td>
+                        </tr>
+                        <tr>
+                            <td align="center">余额：222.22￥</td>
+                        </tr>
+                        <tr>
+                            <td align="center">正在使用</td>
+                        </tr>
+                        <tr>
+                            <td align="center">已使用2个月</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <!--查看正在挂失流程中的挂失信息-->
             <div class="loss-ing-panel">
@@ -576,7 +658,13 @@
             </div>
             <!--查看挂失流程须知-->
             <div class="loss-tip-panel">
-
+                <ul>
+                    <li style="border-left: 5px solid #4e65c7;font-size: 20px;margin-bottom:30px;font-weight: 800;color: #c7254e;">挂失须知<font class="iconfont icon-gantanhao"></font></li>
+                    <li>你在线申请挂失，填写挂失信息（需保证<font style="color: #c7254e;border: 1px solid #c7254e;border-radius: 1px;">邮箱</font>正常使用）</li>
+                    <li>管理员收到你的申请后处理</li>
+                    <li>挂失<font style="color: #2f9833;border: 1px solid #2f9833;border-radius: 1px;">成功</font>，卡内余额自动转入你的账户余额，并以邮件形式通知你</li>
+                    <li>挂失<font style="color: #c7254e;border: 1px solid #c7254e;border-radius: 1px;">失败</font>，卡内余额不变，卡继续使用，并以邮件形式通知你</li>
+                </ul>
             </div>
         </div>
 
@@ -603,6 +691,40 @@
         </div>
     </div>
 <script>
+
+
+    $(".loss-global .loss-global-nav .to-home *").click(function () {
+        window.open("${global_url}");
+    });
+
+    // $(".loss-global .loss-global-nav .to-home ").hover(function () {
+    //     elemTitle.title($(this),"主页");
+    // });
+    // $(".loss-global .loss-global-nav .to-home ").mouseleave(function () {
+    //     elemTitle.remove($(this));
+    // });
+
+    $(".loss-global .loss-global-nav .to-my-page *").click(function () {
+        window.open("${global_url}navTo?url=home/mine/info");
+    });
+    // $(".loss-global .loss-global-nav .to-my-page ").hover(function () {
+    //     elemTitle.title($(this),"个人信息");
+    // });
+    // $(".loss-global .loss-global-nav .to-my-page ").mouseleave(function () {
+    //     elemTitle.remove($(this));
+    // });
+
+    $(".loss-global .loss-global-nav .to-help *").click(function () {
+        window.open("${global_url}navTo?url=home/system/useBook");
+    });
+    // $(".loss-global .loss-global-nav .to-help ").hover(function () {
+    //     elemTitle.title($(this),"帮助");
+    // });
+    // $(".loss-global .loss-global-nav .to-help ").mouseleave(function () {
+    //     elemTitle.remove($(this));
+    // });
+
+
     $("#quick-loss").click(function () {
         $(".loss-msg").animate({top:'50%',opacity:1},800);
     });
@@ -625,6 +747,9 @@
         }
     });
 
+    $(".loss-msg .loss-operator-panel .loss-approve-panel .loss-approve-msg .loss-card-tip").click(function () {
+        $(".loss-msg .loss-operator .loss-nav .loss-tip").click();
+    });
 
     function open_panel(panelNode) {
         if(typeof (panelNode) !="undefined" && panelNode !=""){
@@ -636,6 +761,19 @@
             $(panelNode).animate({opacity:0,'z-index':1},200);
         }
     }
+
+
+    cssMap = [{cssName:"width",cssValue:'100px'},
+        {cssName:"background-color",cssValue:'var(--sub_color)'},
+        {cssName:"color",cssValue:'#fff'}];
+    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-approve"),"挂失申请",cssMap);
+    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-ing"),"挂失状态",cssMap);
+    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-recording"),"挂失记录",cssMap);
+    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-tip"),"挂失流程",cssMap);
+
+    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-home"),"主页",[{cssName:"width",cssValue:'50px'}]);
+    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-my-page"),"个人信息",[{cssName:"width",cssValue:'100px'}]);
+    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-help"),"帮助",[{cssName:"width",cssValue:'50px'}]);
 </script>
 </body>
 </html>

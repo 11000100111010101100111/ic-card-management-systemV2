@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "25780233",
+      "name": "感叹号",
+      "font_class": "gantanhao",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "1643521",
+      "name": "个人中心_班主老师",
+      "font_class": "gerenzhongxin_banzhulaoshi",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
       "icon_id": "14930145",
       "name": "Up向上 (22)",
       "font_class": "Upxiangshang22",

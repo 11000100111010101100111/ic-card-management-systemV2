@@ -909,28 +909,41 @@ var elemUtil = {
 };
 
 //dom结点提示文本==============================================================================
-var elemTitle={
-    title: function(element,tip){
-        $(element).append("<div class='elem-title'>"+tip+"</div>");
-        $(element).find('.elem-title').animate({
-            // width:'200%',
-            height: '20px',
-            padding: '5px 10px',
-            color:'#aaa'
-        },500);
-    },
-    remove: function(element){
-        if(typeof ($(element).find('.elem-title')) != "undefined"){
-            $(element).find('.elem-title').animate({
-                // width: 0,
-                height:0,
-                padding: '0 10px',
-                color:'rgba(0,0,0,0)'
-            },{duration:400,complete:function () {
-                    $($(element).find('.elem-title')).remove();
-                }});
-        }else{
+var elemTitle = {
+    cssMap:{cssName:"",cssValue:""},
+    gridTitle:function e(elemNode,titleTxt,cssMap){
+        $(elemNode).hover(function f() {
+            if(  $($(elemNode).find('.elem-title')).length >0){
+                $($(elemNode).find('.elem-title')).remove();
+            }
+            $(elemNode).append("<div class='elem-title'>"+titleTxt+"</div>");
+            if(typeof (cssMap) != "undefined" && cssMap != "" && cssMap.length >0){
+                for (let cssMapIndex = 0;cssMapIndex <cssMap.length;cssMapIndex++) {
+                    $($(elemNode).find('.elem-title')).css(cssMap[cssMapIndex].cssName , cssMap[cssMapIndex].cssValue );
+                }
+            }
+            $($(elemNode).find('.elem-title::after')).css("background-color" , $($(elemNode).find('.elem-title')).css("background-color") );
 
-        }
-    }
-};
+            $($(elemNode).find('.elem-title')).animate({
+                // width:'200%',
+                height: '20px',
+                padding: '5px 10px',
+                color:'#aaa'
+            },400);
+        });
+        $(elemNode).mouseleave(function s() {
+            if(typeof ($(elemNode).find('.elem-title')) != "undefined"){
+                $($(elemNode).find('.elem-title')).animate({
+                    // width: 0,
+                    height:0,
+                    padding: '0 10px',
+                    color:'rgba(0,0,0,0)'
+                },{duration:200,complete:function () {
+                        $($(elemNode).find('.elem-title')).remove();
+                    }});
+            }else{
+
+            }
+        });
+    },
+}
