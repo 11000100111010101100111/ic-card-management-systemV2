@@ -922,8 +922,6 @@ var elemTitle = {
                     $($(elemNode).find('.elem-title')).css(cssMap[cssMapIndex].cssName , cssMap[cssMapIndex].cssValue );
                 }
             }
-            $($(elemNode).find('.elem-title::after')).css("background-color" , $($(elemNode).find('.elem-title')).css("background-color") );
-
             $($(elemNode).find('.elem-title')).animate({
                 // width:'200%',
                 height: '20px',
@@ -934,11 +932,11 @@ var elemTitle = {
         $(elemNode).mouseleave(function s() {
             if(typeof ($(elemNode).find('.elem-title')) != "undefined"){
                 $($(elemNode).find('.elem-title')).animate({
-                    // width: 0,
+                    width: 0,
                     height:0,
-                    padding: '0 10px',
+                    padding: '0',
                     color:'rgba(0,0,0,0)'
-                },{duration:200,complete:function () {
+                },{duration:100,complete:function () {
                         $($(elemNode).find('.elem-title')).remove();
                     }});
             }else{
@@ -946,4 +944,4 @@ var elemTitle = {
             }
         });
     },
-}
+};

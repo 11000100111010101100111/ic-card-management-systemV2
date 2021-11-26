@@ -762,18 +762,25 @@
         }
     }
 
+    //获取挂失信息
+    function getLossMsg(){
+
+        $.ajax({
+
+        });
+    }
 
     cssMap = [{cssName:"width",cssValue:'100px'},
         {cssName:"background-color",cssValue:'var(--sub_color)'},
         {cssName:"color",cssValue:'#fff'}];
-    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-approve"),"挂失申请",cssMap);
-    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-ing"),"挂失状态",cssMap);
+    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-approve"),  "挂失申请",cssMap);
+    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-ing"),      "挂失状态",cssMap);
     elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-recording"),"挂失记录",cssMap);
-    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-tip"),"挂失流程",cssMap);
+    elemTitle.gridTitle($(".loss-msg .loss-operator .loss-nav .loss-tip"),      "挂失流程",cssMap);
 
-    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-home"),"主页",[{cssName:"width",cssValue:'50px'}]);
-    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-my-page"),"个人信息",[{cssName:"width",cssValue:'100px'}]);
-    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-help"),"帮助",[{cssName:"width",cssValue:'50px'}]);
+    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-home"),   "主页",     [{cssName:"width",cssValue:'50px'}]);
+    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-my-page"),"个人信息", [{cssName:"width",cssValue:'100px'}]);
+    elemTitle.gridTitle($(".loss-global .loss-global-nav .to-help"),   "帮助",     [{cssName:"width",cssValue:'50px'}]);
 </script>
 </body>
 </html>

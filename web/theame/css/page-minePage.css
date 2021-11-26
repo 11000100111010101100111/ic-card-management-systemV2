@@ -64,12 +64,23 @@
     outline: none;
     text-decoration: none;
 }
+.mine-left ul li a .a_font{
+    border: 1px solid #4e65c7;
+    color: #4e65c7;;
+    font-size: 16px;
+    padding: 2px;
+    border-radius: 5px;
+    font-weight: 800;
+}
 .mine-left ul li:hover a{
     animation:move_center 0.5s ease-in;
     animation-fill-mode: forwards;
     color: #fff;
 }
-
+.mine-left ul li:hover .a_font{
+    color:#fff;
+    border: 1px solid #FFF;
+}
 @keyframes move_center {
     0%{}
     100%{

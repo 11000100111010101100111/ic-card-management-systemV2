@@ -43,31 +43,49 @@
     <div class="mine-left">
         <ul>
             <li id="a_1">
-                <a href="#sub-1" target="_self" title="我的信息"><font class="iconfont a_font" style="color: #c7254e;"></font>我的信息</a>
+                <a href="#sub-1" target="_self">
+                    <font class="iconfont icon-xuesheng a_font"></font>
+                    我的信息</a>
             </li>
             <li id="a_2">
-                <a href="#sub-2" target="_self" title="账户余额"> <font class="iconfont a_font" style="color: #c7254e;"></font>账户余额</a>
+                <a href="#sub-2" target="_self">
+                    <font class="iconfont icon-jiangxuejin a_font"></font>
+                    账户余额</a>
             </li>
             <li id="a_3">
-                <a href="#sub-3" target="_self" title="卡片中心"> <font class="iconfont a_font" style="color: #c7254e;"></font>卡片中心</a>
+                <a href="#sub-3" target="_self">
+                    <font class="iconfont icon-xinwendongtai a_font"></font>
+                    卡片中心</a>
             </li>
             <li id="a_4">
-                <a href="#sub-4" target="_self" title="我的消费"> <font class="iconfont a_font" style="color: #c7254e;"></font>我的消费</a>
+                <a href="#sub-4" target="_self">
+                    <font class="iconfont icon-feiyongbaoxiao a_font"></font>
+                    我的消费</a>
             </li>
             <li id="a_5">
-                <a href="#sub-5" target="_self" title="挂失记录"> <font class="iconfont a_font" style="color: #c7254e;"></font>挂失记录</a>
+                <a href="#sub-5" target="_self">
+                    <font class="iconfont icon-tongzhigonggao a_font"></font>
+                    挂失记录</a>
             </li>
             <li id="a_6">
-                <a href="#sub-6" target="_self" title="注销记录"> <font class="iconfont a_font" style="color: #c7254e;"></font>注销记录</a>
+                <a href="#sub-6" target="_self">
+                    <font class="iconfont icon-kejipingtai a_font"></font>
+                    注销记录</a>
             </li>
             <li id="a_7">
-                <a href="#sub-7" target="_self" title="账号变更"> <font class="iconfont a_font" style="color: #c7254e;"></font>账号变更</a>
+                <a href="#sub-7" target="_self">
+                    <font class="iconfont icon-jishuzhuanyi a_font"></font>
+                    账号变更</a>
             </li>
             <li id="a_8">
-                <a href="#sub-8" target="_self" title="账号登录及安全" target="_top" title="悬停文本">账号安全</a>
+                <a href="#sub-8" target="_self" target="_top">
+                    <font class="iconfont icon-kexuejishu a_font"></font>
+                    账号安全</a>
             </li>
             <li>
-                <a>退   出</a>
+                <a>
+                    <font class="iconfont icon-tuichudenglu a_font"></font>
+                    退   出</a>
             </li>
         </ul>
     </div>
@@ -530,9 +548,21 @@
             "<span style='color:#888;font-size:12px;border-raduis:5px;padding:5px 2px;'>" +
             "(用户类型不能修改)" +
             "    <font class='iconfont icon-wenhao' " +
-            "     style='width: 5px;height: 5px;border-radius: 50%;background-color: #c7254e;color: #fff;cursor:help; ' title='请前往账号变更中心申请！'>" +
+            "     style='width: 5px;height: 5px;border-radius: 50%;background-color: #c7254e;color: #fff;cursor:help; '>" +
             "    </font>" +
             "</span>");//用户类型（不可再此处修改）
+        elemTitle.gridTitle(
+            $("#new-msg-userType span font"),
+            "请前往账号变更中心申请！",
+            [
+                {cssName:"width",cssValue:'250px'},
+                {cssName:"background-color",cssValue:'#ff333d'},
+                {cssName:"color",cssValue:'#fff'},
+                {cssName:"z-index",cssValue:"30"}
+            ]);
+        $("#new-msg-userType span font").click(function () {
+            $("#a_7 a").click();
+        });
     }
     function getUserInfo() {
         // let selector = document.getElementsByName('new-sex');
@@ -1670,6 +1700,22 @@
 
         return str;
     }
+
+    cssMap = [
+        {cssName:"width",cssValue:'100px'},
+        {cssName:"background-color",cssValue:'var(--sub_color)'},
+        {cssName:"color",cssValue:'#fff'},
+        {cssName:"z-index",cssValue:"20"}
+    ];
+    elemTitle.gridTitle($("#a_1 a"),"我的信息",cssMap);
+    elemTitle.gridTitle($("#a_2 a"),"账户余额",cssMap);
+    elemTitle.gridTitle($("#a_3 a"),"卡片中心",cssMap);
+    elemTitle.gridTitle($("#a_4 a"),"我的消费",cssMap);
+    elemTitle.gridTitle($("#a_5 a"),"挂失记录",cssMap);
+    elemTitle.gridTitle($("#a_6 a"),"注销记录",cssMap);
+    elemTitle.gridTitle($("#a_7 a"),"账号变更",cssMap);
+    elemTitle.gridTitle($("#a_8 a"),"登录安全",cssMap);
+
 </script>
 </body>
 </html>
