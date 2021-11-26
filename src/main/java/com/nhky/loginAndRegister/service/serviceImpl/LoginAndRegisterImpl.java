@@ -8,6 +8,7 @@ import com.nhky.pojo.User;
 import com.nhky.utils.LogUtil;
 import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
+import com.nhky.utils.VeryificationCodeUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -147,19 +148,6 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
 
     @Override
     public String getCode(int size) {
-        StringBuilder sb = new StringBuilder();
-//        48-57:0-9
-//        65-90:A-Z
-//        97-122:a-z
-//        while ((sb.append((new Random()).nextInt(90)+65)).length()<size){}
-        int item = 0;
-        while (sb.length()<size)
-        {
-            while(( (item =(new Random()).nextInt(74)+48)>57 && item<65)
-                    || (item>90&&item<97) ){}
-//            System.out.println(item + ":" + (char) (item));
-            sb.append((""+(char) (item)).toUpperCase());
-        }
-        return sb.toString();
+        return VeryificationCodeUtil.getCode(size);
     }
 }

@@ -1,6 +1,7 @@
 package com.nhky.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -55,5 +56,10 @@ public class StringUtil {
            return false;
        }
         return (Pattern.compile("[0-9]*")).matcher(getPamterString(str)).matches();
+    }
+
+    //正则表达式验证字符串
+    public static boolean matcher(String reg,String obj){
+        return Pattern.compile(reg).matcher(obj).matches();
     }
 }

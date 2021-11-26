@@ -1,16 +1,23 @@
 package com.nhky.templete;
 
 import com.alibaba.fastjson.JSON;
+import com.nhky.utils.RequestUtil;
+import com.nhky.utils.VeryificationCodeUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import java.io.IOException;
 import java.net.BindException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -174,5 +181,41 @@ public class TestController {
     @RequestMapping("/file")
     public String file(){
         return "/template/fileTemplate";
+    }
+
+
+    @Resource(name = "javaMailSender")
+    private JavaMailSender javaMailSender;//在spring中配置的邮件发送的bean
+
+    @RequestMapping("/email")
+    @ResponseBody
+    public String sendEmail() {
+        String email="2749984520@qq.com";
+        MimeMessage mMessage =null;
+        try {
+            mMessage= javaMailSender.createMimeMessage();//创建邮件对象
+        }catch (Exception e){
+            System.out.println(e.getLocalizedMessage()+e.getStackTrace()+e.getStackTrace());
+        }
+
+        MimeMessageHelper mMessageHelper;
+        Properties prop = new Properties();
+        String from;
+        String code = VeryificationCodeUtil.getCode(6);
+        RequestUtil.getRequest().getSession().setAttribute("email_code",code);
+        try {
+            //从配置文件中拿到发件人邮箱地址
+            prop.load(this.getClass().getResourceAsStream("/mail.properties"));
+            from = prop.get("mail.smtp.username") + "";
+            mMessageHelper = new MimeMessageHelper(mMessage, true);
+            mMessageHelper.setFrom(from);//发件人邮箱
+            mMessageHelper.setTo(email);//收件人邮箱
+            mMessageHelper.setSubject("IC卡挂失");//邮件的主题
+            mMessageHelper.setText("<p>您的验证码是：</p><br/><a>"+code+"</a><br/>", true);//邮件的文本内容，true表示文本以html格式打开
+            javaMailSender.send(mMessage);//发送邮件
+        } catch (MessagingException | IOException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }
