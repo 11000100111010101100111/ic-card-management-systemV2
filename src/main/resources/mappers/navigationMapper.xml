@@ -12,19 +12,21 @@
 <!--    //在某个状态下，查询用户可访问路由集合（如：用户访问主页时，获取导航栏路由信息，此时路由状态就是主页，根据uid获取用户权限级别后查询可访问路由）-->
 <!--    public List<Router> navigationList(@Param("uid") Long uid, @Param("router_type")String router_type);-->
     <select id="navigationList" resultType="com.nhky.pojo.Router">
-        SELECT `id`,`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`,`del_time`,`del_personal`,`status`
-            FROM `ic_util_router_navigation` WHERE
-            `leavel` = 0
-            <if test="uid != null || uid > 0">
-                OR `leavel` &lt;= (
-                    SELECT `leavel` FROM `ic_user_leavel` WHERE `user_type` = (
-                            SELECT `register_identify` FROM `ic_main_user` WHERE
-                                `easy_id` = #{uid}
-                                AND `node_status` = '1'
-                                AND `user_status` = '1'
+        SELECT
+        `id`,`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`,`del_time`,`del_personal`,`status`
+        FROM `ic_util_router_navigation` WHERE
+            (`leavel` = 0
+                <if test="uid != null || uid > 0">OR `leavel` &lt;= (
+                    SELECT
+                    `leavel` FROM `ic_user_leavel` WHERE `user_type` = (
+                    SELECT `register_identify` FROM `ic_main_user` WHERE
+                    `easy_id` = #{uid}
+                    AND `node_status` = '1'
+                    AND `user_status` = '1'
                     )
-                )
-            </if>
+                    )
+                </if>
+            )
             AND `router_type` = #{router_type}
             AND `status` = 1 ORDER BY `parent_router`
     </select>

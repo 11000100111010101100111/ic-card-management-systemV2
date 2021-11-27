@@ -2,11 +2,87 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="">
+<mapper namespace="com.nhky.icCardLoss.dao.LossCardDao">
     <!--
  * Created by IntelliJ IDEA.
  * User: 波罗的海
  * Date: 2021/11/27
  * Time: 12:47
 -->
+<!--    //   卡状态： -4失效卡、-3已挂失，-2正在注销中，-1正在挂失中，0申请恢复中，1正常-->
+<!--    List<Map<String,Object>> getUsersCards(@Param("uid") Long uid);-->
+    <select id="getUsersCards" parameterType="java.lang.Long" resultType="map">
+        SELECT
+             icm.`card_id` AS cardId,
+             imu.`easy_id` AS uId,imu.`name` AS uName,imu.`email` AS uEmail,imu.`identify_card` AS uIdentify,imu.`phone` AS uPhone,imu.`sex` AS uSex ,imu.`head_url` AS uHeadurl,
+             ict.`type_name` AS cardType,ict.`icon` AS cardUrl,ict.`count` AS cardCount,
+             icem.`blance` AS cardBlance,icem.`create_date` AS cardCreateTime,icem.`card_status` AS cardStatus
+        FROM `ic_card_msg` icm
+             LEFT JOIN `ic_card_easy_msg` icem ON icm.`card_id` = icem.`id`
+             LEFT JOIN `ic_card_type` ict ON ict.`type_name` = icem.`card_type_type`
+             LEFT JOIN `ic_main_user` imu ON imu.`easy_id` = icm.`user_id`
+         WHERE icm.`user_id` = #{uid}
+    </select>
+
+<!--    //获取挂失历史-->
+<!--    List<Map<String,Object>> getLossHistory(@Param("cardId") Long cardId);-->
+    <select id="getLossHistory" parameterType="java.lang.Long" resultType="map">
+         SELECT
+            icem.id AS cardId,icem.`blance` AS cardBalance,icem.`create_date` AS cardCreareDate,icem.`card_type_type` AS cardType,
+            ich.`handle_type` AS handleType,ich.`handle_date` AS handleDate,ich.`handle_result` AS handleResult ,ich.`mark` AS handleMark,
+            ict.`icon` AS cardIcon,ict.`count` AS cardCount
+          FROM `ic_card_easy_msg` AS icem
+            LEFT JOIN `ic_card_handel` AS ich ON  ich.`card_id` = icem.`id`
+            LEFT JOIN `ic_card_type` AS ict ON ict.`type_name` = icem.`card_type_type`
+          WHERE icem.`id` = #{cardId} AND icem.`status`=1
+          ORDER BY ich.`handle_date`
+    </select>
+
+<!--       List<Map<String, Object>> getCardList(@Param("start") Integer start,@Param("end") Integer end,@Param("uid")Long uid);-->
+    <select id="getCardList" resultType="map">
+         SELECT
+            id AS cardId,
+            card_status AS cardStatus,
+            (SELECT `name` FROM `ic_main_user` WHERE `easy_id`= #{uid} AND `status` = 1) AS uName FROM `ic_card_easy_msg`
+        WHERE `id` IN (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{uid} AND `status`=1 ) AND `status` = 1
+        <if test="null != start and start >= 0 and end >= 1">
+            limit #{start},#{end}
+        </if>
+
+    </select>
+<!--    Integer getCardTotal(@Param("uid")Long uid);-->
+    <select id="getCardTotal" resultType="java.lang.Integer" parameterType="java.lang.Long">
+         SELECT count(`id`) FROM `ic_card_easy_msg`
+        WHERE `id` IN (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{uid} AND `status`=1 ) AND `status` = 1
+    </select>
+
+<!--    //挂失卡-->
+<!--    /*-->
+<!--    * 1、添加卡操作记录-->
+<!--    * 2、修改卡状态：-1正在挂失中-->
+<!--    * */-->
+<!--    Integer addLossHistory(CardHistory history);-->
+<!--    Integer modifyCardStatus(@Param("status") String status,@Param("cid") Long cid);-->
+    <insert id="addLossHistory" parameterType="com.nhky.pojo.CardHistory">
+             INSERT INTO `ic_card_handel`
+                (`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`)
+             VALUES
+                (#{card_id},#{handle_type},NOW(),#{handle_result},#{mark})
+    </insert>
+    <update id="modifyCardStatus">
+         UPDATE `ic_card_easy_msg` SET `card_status` = #{status} WHERE `id` = #{cid}
+    </update>
+
+<!--    /*-->
+<!--    * 临界业务：修改邮箱-->
+<!--    *-->
+<!--    * */-->
+<!--    public Integer modifyEmail(@Param("email") String email,@Param("uid")Long uid);-->
+<!--    public Integer getEmail(@Param("uid")Long uid);-->
+    <select id="getEmail" parameterType="java.lang.Long" resultType="java.lang.String">
+        select email from `ic_main_user` WHERE `easy_id` = #{uid}
+    </select>
+    <update id="modifyEmail">
+         UPDATE `ic_main_user` SET `email` = #{email} WHERE `easy_id` = #{uid}
+    </update>
 </mapper>

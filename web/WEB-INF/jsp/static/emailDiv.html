@@ -2,9 +2,178 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/mySelect.css">
+    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
+    <title>挂失模块-验证邮箱</title>
+    <style>
+        .loss-panel-ack-email{
+            position: fixed;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 600px;
+            height: 450px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow:  0 0 6px #666;
+            z-index: 30;
+        }
+        .loss-panel-ack-email .close{
+            position: absolute;
+            top:0;
+            left: 100%;
+            transform: translateX(calc(-100% - 5px));
+            float: right;
+            margin-top: 5px;
+            width: 20px;
+            height: 20px;
+            font-size: 18px;
+            padding: 3px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: var(--sub_color);
+            cursor: pointer;
+            transition: all var(--transform_slowily);
+        }
+        .loss-panel-ack-email .close:hover{
+            background-color: #c7254e;
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 90%;
+            height: 90%;
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .sub-title{
+            border-left: 3px solid var(--sub_color);
+            margin: 20px 0;
+            padding-left: 5px;
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email{
+            width: 100%;
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .div{
+            width: 100%;
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email h3{
+            border-left: 2px solid var(--sub_color);
+            margin: 10px 0;
+            padding-left: 5px;
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .email{
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            padding: 5px 0;
+            color: var(--sub_color);
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .ack-email-code{
+            width: calc(100% - 96px);
+            text-align: center;
+            font-size: 16px;
+            padding: 5px 0;
+            margin: 5px 5px 5px 0;
+            color: var(--sub_color);
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .send-email{
+            width: 80px;
+            text-align: center;
+            font-size: 16px;
+            padding: 5px 0;
+            margin: 5px 0 5px 0;
+            background-color: #4e65c7;
+            color: #fff;
+            font-weight: 800;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .send-email:hover{
+            box-shadow: none;
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .send-email:focus{
+            border: none;
+            outline: none;
+            animation:send-email 0.6s linear ;
+            animation-iteration-count: 2;
+            /*animation-fill-mode: forwards;*/
+        }
+        @keyframes send-email {
+            from{
+                box-shadow: 0 0 0 #4e65c7;
+            }
+            10%{
+                box-shadow: -5px -5px 8px #4e65c7;
+            }
+            50%{
+                box-shadow: 5px 5px 8px #4e65c7;
+            }
+            90%{
+                box-shadow: -5px -5px 8px #4e65c7;
+            }
+            to{
+                box-shadow: 0 0 0 #4e65c7;
+            }
+        }
+
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email textarea{
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            resize: none;
+            padding: 5px;
+            font-size: 12px;
+            text-align: left;
+            color: var(--sub_color);
+        }
+
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .bottom-btn-panel{
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+        }
+        .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .bottom-btn-panel .sure-loss-btn{
+            width: 90px;
+            height: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            background-color: var(--sub_color);
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <div class="loss-panel-ack-email">
+        <div class="close iconfont icon-jiaoyi"></div>
+        <div class="loss-panel-ack-email-sub">
+            <h1 class="sub-title">确认挂失</h1>
+            <div class="ack-email">
+                <div class="div">
+                    <h3><font class="iconfont icon-queren"></font>确认您的邮箱</h3>
+                    <input type="email" class="email" id="mine-email" value="2749984520@qq.com" autocomplete="off">
+                    <input type="text" class="ack-email-code inline_block" placeholder="填写邮箱验证码">
+                    <input type="button" class="send-email inline_block" value="发  送">
+                </div>
+                <div class="div">
+                    <h3><font class="iconfont icon-wenhao"></font>您问什么选择挂失</h3>
+                    <textarea name="loss-mark" id="loss-mark" cols="30" rows="10" οnchange="this.value=this.value.substring(0, 400)"
+                              οnkeydοwn="this.value=this.value.substring(0, 400)"
+                              οnkeyup="this.value=this.value.substring(0, 400)"></textarea>
+                </div>
+                <div class="bottom-btn-panel">
+                    <input type="button" class="sure-loss-btn" value="提  交">
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

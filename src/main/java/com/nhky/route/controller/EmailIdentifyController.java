@@ -1,4 +1,4 @@
-package com.nhky.route;
+package com.nhky.route.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.nhky.emun.CommonCode;
@@ -25,7 +25,7 @@ import java.util.Properties;
  * Time: 21:49
  **/
 @Controller
-@RequestMapping("/global")
+@RequestMapping("/email")
 public class EmailIdentifyController {
     @Resource(name = "javaMailSender")
     private JavaMailSender javaMailSender;
@@ -35,12 +35,11 @@ public class EmailIdentifyController {
     * @Return
     *
     * */
-    @RequestMapping("/email")
+    @RequestMapping("/get")
     @ResponseBody
     public String sendEmail(@RequestParam("email")String email,@RequestParam("target")String target) {
 //        String email="2749984520@qq.com";
         String reg="^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
-//        "^[http:\\]?[www.]?\\w+@\\w+\\.[a-z]{2,}$"
         if( !StringUtil.matcher(reg,StringUtil.getPamterString(email)) ){
             return JSON.toJSONString(ResultUtil.result(CommonCode.SYSTEM_BUSY,"邮箱号码输入有误！"));
         }
@@ -79,7 +78,7 @@ public class EmailIdentifyController {
             Map<String,Object> emailCode = new HashMap<>();
             emailCode.put("codeTimeout",timeout);
             emailCode.put("codeCreateTime", DateUtil.nowDateTime());
-            emailCode.put("email_code",code);
+            emailCode.put("code",code);
             emailCode.put("userId",uid);
 
             RequestUtil.getRequest().getSession().setAttribute("email_code",emailCode);
@@ -88,5 +87,32 @@ public class EmailIdentifyController {
             return JSON.toJSONString(ResultUtil.error(CommonCode.SYSTEM_BUSY));
         }
         return JSON.toJSONString(ResultUtil.succeed("获取成功，请注意查看QQ邮箱，验证码有效时间10分钟！"));
+    }
+
+    /*
+    * 确认邮箱验证信息
+    * 校验邮箱是否过期，过期返回请求超时重发，不过期进行下一步
+    * 判断邮箱验证码是否正确，正确通过验证，不正确请求重发或重新输入
+    * */
+    @RequestMapping("/ack")
+    @ResponseBody
+    public String ackEmail(@RequestParam("code") String clientCode){
+
+        Map<String,Object> emailCode = (Map<String, Object>) RequestUtil.getRequest().getSession().getAttribute("email_code");
+        if(null == emailCode){
+            return JSON.toJSONString(ResultUtil.error(CommonCode.NO_EMAIL));
+        }
+
+        String timeout = StringUtil.getPamterString(emailCode.get("codeTimeout"));
+        String createTime = StringUtil.getPamterString(emailCode.get("codeCreateTime"));
+        if( DateUtil.isTimeOut( createTime,timeout.equals("")?0:Integer.parseInt(timeout) ) ){
+            return JSON.toJSONString(ResultUtil.error(CommonCode.EMAIL_TIMEOUT));
+        }
+
+        String browerCode = StringUtil.getPamterString(emailCode.get("code"));
+        if(browerCode.equals(emailCode)){
+            return JSON.toJSONString(ResultUtil.succeed("邮箱验证成功"));
+        }
+        return JSON.toJSONString(ResultUtil.error(CommonCode.EMAIL_ERROR));
     }
 }

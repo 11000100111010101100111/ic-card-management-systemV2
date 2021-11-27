@@ -62,4 +62,11 @@ public class StringUtil {
     public static boolean matcher(String reg,String obj){
         return Pattern.compile(reg).matcher(obj).matches();
     }
+
+    public static boolean equal(String key,String ...val){
+        for (String s : val) {
+            if (key.equals(s)) return true;
+        }
+        return false;
+    }
 }

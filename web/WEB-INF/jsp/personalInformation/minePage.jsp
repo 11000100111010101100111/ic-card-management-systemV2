@@ -125,7 +125,7 @@
                                 <img src="D:/桌面/课程设计/UI/img/defult_man.png" id="new-msg-headIcon">
                                 <span id="new-msg-single">hello!!!</span>
                                 <div id="modify-single-panel">
-                                    <textarea name="new_single" id="new_single" type="text"οnchange="this.value=this.value.substring(0, 400)"
+                                    <textarea name="new_single" id="new_single" type="text" οnchange="this.value=this.value.substring(0, 400)"
                                               οnkeydοwn="this.value=this.value.substring(0, 400)"
                                               οnkeyup="this.value=this.value.substring(0, 400)"></textarea>
                                     <label class="label label-danger">字数不超过<font style="color: crimson;">200</font>字</label>
@@ -1670,37 +1670,8 @@
         }
     }
 </script>
-<!--//时间-->
+
 <script>
-    Date.prototype.Format = function(formatStr)  {
-        if(typeof (formatStr) =="undefined")
-            formatStr = (new Date()).toLocaleString( );
-        var str = formatStr;
-        // var Week = ['日','一','二','三','四','五','六'];
-
-        str=str.replace(/yyyy|YYYY/,this.getFullYear());
-        str=str.replace(/yy|YY/,(this.getYear() % 100)>9?(this.getYear() % 100).toString():'0' + (this.getYear() % 100));
-
-        str=str.replace(/MM/,this.getMonth()>9?this.getMonth().toString():'0' + this.getMonth());
-        str=str.replace(/M/g,this.getMonth());
-
-
-        // str=str.replace(/w|W/g,Week[this.getDay()]);
-
-        str=str.replace(/dd|DD/,this.getDate()>9?this.getDate().toString():'0' + this.getDate());
-        str=str.replace(/d|D/g,this.getDate());
-
-        str=str.replace(/hh|HH/,this.getHours()>9?this.getHours().toString():'0' + this.getHours());
-        str=str.replace(/h|H/g,this.getHours());
-        str=str.replace(/mm/,this.getMinutes()>9?this.getMinutes().toString():'0' + this.getMinutes());
-        str=str.replace(/m/g,this.getMinutes());
-
-        str=str.replace(/ss|SS/,this.getSeconds()>9?this.getSeconds().toString():'0' + this.getSeconds());
-        str=str.replace(/s|S/g,this.getSeconds());
-
-        return str;
-    }
-
     cssMap = [
         {cssName:"width",cssValue:'100px'},
         {cssName:"background-color",cssValue:'var(--sub_color)'},

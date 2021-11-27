@@ -52,7 +52,7 @@ public class CreateCardServiceImpl implements CreateCardService {
             int zhengchang = 0;
             for (CardOfUser cardOfUser : cardList) {
 
-                //   卡状态： -3失效卡，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
+                //   卡状态： -4失效卡、-3已挂失，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
                 switch (cardOfUser.getStatus()){
                     case 1: zhengchang++;break;
                     case -1: guashi++;break;

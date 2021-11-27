@@ -659,17 +659,29 @@
 
             addEvent(elem,obj);
         },
-        getSelection: function (elem) {
-            var _trs = $(elem).find("table tbody tr");
-            var _tr_len = _trs.length;
-            var ids=new Array();
-            for(let index=0;index<_tr_len;index++){
-                if($(_trs[index]).find("input[type='checkbox']").attr("checked") == "checked"){
-                    ids.push(index);
+        getSelection: function (elem,columnIndex) {
+            let _trs = $(elem).find("table tbody tr");
+            let _tr_len = _trs.length;
+            let values=new Array();
+
+            if(typeof (columnIndex) != "undefined") {
+                let _th_len = $($(elem).find("table thead th")).length;
+                if (parseInt(columnIndex) >= _th_len || parseInt(columnIndex) < 0) {
+                    console.error("无法获取到索引为[" + columnIndex + "]的项...");
                 }
             }
-            return ids;
-        }
+            for(let index=0;index<_tr_len;index++){
+                if($(_trs[index]).find("input[type='checkbox']").prop("checked") == true){
+                    if(typeof (columnIndex) != "undefined"){
+                        let _val_td = $( $($(elem).find("tbody tr")[index]).find("td")[columnIndex] ).html();
+                        values.push(_val_td);
+                    }else {
+                        values.push(index);
+                    }
+                }
+            }
+            return values;
+        },
     }
     function ajaxData(elem,obj) {
         var url = obj.ajac.url ;

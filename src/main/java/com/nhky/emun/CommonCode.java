@@ -11,6 +11,7 @@ public enum CommonCode implements ICommonCode {
      * 3. 所有错误码枚举类均需要实现错误码接口类
      */
     SUCCESS(              true, 0,      "操作成功"          ),
+    ERROR(false,-1,"操作失败"),
     SYSTEM_BUSY(          false,10000,  "系统繁忙,稍后再试!" ),
     FORM_VALIDATION_ERROR(false,10001,  "表单验证错误"       ),
     // 用户登录方面错误码
@@ -20,7 +21,10 @@ public enum CommonCode implements ICommonCode {
     SELECT_ERROR(          false,101004, "数据查询异常"),
     INSERT_ERROR(false,101005, "数据增加异常"),
     INSERT_SUCCEED(true,101006, "添加加成功"),
-    NO_LOGIN(false,101007,"没有登录，请先登录");
+    NO_LOGIN(false,101007,"没有登录，请先登录"),
+    EMAIL_ERROR(false,101008,"邮箱验证失败"),
+    NO_EMAIL(false,101009,"没有邮箱验证信息"),
+    EMAIL_TIMEOUT(false,101010,"邮箱验证码超时");
     //...
     //可向下增加更多类型
 
