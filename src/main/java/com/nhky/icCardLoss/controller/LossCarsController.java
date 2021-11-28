@@ -59,7 +59,16 @@ public class LossCarsController {
         return JSON.toJSONString(ResultUtil.succeed(history));
     }
 
-
+    @RequestMapping("/lossBack")
+    @ResponseBody
+    @AjaxConnect
+    public  String lossBack(){
+        return JSON.toJSONString(
+                lossCardService.lossBack()>0?
+                        ResultUtil.succeed("撤回成功！"):
+                        ResultUtil.result(CommonCode.ERROR,"撤回失败！")
+        );
+    }
     /*
      * 查询当前正在挂失卡的挂失进度
      *

@@ -34,6 +34,14 @@ public interface LossCardService {
     * */
     public List<Map<String,Object>> getLossStep();
 
+    /*
+    * 挂失撤回：
+    * 事务：
+    *   1、修改Ic卡状态
+    *   2、添加一条撤回记录
+    * */
+    //挂失撤回
+    public Integer lossBack();
 
     /*
     * 确认挂失

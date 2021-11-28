@@ -7,10 +7,7 @@ import com.nhky.icCardLoss.service.LossCardService;
 import com.nhky.pojo.CardHistory;
 import com.nhky.pojo.UserBalanceLogVO;
 import com.nhky.pojo.VO.PageVO;
-import com.nhky.utils.LogUtil;
-import com.nhky.utils.RequestUtil;
-import com.nhky.utils.ResultUtil;
-import com.nhky.utils.StringUtil;
+import com.nhky.utils.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -136,6 +133,23 @@ public class LossCardServiceImpl implements LossCardService {
     public List<Map<String, Object>> getLossStep() {
         return null;
     }
+
+    @Override
+    @Transactional
+    public Integer lossBack() {
+        String cardId = StringUtil.getPamterString(RequestUtil.getRequestParam("card_id"));
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
+        Integer lossFlag = lossCardDao.lossBack(Long.parseLong(cardId));
+
+        CardHistory history = new CardHistory();
+        history.setCard_id(Long.parseLong(cardId));
+        history.setHandle_result("撤回成功");
+        history.setHandle_type("挂失撤回");
+        history.setMark("挂失撤回---"+lossCardDao.getUName(Long.parseLong(uid))+"---"+ DateUtil.nowDateTime());
+        Integer historyFlag = lossCardDao.addLossHistory(history);
+        return lossFlag>0&&historyFlag>0?1:-1;
+    }
+
 
     @Override
     @Transactional

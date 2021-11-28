@@ -23,6 +23,328 @@
 <%--    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>--%>
     <script src="${global_url}theame/js/echarts.min.js"></script>
     <link type="text/css" rel="stylesheet" href="${global_url}theame/css/page-minePage.css">
+
+    <style>
+        .sub-3 .table-box .table-top{
+            box-shadow: 0 0 5px #666;
+        }
+        .sub-3 .table-box .table-top ul{
+            position: absolute;
+            display: inline;
+            list-style: none;
+            background-color: #fff;
+            overflow-x: scroll;
+            width: calc(100% - 20px);
+            height:  calc(100% - 10px);
+            padding: 10px 10px 0 10px;
+            white-space: nowrap;
+            overflow-y: hidden;
+        }
+        .sub-3 .table-box .table-top ul li{
+            position: relative;
+            display: inline-block;
+            width: calc( (100% - 20px)/2 );
+            height: calc(100% - 10px);
+            background-color: #fff;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 6px #666;
+            transition: all var(--transform_slowily);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .sub-3 .table-box .table-top ul .more{
+            width: calc( (100% - 20px)/4 );
+            height: calc(100% - 10px);
+            background-color: #fff;
+            box-shadow: 0 0 6px #999;
+        }
+        .sub-3 .table-box .table-top ul .card_li:first-child{
+            margin-left: 0;
+        }
+        .sub-3 .table-box .table-top ul .card_li:hover{
+            z-index: 5;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px var(--sub_color);
+            animation: li_box_to_big 0.3s linear;
+            animation-iteration-count: 3;
+        }
+        @keyframes li_box_to_big {
+            from{box-shadow: 0 0 10px var(--sub_color);}
+            50%{box-shadow: 0 0 15px var(--sub_color);}
+            to{box-shadow: 0 0 10px var(--sub_color);}
+        }
+        .mine-box .sub-3 .table-box .table-top{
+            position: relative;
+            /*overflow-x: visible;*/
+            overflow-x: visible;
+        }
+        .sub-3 .table-box .table-top ul .loss_li_span {
+            position: absolute;
+            /*width: 100%;*/
+            /*height: 33%;*/
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1px 3px;
+        }
+        .sub-3.table-box .table-top ul .loss_li_span_01{
+            font-size: 14px;
+            top:0;
+            left:0;
+            text-align: left;
+            /*width: calc(100% - 10px);*/
+            margin: 10px 0 0 10px ;
+        }
+        .sub-3 .table-box .table-top ul .loss_li_span_02{
+            font-size: 24px;
+            top:50%;
+            left:50%;
+            text-align: center;
+            transform: translate(-50%,-50%);
+        }
+        .sub-3 .table-box .table-top ul .loss_li_span_03{
+            font-size: 14px;
+            top:100%;
+            left:100%;
+            text-align: right;
+            margin: 0 10px 10px 0;
+            /*width: calc(100% - 10px);*/
+            transform: translate(calc(-100% - 10px),calc(-100% - 10px));
+        }
+        .sub-3 .table-box .table-top ul .noMore{
+            width: 100px;
+            height: 100px;
+            color: var(--sub_color);
+            font-size: 100px;
+            box-shadow: 0 0 6px #888;
+            border-radius: 50%;
+            transition: all var(--transform_slowily);
+        }
+        .sub-3 .table-box .table-top ul .noMore:hover{
+            transform: translate(-50%,-50%) scale(1.1);
+        }
+    </style>
+    <style>
+        .sub-3 .table-box .table-top ul .error_li{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 0 6px #666;
+            background-color: #555;
+            padding: 4px;
+            list-style: none;
+        }
+        .sub-3 .table-box .table-top ul .error_li .error{
+            position: absolute;
+            display: inline-block;
+            width: calc(50% - 4px);
+            height: calc(50% - 4px);
+            background-color: #fff;
+            font-size: 42px;
+            text-align: center;
+            z-index: 2;
+        }
+        .sub-3 .table-box .table-top ul .error_li .e_l_t{
+
+        }
+        .sub-3 .table-box .table-top ul .error_li .e_l_b{
+            top:100%;
+            transform: translateY(calc(-100% - 4px));
+        }
+        .sub-3 .table-box .table-top ul .error_li .e_r_t{
+            left:100%;
+            transform: translateX(calc( -100% - 4px));
+        }
+        .sub-3 .table-box .table-top ul .error_li .e_r_b{
+            top:100%;
+            left:100%;
+            transform: translate(calc(-100% - 4px),calc(-100% - 4px));
+        }
+        .sub-3 .table-box .table-top ul .error_li .move-target{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 5px;
+            height: 5px;
+            z-index: 1;
+            border-radius: 50%;
+            background-color: #ff2f64;
+            box-shadow: 0 0 50px #ff2f64;
+            animation: move-target-move 5s infinite linear;
+        }
+        @keyframes move-target-move {
+            from{top:4px;}
+            50%{top:calc(100% - 4px);}
+            to{top:4px;}
+        }
+    </style>
+
+    <style>
+        .sub-5 .table-box .table-top{
+            box-shadow: 0 0 5px #666;
+        }
+        .sub-5 .table-box .table-top ul{
+            position: absolute;
+            display: inline;
+            list-style: none;
+            background-color: #fff;
+            overflow-x: scroll;
+            width: calc(100% - 20px);
+            height:  calc(100% - 10px);
+            padding: 10px 10px 0 10px;
+            white-space: nowrap;
+            overflow-y: hidden;
+        }
+        .sub-5 .table-box .table-top ul li{
+            position: relative;
+            display: inline-block;
+            width: calc( (100% - 20px)/5 );
+            height: calc(100% - 10px);
+            background-color: #fff;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 6px #666;
+            transition: all var(--transform_slowily);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .sub-5 .table-box .table-top ul .more{
+            width: calc( (100% - 20px)/7 );
+            height: calc(100% - 10px);
+            background-color: #fff;
+            box-shadow: 0 0 6px #999;
+        }
+        .sub-5 .table-box .table-top ul .card_li:first-child{
+            margin-left: 0;
+        }
+        .sub-5 .table-box .table-top ul .card_li:hover{
+            z-index: 5;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px var(--sub_color);
+            animation: li_box_to_big 0.3s linear;
+            animation-iteration-count: 3;
+        }
+        @keyframes li_box_to_big {
+            from{box-shadow: 0 0 10px var(--sub_color);}
+            50%{box-shadow: 0 0 15px var(--sub_color);}
+            to{box-shadow: 0 0 10px var(--sub_color);}
+        }
+        .mine-box .sub-5 .table-box .table-top{
+            position: relative;
+            /*overflow-x: visible;*/
+            overflow-x: visible;
+        }
+        .sub-5 .table-box .table-top ul .loss_li_span {
+            position: absolute;
+            /*width: 100%;*/
+            /*height: 33%;*/
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 1px 3px;
+        }
+        .sub-5 .table-box .table-top ul .loss_li_span_01{
+            font-size: 14px;
+            top:0;
+            left:0;
+            text-align: left;
+            /*width: calc(100% - 10px);*/
+            margin: 10px 0 0 10px ;
+        }
+        .sub-5 .table-box .table-top ul .loss_li_span_02{
+            font-size: 24px;
+            top:50%;
+            left:50%;
+            text-align: center;
+            transform: translate(-50%,-50%);
+        }
+        .sub-5 .table-box .table-top ul .loss_li_span_03{
+            font-size: 14px;
+            top:100%;
+            left:100%;
+            text-align: right;
+            margin: 0 10px 10px 0;
+            /*width: calc(100% - 10px);*/
+            transform: translate(calc(-100% - 10px),calc(-100% - 10px));
+        }
+        .sub-5 .table-box .table-top ul .noMore{
+            width: 100px;
+            height: 100px;
+            color: var(--sub_color);
+            font-size: 100px;
+            box-shadow: 0 0 6px #888;
+            border-radius: 50%;
+            transition: all var(--transform_slowily);
+        }
+        .sub-5 .table-box .table-top ul .noMore:hover{
+            transform: translate(-50%,-50%) scale(1.1);
+        }
+    </style>
+    <style>
+        .sub-5 .table-box .table-top ul .error_li{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 0 6px #666;
+            background-color: #555;
+            padding: 4px;
+            list-style: none;
+        }
+        .sub-5 .table-box .table-top ul .error_li .error{
+            position: absolute;
+            display: inline-block;
+            width: calc(50% - 4px);
+            height: calc(50% - 4px);
+            background-color: #fff;
+            font-size: 42px;
+            text-align: center;
+            z-index: 2;
+        }
+        .sub-5 .table-box .table-top ul .error_li .e_l_t{
+
+        }
+        .sub-5 .table-box .table-top ul .error_li .e_l_b{
+            top:100%;
+            transform: translateY(calc(-100% - 4px));
+        }
+        .sub-5 .table-box .table-top ul .error_li .e_r_t{
+            left:100%;
+            transform: translateX(calc( -100% - 4px));
+        }
+        .sub-5 .table-box .table-top ul .error_li .e_r_b{
+            top:100%;
+            left:100%;
+            transform: translate(calc(-100% - 4px),calc(-100% - 4px));
+        }
+        .sub-5 .table-box .table-top ul .error_li .move-target{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 5px;
+            height: 5px;
+            z-index: 1;
+            border-radius: 50%;
+            background-color: #ff2f64;
+            box-shadow: 0 0 50px #ff2f64;
+            animation: move-target-move 5s infinite linear;
+        }
+        @keyframes move-target-move {
+            from{top:4px;}
+            50%{top:calc(100% - 4px);}
+            to{top:4px;}
+        }
+    </style>
 </head>
 <body>
 <div class="mine-box">
@@ -252,7 +574,9 @@
                 <div class="con">
                     <div class="left">
                         <div class="table-box">
-                            <div class="table-top"></div>
+                            <div class="table-top">
+
+                            </div>
                             <div class="table-bottom"></div>
                         </div>
                     </div>
@@ -274,7 +598,23 @@
             </div>
             <div class="sub-content sub-5" name="sub-5">
                 <div class="table-box">
-                    <div class="table-top"></div>
+                    <div class="table-top">
+                        <ul>
+<%--                            <li id="loss_li_1" class="card_li" style="background-image: url('http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png');">--%>
+<%--                                <span class="loss_li_span loss_li_span_01"><font class=" iconfont icon-huizhang1" style="color: #4e65c7"> </font>NO.<font style="color: var(--sub_color);">1</font></span>--%>
+<%--                                <span class="loss_li_span loss_li_span_02"><font class=" iconfont icon--yue" style="color: #ffda62"></font>余额：<font style="color: #ffda62">122.00</font>￥</span>--%>
+<%--                                <span class="loss_li_span loss_li_span_03"><font class="iconfont icon-xuesheng" style="color: var(--sub_color);"> </font>持有人：<font style="color: var(--sub_color);">肖家海</font></span>--%>
+<%--                            </li>--%>
+<%--                            <li id="loss_li_2" class="card_li" style="background-image: url('http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png');">--%>
+<%--                                <span class="loss_li_span loss_li_span_01"><font class=" iconfont icon-huizhang1" style="color: #4e65c7"> </font>NO.<font style="color: var(--sub_color);">2</font></span>--%>
+<%--                                <span class="loss_li_span loss_li_span_02"><font class=" iconfont icon--yue" style="color: #ffda62"></font>余额：<font style="color: #ffda62">182.00</font>￥</span>--%>
+<%--                                <span class="loss_li_span loss_li_span_03"><font class="iconfont icon-xuesheng" style="color: var(--sub_color);"> </font>持有人：<font style="color: var(--sub_color);">肖家海</font></span>--%>
+<%--                            </li>--%>
+<%--                            <li class="more">--%>
+<%--                                <span class="noMore loss_li_span loss_li_span_02 iconfont icon-icon--"></span>--%>
+<%--                            </li>--%>
+                        </ul>
+                    </div>
                     <div class="table-bottom"></div>
                 </div>
             </div>
@@ -655,6 +995,23 @@
             }
         );
 
+        $.ajax({
+            url:"${global_url}personalLoss/getLoss",
+            method:'post',
+            dataType:'json',
+            data:{},
+            success:function (data) {
+                if(data.succeed == true){
+                    setcardsSub3(data.data);
+                    console.log(data.data)
+                }else{
+                    setCardsError();
+                }
+            },
+            error:function () {
+                setCardsError();
+            }
+        });
     }
     //查看我的消费
     function toMyConmue() {
@@ -662,7 +1019,7 @@
     }
     //查看我的挂失记录
     function toLossCardDetial() {
-
+        getCardList();
     }
     //查看我的注销记录
     function toLogoutCardDetial() {
@@ -1049,37 +1406,97 @@
 </script>
 <!--sub-3卡管理-->
 <script>
-    var sub3_gridData = {
-        ajac: {
-            url: "${global_url}balance/page",//请求地址
-            method: "post",//请求方法
-            data: {
-                uid:uid
-            },//请求条件
-            dataType: "json",
-            beforeSend:function () {
-                // my_layer.open();
-            },
-            overSend:function () {
-                // my_layer.close();
-            }
-        },
-        columnId:true,//显示列表序号（自增）
-        columns:[
-            {title:"id",      name:"id",width:"5",hidden:true,align:"center"},
-            {title:"变更类型", name:"type",       width:"15",hidden:false,align:"center"},
-            {title:"变更金额", name:"money", width:"10",hidden:false,align:"center"},
-            {title:"操作账号", name:"operatorUser",   width:"10",hidden:false,align:"center"},
-            {title:"余额",     name:"balance",   width:"10",hidden:false,align:"center"},
-            {title:"时间",     name:"time",   width:"20",hidden:false,align:"center"},
-            {title:"备注",     name:"note",    width:"25",hidden:false,align:"center"},
-        ],//数据集合
-        multi_select:true,//是否多选
-        pages:[5,10,20,50,100],//每页多少天，选项
-    };
 
-    //绑定把表格数据
-    dataGrid.grid($(".sub-3 .table-bottom"),sub3_gridData);
+    function setcardsSub3(card) {
+        let _cardList_html_ =" <ul>";
+        $(".sub-3 .table-top ul").remove();
+
+        for (let cardIndex=0;cardIndex<card.length;cardIndex++) {
+            _cardList_html_ += "" +
+                "<li id='sub3cardLi" + card[cardIndex].cardId + "' class='card_li'>" +
+                "     <span class='loss_li_span loss_li_span_01'><font class=' iconfont icon-huizhang1' style='color: #4e65c7'> </font>NO.<font style='color: var(--sub_color);'>"+card[cardIndex].cardId+"</font></span>" +
+                "     <span class='loss_li_span loss_li_span_02'><font class=' iconfont icon--yue' style='color: #ffda62'></font>余额：<font style='color: #ffda62'>"+card[cardIndex].cardBalance+"</font>￥</span>" +
+                "     <span class='loss_li_span loss_li_span_03'><font class='iconfont icon-xuesheng' style='color: var(--sub_color);'> </font>持有人：<font style='color: var(--sub_color);'>"+card[cardIndex].uName+"</font></span>" +
+                " </li>";
+        }
+        _cardList_html_ += "<li class='more'><span class='noMore loss_li_span loss_li_span_02 iconfont icon-icon--' title='添加更多IC卡'></span></li></ul>";
+
+        $(".sub-3 .table-top").append(_cardList_html_);
+
+        let lis =  $(".sub-3 .table-top ul .card_li");
+        for (let cardIndex=0;cardIndex<card.length;cardIndex++) {
+            $(lis[cardIndex]).css('background-image',"url('" + card[cardIndex].cardUrl + "')");
+        }
+        $(".sub-3 .table-top .more .noMore").click(function () {
+            window.open("${global_url}navTo?url=home/businessProcess/createIc");
+        });
+
+        $(".sub-3 .table-top ul .card_li").click(function () {
+            var clickSub3LiId = $(this).prop("id");
+            setLossHistory(clickSub3LiId.substr(10,clickSub3LiId.length-1));
+        });
+        function setLossHistory(cId) {
+            var sub3_gridData = {
+                ajac: {
+                    url: "${global_url}personalLoss/getLossPage",//请求地址
+                    method: "post",//请求方法
+                    data: {
+                        cardId:cId
+                    },//请求条件
+                    dataType: "json",
+                    beforeSend:function () {
+                        // my_layer.open();
+                    },
+                    overSend:function () {
+                        // my_layer.close();
+                    }
+                },
+                columnId:true,//显示列表序号（自增）
+                columns:[
+                    {title:"IC卡号", name:"cardId",       width:"10",hidden:false,align:"center"},
+                    {title:"操作类型", name:"handleType", width:"20",hidden:false,align:"center"},
+                    {title:"操作日期", name:"handelDate",   width:"30",hidden:false,align:"center"},
+                    {title:"操作结果", name:"handleResult",   width:"20",hidden:false,align:"center"},
+                    {title:"备注",    name:"handelMark",   width:"20",hidden:false,align:"center"}
+                ],//数据集合
+                multi_select:true,//是否多选
+                pages:[5,10,20,50,100],//每页多少天，选项
+            };
+            <%--var sub3_gridData = {--%>
+            <%--    ajac: {--%>
+            <%--        url: "${global_url}balance/page",//请求地址--%>
+            <%--        method: "post",//请求方法--%>
+            <%--        data: {--%>
+            <%--            uid:uid--%>
+            <%--        },//请求条件--%>
+            <%--        dataType: "json",--%>
+            <%--        beforeSend:function () {--%>
+            <%--            // my_layer.open();--%>
+            <%--        },--%>
+            <%--        overSend:function () {--%>
+            <%--            // my_layer.close();--%>
+            <%--        }--%>
+            <%--    },--%>
+            <%--    columnId:true,//显示列表序号（自增）--%>
+            <%--    columns:[--%>
+            <%--        {title:"id",      name:"id",width:"5",hidden:true,align:"center"},--%>
+            <%--        {title:"变更类型", name:"type",       width:"15",hidden:false,align:"center"},--%>
+            <%--        {title:"变更金额", name:"money", width:"10",hidden:false,align:"center"},--%>
+            <%--        {title:"操作账号", name:"operatorUser",   width:"10",hidden:false,align:"center"},--%>
+            <%--        {title:"余额",     name:"balance",   width:"10",hidden:false,align:"center"},--%>
+            <%--        {title:"时间",     name:"time",   width:"20",hidden:false,align:"center"},--%>
+            <%--        {title:"备注",     name:"note",    width:"25",hidden:false,align:"center"},--%>
+            <%--    ],//数据集合--%>
+            <%--    multi_select:true,//是否多选--%>
+            <%--    pages:[5,10,20,50,100],//每页多少天，选项--%>
+            <%--};--%>
+            //绑定把表格数据
+            dataGrid.grid($(".sub-3 .table-bottom"),sub3_gridData);
+        }
+    }
+
+
+
 </script>
 <!--sub-4我的消费-->
 <script>
@@ -1197,37 +1614,106 @@
 </script>
 <!--sub-5挂失-->
 <script>
-    var sub5_gridData = {
-        ajac: {
-            url: "${global_url}balance/page",//请求地址
-            method: "post",//请求方法
-            data: {
-                uid:uid
-            },//请求条件
-            dataType: "json",
-            beforeSend:function () {
-                // my_layer.open();
+    function getCardList() {
+        // let cards = [
+        //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'1','uName':'肖家海','cardBalance':'100.22'},
+        //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'2','uName':'肖家海','cardBalance':'100.22'},
+        //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'3','uName':'肖家海','cardBalance':'100.22'}
+        // ];
+        $.ajax({
+            url:"${global_url}personalLoss/getLoss",
+            method:'post',
+            dataType:'json',
+            data:{},
+            success:function (data) {
+                if(data.succeed == true){
+                    setcards(data.data);
+                    console.log(data.data)
+                }else{
+                    setCardsError();
+                }
             },
-            overSend:function () {
-                // my_layer.close();
+            error:function () {
+                setCardsError();
             }
-        },
-        columnId:true,//显示列表序号（自增）
-        columns:[
-            {title:"id",      name:"id",width:"5",hidden:true,align:"center"},
-            {title:"变更类型", name:"type",       width:"15",hidden:false,align:"center"},
-            {title:"变更金额", name:"money", width:"10",hidden:false,align:"center"},
-            {title:"操作账号", name:"operatorUser",   width:"10",hidden:false,align:"center"},
-            {title:"余额",     name:"balance",   width:"10",hidden:false,align:"center"},
-            {title:"时间",     name:"time",   width:"20",hidden:false,align:"center"},
-            {title:"备注",     name:"note",    width:"25",hidden:false,align:"center"},
-        ],//数据集合
-        multi_select:true,//是否多选
-        pages:[5,10,20,50,100],//每页多少天，选项
-    };
+        });
 
-    //绑定把表格数据
-    dataGrid.grid($(".sub-5 .table-bottom"),sub5_gridData);
+
+    }
+    function setcards(card) {
+        let _cardList_html_ =" <ul>";
+        $(".sub-5 .table-top ul").remove();
+
+        for (let cardIndex=0;cardIndex<card.length;cardIndex++) {
+            _cardList_html_ += "" +
+                "<li id='cardLi" + card[cardIndex].cardId + "' class='card_li'>" +
+                "     <span class='loss_li_span loss_li_span_01'><font class=' iconfont icon-huizhang1' style='color: #4e65c7'> </font>NO.<font style='color: var(--sub_color);'>"+card[cardIndex].cardId+"</font></span>" +
+                "     <span class='loss_li_span loss_li_span_02'><font class=' iconfont icon--yue' style='color: #ffda62'></font>余额：<font style='color: #ffda62'>"+card[cardIndex].cardBalance+"</font>￥</span>" +
+                "     <span class='loss_li_span loss_li_span_03'><font class='iconfont icon-xuesheng' style='color: var(--sub_color);'> </font>持有人：<font style='color: var(--sub_color);'>"+card[cardIndex].uName+"</font></span>" +
+                " </li>";
+        }
+        _cardList_html_ += "<li class='more'><span class='noMore loss_li_span loss_li_span_02 iconfont icon-icon--' title='添加更多IC卡'></span></li></ul>";
+
+        $(".sub-5 .table-top").append(_cardList_html_);
+
+        let lis =  $(".sub-5 .table-top ul .card_li");
+        for (let cardIndex=0;cardIndex<card.length;cardIndex++) {
+           $(lis[cardIndex]).css('background-image',"url('" + card[cardIndex].cardUrl + "')");
+        }
+        $(".sub-5 .table-top .more .noMore").click(function () {
+            window.open("${global_url}navTo?url=home/businessProcess/createIc");
+        });
+
+        $(".sub-5 .table-top ul .card_li").click(function () {
+            var clickLiId = $(this).prop("id");
+            setLossHistory(clickLiId.substr(6,clickLiId.length-1));
+        });
+        function setLossHistory(cId) {
+            var sub5_gridData = {
+                ajac: {
+                    url: "${global_url}personalLoss/getLossPage",//请求地址
+                    method: "post",//请求方法
+                    data: {
+                        cardId:cId
+                    },//请求条件
+                    dataType: "json",
+                    beforeSend:function () {
+                        // my_layer.open();
+                    },
+                    overSend:function () {
+                        // my_layer.close();
+                    }
+                },
+                columnId:true,//显示列表序号（自增）
+                columns:[
+                    {title:"IC卡号", name:"cardId",       width:"10",hidden:false,align:"center"},
+                    {title:"操作类型", name:"handleType", width:"20",hidden:false,align:"center"},
+                    {title:"操作日期", name:"handelDate",   width:"30",hidden:false,align:"center"},
+                    {title:"操作结果", name:"handleResult",   width:"20",hidden:false,align:"center"},
+                    {title:"备注",    name:"handelMark",   width:"20",hidden:false,align:"center"}
+                ],//数据集合
+                multi_select:true,//是否多选
+                pages:[5,10,20,50,100],//每页多少天，选项
+            };
+
+            //绑定把表格数据
+            dataGrid.grid($(".sub-5 .table-bottom"),sub5_gridData);
+        }
+    }
+    function setCardsError() {
+        let _cardList_html_ =" <ul>";
+        $(".sub-5 .table-top ul").remove();
+
+        _cardList_html_ += " <li class='error_li'>" +
+            "    <span class='error e_l_t'>没</span><!--" +
+            "    --><span class='error e_r_t'>有</span><!--" +
+            "    --><span class='error e_l_b'>数</span><!--" +
+            "    --><span class='error e_r_b'>据</span>" +
+            "    <span class='move-target'></span>" +
+            "</li></ul>";
+
+        $(".sub-5 .table-top").append(_cardList_html_);
+    }
 </script>
 <!--sub-6注销-->
 <script>

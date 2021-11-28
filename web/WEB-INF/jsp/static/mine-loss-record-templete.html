@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的挂失模板</title>
+    <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/mySelect.css">
+    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://localhost:8080/nchkkjxy/theame/css/page-minePage.css">
+    <style>
+        .sub-5 .table-box .table-top ul{
+            position: absolute;
+            display: inline;
+            list-style: none;
+            background-color: #fff;
+            overflow-x: scroll;
+            width: calc(100% - 20px);
+            height:  calc(100% - 10px);
+            padding: 10px 10px 0 10px;
+            white-space: nowrap;
+            overflow-y: hidden;
+        }
+        .sub-5 .table-box .table-top ul li{
+            position: relative;
+            display: inline-block;
+            width: calc( (100% - 20px)/5 );
+            height: calc(100% - 10px);
+            background-color: #fff;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 6px #666;
+            transition: all var(--transform_slowily);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .sub-5 .table-box .table-top ul .more{
+            width: calc( (100% - 20px)/7 );
+            height: calc(100% - 10px);
+            background-color: #fff;
+            box-shadow: 0 0 6px #999;
+        }
+        .sub-5 .table-box .table-top ul .card_li:first-child{
+            margin-left: 0;
+        }
+        .sub-5 .table-box .table-top ul .card_li:hover{
+            z-index: 5;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px var(--sub_color);
+            animation: li_box_to_big 0.3s linear;
+            animation-iteration-count: 3;
+        }
+        @keyframes li_box_to_big {
+            from{box-shadow: 0 0 10px var(--sub_color);}
+            50%{box-shadow: 0 0 15px var(--sub_color);}
+            to{box-shadow: 0 0 10px var(--sub_color);}
+        }
+        .mine-box .sub-5 .table-box .table-top{
+            position: relative;
+            /*overflow-x: visible;*/
+            overflow-x: visible;
+        }
+        .sub-5 .table-box .table-top ul .loss_li_span {
+            position: absolute;
+            width: 100%;
+            /*height: 33%;*/
+        }
+        .sub-5 .table-box .table-top ul .loss_li_span_01{
+            font-size: 14px;
+            top:0;
+            left:0;
+            text-align: left;
+            width: calc(100% - 10px);
+            margin: 10px 0 0 10px ;
+        }
+        .sub-5 .table-box .table-top ul .loss_li_span_02{
+            font-size: 24px;
+            top:50%;
+            left:50%;
+            text-align: center;
+            transform: translate(-50%,-50%);
+        }
+        .sub-5 .table-box .table-top ul .loss_li_span_03{
+            font-size: 14px;
+            top:100%;
+            left:100%;
+            text-align: right;
+            margin: 0 10px 10px 0;
+            width: calc(100% - 10px);
+            transform: translate(calc(-100% - 10px),calc(-100% - 10px));
+        }
+        .sub-5 .table-box .table-top ul .noMore{
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+            box-shadow: 0 0 6px #888;
+            border-radius: 50%;
+            transition: all var(--transform_slowily);
+        }
+        .sub-5 .table-box .table-top ul .noMore:hover{
+            transform: translate(-50%,-50%) scale(1.1);
+        }
+    </style>
+    <style>
+        .sub-5 .table-box .table-top ul .error_li{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 0 6px #666;
+            background-color: #555;
+            padding: 4px;
+            list-style: none;
+        }
+        .sub-5 .table-box .table-top ul .error_li .error{
+            position: absolute;
+            display: inline-block;
+            width: calc(50% - 4px);
+            height: calc(50% - 4px);
+            background-color: #fff;
+            font-size: 42px;
+            text-align: center;
+            z-index: 2;
+        }
+        .sub-5 .table-box .table-top ul .error_li .e_l_t{
+
+        }
+        .sub-5 .table-box .table-top ul .error_li .e_l_b{
+            top:100%;
+            transform: translateY(calc(-100% - 4px));
+        }
+        .sub-5 .table-box .table-top ul .error_li .e_r_t{
+            left:100%;
+            transform: translateX(calc( -100% - 4px));
+        }
+        .sub-5 .table-box .table-top ul .error_li .e_r_b{
+            top:100%;
+            left:100%;
+            transform: translate(calc(-100% - 4px),calc(-100% - 4px));
+        }
+        .sub-5 .table-box .table-top ul .error_li .move-target{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 5px;
+            height: 5px;
+            z-index: 1;
+            border-radius: 50%;
+            background-color: #ff2f64;
+            box-shadow: 0 0 50px #ff2f64;
+            animation: move-target-move 5s infinite linear;
+        }
+        @keyframes move-target-move {
+            from{top:4px;}
+            50%{top:calc(100% - 4px);}
+            to{top:4px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="mine-box">
+        <div class="mine-right">
+            <div class="content">
+                <div class="sub-content sub-5" name="sub-5">
+                    <div class="table-box">
+                        <div class="table-top">
+                            <ul>
+                                <li class="error_li">
+                                    <span class="error e_l_t">没</span><!--
+                                    --><span class="error e_r_t">有</span><!--
+                                    --><span class="error e_l_b">数</span><!--
+                                    --><span class="error e_r_b">据</span>
+                                    <span class="move-target"></span>
+                                </li>
+<!--                                <li id="loss_li_1" class="card_li" style="background-image: url('http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png');">-->
+<!--                                    <span class="loss_li_span loss_li_span_01"><font class=" iconfont icon-dollar-symbol"> </font>NO.<font style="color: var(&#45;&#45;sub_color);">1</font></span>-->
+<!--                                    <span class="loss_li_span loss_li_span_02"><font class=" iconfont icon-wodezijin"></font>余额：<font style="color: #ffda62">122.00</font>￥</span>-->
+<!--                                    <span class="loss_li_span loss_li_span_03"><font class="iconfont icon-xuesheng"> </font>持有人：<font style="color: var(&#45;&#45;sub_color);">肖家海</font></span>-->
+<!--                                </li>-->
+<!--                                <li id="loss_li_2" class="card_li" style="background-image: url('http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png');">-->
+<!--                                    <span class="loss_li_span loss_li_span_01"><font class=" iconfont icon-dollar-symbol"> </font>NO.<font style="color: var(&#45;&#45;sub_color);">2</font></span>-->
+<!--                                    <span class="loss_li_span loss_li_span_02"><font class=" iconfont icon-wodezijin"></font>余额：<font style="color: #ffda62">182.00</font>￥</span>-->
+<!--                                    <span class="loss_li_span loss_li_span_03"><font class="iconfont icon-xuesheng"> </font>持有人：<font style="color: var(&#45;&#45;sub_color);">肖家海</font></span>-->
+<!--                                </li>-->
+<!--                                <li class="more">-->
+<!--                                    <span class="noMore loss_li_span loss_li_span_02 iconfont icon-xiangyou"></span>-->
+<!--                                </li>-->
+                            </ul>
+                        </div>
+                        <div class="table-bottom">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

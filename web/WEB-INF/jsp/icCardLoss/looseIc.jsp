@@ -1597,7 +1597,25 @@
             let cardType = dataGrid.getSelection(".loss-msg .loss-operator-panel .loss-recording-panel .table-loss",4);
             console.log(cardType);
             if(cardType[0] == "已挂失"){
-                alert("撤回成功！")
+                $.ajax({
+                    url:'${global_url}lossCard/lossBack',
+                    method:'post',
+                    dataType:'json',
+                    data:{
+                        'card_id':cardId
+                    },
+                    beforeSend:function(){
+                        loading_cir.loading('body');
+                    },
+                    success:function (data) {
+                        loading_cir.loaded('body');
+                        my_tip.tip(data.data);
+                    },
+                    error:function () {
+                        loading_cir.loaded('body');
+                        my_tip.tip("操作异常！");
+                    }
+                });
             }else {
                 my_tip.tip("选择的记录不是挂失记录，无法撤回！");
             }

@@ -33,6 +33,9 @@ public interface LossCardDao {
     Integer addLossHistory(CardHistory history);
     Integer modifyCardStatus(@Param("status") String status,@Param("cid") Long cid);
 
+    //挂失撤回
+    public Integer lossBack(@Param("cardId")Long cardId);
+    public String getUName(@Param("uId")Long uId);
     /*
     * 临界业务：修改邮箱
     *

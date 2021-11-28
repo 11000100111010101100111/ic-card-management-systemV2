@@ -73,6 +73,14 @@
          UPDATE `ic_card_easy_msg` SET `card_status` = #{status} WHERE `id` = #{cid}
     </update>
 
+<!--    //挂失撤回-->
+<!--    public Integer lossBack(@Param("cardId")Long cardId);-->
+    <update id="lossBack">
+        UPDATE `ic_card_easy_msg` SET `card_status`=1 WHERE `id` = #{cardId}
+    </update>
+    <select id="getUName" parameterType="java.lang.Long" resultType="java.lang.String">
+        SELECT `name` FROM `ic_main_user` WHERE `easy_id` = #{uId} AND `node_status` = 1
+    </select>
 <!--    /*-->
 <!--    * 临界业务：修改邮箱-->
 <!--    *-->

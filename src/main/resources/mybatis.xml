@@ -23,6 +23,7 @@
         <mapper resource="/mappers/personalConsume.xml"/>
         <mapper resource="/mappers/navigationMapper.xml"/>
         <mapper resource="/mappers/fileMapper.xml"/>
+        <mapper resource="/mappers/personalLossMapper.xml"/>
     </mappers>
 
 

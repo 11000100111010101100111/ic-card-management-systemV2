@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhky.personalInformation.dao.PersonalCardLoseDao">
+    <!--
+ * Created by IntelliJ IDEA.
+ * User: 波罗的海
+ * Date: 2021/11/28
+ * Time: 14:00
+-->
+<!--    //获取挂失卡列表：卡id+用户姓名+卡图表+卡余额-->
+<!--    public List<Map<String,Object>> getCards(@Param("uid") Long uid);-->
+        <select id="getCards" resultType="map" parameterType="java.lang.Long">
+            SELECT
+                icem.id AS cardId,icem.`blance` AS cardBalance,
+                (SELECT `icon` FROM `ic_card_type` WHERE `type_name` = icem.`card_type_type` AND `status`=1) AS cardUrl,
+                (SELECT `name` FROM `ic_main_user` WHERE `easy_id` = #{uid} AND `node_status`=1) AS uName
+            FROM `ic_card_easy_msg` AS icem
+            WHERE `id` IN (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{uid} AND `status` = 1)
+        </select>
+
+<!--    //根据卡id获取挂失总记录条数-->
+<!--    public Integer getCardTotal(@Param("cardId") Long cardId);-->
+        <select id="getCardTotal" resultType="java.lang.Integer" parameterType="java.lang.Long">
+            select count(id) FROM `ic_card_handel` WHERE `card_id`=#{cardId}  AND `status`=1
+        </select>
+<!--    //根据卡id查看挂失历史信息-->
+<!--    public Map<String,Object> getLossMsgOfCard(@Param("cardId") Long cardId ,@Param("off") Integer off,@Param("end") Integer end);-->
+        <select id="getLossMsgOfCard" resultType="map">
+            SELECT
+                `card_id` AS cardId,
+                `handle_type` AS handleType,
+                `handle_date` AS handelDate,
+                `handle_result` AS handleResult,
+                `mark` AS handelMark
+            FROM `ic_card_handel` WHERE `card_id`=#{cardId} AND `status`=1
+            ORDER BY `handle_date`
+            <if test="null != off and off >= 0 and end >= 1">
+                LIMIT #{off},#{end}
+            </if>
+        </select>
+</mapper>
