@@ -8,15 +8,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!-- 加载systemInfo配置文件 -->
+<!-- 加载args配置文件 -->
 <fmt:setBundle basename="args" var="global_args" />
-<!-- 读取配置值AppName，并赋值给变量appName -->
+<!-- 读取配置值http_url，并赋值给变量global_url -->
 <fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html>
     <head>
         <title>注册</title>
+        <link rel="stylesheet" href="${global_url}font/iconfont.css">
         <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
-<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/inputCss.css">--%>
+        <link rel="stylesheet" type="text/css" href="${global_url}theame/css/mySelect.css">
+        <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
+        <script src="${global_url}theame/js/baseJs.js"></script>
+        <script src="${global_url}theame/js/waitting-layer.js"></script>
         <style>
             body{
                 /*position: relative;*/
@@ -431,77 +435,69 @@
                 }
             }
         </style>
-<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myRadioButton.css">--%>
-<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/myLayer.css">--%>
-<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/waitting-layer.css">--%>
-<%--        <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/backJs.css">--%>
     </head>
     <body>
-<%--    <div class="back_con" id="jsi-particle-container"></div>--%>
-<%--        加载组件--%>
-        <div class="waitting-layer">
-    <div class="cover_layer">
-        <div class="cover_layer">
-            <div class="cover_layer">
-                <div class="cover_layer">
-                    <div class="cover_layer">
-                        <div class="cover_layer">
-                            <div class="cover_layer points-contain">
-                                <div class="point-containX">
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point center-ele">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                </div>
-                                <div class="point-containY .point-containX">
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point center-ele">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                    <div class="center-point">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <span class="wait-font">请稍后<br><font class="f_1 f">●</font><font class="f_2 f">◉</font><font class="f_3 f">●</font></span>
-</div>
-
-        <div class="msg-content">
-            <div class="logo">msg</div>
-            <div class="msg-body">
-                <div class="mb_revise">
-                    <div class="icon"></div>
-                    <p class="msg-txt">消息：</p>
-                </div>
-                <button class="determine">确定</button>
-                <button class="cancen">取消</button>
-            </div>
-        </div>
-
-
+        <%--加载组件--%>
+<%--        <div class="waitting-layer">--%>
+<%--            <div class="cover_layer">--%>
+<%--                <div class="cover_layer">--%>
+<%--                    <div class="cover_layer">--%>
+<%--                        <div class="cover_layer">--%>
+<%--                            <div class="cover_layer">--%>
+<%--                                <div class="cover_layer">--%>
+<%--                                    <div class="cover_layer points-contain">--%>
+<%--                                        <div class="point-containX">--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point center-ele">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="point-containY .point-containX">--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point center-ele">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                            <div class="center-point">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <span class="wait-font">请稍后<br><font class="f_1 f">●</font><font class="f_2 f">◉</font><font class="f_3 f">●</font></span>--%>
+<%--        </div>--%>
+<%--        <div class="msg-content">--%>
+<%--            <div class="logo">msg</div>--%>
+<%--            <div class="msg-body">--%>
+<%--                <div class="mb_revise">--%>
+<%--                    <div class="icon"></div>--%>
+<%--                    <p class="msg-txt">消息：</p>--%>
+<%--                </div>--%>
+<%--                <button class="determine">确定</button>--%>
+<%--                <button class="cancen">取消</button>--%>
+<%--            </div>--%>
+<%--        </div>--%>
         <div class="login-btn forbiden_txt" >
             <a href="${global_url}navTo?url=toLogin">去登录</a>
         </div>
@@ -641,25 +637,16 @@
         </div>
         </div>
         </div>
-        <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
-        <script src="${global_url}theame/js/myLayer.js"></script>
-        <script src="${global_url}theame/js/waitting-layer.js"></script>
-<%--        <script src="http://localhost:8080/nchkkjxy/theame/js/backJs.js"></script>--%>
         <script>
-            // 切换头像
-           $("#man").click(function () {
+        //切换头像
+            $("#man").click(function () {
                 $(".pesonal-set .self-icon").css("background", "url('${global_url}pic/head_icon/defult_man.png') center no-repeat");
            });
             $("#woman").click(function () {
                 $(".pesonal-set .self-icon").css("background", "url('${global_url}pic/head_icon/defult_woman.png') center no-repeat");
             });
-            <%--docume
-           nt.getElementById("toLogin").onclick = function () {--%>
-            <%--    alert("success");--%>
-            <%--    window.open("${pageContext.request.contextPath}/index.jsp");--%>
-            <%--}--%>
         </script>
-<%--        //限制输入框内容长度--%>
+        <%--限制输入框内容长度--%>
         <script>
             $(function(){
                 $("#single").bind('input propertychange',function(){
@@ -667,8 +654,7 @@
                     let maxlength = parseInt($(".max-char").html());
                     checkContent(this,maxlength);
                 });
-            })
-
+            });
             function checkContent(obj,max){
                 // debugger;
                 var _val = $(obj).val();
@@ -682,75 +668,43 @@
                 $(".input-char").html(_val.length);
             }
         </script>
-<%--    密码框安全--%>
+        <%--密码框安全--%>
         <script>
-
-        $("#pwd-2").blur(function () {
-            loseFocus();
-        });
-        $("#upwd").blur(function () {
-            let new_pwd = $("#pwd-2").val().trim();
-            if( new_pwd != null && new_pwd !== "") {
+            $("#pwd-2").blur(function () {
                 loseFocus();
-            }
-        });
-
-        $("#upwd").focus(function () {
-            reback(this);
-            reback("#pwd-2");
-        });
-        $("#pwd-2").focus(function () {
-            reback(this);
-            reback("#upwd");
-        });
-
-        function loseFocus() {
-            let pwd = $("#upwd").val().trim();
-            if( pwd != null && pwd !== ""){
+            });
+            $("#upwd").blur(function () {
                 let new_pwd = $("#pwd-2").val().trim();
-                if(new_pwd !== pwd){
-                    $("#upwd").css("color","#fff");
-                    $("#pwd-2").css("color","#fff");
-                    $("#upwd").css("background-color","crimson");
-                    $("#pwd-2").css("background-color","crimson");
+                if( new_pwd != null && new_pwd !== "") {
+                    loseFocus();
                 }
-                // else{
-                //     reback("#upwd");
-                //     reback("#pwd-2");
-                // }
+            });
+            $("#upwd").focus(function () {
+                reback(this);
+                reback("#pwd-2");
+            });
+            $("#pwd-2").focus(function () {
+                reback(this);
+                reback("#upwd");
+            });
+            function loseFocus() {
+                let pwd = $("#upwd").val().trim();
+                if( pwd != null && pwd !== ""){
+                    let new_pwd = $("#pwd-2").val().trim();
+                    if(new_pwd !== pwd){
+                        $("#upwd").css("color","#fff");
+                        $("#pwd-2").css("color","#fff");
+                        $("#upwd").css("background-color","crimson");
+                        $("#pwd-2").css("background-color","crimson");
+                    }
+                }
             }
-        }
-        function reback(obj) {
-            $(obj).css("background-color","#fff");
-            $(obj).css("color","#000");
-        }
-        // var pwd_frist = "";
-        // var pwd_second="";
-        // $(function(){
-        //     $("#single").bind('input propertychange',function(){
-        //         // checkContent(this,maxlength);
-        //
-        //     });
-        //     $("#single").bind('input propertychange',function(){
-        //         checkContent(this,maxlength);
-        //     });
-        // })
-        // function checkContent(obj,str){
-        //     $(obj).keydown(function (ev) {
-        //         str+=ev;
-        //     });
-        //     var _val = $(obj).val();
-        //     if (_val.length > max) {
-        //         $(".input-char").css("color","crimson");
-        //         $(obj).val(_val.substring(0, max));
-        //         $(obj).tips({side:3, msg:'达到最大字数限制', bg:'#AE81FF', time:1});
-        //     }else{
-        //         $(".input-char").css("color","#666");
-        //     }
-        //     $(".input-char").html(_val.length);
-        // }
-    </script>
-<%--        切换面板--%>
+            function reback(obj) {
+                $(obj).css("background-color","#fff");
+                $(obj).css("color","#000");
+            }
+        </script>
+        <%--切换面板--%>
         <script>
             var index_panel = 0;
             var map_panel = [".count-set",".pesonal-set",".pwd-setting"];
@@ -772,7 +726,6 @@
                 $("#next").css("display","none");
                 $("#before").css("display","block");
             });
-
             $("#before").click(function () {
                 if(index_panel<=1){
                     $(this).css("display","none");
@@ -793,7 +746,6 @@
                 }
 
             });
-
             function befor_panel() {
                 if(index_panel<=0){
                     index_panel=0;
@@ -842,7 +794,6 @@
                 $(".pesonal-set").css("z-index","1");
                 $(".pwd-setting").css("z-index","1");
             }
-
             function routePanel(index) {
                 index_panel = index;
                 change_zIdex($(map_panel[index_panel]));
@@ -851,9 +802,8 @@
                 $("#next").css("display",index_panel === 2?"none":"block");
             }
         </script>
-<%--        上传注册信息--%>
+        <%--上传注册信息--%>
         <script>
-
             function judgeForm(){
                 let phone = $("#phone").val();
                 let identify = $("#identify").val();
@@ -923,28 +873,19 @@
 
                 return {single:-1,msg:msg};
             }
-
             $("#submit").click(function () {
                 let result = judgeForm();
+                // console.log(result);
                 if(result.single !== -1){
-                    showMessage_myLayer(result.msg,"${global_url}pic/login/无数据.png");
+                    my_tip.tip(result.msg);
+                    <%--showMessage_myLayer(result.msg,"${global_url}pic/login/无数据.png");--%>
                     routePanel(result.single);
                 }else {
                     // debugger;
                     register(result.msg);
                 }
             });
-
             function register(msg) {
-                var url = "?phone="+msg.phone+
-                    "&identify="+msg.identify+
-                    "&name="+msg.name+
-                    "&sex="+msg.sex+
-                    "&birthday="+msg.data+
-                    "&email="+msg.email+
-                    "&single="+msg.single+
-                    "&headImg="+msg.headImg+
-                    "&pwd="+msg.pwd;
                 $.ajax({
                     type: "post",                //数据提交方式（post）
                     url: "${pageContext.request.contextPath}/go/register", //提交的数据
@@ -954,28 +895,32 @@
                         identify:msg.identify,
                         name:msg.name,
                         sex:msg.sex,
-                        birthday:msg.data,
+                        birthday:msg.birthday,
                         email:msg.email,
                         single:msg.single,
                         headImg:msg.headImg,
                         pwd:msg.pwd
                     },
                     beforeSend:function(XMLHttpRequest){
-                        my_layer.open();
+                        // my_layer.open();
+                        loading_cir.loading('body');
                     },
                     success: function (data) {
-                        my_layer.close();
-
+                        // my_layer.close();
+                        loading_cir.loaded('body');
                         let msg = data.val;
                         // debugger;
-                        showMessage_myLayer(msg,"${global_url}pic/login/"+(data.single === "succeed"?"注册成功":"404")+".png");
+                        my_tip.tip(data.single === "succeed"?"注册成功！":"注册失败！");
+                        <%--showMessage_myLayer(msg,"${global_url}pic/login/"+(data.single === "succeed"?"注册成功":"404")+".png");--%>
                     },
                     error:function () {
-                        showMessage_myLayer(msg,"${global_url}pic/login/404.png");
+                        loading_cir.loaded('body');
+                        my_tip.tip("网络连接失败！");
+                        <%--showMessage_myLayer(msg,"${global_url}pic/login/404.png");--%>
+                        // my_layer.close();
                     }
                 });
             }
         </script>
-
     </body>
 </html>

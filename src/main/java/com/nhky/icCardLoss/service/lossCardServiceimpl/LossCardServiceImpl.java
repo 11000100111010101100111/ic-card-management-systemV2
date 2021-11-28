@@ -156,7 +156,7 @@ public class LossCardServiceImpl implements LossCardService {
     public Integer lossCard() {
         String cardId = StringUtil.getPamterString(RequestUtil.getRequestParam("card_id"));
         String handleType = "挂失";
-        String handleResult = "0";
+        String handleResult = "挂失";
         String mark = StringUtil.getPamterString(RequestUtil.getRequestParam("mark"));
         String cardStatus ="-1";
 
