@@ -25,4 +25,10 @@ public interface RouterNavigationDao {
 
     //获取开发者列表
     public List<User> getAuthors();
+
+    /*
+    *
+    * 修改邮箱
+    * */
+    public Integer modifyEmail(@Param("email") String email,@Param("uid") Long uid);
 }

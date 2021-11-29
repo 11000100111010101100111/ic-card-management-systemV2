@@ -2,6 +2,8 @@ package com.nhky.route.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.nhky.emun.CommonCode;
+import com.nhky.route.home.NavigationService;
+import com.nhky.route.home.RouterNavigationDao;
 import com.nhky.utils.*;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -29,6 +31,9 @@ import java.util.Properties;
 public class EmailIdentifyController {
     @Resource(name = "javaMailSender")
     private JavaMailSender javaMailSender;
+
+    @Resource(name = "routerNavigationDao")
+    RouterNavigationDao navigation;
 
     /*
     * @Param  email 接收验证码的邮箱
@@ -80,6 +85,7 @@ public class EmailIdentifyController {
             emailCode.put("codeCreateTime", DateUtil.nowDateTime());
             emailCode.put("code",code);
             emailCode.put("userId",uid);
+            emailCode.put("email",email);
 
             RequestUtil.getRequest().getSession().setAttribute("email_code",emailCode);
 
@@ -100,7 +106,7 @@ public class EmailIdentifyController {
 
         Map<String,Object> emailCode = (Map<String, Object>) RequestUtil.getRequest().getSession().getAttribute("email_code");
         if(null == emailCode){
-            return JSON.toJSONString(ResultUtil.error(CommonCode.NO_EMAIL));
+            return JSON.toJSONString(ResultUtil.error("请先获取验证码！"));
         }
 
         String timeout = StringUtil.getPamterString(emailCode.get("codeTimeout"));
@@ -110,9 +116,18 @@ public class EmailIdentifyController {
         }
 
         String browerCode = StringUtil.getPamterString(emailCode.get("code"));
-        if(browerCode.equals(emailCode)){
-            return JSON.toJSONString(ResultUtil.succeed("邮箱验证成功"));
+        if(browerCode.equals(clientCode)){
+            try {
+                navigation.modifyEmail(
+                        StringUtil.getPamterString(emailCode.get("email")),
+                        Long.parseLong(StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId")))
+                );
+                RequestUtil.destroySessionAttr("email_code");
+                return JSON.toJSONString(ResultUtil.succeed("邮箱验证成功"));
+            }catch (Exception e){
+                return JSON.toJSONString(ResultUtil.error("您的登录信息或者邮箱验证信息过期了！"));
+            }
         }
-        return JSON.toJSONString(ResultUtil.error(CommonCode.EMAIL_ERROR));
+        return JSON.toJSONString(ResultUtil.error("验证码输入错误！"));
     }
 }

@@ -1144,7 +1144,7 @@
     var wait_time = 60;
     $(".loss-msg .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .send-email").click(function () {
         if(email_send_times > 0){
-            my_tip.tip("发送次数太多了，休息一下吧！",'body',[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}]);
+            my_tip.tip("发送次数太多了，休息一下吧！",1,'body',[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}]);
             $(".loss-msg .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .send-email").css("pointer-events","none");
             $(".loss-msg .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .send-email").css("cursor","no-drop");
             $(".loss-msg .loss-panel-ack-email .loss-panel-ack-email-sub .ack-email .send-email").css("font-size","14px");
@@ -1177,15 +1177,15 @@
             success:function (data) {
                 loading_cir.loaded("body");
                 if(data.succeed = true){
-                    my_tip.tip(data.data,".loss-msg .loss-panel-ack-email");
+                    my_tip.tip(data.data,1,".loss-msg .loss-panel-ack-email");
                     email_send_times++;
                 }else {
-                    my_tip.tip(""+data.msg+data.code,".loss-msg .loss-panel-ack-email");
+                    my_tip.tip(""+data.msg+data.code,1,".loss-msg .loss-panel-ack-email");
                 }
             },
             error:function () {
                 loading_cir.loaded("body");
-                my_tip.tip("数据加载异常！",".loss-msg .loss-panel-ack-email");
+                my_tip.tip("数据加载异常！",1,".loss-msg .loss-panel-ack-email");
             }
         })
     });
@@ -1194,7 +1194,7 @@
         var _email_code = $("#email_code").val();
         var _mark = $("#loss-mark").val();
         if(_email_code == "" || _mark == ""){
-            my_tip.tip("填写内容不能为空！","body",[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}]);
+            my_tip.tip("填写内容不能为空！",1,"body",[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}]);
             return;
         }
         $.ajax({
@@ -1208,7 +1208,7 @@
                 loading_cir.loading("body");
             },
             success:function (data) {
-                if(data.succeed = true){
+                if(data.succeed == true){
                     $.ajax({
                             url:'${global_url}lossCard/loss',
                             method:'post',
@@ -1220,14 +1220,14 @@
                             beforeSend:function () {
 
                             },
-                            success:function (data) {
+                            success:function (d) {
                                 loading_cir.loaded('body');
-                                if (data.succeed == true){
-                                    my_tip.tip(data.data, 'body');
+                                if (d.succeed == true){
+                                    my_tip.tip(d.data,1, 'body');
                                     $(".loss-msg .loss-panel-ack-email .close").click();
                                     getCardMsg();
                                 }else {
-                                    my_tip.tip(data.data, 'body', [{
+                                    my_tip.tip(d.data,1, 'body', [{
                                         cssName: 'background-color',
                                         cssValue: '#c7254e'
                                     }, {cssName: 'color', cssValue: '#fff'}]);
@@ -1235,18 +1235,18 @@
                             },
                             error:function () {
                                 loading_cir.loaded('body');
-                                my_tip.tip("访问异常",'body',[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}])
+                                my_tip.tip("访问异常",1,'body',[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}])
                             }
                      });
                 }
                 else{
                     loading_cir.loaded('body');
-                    my_tip.tip(data.msg,'body',[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}])
+                    my_tip.tip(data.msg+":"+data.data,1,'body',[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}])
                 }
             },
             error:function () {
                 loading_cir.loaded('body');
-                my_tip.tip("访问异常",'body',[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}])
+                my_tip.tip("访问异常",1,'body',[{cssName:'background-color',cssValue:'#c7254e'},{cssName: 'color',cssValue: '#fff'}])
             }
         });
 
@@ -1485,11 +1485,11 @@
         function getHistory() {
             var cardId=dataGrid.getSelection(".loss-msg .loss-operator-panel .loss-recording-panel .table-loss",2);
             if(cardId.length>1){
-                my_tip.tip("一次只能查看一条数据！",'body');
+                my_tip.tip("一次只能查看一条数据！",1,'body');
                 return;
             }
             if(cardId.length<1){
-                my_tip.tip("请先选择需要查看的信息！",'body');
+                my_tip.tip("请先选择需要查看的信息！",1,'body');
                 return;
             }
             hasLossHistory = true;
@@ -1518,7 +1518,7 @@
             $(".loss-msg .loss-history").remove();
             let _history_html = "";
             if(history.length<1){
-                my_tip.tip("翻遍了数据库都没看到你要的数据~~~~~","body");
+                my_tip.tip("翻遍了数据库都没看到你要的数据~~~~~",1,"body");
                 _history_html = " <div class='loss-history'>" +
                     "           <div class='loss-history-sub'>" +
                     " <input type='button'  id='konwHistory' value='离开' style='position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);'>"+
@@ -1594,11 +1594,11 @@
         $("#back_loss").click(function () {
             var cardId=dataGrid.getSelection(".loss-msg .loss-operator-panel .loss-recording-panel .table-loss",2);
             if(cardId.length>1){
-                my_tip.tip("选择太多了！",'body');
+                my_tip.tip("选择太多了！",1,'body');
                 return;
             }
             if(cardId.length<1){
-                my_tip.tip("请先选择需要查看的信息！",'body');
+                my_tip.tip("请先选择需要查看的信息！",1,'body');
                 return;
             }
             let cardType = dataGrid.getSelection(".loss-msg .loss-operator-panel .loss-recording-panel .table-loss",4);

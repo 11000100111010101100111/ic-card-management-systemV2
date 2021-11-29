@@ -552,7 +552,7 @@
                     <table class="balance-tab">
                         <tr>
                             <td>
-                                <img src="" class="inline_block" alt="" style="width: 100px;height: 100px;border-radius: 5px;">
+                                <img src="${global_url}pic/main_page/money_icon.png" class="inline_block" alt="" style="width: 100px;height: 100px;border-radius: 5px;">
                                 <div class="inline_block" >
                                         <span>
                                             <font style=" border-radius:5px;font-size: 10px;font-family: 'Adobe 宋体 Std L';color: var(--sub_color);background-color: #fff;padding: 2px;margin-left: 2px;">余额￥</font>

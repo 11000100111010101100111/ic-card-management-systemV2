@@ -42,4 +42,9 @@
     <select id="getAuthors" resultType="com.nhky.pojo.User">
         SELECT * FROM `ic_main_user` WHERE `register_identify` = '开发者' AND `node_status` = 1 AND `user_status` = 1
     </select>
+
+<!--    public Integer modifyEmail(@Param("email") String email,@Param("uid") Long uid);-->
+    <update id="modifyEmail">
+        UPDATE `ic_main_user` SET `email`=#{email} WHERE `easy_id`=#{uid}
+    </update>
 </mapper>

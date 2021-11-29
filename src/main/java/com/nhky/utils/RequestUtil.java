@@ -39,4 +39,12 @@ public class RequestUtil {
             RequestUtil.getRequest().getSession().removeAttribute(em.nextElement().toString());
         }
     }
+    public static boolean destroySessionAttr(String key){
+        try{
+            RequestUtil.getRequest().getSession().removeAttribute(key);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

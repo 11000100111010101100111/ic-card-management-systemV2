@@ -28,7 +28,9 @@ public class ResultUtil {
     public static ResultVO error(ICommonCode errorCode) {
         return new ResultVO().setCodeMessage(errorCode);
     }
-
+    public static ResultVO error(Object data) {
+        return new ResultVO(CommonCode.ERROR,data);
+    }
     /**
      * 描述: 有结果，需提示的情况
      * @return: [ResultVO]
