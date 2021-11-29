@@ -278,20 +278,20 @@
     <span>注&nbsp;&nbsp;销</span>
 </div>
 <script>
-    //去挂失
+    //去注销
     $("#logout-toLogout-btn").click(function () {
         showPanel(".logout-card");
     });
-    //关闭去挂失
+    //关闭去注销
     $(".logout-card  .close").click(function () {
         closePanel(".logout-card");
     });
 
-    //查看挂失历史
+    //查看注销历史
     $("#logout-seeHistory-btn").click(function () {
         showPanel(".logout-history");
     });
-    //关闭挂失历史
+    //关闭注销历史
     $(".logout-history .close").click(function () {
         closePanel(".logout-history");
     });
