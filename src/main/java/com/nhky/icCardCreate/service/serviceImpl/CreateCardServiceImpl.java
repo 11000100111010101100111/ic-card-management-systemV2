@@ -53,10 +53,10 @@ public class CreateCardServiceImpl implements CreateCardService {
             for (CardOfUser cardOfUser : cardList) {
 
                 //   卡状态： -4失效卡、-3已挂失，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
-                switch (cardOfUser.getStatus()){
-                    case 1: zhengchang++;break;
-                    case -1: guashi++;break;
-                    case -2: zuxiao++;break;
+                switch (StringUtil.getPamterString(cardOfUser.getStatus())){
+                    case "1": zhengchang++;break;
+                    case "-1": guashi++;break;
+                    case "-2": zuxiao++;break;
                 }
             }
             StringBuffer msg = new StringBuffer();

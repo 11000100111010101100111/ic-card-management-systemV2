@@ -65,7 +65,7 @@
         <property name="basePackage" value="com.nhky.*"/>
     </bean>
 
-    <!--    //配置事务-->
+    <!--//配置事务-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--        //添加数据库-->
         <property name="dataSource" ref="dataSource"/>
@@ -101,6 +101,13 @@
                 <prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
                 <prop key="mail.smtp.timeout">${mail.smtp.timeout}</prop>
             </props>
+        </property>
+    </bean>
+
+<!--    编程式事务配置-->
+    <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager">
+            <ref bean="transactionManager"/>
         </property>
     </bean>
 </beans>

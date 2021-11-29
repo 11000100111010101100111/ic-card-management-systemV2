@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhky.icCardLogout.dao.CardLogoutDao">
+    <!--
+ * Created by IntelliJ IDEA.
+ * User: 波罗的海
+ * Date: 2021/11/29
+ * Time: 9:13
+ 注销卡数据访问层mapper
+-->
+<!--    /*-->
+<!--    * 根据用户id查找用户所有卡-->
+<!--    * */-->
+<!--    public List<CardOfUser> findMyCards(@Param("uid") Long uid);-->
+        <select id="findMyCards" resultType="com.nhky.pojo.CardOfUser" parameterType="java.lang.Long">
+            SELECT `id`, `card_id`,`user_id`,`status` FROM `ic_card_msg` WHERE `user_id`=#{uid} AND `status`=1
+        </select>
+<!--    /*-->
+<!--    * 根据卡id查找卡的基本信息-->
+<!--    * */-->
+<!--    public Map<String,Object> findCardById(@Param("cardId")Long cardId);-->
+        <select id="findCardById" parameterType="java.lang.Long" resultType="map">
+           SELECT
+               imu.`easy_id` AS uId,imu.`name` AS uName,imu.`identify_card` AS uIdentify,imu.`phone` AS uPhone,imu.`email` AS uEmail,
+                        imu.`head_url` AS uHead,imu.`register_identify` AS uRegisterIdentify,imu.`money_balance` AS uBalance,
+               icem.`id` AS cId,icem.`blance` AS cBalance,icem.`create_date` AS cCreateDate,icem.`card_status` AS cStatus,
+               ict.`type_name` AS cName,ict.`icon` AS cIcon,ict.`count` AS cCount
+           FROM `ic_card_easy_msg` AS icem
+           LEFT JOIN `ic_card_type` AS ict ON ict.`type_name` = icem.`card_type_type`
+           LEFT JOIN `ic_card_msg` AS icm ON icm.`card_id` = icem.`id`
+           LEFT JOIN `ic_main_user` AS imu ON imu.`easy_id` = icm.`user_id`
+           WHERE icem.`id` = #{cardId} AND icem.`status`=1
+        </select>
+<!--    /*-->
+<!--    * 因为注销卡为永久不可逆，-->
+<!--    * 所以注销卡后卡内余额需全部转到账户余额，-->
+<!--    * */-->
+<!--    public Integer changeAccountBalance(@Param("cardId")Long cId,@Param("uid") Long uId);-->
+    <update id="changeAccountBalance" parameterType="java.lang.Long">
+           UPDATE `ic_main_user` SET `money_balance` = FORMAT(
+            CAST(`money_balance` AS DECIMAL)
+            +
+            CAST(
+                (SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = (
+                    SELECT `id` FROM `ic_card_easy_msg` AS icem WHERE icem.`id` IN (
+                        SELECT `card_id` FROM `ic_card_msg` AS icm WHERE icm.`user_id` = #{uid} AND icm.`status`=1
+                        )
+                     AND icem.`card_status` = 1
+                    )
+                )
+                AS DECIMAL
+            ) ,2)
+           WHERE `easy_id` = #{uid}
+    </update>
+
+<!--    #添加账户余额变更记录-->
+<!--    public Integer addAccountBalanceHistory(@Param("cardId")Long cId,@Param("uid") Long uId,@Param("host")String host);-->
+    <insert id="addAccountBalanceHistory">
+    INSERT INTO `ic_main_user_balance_log`
+    (user_id,money,`type`,`time`,balance,operator_user,ip_host,note)
+    VALUES
+    (
+        #{uid},
+        (
+            SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = #{cardId}
+        ),
+        '卡注销资金变更',
+        NOW(),
+        (
+            SELECT FORMAT(`money_balance`,2) FROM `ic_main_user` WHERE `easy_id` = #{uid}
+        ),
+        #{uid},
+        #{host},
+        '卡注销资金变更'
+    )
+    </insert>
+
+    <!--    /*-->
+    <!--    * 根据卡的id注销这张卡:-->
+    <!--    * 修改卡的状态为：-3,修改卡余额为0,修改卡状态为0//注销为永久不可逆-->
+    <!--    * */-->
+    <!--    public Integer logoutCard(@Param("cardId") Long cardId);-->
+    <update id="logoutCard" parameterType="java.lang.Long">
+        UPDATE `ic_card_easy_msg` SET `card_status` = -3,`blance`='0.00' ,`status`=0 WHERE `id`=#{cardId}
+    </update>
+<!--    /*-->
+<!--    * 添加注销卡业务历史-->
+<!--    * */-->
+<!--    public Integer addLogoutHistory(CardHistory logoutHistory);(#{},'IC卡注销',NOW(),'注销成功','注销',1)-->
+    <insert id="addLogoutHistory" parameterType="com.nhky.pojo.CardHistory">
+        INSERT INTO
+        `ic_card_handel` (`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`,`status`)
+         VALUES(#{card_id},'IC卡注销',NOW(),'注销成功','注销',1)
+    </insert>
+</mapper>
