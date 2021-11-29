@@ -33,22 +33,36 @@ CREATE TABLE `ic_card_easy_msg` (
 /*Data for the table `ic_card_easy_msg` */
 
 insert  into `ic_card_easy_msg`(`id`,`blance`,`create_date`,`card_status`,`card_type_type`,`status`) values 
-(1,'0','2021-11-13 12:22:56','1','普通卡',1);
+(1,'10.00','2021-11-13 12:22:56','1','普通卡',1);
 
 /*Table structure for table `ic_card_handel` */
 
 DROP TABLE IF EXISTS `ic_card_handel`;
 
 CREATE TABLE `ic_card_handel` (
-  `id` varchar(225) NOT NULL COMMENT '表id',
-  `card_id` varchar(225) DEFAULT NULL COMMENT '卡id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '表id',
+  `card_id` bigint(20) DEFAULT NULL COMMENT '卡id',
   `handle_type` varchar(225) DEFAULT NULL COMMENT '处理类型',
   `handle_date` varchar(225) DEFAULT NULL COMMENT '处理日期',
-  `status` int(11) DEFAULT NULL COMMENT '状态码',
+  `handle_result` varchar(10) DEFAULT NULL COMMENT '处理结果(-1:已撤销,0:挂失)',
+  `mark` varchar(225) DEFAULT NULL COMMENT '处理备注',
+  `status` int(11) DEFAULT '1' COMMENT '状态码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `ic_card_handel` */
+
+insert  into `ic_card_handel`(`id`,`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`,`status`) values 
+(14,1,'创建','2021-11-13 12:22:56','创建成功','无',1),
+(15,1,'挂失','2022','挂失过程','www',1),
+(16,1,'挂失','2021-11-28 15:52:43','0','太那个了啊',1),
+(17,1,'挂失撤回','2021-11-28 16:02:00','撤回成功','撤回',1),
+(18,1,'挂失','2021-11-28 16:28:37','0','就像挂失',1),
+(19,1,'挂失撤回','2021-11-28 16:33:07','撤回成功','挂失撤回---肖家海---2021年33月28日 16时11分03秒',1),
+(20,1,'挂失','2021-11-28 16:36:00','0','O(∩_∩)O哈哈~',1),
+(21,1,'挂失撤回','2021-11-28 16:36:17','撤回成功','挂失撤回---肖家海---2021年36月28日 16时11分17秒',1),
+(22,1,'挂失','2021-11-28 16:39:04','0','百年',1),
+(23,1,'挂失撤回','2021-11-28 16:47:05','撤回成功','挂失撤回---肖家海---2021年47月28日 16时11分05秒',1);
 
 /*Table structure for table `ic_card_msg` */
 
@@ -60,27 +74,37 @@ CREATE TABLE `ic_card_msg` (
   `user_id` bigint(225) DEFAULT NULL COMMENT '用户id',
   `status` int(11) DEFAULT '1' COMMENT '状态码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `ic_card_msg` */
 
 insert  into `ic_card_msg`(`id`,`card_id`,`user_id`,`status`) values 
-(1,1,10,1);
+(1,1,10,1),
+(3,2,10,1),
+(4,3,10,1);
 
 /*Table structure for table `ic_card_type` */
 
 DROP TABLE IF EXISTS `ic_card_type`;
 
 CREATE TABLE `ic_card_type` (
-  `id` varchar(225) NOT NULL COMMENT '表id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '表id',
   `type_name` varchar(225) DEFAULT NULL COMMENT '类型名称',
   `icon` varchar(225) DEFAULT NULL COMMENT '类型图标地址',
   `count` varchar(225) DEFAULT NULL COMMENT '类型消费折扣',
   `status` int(11) DEFAULT NULL COMMENT '状态码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `ic_card_type` */
+
+insert  into `ic_card_type`(`id`,`type_name`,`icon`,`count`,`status`) values 
+(1,'普通卡','http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','1',1),
+(2,'军人卡','http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/军人卡.png','0.6',1),
+(3,'学生卡','http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/student.png','0.6',1),
+(4,'老人卡','http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/老人卡.png','0.6',1),
+(5,'残疾卡','http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/残疾卡.png','0.6',1),
+(6,'VIP卡','http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/vip.png','0.8',1);
 
 /*Table structure for table `ic_consume_node` */
 
@@ -149,7 +173,7 @@ CREATE TABLE `ic_main_easy_user` (
   `password` varchar(50) DEFAULT NULL COMMENT '密码',
   `indentify` varchar(50) DEFAULT NULL COMMENT '用户身份',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `ic_main_easy_user` */
 
@@ -158,7 +182,10 @@ insert  into `ic_main_easy_user`(`id`,`easy_id`,`password`,`indentify`) values
 (3,'188206140','123456','开发者'),
 (4,'188206119','123456','开发者'),
 (5,'188206107','123456','开发者'),
-(10,'xjh','111','开发者');
+(10,'xjh','111','开发者'),
+(11,'14789654586','x123456','普通用户'),
+(12,'19963574852','x123456','普通用户'),
+(13,'19970246512','x123456','普通用户');
 
 /*Table structure for table `ic_main_route` */
 
@@ -210,12 +237,12 @@ CREATE TABLE `ic_main_user` (
   `money_balance` varchar(225) DEFAULT '0.00' COMMENT '钱包余额',
   `node_status` varchar(50) DEFAULT '1' COMMENT '记录结点状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `ic_main_user` */
 
 insert  into `ic_main_user`(`id`,`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`) values 
-(1,10,'肖家海','362430199999999999','15770674965','2749984520@qq.com','2021-11-01','男','http://localhost:8080/nchkkjxy/upload/img/2021_49_21_20_11_20_73edca11-bd73-4eec-8cfd-8c9a733c1785.png','喜欢敲代码！','开发者','1','201.69','1'),
+(1,10,'肖家海','362430199999999999','15770674965','2749984520@qq.com','2021-11-01','男','http://localhost:8080/nchkkjxy//upload/img/2021_52_24_09_11_08_3e716a2b-9649-4880-90ba-5bd104ef285d.png','喜欢敲代码！哈哈哈','开发者','1','212.00','1'),
 (2,11,'张四','362403655984215412','19970246855','123@qq.com','2000-12-01','男','http://localhost:8080/nchkkjxy/pic/head_icon/defult.png','hello','普通用户','1','0.06','1'),
 (3,12,'张四','362403655984215411','19970246858','123@qq.com','2000-12-01','男','http://localhost:8080/nchkkjxy/pic/head_icon/defult.png','hello','普通用户','1','0.00','1'),
 (4,13,'张四','362403655984215413','19970246851','123@qq.com','2000-12-01','男','http://localhost:8080/nchkkjxy/pic/head_icon/defult.png','hello','普通用户','1','0.00','1'),
@@ -233,7 +260,10 @@ insert  into `ic_main_user`(`id`,`easy_id`,`name`,`identify_card`,`phone`,`email
 (16,2,'项若颖','333333333333333333','15777777771','111@123.com','2021-11-19','女','http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png','没有个性也是一种个性！','开发者','1','0.09','1'),
 (18,3,'郑子豪','433333333333333333','1577777772','111@124.com','3333-33-34','男','http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png','没有个性也是一种个性！','开发者','1','0.00','1'),
 (19,4,'卢正豪','533333333333333333','15777777773','111@125.com','3333-33-35','男','http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png','没有个性也是一种个性！','开发者','1','0.00','1'),
-(20,5,'晏慧君','633333333333333333','15777777774','111@126.com','3333-33-36','女','http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png','没有个性也是一种个性！','开发者','1','0.00','1');
+(20,5,'晏慧君','633333333333333333','15777777774','111@126.com','3333-33-36','女','http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png','没有个性也是一种个性！','开发者','1','0.00','1'),
+(21,11,'吃吃吃','382162199108152142','14789654586','222@cc.com',NULL,'女','http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png','就知道吃','普通用户','1','0.00','1'),
+(22,12,'京津冀','325496588742153654','19963574852','111@qq.com',NULL,'男','http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png','北上广不相信眼泪','普通用户','1','0.00','1'),
+(23,13,'vv','365248466520213651','19970246512','bbb@qq.com','2021-11-05','女','http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png','uuu','普通用户','1','0.00','1');
 
 /*Table structure for table `ic_main_user_balance_log` */
 
@@ -251,7 +281,7 @@ CREATE TABLE `ic_main_user_balance_log` (
   `status` int(11) DEFAULT '1' COMMENT '记录的状态字',
   `note` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `ic_main_user_balance_log` */
 
@@ -487,7 +517,12 @@ insert  into `ic_main_user_balance_log`(`id`,`user_id`,`money`,`type`,`time`,`ba
 (233,2,'0.01','签到','2021-11-19 20:51:03','0.060000000000000005',2,'127.0.0.1',1,'日常签到'),
 (234,2,'0.01','签到','2021-11-19 20:51:07','0.06999999999999999',2,'127.0.0.1',1,'日常签到'),
 (235,2,'0.01','签到','2021-11-19 20:51:11','0.08',2,'127.0.0.1',1,'日常签到'),
-(236,2,'0.01','签到','2021-11-20 08:38:41','0.09',2,'127.0.0.1',1,'日常签到');
+(236,2,'0.01','签到','2021-11-20 08:38:41','0.09',2,'127.0.0.1',1,'日常签到'),
+(237,10,'0.01','签到','2021-11-22 12:13:20','201.7',10,'127.0.0.1',1,'日常签到'),
+(238,10,'0.01','签到','2021-11-26 11:16:19','201.70999999999998',10,'127.0.0.1',1,'日常签到'),
+(239,10,'0.01','签到','2021-11-27 21:14:10','201.72',10,'127.0.0.1',1,'日常签到'),
+(240,10,'100','卡注销资金变更','2021-11-29 10:23:54','212.00',10,'192.168.102.1',1,'卡注销资金变更'),
+(241,10,'10.00','卡注销资金变更','2021-11-29 10:27:18','212.00',10,'192.168.102.1',1,'卡注销资金变更');
 
 /*Table structure for table `ic_recharge_node` */
 
@@ -697,7 +732,7 @@ CREATE TABLE `ic_util_router_navigation` (
   `del_personal` bigint(20) DEFAULT NULL COMMENT '路由删除id',
   `status` int(11) DEFAULT '1' COMMENT '路由状态默认1，0表示删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `ic_util_router_navigation` */
 
@@ -713,14 +748,15 @@ insert  into `ic_util_router_navigation`(`id`,`title`,`url`,`icon`,`leavel`,`rou
 (9,'IC卡申领','http://localhost:8080/nchkkjxy/navTo?url=home/businessProcess/createIc','iconfont icon-kexuejishu',0,'主页',3,'2021-11-17 12:34:39',10,NULL,NULL,1),
 (10,'IC卡挂失','http://localhost:8080/nchkkjxy/navTo?url=home/businessProcess/looseIc','iconfont icon-301guashishenqing-lv',0,'主页',3,'2021-11-17 12:34:39',10,NULL,NULL,1),
 (11,'IC卡注销','http://localhost:8080/nchkkjxy/navTo?url=home/businessProcess/logoutIc','iconfont icon-chonghong-21',0,'主页',3,'2021-11-17 12:34:39',10,NULL,NULL,1),
-(12,'业务记录','http://localhost:8080/nchkkjxy/navTo?url=home/businessProcess/businessNode','iconfont icon-shouxinxiangqing-xiaofeijilu',0,'主页',3,'2021-11-17 12:34:39',10,NULL,NULL,1),
+(12,'业务记录','http://localhost:8080/nchkkjxy/navTo?url=home/businessProcess/businessNode','iconfont icon-shouxinxiangqing-xiaofeijilu',0,'主页',3,'2021-11-17 12:34:39',10,NULL,NULL,0),
 (13,'个人信息','http://localhost:8080/nchkkjxy/navTo?url=home/mine/info','iconfont icon-xueshengziliao',0,'主页',4,'2021-11-17 12:40:03',10,NULL,NULL,1),
 (14,'登录选项','http://localhost:8080/nchkkjxy/navTo?url=home/mine/loginChiose','iconfont icon-huidaodingbu',0,'主页',4,'2021-11-17 12:40:03',10,NULL,NULL,1),
 (15,'退出系统','http://localhost:8080/nchkkjxy/navTo?url=home/mine/exit','iconfont icon-tuichudenglu',0,'主页',4,'2021-11-17 12:40:03',10,NULL,NULL,1),
 (16,'关于我们','http://localhost:8080/nchkkjxy/navTo?url=home/system/our','iconfont icon-dollar-symbol',0,'主页',5,'2021-11-17 12:40:03',10,NULL,NULL,1),
 (17,'使用手册','http://localhost:8080/nchkkjxy/navTo?url=home/system/useBook','iconfont icon-shiyongshouce_icon',0,'主页',5,'2021-11-17 12:40:04',10,NULL,NULL,1),
 (18,'开发者','http://localhost:8080/nchkkjxy/navTo?url=home/system/author','iconfont icon-kaifazhe',0,'主页',5,'2021-11-17 12:40:04',10,NULL,NULL,1),
-(19,'法律','http://localhost:8080/nchkkjxy/navTo?url=home/system/ligel','iconfont icon-falvshengmingfalv',0,'主页',5,'2021-11-17 12:40:04',10,NULL,NULL,1);
+(19,'法律','http://localhost:8080/nchkkjxy/navTo?url=home/system/ligel','iconfont icon-falvshengmingfalv',0,'主页',5,'2021-11-17 12:40:04',10,NULL,NULL,1),
+(20,'源码下载','https://gitee.com/code-on-top/ic-card-management-system','iconfont icon-kexuejishu2',0,'主页',5,'2021-11-28 13:55:00',10,NULL,NULL,1);
 
 /*Table structure for table `trade_goods_detail` */
 
