@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/mySelect.css">
+    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
+    <title>注销</title>
+    <style>
+        body{
+            --color_1: #c7254e;
+            --color_2: #277dc7;
+            --color_3: #18c735;
+            --color_4: #c7c610;
+        }
+        .logout-start-div{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            background-color: var(--sub_color);
+            z-index: 2;
+        }
+        .logout-start-div .logout-start-div-sub{
+            position: absolute;
+            height: 70px;
+            /*background-color: #c7254e;*/
+            width: 80%;
+            border-radius: 70px;
+            border: 5px solid #fff;
+            z-index: 2;
+        }
+        .logout-start-div .logout-start-div-sub:nth-child(1){
+            top:30%;
+            left:-10%;
+            transform: translate(-50%,50%) rotate(45deg);
+            background-color: var(--color_1);
+        }
+        .logout-start-div .logout-start-div-sub:nth-child(2){
+            /*top:50%;*/
+            width: 90%;
+            left:-45%;
+            transform: rotate(45deg);
+            background-color: var(--color_2);
+        }
+        .logout-start-div .logout-start-div-sub:nth-child(3){
+            width: 90%;
+            top:-35%;
+            left:15%;
+            transform: translate(-50%,50%)  rotate(45deg);
+            background-color: var(--color_3);
+        }
+        .logout-start-div .logout-start-div-sub:nth-child(4){
+            width: 90%;
+            top:30%;
+            left:45%;
+            transform: translate(-50%,50%)  rotate(-45deg);
+            background-color: var(--color_4);
+            /*transform: translate(0,-50px) rotate(45deg);*/
+        }
+        .logout-start-div .logout-btn-div{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /*background-color: #c7254e;*/
+            z-index: 1;
+        }
+        .logout-start-div .logout-btn-div .logout-btn{
+            position: absolute;
+            width: 120px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transform_slowily);
+        }
+
+        .logout-start-div .logout-btn-div .logout-btn:nth-child(1){
+            top: calc(50% - 90px);
+            left: calc(50% + 160px);
+            transform: translate(-50%,-50%);
+            border: 5px solid var(--color_1);
+            color: var(--color_1);
+        }
+        .logout-start-div .logout-btn-div .logout-btn:nth-child(1):hover{
+            box-shadow: 0 0 10px var(--color_1);
+            transform: translate(-50%,-50%) scaleX(1.2);
+        }
+
+        .logout-start-div .logout-btn-div .logout-btn:nth-child(2){
+            top: 50%;
+            left: calc(50% + 70px);
+            transform: translate(-50%,-50%);
+            border: 5px solid var(--color_2);
+            color: var(--color_2);
+        }
+        .logout-start-div .logout-btn-div .logout-btn:nth-child(2):hover{
+            box-shadow: 0 0 10px var(--color_2);
+            transform: translate(-50%,-50%) scaleX(1.2);
+        }
+
+        .logout-start-div .logout-btn-div .logout-btn:nth-child(3){
+            top: calc(50% + 90px);
+            left: calc(50% - 20px);
+            transform: translate(-50%,-50%);
+            border: 5px solid var(--color_3);
+            color: var(--color_3);
+        }
+        .logout-start-div .logout-btn-div .logout-btn:nth-child(3):hover{
+            box-shadow: 0 0 10px var(--color_3);
+            transform: translate(-50%,-50%) scaleX(1.2);
+
+        }
+
+        .logout-panel{
+            position: absolute;
+            left: 50%;
+            top:100%;
+            transform:translate(-50%,-50%);
+            z-index: 5;
+            border-radius: 5px;
+            box-shadow: 0 0 8px #666;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .logout-panel .close{
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .logout-panel .close span{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            width: 15px;
+            height: 2px;
+            background-color: var(--color_1);
+            transition: all var(--transform_slowily);
+        }
+        .logout-panel .close:hover{
+            box-shadow: 0 0 8px var(--color_1);
+        }
+        .logout-panel .close:hover span:nth-child(1){
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        .logout-panel .close:hover span:nth-child(2){
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+        .logout-card{
+            /*background-color: var(--color_1);*/
+        }
+        .logout-history{
+            /*background-color: var(--color_2);*/
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-start-div">
+        <div class="logout-start-div-sub"></div>
+        <div class="logout-start-div-sub"></div>
+        <div class="logout-start-div-sub"></div>
+        <div class="logout-start-div-sub"></div>
+        <div class="logout-btn-div">
+            <input type="button" class="logout-btn" id="logout-toLogout-btn" value="立即挂失">
+            <input type="button" class="logout-btn" id="logout-seeHistory-btn" value="挂失历史">
+            <input type="button" class="logout-btn" id="logout-toHome-btn" value="返回主页">
+        </div>
+    </div>
+    <div class="logout-card logout-panel">
+        <div class="close">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="logout-history logout-panel">
+        <div class="close">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+        //去挂失
+        $("#logout-toLogout-btn").click(function () {
+            showPanel(".logout-card");
+        });
+        //关闭去挂失
+        $(".logout-card  .close").click(function () {
+            closePanel(".logout-card");
+        });
+
+        //查看挂失历史
+        $("#logout-seeHistory-btn").click(function () {
+            showPanel(".logout-history");
+        });
+        //关闭挂失历史
+        $(".logout-history .close").click(function () {
+            closePanel(".logout-history");
+        });
+
+        //返回主页
+        $("#logout-toHome-btn").click(function () {
+            window.location.href='http://localhost:8080/nchkkjxy/';
+        });
+
+        function showPanel(panelNode) {
+            $(panelNode).animate({
+                width:'80%',
+                height:'80%',
+                top:'50%',
+                opacity: 1,
+            },800);
+        }
+        function closePanel(panelNode) {
+            $(panelNode).animate({
+                width:'0',
+                height:'0',
+                top:'100%',
+                opacity:0
+            },800);
+        }
+    </script>
+</body>
+</html>
