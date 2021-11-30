@@ -17,6 +17,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>页面不存在</title>
+    <link rel="shortcut icon" href="${global_url}pic/page-error.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         body{

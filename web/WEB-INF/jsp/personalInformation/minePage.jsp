@@ -16,6 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <title>我的主页</title>
+    <link rel="shortcut icon" href="${global_url}pic/page-mine.ico" type="image/x-icon">
     <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
     <script src="${global_url}theame/js/baseJs.js"></script>
     <link type="text/css" rel="stylesheet" href="${global_url}font/iconfont.css">

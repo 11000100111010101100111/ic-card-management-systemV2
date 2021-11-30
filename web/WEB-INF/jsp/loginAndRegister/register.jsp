@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="${global_url}font/iconfont.css">
         <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
         <link rel="stylesheet" type="text/css" href="${global_url}theame/css/mySelect.css">
+        <link rel="shortcut icon" href="${global_url}pic/page-register.ico" type="image/x-icon">
         <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
         <script src="${global_url}theame/js/baseJs.js"></script>
         <script src="${global_url}theame/js/waitting-layer.js"></script>

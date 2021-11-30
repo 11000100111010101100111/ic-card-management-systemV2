@@ -23,6 +23,7 @@
     <%--    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>--%>
     <script src="${global_url}theame/js/echarts.min.js"></script>
     <link type="text/css" rel="stylesheet" href="${global_url}theame/css/page-minePage.css">
+    <link rel="shortcut icon" href="${global_url}pic/page-charageRecharage.ico" type="image/x-icon">
     <style>
         * {
             margin: 0;

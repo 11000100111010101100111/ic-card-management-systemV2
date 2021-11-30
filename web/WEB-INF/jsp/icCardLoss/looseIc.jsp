@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="${global_url}theame/css/mySelect.css">
     <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
     <script src="${global_url}theame/js/baseJs.js"></script>
+    <link rel="shortcut icon" href="${global_url}pic/page-loss.ico" type="image/x-icon">
     <title>挂失</title>
     <style>
         * {

@@ -14,6 +14,7 @@
     <link rel="icon shortcut" href="${global_url}theame/img/favicon.ico" type="img/x-icon">
     <link rel="stylesheet" type="text/css" href="${global_url}theame/css/ataticAll.css">
     <link rel="stylesheet" type="text/css" href="${global_url}theame/css/myLayer.css">
+    <link rel="shortcut icon" href="${global_url}pic/page-login.ico" type="image/x-icon">
     <style>
         body{
             /* 主题色 */

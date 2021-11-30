@@ -17,6 +17,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="${global_url}pic/page-home.ico" type="image/x-icon">
     <link rel="stylesheet" href="${global_url}font/iconfont.css">
     <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
     <link rel="stylesheet" type="text/css" href="${global_url}theame/css/mySelect.css">

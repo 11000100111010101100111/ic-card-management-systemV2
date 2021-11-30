@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="${global_url}theame/css/waitting-layer.css">
     <script src="${global_url}theame/js/waitting-layer.js"></script>
+    <link rel="shortcut icon" href="${global_url}pic/page-create.ico" type="image/x-icon">
     <style>
         .under-cir-panel{
             width: 0px;
