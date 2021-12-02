@@ -13,22 +13,24 @@ public class CardOfUser {
     private Long id;
     private Long card_id;
     private Long user_id;
-    private Integer status;//   卡状态： -3失效卡，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
-
+    private Integer card_status;//   卡状态： -3失效卡，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
+    private Integer status;
     public CardOfUser() {
     }
 
-    public CardOfUser(Long card_id, Long user_id, Integer status) {
+    public CardOfUser(Long card_id, Long user_id, Integer status,Integer card_status) {
         this.card_id = card_id;
         this.user_id = user_id;
+        this.card_status = card_status;
         this.status = status;
     }
 
-    public CardOfUser(Long id, Long card_id, Long user_id, Integer status) {
+    public CardOfUser(Long id, Long card_id, Long user_id, Integer status,Integer card_status) {
         this.id = id;
         this.card_id = card_id;
         this.user_id = user_id;
         this.status = status;
+        this.card_status = card_status;
     }
 
     @Override
@@ -39,6 +41,14 @@ public class CardOfUser {
                 ", user_id=" + user_id +
                 ", status=" + status +
                 '}';
+    }
+
+    public Integer getCard_status() {
+        return card_status;
+    }
+
+    public void setCard_status(Integer card_status) {
+        this.card_status = card_status;
     }
 
     public Long getId() {

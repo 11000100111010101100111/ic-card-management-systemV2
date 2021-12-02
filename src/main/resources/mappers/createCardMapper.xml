@@ -13,7 +13,39 @@
 <!--    //查询当前登录用户有多少张卡，-3失效卡，-2正在注销中，-1正在挂失中，0申请恢复中，1正常-->
 <!--    List<CardOfUser> getUsersCards(Long uid);-->
     <select id="getUsersCards" parameterType="java.lang.String" resultType="com.nhky.pojo.CardOfUser">
-        select `id`,card_id,user_id,`status` from ic_card_msg where user_id =  #{uid} 
+         SELECT `id`,
+             card_id,
+             user_id,
+             (SELECT `card_status` FROM `ic_card_easy_msg` AS icem WHERE icem.id = icm.card_id) AS `card_status`,
+             `status`
+        FROM ic_card_msg AS icm WHERE icm.user_id =  #{uid}
     </select>
-    <insert id="create"></insert>
+
+<!--    //创建卡#办卡-->
+<!--    //插入卡信息-->
+<!--    public Integer create(CardEasyMsg card);-->
+    <insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="com.nhky.pojo.CardEasyMsg">
+        INSERT INTO `ic_card_easy_msg`
+            (`blance`,`create_date`,`card_status`,`card_type_type`,`status`)
+        VALUES
+            ('0.00',NOW(),1,#{card_type_type},1)
+    </insert>
+
+<!--    //绑定卡到用户-->
+<!--    public Integer bindCardForUser(@Param("uId")Long uId,@Param("cId") Long cId);-->
+<insert id="bindCardForUser">
+        INSERT INTO `ic_card_msg`
+            (`card_id`,`user_id`,`status`)
+        VALUES
+            (#{cId},#{uId},1)
+</insert>
+
+<!--    //添加卡信息到流水信息表-->
+<!--    public Integer addCreateCardHistory(@Param("cId")Long cId);-->
+    <insert id="addCreateCardHistory">
+        INSERT INTO `ic_card_handel`
+            (`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`,`status`)
+        VALUES
+            (#{cId},'创建',(SELECT icem.`create_date` FROM `ic_card_easy_msg` AS icem WHERE icem.`id`=#{cId}),'创建成功','无',1)
+    </insert>
 </mapper>

@@ -32,7 +32,7 @@ public class CreateCardController {
 
     @ResponseBody
     @RequestMapping("/hasCard")
-    @NeedSecurity(security = Security.ADMIN)
+    @NeedSecurity(security = Security.NOMAL)
     @AjaxConnect(time = 2000)
     public String hasCard(@RequestParam("cardType")String cardType, HttpSession session){
         return createCardService.getUsersCards(cardType);
@@ -40,7 +40,7 @@ public class CreateCardController {
 
     @ResponseBody
     @RequestMapping("/create")
-    @NeedSecurity(security = Security.ADMIN)
+    @NeedSecurity(security = Security.NOMAL)
     @AjaxConnect(time = 2000)
     public String create(@RequestParam("cardType")String cardType, HttpSession session){
         return createCardService.create(cardType);

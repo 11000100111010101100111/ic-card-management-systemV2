@@ -3,10 +3,12 @@ package com.nhky.icCardCreate.service.serviceImpl;
 import com.alibaba.fastjson.JSON;
 import com.nhky.icCardCreate.dao.CreateCardDao;
 import com.nhky.icCardCreate.service.CreateCardService;
+import com.nhky.pojo.CardEasyMsg;
 import com.nhky.pojo.CardOfUser;
 import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -53,7 +55,7 @@ public class CreateCardServiceImpl implements CreateCardService {
             for (CardOfUser cardOfUser : cardList) {
 
                 //   卡状态： -4失效卡、-3已挂失，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
-                switch (StringUtil.getPamterString(cardOfUser.getStatus())){
+                switch (StringUtil.getPamterString(cardOfUser.getCard_status())){
                     case "1": zhengchang++;break;
                     case "-1": guashi++;break;
                     case "-2": zuxiao++;break;
@@ -64,15 +66,15 @@ public class CreateCardServiceImpl implements CreateCardService {
             msg.append(guashi>0||zuxiao>0||zhengchang>0?"用户您好！经检测，您名下有Ic卡":"200");
             if(guashi>0){
                 result.put("挂失卡",guashi);
-                msg.append("<font style='color:;font-size='14px';font-weiht:400;'>"+guashi+"</font>正处于挂失状态。");
+                msg.append("<font style='color:;font-size='14px';font-weiht:400;'>"+guashi+"</font>张，正处于挂失状态。");
             }
             if(zuxiao>0){
                 result.put("注销卡",zuxiao);
-                msg.append("<font style='color:;font-size='14px';font-weiht:400;'>"+zuxiao+"</font>正处于注销状态。");
+                msg.append("<font style='color:;font-size='14px';font-weiht:400;'>"+zuxiao+"</font>张，正处于注销状态。");
             }
             if(zhengchang>0){
                 result.put("正常卡",zhengchang);
-                msg.append("<font style='color:;font-size='14px';font-weiht:400;'>"+zhengchang+"</font>正处于使用状态。");
+                msg.append("<font style='color:;font-size='14px';font-weiht:400;'>"+zhengchang+"</font>张，正处于使用状态。");
             }
             msg.append(guashi>0||zuxiao>0||zhengchang>0?"<font style='color:var(--sub__color);font-weight:600;'>暂时不能申请</font>":"");
 
@@ -90,10 +92,28 @@ public class CreateCardServiceImpl implements CreateCardService {
     }
 
     @Override
+    @Transactional
     public String create(String cardType) {
         Map<String,Object> result = new HashMap<>();
-        result.put("single","200");
-        result.put("msg","succeed");
-        return JSON.toJSONString(result);
+        cardType = StringUtil.getPamterString(cardType );
+
+        CardEasyMsg card = new CardEasyMsg(cardType);
+
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
+
+        try {
+            createCard.create(card);
+            createCard.bindCardForUser(Long.parseLong(uid),card.getId());
+            createCard.addCreateCardHistory(card.getId());
+
+            result.put("single","200");
+            result.put("msg","succeed");
+            return JSON.toJSONString(result);
+        }
+        catch (Exception e){
+            result.put("single","400");
+            result.put("msg","error");
+            return JSON.toJSONString(result);
+        }
     }
 }

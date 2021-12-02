@@ -428,11 +428,12 @@
         $(".appover-box .sure-btn-box .sure_this_card").click(function(){
 
             $.ajax({
-                type: "post",                //数据提交方式（post）
+                method: "post",                //数据提交方式（post）
                 url: "${pageContext.request.contextPath}/createCard/hasCard", //提交的数据
                 dataType: "json",           //返回的数据类型格式
                 data:{cardType:getFoucsCard().txt},
                 beforeSend:function(XMLHttpRequest){
+                    console.log(getFoucsCard().txt);
                     //发起连接前开启等待动画
                     my_layer.open();
                 },
@@ -445,7 +446,7 @@
                         //session失效了
                         showMessage_myLayer("登录过期，请在重新登录后申请！","${global_url}staticRes/icon/icCardCreate/认证失败.png");
                     }else if(data.single === "200"){
-                        layerUrl="#";
+                        layerUrl="${global_url}navTo?url=home/mine/info";
                         // 不满足申请条件
                         showMessage_myLayer(data.msg+"<br/><font style='color:var(--sub_color);'>现在去查看吗</font>？" ,"${global_url}staticRes/icon/icCardCreate/已有数据.png");
                     }else if(data.single == "500"){
@@ -532,8 +533,10 @@
                 //获得http回复后终止等待动画
                 my_layer.close();
                 if(data.single === "200") {
+                    layerUrl="${global_url}navTo?url=home/mine/info";
                     showMessage_myLayer("申请成功！是否前往我的主页查看？", "${global_url}staticRes/icon/icCardCreate/已有数据.png");
                 }else{
+                    layerUrl="#";
                     showMessage_myLayer("网络繁忙...");
                 }
             },
