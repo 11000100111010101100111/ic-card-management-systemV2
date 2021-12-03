@@ -974,3 +974,77 @@ Date.prototype.Format = function(formatStr)  {
 
     return str;
 }
+
+//警示框=============================================================================
+var alter_layer = {
+    show:function (title,message,acceptEvent) {
+    $(".alter-layer").remove();
+    let _alter_layer_html = "<div class='alter-layer'>" +
+        "        <span class='title'>"+title+"</span>" +
+        "        <div class='layer-txt'>" +
+        "            <span class='layer-span'>" +
+        message +
+        "            </span>" +
+        "        </div>" +
+        "        <div class='layer-button'>" +
+        "            <input type='button' value='确 定' class='layer-accept'>" +
+        "            <input type='button' value='取 消' class='layer-disagree'>" +
+        "        </div>" +
+        "    </div>";
+    $('body').append(_alter_layer_html);
+
+    $(".alter-layer").animate(
+        {
+            width:"150px",
+            height:'150px'
+        },{
+            duration:800,
+            complete:function () {
+                $("*").css("pointer-events","none");
+                $("*").css("cursor","no-drop");
+
+                $(".alter-layer *").css("opacity","0");
+                $(".alter-layer").css("cursor","auto");
+                $(".alter-layer *").css("cursor","auto");
+                $(".alter-layer input[type='button']").css("cursor","pointer");
+
+                $(".alter-layer").animate({
+                    width: "300px",
+                },100);
+                $(".alter-layer *").animate({
+                    opacity: "1"
+                },100);
+                $(".alter-layer").css("opacity","1");
+                $(".alter-layer").css("pointer-events","painted");
+                $(".alter-layer *").css("pointer-events","painted");
+            }
+        });
+    $(".alter-layer .layer-disagree,.alter-layer .layer-accept").click(function () {
+        $(".alter-layer").animate(
+            {
+                width:"150px",
+                height:'150px'
+            },{
+                duration:800,
+                complete:function () {
+                    $(".alter-layer").animate({
+                        width: "0",
+                        height:0
+                    },{
+                        duration:100,
+                        complete:function () {
+                            $(".alter-layer").remove();
+                            $("*").css("pointer-events","painted");
+                            $("*").css("cursor","auto");
+                        }
+                    });
+                }
+            });
+        $(".alter-layer *").animate({
+            opacity: "0"
+        },10);
+        return -1;
+    });
+    $(".alter-layer .layer-accept").click(acceptEvent);
+}
+};

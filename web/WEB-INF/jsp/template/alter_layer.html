@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://localhost:8080/nchkkjxy/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/baseCss.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nchkkjxy/theame/css/mySelect.css">
+    <script src="http://localhost:8080/nchkkjxy/theame/js/jquery-3.6.0.js"></script>
+    <script src="http://localhost:8080/nchkkjxy/theame/js/baseJs.js"></script>
+    <title>警示框-模板</title>
+    <style>
+        .alter-layer{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 0;
+            height:0;
+            box-shadow: 0 0 10px #555;
+            border-radius: 30px;
+        }
+        .alter-layer *{
+            opacity: 0;
+        }
+        .alter-layer .title{
+            position: absolute;
+            width: 80%;
+            top:0;
+            left:50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: var(--sub_color);
+            font-weight: 400;
+            text-align: center;padding: 5px 0;
+        }
+        .alter-layer .layer-txt{
+            position: absolute;
+            width: 90%;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-top: 2px solid var(--sub_color);
+
+            padding: 10px;
+        }
+        .alter-layer .layer-txt .layer-span{
+            position: absolute;
+            width: calc(100% - 20px);
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--sub_color);
+        }
+        .alter-layer .layer-button{
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+        }
+        .alter-layer .layer-button input[type='button']{
+            width: 60px;
+            height: 25px;
+            font-size: 14px;
+            font-weight: 400;
+            margin: 5px;
+            display: inline-block;
+            border: 0;
+            transition: all var(--transform_slowily);
+            cursor: pointer;
+        }
+        .alter-layer .layer-button input[type='button']:focus{
+            border: 0;
+            outline: none;
+        }
+        .alter-layer .layer-button .layer-accept{
+            background-color: var(--sub_color);
+            color: #fff;
+        }
+        .alter-layer .layer-button .layer-accept:hover{
+            box-shadow: 0 0 10px var(--sub_color);
+        }
+        .alter-layer .layer-button .layer-disagree{
+            background-color: #c7254e;
+            color: #fff;
+        }
+        .alter-layer .layer-button .layer-disagree:hover{
+            box-shadow: 0 0 10px #c7254e;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="open" id="open">
+    <div class="alter-layer">
+        <span class="title">信息提示</span>
+        <div class="layer-txt">
+            <span class="layer-span">
+                确认选择这个操作吗？确认后不能修改！
+            </span>
+        </div>
+        <div class="layer-button">
+            <input type="button" value="确 定" class="layer-accept">
+            <input type="button" value="取 消" class="layer-disagree">
+        </div>
+    </div>
+<script>
+    $("#open").click(function () {
+        show('信息提示',' 确认选择这个操作吗？确认后不能修改！',function () {
+            alert("ok");
+        });
+    });
+
+    function show(title,message,event) {
+        $(".alter-layer").remove();
+        let _alter_layer_html = "<div class='alter-layer'>" +
+            "        <span class='title'>"+title+"</span>" +
+            "        <div class='layer-txt'>" +
+            "            <span class='layer-span'>" +
+            message +
+            "            </span>" +
+            "        </div>" +
+            "        <div class='layer-button'>" +
+            "            <input type='button' value='确 定' class='layer-accept'>" +
+            "            <input type='button' value='取 消' class='layer-disagree'>" +
+            "        </div>" +
+            "    </div>";
+        $('body').append(_alter_layer_html);
+
+        $(".alter-layer").animate(
+            {
+                width:"150px",
+                height:'150px'
+            },{
+                duration:800,
+                complete:function () {
+                    $("*").css("pointer-events","none");
+                    $("*").css("cursor","no-drop");
+
+                    $(".alter-layer *").css("opacity","0");
+                    $(".alter-layer").css("cursor","auto");
+                    $(".alter-layer *").css("cursor","auto");
+                    $(".alter-layer input[type='button']").css("cursor","pointer");
+
+                    $(".alter-layer").animate({
+                        width: "300px",
+                    },100);
+                    $(".alter-layer *").animate({
+                        opacity: "1"
+                    },100);
+                    $(".alter-layer").css("opacity","1");
+                    $(".alter-layer").css("pointer-events","painted");
+                    $(".alter-layer *").css("pointer-events","painted");
+                }
+            });
+        $(".alter-layer .layer-disagree").click(function () {
+            $(".alter-layer").animate(
+                {
+                    width:"150px",
+                    height:'150px'
+                },{
+                    duration:800,
+                    complete:function () {
+                        $(".alter-layer").animate({
+                            width: "0",
+                            height:0
+                        },{
+                            duration:100,
+                            complete:function () {
+                                $(".alter-layer").remove();
+                                $("*").css("pointer-events","painted");
+                                $("*").css("cursor","auto");
+                            }
+                        });
+                    }
+                });
+            $(".alter-layer *").animate({
+                opacity: "0"
+            },10);
+            return -1;
+        });
+        $(".alter-layer .layer-accept").click(event);
+    }
+
+</script>
+</body>
+</html>
