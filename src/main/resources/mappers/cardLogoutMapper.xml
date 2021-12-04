@@ -31,7 +31,7 @@
            LEFT JOIN `ic_card_type` AS ict ON ict.`type_name` = icem.`card_type_type`
            LEFT JOIN `ic_card_msg` AS icm ON icm.`card_id` = icem.`id`
            LEFT JOIN `ic_main_user` AS imu ON imu.`easy_id` = icm.`user_id`
-           WHERE icem.`id` = #{cardId} AND icem.`status`=1
+           WHERE icem.`id` = #{cardId}
         </select>
 <!--    /*-->
 <!--    * 因为注销卡为永久不可逆，-->
@@ -39,19 +39,11 @@
 <!--    * */-->
 <!--    public Integer changeAccountBalance(@Param("cardId")Long cId,@Param("uid") Long uId);-->
     <update id="changeAccountBalance" parameterType="java.lang.Long">
-           UPDATE `ic_main_user` SET `money_balance` = FORMAT(
-            CAST(`money_balance` AS DECIMAL)
-            +
-            CAST(
-                (SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = (
-                    SELECT `id` FROM `ic_card_easy_msg` AS icem WHERE icem.`id` IN (
-                        SELECT `card_id` FROM `ic_card_msg` AS icm WHERE icm.`user_id` = #{uid} AND icm.`status`=1
-                        )
-                     AND icem.`card_status` = 1
-                    )
-                )
-                AS DECIMAL
-            ) ,2)
+        UPDATE `ic_main_user` AS a SET `money_balance` = FORMAT(
+                CAST( a.`money_balance` AS DECIMAL)
+                +
+                CAST( (SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = #{cardId} ) AS DECIMAL)
+            ,2)
            WHERE `easy_id` = #{uid}
     </update>
 

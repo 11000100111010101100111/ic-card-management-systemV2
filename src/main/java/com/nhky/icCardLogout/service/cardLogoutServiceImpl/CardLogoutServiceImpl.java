@@ -39,7 +39,26 @@ public class CardLogoutServiceImpl implements CardLogoutService {
     @Override
     public Map<String, Object> findCardMsg() {
         String cardId = StringUtil.getPamterString(RequestUtil.getRequestParam("cardId"));
-        return cardLogoutDao.findCardById(Long.parseLong(cardId));
+        Map<String,Object> card =  cardLogoutDao.findCardById(Long.parseLong(cardId));
+        if (StringUtil.isNotBank(card.get("cStatus"))){
+            String cardStatus =  StringUtil.getPamterString(card.get("cStatus"));
+//            -4失效卡、-3已挂失，-2正在注销中，-1正在挂失中，0申请恢复中，1正常
+            switch (cardStatus){
+                case "0":
+                    cardStatus="申请恢复中";break;
+                case  "1":
+                    cardStatus="正在使用";break;
+                case "-1":
+                case  "-2":
+                    cardStatus="已挂失";break;
+                case "-3":
+                case "-4":
+                    cardStatus="已失效";break;
+                default:cardStatus="未知状态";
+            }
+            card.put("cStatus",cardStatus);
+        }
+        return card;
     }
 
 

@@ -305,13 +305,37 @@
                 left:5%;
             }
             .logout-panel .card-msg-div .card-msg img{
-                width: 25%;
-                height: 33%;
+                /*width: 25%;*/
+                /*height: 33%;*/
+                width: 100%;
+                height: 100%;
                 border-radius: 5px;
                 border: 2px solid #fff;
             }
-            .logout-panel .card-msg-div td{
-                padding: 20px 5px;
+            .logout-panel .card-msg-div .card-msg .base-msg{
+                display: inline-block;
+                height: 33%;
+            }
+            .logout-panel .card-msg-div .card-msg .left-msg{
+                width: 25%;
+            }
+            .logout-panel .card-msg-div .card-msg .right-msg{
+                float: right;
+                width: 50%;
+            }
+            .logout-panel .card-msg-div .card-msg .right-msg span{
+                display: block;
+                color: #fff;
+                font-size: 16px;
+                margin: 10px;
+                text-align: right;
+            }
+            .logout-panel .card-msg-div .card-msg .right-msg span font{
+                margin-left: 10px;
+                font-size: 25px;
+            }
+            .logout-panel .card-msg td{
+                padding: 10px 5px;
                 font-size: 16px;
                 font-weight: 800;
                 color: var(--sub_color);
@@ -322,26 +346,28 @@
                 width: 100%;
             }
 
-            .logout-panel th, .logout-panel td {
+            .logout-panel .card-msg th, .logout-panel .card-msg  td {
                 /*text-align: left;*/
                 padding: 8px;
             }
-            .logout-panel tr:nth-child(1){
+            .logout-panel .card-msg  tr:nth-child(1){
                 background-color: transparent;
             }
-            .logout-panel tr:nth-child(2){
+            .logout-panel .card-msg  tr:nth-child(2){
                 background-color: #aaa;
 
             }
-            .logout-panel tr:nth-child(2) td{
+            .logout-panel .card-msg  tr:nth-child(2) td{
                 color: #fff;
             }
-            .logout-panel tr{background-color: #f2f2f2}
+            .logout-panel .card-msg  tr{background-color: #f2f2f2}
 
-            .logout-panel th {
-                background-color: #4CAF50;
+            .logout-panel .card-msg  th {
+                background-color: #fff;
+                border-radius: 5px;
                 color: white;
             }
+
             .logout-panel .sure-to-logout-btn{
                 width: 80px;
                 height: 30px;
@@ -600,6 +626,172 @@
             /*    background-color: #aaa;*/
             /*}*/
         </style>
+
+        <style>
+            .card-msg-div .table-top{
+                width: 100%;
+                position: relative;
+                box-shadow: 0 0 5px #666;
+                height: 150px;
+            }
+            .card-msg-div .table-top ul{
+                position: absolute;
+                display: inline;
+                list-style: none;
+                top:0;
+                left:0;
+                background-color: #fff;
+                overflow-x: scroll;
+                width: calc(100% - 20px);
+                height:  calc(100% - 10px);
+                padding: 10px 10px 0 10px;
+                white-space: nowrap;
+                overflow-y: hidden;
+            }
+            .card-msg-div .table-top ul li{
+                position: relative;
+                display: inline-block;
+                width: calc( (100% - 20px)/5 );
+                height: calc(100% - 10px);
+                background-color: #fff;
+                border-radius: 5px;
+                margin-left: 10px;
+                cursor: pointer;
+                box-shadow: 0 0 6px #666;
+                transition: all var(--transform_slowily);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-position: center;
+            }
+            .card-msg-div .table-top ul .more{
+                width: calc( (100% - 20px)/7 );
+                height: calc(100% - 10px);
+                background-color: #fff;
+                box-shadow: 0 0 6px #999;
+            }
+            .card-msg-div .table-top ul .card_li:first-child{
+                margin-left: 0;
+            }
+            .card-msg-div .table-top ul .card_li:hover{
+                z-index: 5;
+                transform: scale(1.05);
+                box-shadow: 0 0 10px var(--sub_color);
+                animation: li_box_to_big 0.3s linear;
+                animation-iteration-count: 3;
+            }
+            @keyframes li_box_to_big {
+                from{box-shadow: 0 0 10px var(--sub_color);}
+                50%{box-shadow: 0 0 15px var(--sub_color);}
+                to{box-shadow: 0 0 10px var(--sub_color);}
+            }
+            .card-msg-div .table-top{
+                position: relative;
+                /*overflow-x: visible;*/
+                overflow-x: visible;
+            }
+            .card-msg-div .table-top ul .loss_li_span {
+                position: absolute;
+                /*width: 100%;*/
+                /*height: 33%;*/
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 8px;
+                padding: 1px 3px;
+            }
+            .card-msg-div .table-top ul .loss_li_span_01{
+                font-size: 14px;
+                top:0;
+                left:0;
+                text-align: left;
+                /*width: calc(100% - 10px);*/
+                margin: 10px 0 0 10px ;
+            }
+            .card-msg-div .table-top ul .loss_li_span_02{
+                font-size: 24px;
+                top:50%;
+                left:50%;
+                text-align: center;
+                transform: translate(-50%,-50%);
+            }
+            .card-msg-div .table-top ul .loss_li_span_03{
+                font-size: 14px;
+                top:100%;
+                left:100%;
+                text-align: right;
+                margin: 0 10px 10px 0;
+                /*width: calc(100% - 10px);*/
+                transform: translate(calc(-100% - 10px),calc(-100% - 10px));
+            }
+            .card-msg-div .table-top ul .noMore{
+                width: 100px;
+                height: 100px;
+                color: var(--sub_color);
+                font-size: 100px;
+                box-shadow: 0 0 6px #888;
+                border-radius: 50%;
+                transition: all var(--transform_slowily);
+            }
+            .card-msg-div .table-top ul .noMore:hover{
+                transform: translate(-50%,-50%) scale(1.1);
+            }
+        </style>
+        <style>
+            .card-msg-div .table-top ul .error_li{
+                position: relative;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                width: 120px;
+                height: 120px;
+                box-shadow: 0 0 6px #666;
+                background-color: #555;
+                padding: 4px;
+                list-style: none;
+            }
+            .card-msg-div .table-top ul .error_li .error{
+                position: absolute;
+                display: inline-block;
+                width: calc(50% - 4px);
+                height: calc(50% - 4px);
+                background-color: #fff;
+                font-size: 42px;
+                text-align: center;
+                z-index: 2;
+            }
+            .card-msg-div .table-top ul .error_li .e_l_t{
+
+            }
+            .card-msg-div .table-top ul .error_li .e_l_b{
+                top:100%;
+                transform: translateY(calc(-100% - 4px));
+            }
+            .card-msg-div .table-top ul .error_li .e_r_t{
+                left:100%;
+                transform: translateX(calc( -100% - 4px));
+            }
+            .card-msg-div .table-top ul .error_li .e_r_b{
+                top:100%;
+                left:100%;
+                transform: translate(calc(-100% - 4px),calc(-100% - 4px));
+            }
+            .card-msg-div .table-top ul .error_li .move-target{
+                position: absolute;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 5px;
+                height: 5px;
+                z-index: 1;
+                border-radius: 50%;
+                background-color: #ff2f64;
+                box-shadow: 0 0 50px #ff2f64;
+                animation: move-target-move 5s infinite linear;
+            }
+            @keyframes move-target-move {
+                from{top:4px;}
+                50%{top:calc(100% - 4px);}
+                to{top:4px;}
+            }
+        </style>
     </head>
     <body>
         <ul class="logout-nav">
@@ -625,39 +817,49 @@
             </div>
             <div class="card-msg-div">
                 <table class="card-msg">
-                    <tfoot>
+                    <thead>
                         <tr>
-                            <td colspan="4" align="right">
-                                <input type="button" class="sure-to-logout-btn" value="确认挂失">
-                            </td>
+                            <th colspan="4" align="left">
+                                <div class="table-top"></div>
+                            </th>
                         </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td colspan="4">
-                                <img src="${global_url}staticRes/icon/icCardCreate/nomal.png"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" align="center">IC卡信息一览</td>
-                        </tr>
-                        <tr>
-                            <td align="right">卡号：</td>
-                            <td align="left" id="_card_id">1</td>
-                            <td align="right">持有人：</td>
-                            <td align="left">肖家海</td>
-                        </tr>
-                        <tr>
-                            <td align="right">卡内余额：</td>
-                            <td align="left">99.99</td>
-                            <td align="right">开卡日期：</td>
-                            <td align="left">2021-12-01 12:33:00</td>
-                        </tr>
-                        <tr>
-                            <td align="right">卡类型：</td>
-                            <td align="left" colspan="3">普通卡</td>
-                        </tr>
-                    </tbody>
+                    </thead>
+<%--                    <tbody>--%>
+<%--                        <tr>--%>
+<%--                            <td colspan="4">--%>
+<%--                                <div class="base-msg left-msg">--%>
+<%--                                    <img src="${global_url}staticRes/icon/icCardCreate/nomal.png"/>--%>
+<%--                                </div>--%>
+<%--                                <div class="base-msg right-msg">--%>
+<%--                                    <span>肖家海<font class="iconfont icon-xingming"></font></span>--%>
+<%--                                    <span>15770674565<font class="iconfont icon-huafei"></font></span>--%>
+<%--                                    <span>2749984520@qq.com<font class="iconfont icon-youxiang"></font></span>--%>
+<%--                                    <span>36243019970815481X<font class="iconfont icon-gengxinshenfenzhengxinxi01"></font></span>--%>
+<%--                                </div>--%>
+<%--                            </td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td colspan="4" align="center">IC卡信息一览</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td align="right">卡号：</td>--%>
+<%--                            <td align="left" id="_card_id">1</td>--%>
+<%--                            <td align="right">持有人：</td>--%>
+<%--                            <td align="left">肖家海</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td align="right">卡内余额：</td>--%>
+<%--                            <td align="left">99.99</td>--%>
+<%--                            <td align="right">开卡日期：</td>--%>
+<%--                            <td align="left">2021-12-01 12:33:00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td align="right">卡类型：</td>--%>
+<%--                            <td align="left">普通卡</td>--%>
+<%--                            <td align="right">卡状态：</td>--%>
+<%--                            <td align="left">正在使用</td>--%>
+<%--                        </tr>--%>
+<%--                    </tbody>--%>
                 </table>
             </div>
         </div>
@@ -864,10 +1066,14 @@
             //去注销
             $("#logout-toLogout-btn").click(function () {
                 showPanel(".logout-card");
+                getCardList();
             });
             //关闭去注销
             $(".logout-card  .close").click(function () {
                 closePanel(".logout-card");
+
+                $(".card-msg-div .card-msg tbody").remove();
+                $(".card-msg-div .card-msg tfoot").remove();
             });
 
             //查看注销历史
@@ -899,31 +1105,191 @@
                 },800);
             }
         </script>
+        <script>
+            function getCardList() {
+                // let cards = [
+                //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'1','uName':'肖家海','cardBalance':'100.22'},
+                //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'2','uName':'肖家海','cardBalance':'100.22'},
+                //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'3','uName':'肖家海','cardBalance':'100.22'}
+                // ];
+                $.ajax({
+                    url:"${global_url}personalLoss/getLoss",
+                    method:'post',
+                    dataType:'json',
+                    data:{},
+                    success:function (data) {
+                        if(data.succeed == true){
+                            setcards(data.data);
+                        }else{
+                            setCardsError();
+                        }
+                    },
+                    error:function () {
+                        setCardsError();
+                    }
+                });
 
+
+            }
+            function setcards(card) {
+                $(".card-msg-div .table-top ul").remove();
+                let _cardList_html_ =" <ul>";
+                for (let cardIndex=0;cardIndex<card.length;cardIndex++) {
+                    _cardList_html_ += "" +
+                        "<li id='cardLi" + card[cardIndex].cardId + "' class='card_li'>" +
+                        "     <span class='loss_li_span loss_li_span_01'><font class=' iconfont icon-huizhang1' style='color: #4e65c7'> </font>NO.<font style='color: var(--sub_color);'>"+card[cardIndex].cardId+"</font></span>" +
+                        "     <span class='loss_li_span loss_li_span_02'><font class=' iconfont icon--yue' style='color: #ffda62'></font>余额：<font style='color: #ffda62'>"+card[cardIndex].cardBalance+"</font>￥</span>" +
+                        "     <span class='loss_li_span loss_li_span_03'><font class='iconfont icon-xuesheng' style='color: var(--sub_color);'> </font>持有人：<font style='color: var(--sub_color);'>"+card[cardIndex].uName+"</font></span>" +
+                        " </li>";
+                }
+                _cardList_html_ += "<li class='more'><span class='noMore loss_li_span loss_li_span_02 iconfont icon-icon--' title='添加更多IC卡'></span></li></ul>";
+
+                $(".card-msg-div .table-top").append(_cardList_html_);
+
+                let lis =  $(".card-msg-div .table-top ul .card_li");
+                for (let cardIndex=0;cardIndex<card.length;cardIndex++) {
+                    $(lis[cardIndex]).css('background-image',"url('" + card[cardIndex].cardUrl + "')");
+                }
+                $(".card-msg-div .table-top .more .noMore").click(function () {
+                    window.open("${global_url}navTo?url=home/businessProcess/createIc");
+                });
+
+                $(".card-msg-div .table-top ul .card_li").click(function () {
+
+                    var clickLiId = $(this).prop("id");
+                    getMsgOfCardByCardId(clickLiId.substr(6,clickLiId.length-1));
+                });
+
+            }
+            function setCardsError() {
+                let _cardList_html_ =" <ul>";
+                $(".card-msg-div .table-top ul").remove();
+
+                _cardList_html_ += " <li class='error_li'>" +
+                    "    <span class='error e_l_t'>没</span><!--" +
+                    "    --><span class='error e_r_t'>有</span><!--" +
+                    "    --><span class='error e_l_b'>数</span><!--" +
+                    "    --><span class='error e_r_b'>据</span>" +
+                    "    <span class='move-target'></span>" +
+                    "</li></ul>";
+
+                $(".card-msg-div .table-top").append(_cardList_html_);
+            }
+
+
+            function getMsgOfCardByCardId(cId) {
+                $.ajax({
+                    url:'${global_url}cardLg/getMsg',
+                    dataType:'json',
+                    data:{
+                        "cardId": cId
+                    },
+                    method:'post',
+                    success:function (data) {
+                        if(data.succeed == true){
+                            setCardMsg(data.data);
+                        }
+                        // console.log(data);
+                    },error:function () {
+                        my_tip.tip("网络连接错误")
+                    }
+                });
+            }
+            function setCardMsg(cardMsg) {
+                $(".card-msg-div .card-msg tbody").remove();
+                $(".card-msg-div .card-msg tfoot").remove();
+                let _card_msg_html="";
+                if(cardMsg.cStatus == "已失效" || cardMsg.cStatus == "未知状态"){
+                }else{
+                    _card_msg_html +="" +
+                        "<tfoot>" +
+                        "    <tr>" +
+                        "        <td colspan='4' align='right'>" +
+                        "            <input type='button' class='sure-to-logout-btn' value='确认挂失'>" +
+                        "        </td>" +
+                        "    </tr>" +
+                        "</tfoot>";
+                }
+
+                 _card_msg_html += "<tbody>" +
+                    "    <tr>" +
+                    "        <td colspan='4'>" +
+                    "            <div class='base-msg left-msg'>" +
+                    "                <img src='"+
+                    cardMsg.cIcon+"'/>" +
+                    "            </div>" +
+                    "            <div class='base-msg right-msg'>" +
+                    "                <span>"+
+                    cardMsg.uName+"<font class='iconfont icon-xingming'></font></span>" +
+                    "                <span>"+
+                    cardMsg.uPhone+"<font class='iconfont icon-huafei'></font></span>" +
+                    "                <span>" +
+                    cardMsg.uEmail+"<font class='iconfont icon-youxiang'></font></span>" +
+                    "                <span>" +
+                    cardMsg.uIdentify+"<font class='iconfont icon-gengxinshenfenzhengxinxi01'></font></spa'" +
+                    "            </div>" +
+                    "        </td>" +
+                    "    </tr>" +
+                    "    <tr>" +
+                    "        <td colspan='4' align='center'>IC卡信息一览</td>" +
+                    "    </tr>" +
+                    "    <tr>" +
+                    "        <td align='right'>卡号：</td>" +
+                    "        <td align='left' id='_card_id'>" +
+                    cardMsg.cId+"</td>" +
+                    "        <td align='right'>持有人：</td>" +
+                    "        <td align='left'>" +
+                    cardMsg.uName+"</td>" +
+                    "    </tr>" +
+                    "    <tr>" +
+                    "        <td align='right'>卡内余额：</td>" +
+                    "        <td align='left'>" +
+                    cardMsg.cBalance+"</td>" +
+                    "        <td align='right'>开卡日期：</td>" +
+                    "        <td align='left'>"+
+                    cardMsg.cCreateDate+"</td>" +
+                    "    </tr>" +
+                    "    <tr>" +
+                    "        <td align='right'>卡类型：</td>" +
+                    "        <td align='left'>" +
+                    cardMsg.cName+"</td>" +
+                    "        <td align='right'>卡状态：</td>" +
+                    "        <td align='left'>" +
+                    cardMsg.cStatus+"</td>" +
+                    "    </tr>" +
+                    "</tbody>";
+
+                $(".card-msg-div .card-msg").append(_card_msg_html);
+                $(".card-msg-div .card-msg tbody").css("opacity","0");
+                $(".card-msg-div .card-msg tbody").animate({opacity:1},500);
+
+                //一键挂失==>去验证邮箱和填写备注
+                $(".logout-panel .sure-to-logout-btn").click(function () {
+                    $.ajax({
+                        url:'${global_url}lossCard/getEmail',
+                        dataType:'json',
+                        method:'post',
+                        data:{},
+                        beforeSend:function () {
+                            loading_cir.loading("body");
+                        },
+                        success:function (data) {
+                            if(data.succeed == true){
+                                $("#mine-email").val(data.data);
+                                $(".loss-panel-ack-email").animate({top:'50%'},800);
+                            }
+                            loading_cir.loaded("body");
+                        },
+                        error:function () {
+                            loading_cir.loaded("body");
+                        }
+                    });
+                });
+            }
+        </script>
         <script>
 
-        //一键挂失==>去验证邮箱和填写备注
-        $(".logout-panel .sure-to-logout-btn").click(function () {
-            $.ajax({
-                url:'${global_url}lossCard/getEmail',
-                dataType:'json',
-                method:'post',
-                data:{},
-                beforeSend:function () {
-                    loading_cir.loading("body");
-                },
-                success:function (data) {
-                    if(data.succeed == true){
-                        $("#mine-email").val(data.data);
-                        $(".loss-panel-ack-email").animate({top:'50%'},800);
-                    }
-                    loading_cir.loaded("body");
-                },
-                error:function () {
-                    loading_cir.loaded("body");
-                }
-            });
-        });
+
         //取消验证邮箱和填写备注
         $(".loss-panel-ack-email .close").click(function () {
             $("#loss-mark").val("");
@@ -981,6 +1347,8 @@
                 }
             })
         });
+
+
         //确认信息
         $(".sure-loss-btn").click(function () {
             var _email_code = $("#email_code").val();
@@ -1004,12 +1372,12 @@
                     success:function (data) {
                         if(data.succeed == true){
                             $.ajax({
-                                url:'${global_url}lossCard/loss',
+                                url:'${global_url}cardLg/logout',
                                 method:'post',
                                 dataType:'json',
                                 data:{
                                     'mark':_mark,
-                                    'card_id':$("#_card_id").html()
+                                    'cardId':$("#_card_id").html()
                                 },
                                 beforeSend:function () {
 
@@ -1019,7 +1387,7 @@
                                     if (d.succeed == true){
                                         my_tip.tip(d.data,1, 'body');
                                         $(".loss-panel-ack-email .close").click();
-                                        getCardMsg();
+                                        getMsgOfCardByCardId($("#_card_id").html());
                                     }else {
                                         my_tip.tip(d.data,1, 'body', [{
                                             cssName: 'background-color',
@@ -1045,110 +1413,6 @@
                 });
             });
         });
-
-        function getCardMsg() {
-            hasLossMsg = true;
-
-            $.ajax({
-                url:"${global_url}lossCard/getCards",
-                method:"post",
-                dataType:"json",
-                data:{},
-                success:function (data) {
-                    if(data.succeed == true){
-                        setMsg(data.data[0]);
-                    }else {
-                        setErrorMsg(data.data);
-                    }
-                    hasLossMsg = false;
-                },
-                error:function () {
-                    setErrorMsg("网络连接失败...");
-                    hasLossMsg = false;
-                }
-            });
-        }
-        function setMsg(msg) {
-
-            let _loss_html_msg = " <table class='loss-approve-msg'>" +
-                "<tfoot>" +
-                "   <tr>" +
-                "       <td align='center'>" +
-                "           <input type='button' value='一键挂失' class='inline_block loss-card'>" +
-                "           <span class='iconfont inline_block loss-card-tip icon-wenhao'></span>" +
-                "       </td>" +
-                "   </tr>" +
-                "</tfoot>" +
-                " <tbody><tr>" +
-                "<td align='center'>" +
-                "   <img src='"+msg.cardUrl+"' style='position: inherit;margin-bottom:10px;opacity:1 !important;width: 200px;height: 100px;background-color: #4e65c7;border-radius: 5px;z-index: 5;'>" +
-                "</tr>" +
-                "<tr>" +
-                "    <td align='center'>"+msg.uName+"</td>" +
-                "</tr>" +
-                "<tr>" +
-                "    <td align='center' id='_card_id' title='IC卡号'>"+msg.cardId+"</td>" +
-                "</tr>" +
-                "<tr>" +
-                "    <td align='center'>"+msg.cardType+"</td>" +
-                "</tr>" +
-                "<tr>" +
-                "    <td align='center'>余额："+msg.cardBlance+"￥</td>" +
-                "</tr>" +
-                "<tr>" +
-                "    <td align='center'>正在使用中</td>" +
-                "</tr>" +
-                "<tr>" +
-                "    <td align='center'>开卡时间："+msg.cardCreateTime+"</td>" +
-                "</tr></tbody></table>";
-            $(".card-history-div  .loss-approve-panel .loss-approve-msg").remove();
-            $(".card-history-div  .loss-approve-panel").append(_loss_html_msg);
-
-
-            $(".card-history-div  .loss-approve-panel .loss-approve-msg .loss-card-tip").click(function () {
-                $(".loss-operator .loss-nav .loss-tip").click();
-            });
-            //一键挂失==>去验证邮箱和填写备注
-            $(".card-history-div  .loss-approve-panel .loss-approve-msg tfoot .loss-card").click(function () {
-                $.ajax({
-                    url:'${global_url}lossCard/getEmail',
-                    dataType:'json',
-                    method:'post',
-                    data:{},
-                    beforeSend:function () {
-                        loading_cir.loading("body");
-                    },
-                    success:function (data) {
-                        if(data.succeed == true){
-                            $("#mine-email").val(data.data);
-                            $(".loss-panel-ack-email").animate({top:'50%'},800);
-                        }
-                        loading_cir.loaded("body");
-                    },
-                    error:function () {
-                        loading_cir.loaded("body");
-                    }
-                });
-
-            });
-        }
-        function setErrorMsg(msg) {
-            let _loss_html_msg = " <table class='loss-approve-msg'>" +
-                " <tbody>" +
-                "<tr>" +
-                "    <td align='center'>"+msg+"</td>" +
-                "</tr>" +
-                "<tr>" +
-                "    <td align='center'><input type='button' value='去查看' id='toseeHistory' style='border:0;width: 80px;height: 30px;background-color: #c7254e;color: #fff;font-size: 14px;font-weight: 600;'></td>" +
-                "</tr>"+
-                "</tbody></table>";
-            $(".card-history-div  .loss-approve-panel .loss-approve-msg").remove();
-            $(".card-history-div  .loss-approve-panel").append(_loss_html_msg);
-
-            $('#toseeHistory').click(function () {
-                $('.loss-operator .loss-nav .loss-recording').click();
-            });
-        }
     </script>
         <script>
             hasLossMsg = false;
@@ -1186,15 +1450,15 @@
                             // seeHistory();
                         }
                     },
-                    {
-                        id:"back_loss",
-                        txt:"撤回",
-                        icon:"add-icon",
-                        btn_style:"alter",//normal、alter、msg
-                        click:function () {
-                            // lossBack();
-                        }
-                    },
+                    // {
+                    //     id:"back_loss",
+                    //     txt:"撤回",
+                    //     icon:"add-icon",
+                    //     btn_style:"alter",//normal、alter、msg
+                    //     click:function () {
+                    //         // lossBack();
+                    //     }
+                    // },
                     {
                         id:'reflush_history',
                         txt:"刷新",

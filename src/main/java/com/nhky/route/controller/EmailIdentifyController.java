@@ -60,7 +60,7 @@ public class EmailIdentifyController {
             MimeMessageHelper mMessageHelper = new MimeMessageHelper(mMessage, true);
             mMessageHelper.setFrom(from);//发件人邮箱
             mMessageHelper.setTo(email);//收件人邮箱
-            mMessageHelper.setSubject("IC卡挂失");//邮件的主题
+            mMessageHelper.setSubject( StringUtil.getPamterString(prop.get("mail.theame.title")));//邮件的主题
 
             //生成验证码
             int codeLen = Integer.parseInt( StringUtil.getPamterString(prop.get("mail.code.len")) );

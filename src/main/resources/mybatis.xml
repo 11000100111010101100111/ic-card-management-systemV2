@@ -25,6 +25,7 @@
         <mapper resource="/mappers/fileMapper.xml"/>
         <mapper resource="/mappers/personalLossMapper.xml"/>
         <mapper resource="/mappers/cardLogoutMapper.xml"/>
+        <mapper resource="/mappers/rechargeCardMapper.xml"/>
     </mappers>
 
 

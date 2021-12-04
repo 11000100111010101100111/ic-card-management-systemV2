@@ -223,8 +223,155 @@
         /*    display: inline-block;*/
         /*}*/
     </style>
+
+    <style type="text/css">
+        .chiose_content{
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color: #fff;
+            border-radius: 5px 5px 0 0;
+            border: 3px solid var(--sub_color);
+            border-bottom: none;
+            opacity: 0;
+            z-index: 1;
+            display: none;
+            box-shadow: 0 0 10px var(--sub_color);
+        }
+        .chiose_content .main {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 800px;
+            height: 235px;
+            background-color: #fff;
+            margin: 5px;
+        }
+
+        .chiose_content .wrap {
+            position: relative;
+            margin: 10px;
+        }
+
+        .chiose_content .item {
+            width: 150px;
+            height: 80px;
+            background-color: #aaa;
+            position: relative;
+            box-shadow: 0 0 0 3px #dbe0e3;
+            transition: all 0.5s;
+            color: #eee;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .chiose_content .other_item{
+            color: #c7ddef;
+        }
+
+        .chiose_content .item img {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            transform: translate(8px,16px);
+            bottom: 0px;
+            right: 0px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .chiose_content input[type="radio"],
+        .chiose_content input[type="checkbox"] {
+            display: none;
+        }
+
+        .chiose_content input:checked+label .item {
+            box-shadow: 0 0 0 3px var(--sub_color);
+            color: var(--sub_color);
+            background-color: #fff;
+        }
+
+        .chiose_content input:checked+label .item img {
+            opacity: 1;
+        }
+
+        .chiose_content .content {
+            font-size: 30px;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        .chiose_content .input_group{
+            float: right;
+            width: 100%;
+            background-color: var(--sub_color);
+        }
+        .chiose_content .input_group .entry{
+            float: right;
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            transition: all var(--transform_slowily);
+            margin: 10px;
+            background-color: #4e65c7;
+            border-radius: 5px;
+            color:#fff;
+            cursor: pointer;
+        }
+        .chiose_content .input_group .entry:hover{
+            box-shadow: 0 0 15px #555;
+        }
+
+        .chiose_content .input_group .close{
+            background-color: #c7254e;
+        }
+        .chiose_content .input_group .entry:hover{
+            box-shadow: 0 0 15px #c7254e;
+        }
+        .chiose_content .input_money{
+            height: 70px;
+            font-size: 32px;
+            padding-left: 0;
+            border: none;
+            width: 0;
+            color:var(--sub_color);
+        }
+
+
+
+        .chiose_content .box{
+            width: 100%;
+        }
+        .chiose_content .mark_write{
+            position: relative;
+        }
+        .chiose_content .mark_write span,
+        .chiose_content .money_chiose span{
+            font-size: 14px;
+            margin-top: 5px;
+            /*position: absolute;*/
+            /*width: 100%;*/
+            display: block;
+            padding: 3px 5px 3px 10px;
+            border-radius: 5px;
+            color: var(--sub_color);
+            font-weight: 800;
+        }
+        .chiose_content .mark_write .mark{
+            padding: 5px;
+            margin: 10px;
+            font-size: 14px;
+            /*height: ;*/
+            resize: none;
+            color:var(--sub_color);
+        }
+
+    </style>
 </head>
 <body>
+    <input type="hidden" id="card_id" value="">
     <div class="recharge-content">
         <div class="recharge-top">
             <div class="card-balance-panel">
@@ -235,7 +382,7 @@
                     <div class="font-box">
                         <ul>
                             <li class="inline_block">￥</li>
-                            <li class="inline_block">1000.00</li>
+                            <li class="inline_block" id="card_balance">0.00</li>
                         </ul>
                     </div>
                 </div>
@@ -294,8 +441,206 @@
         </div>
         <div class="recharge-bottom">
             <input type="button" value="我要充值" class="recharge-btn charge">
-            <input type="button" value="提现" class="recharge-btn recharge">
+<%--            <input type="button" value="提现" class="recharge-btn recharge">--%>
         </div>
     </div>
+
+    <div class="chiose_content">
+        <div class="box money_chiose">
+            <span><font class="iconfont icon-chongzhi2" style="color: #ff5342;"></font>选择金额</span>
+            <div class="main">
+                <div class="wrap">
+                    <input type="radio" name="1" id="item6" />
+                    <label for="item6">
+                        <div class="item">
+                            <div class="content number_money">10.00</div>
+                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                        </div>
+                    </label>
+                </div>
+                <div class="wrap">
+
+                    <input type="radio" name="1" id="item7" />
+                    <label for="item7">
+                        <div class="item">
+                            <div class="content number_money">20.00</div>
+                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                        </div>
+                    </label>
+                </div>
+                <div class="wrap">
+
+                    <input type="radio" name="1" id="item8" />
+                    <label for="item8">
+                        <div class="item">
+                            <div class="content number_money">50.00</div>
+                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                        </div>
+                    </label>
+                </div>
+                <div class="wrap">
+                    <input type="radio" name="1" id="item9" />
+                    <label for="item9">
+                        <div class="item">
+                            <div class="content number_money">100.00</div>
+                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                        </div>
+                    </label>
+                </div>
+                <div class="wrap">
+                    <input type="radio" name="1" id="item10" />
+                    <label for="item10">
+                        <div class="item other_item">
+                            <div class="content">其他</div>
+                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                        </div>
+                    </label>
+                </div>
+                <input class="input_money" type="text" placeholder="请输入充值金额">
+            </div>
+        </div>
+        <div class="box mark_write">
+            <span><font class="iconfont icon-xiugai" style="color:var(--sub_color);"></font>填写备注</span>
+            <textarea name="mark" class="mark" cols="80" rows="5"></textarea>
+        </div>
+        <div class="input_group">
+            <input type="button" class="entry close" value="取消">
+            <input type="button" class="entry accept-money" value="确定">
+        </div>
+    </div>
+   <script>
+       getCardId();
+       function getCardId() {
+           $.ajax({
+               url:'${global_url}charge/get',
+               method:"post",
+               dataType:"json",
+               data:{},
+               success:function (data) {
+                   if(data.succeed == true){
+                       $("#card_id").val(data.data);
+                       getMsg(data.data);
+                   }else{
+                       $("#card_id").val("0");
+                   }
+               },
+               error:function () {
+                   error_result.NO_RESULT();
+                   $("#card_id").val("0");
+               }
+           });
+       }
+
+       function getMsg(cardId) {
+           $.ajax({
+               url:'${global_url}charge/msg',
+               method:"post",
+               dataType:"json",
+               data:{
+                   cardId:cardId,
+               },
+               success:function (data) {
+                   if(data.succeed == true){
+                       $("#card_balance").html(data.data.cBalance);
+                       console.log(data.data)
+                   }else{
+                       $("#card_balance").html("****.**");
+                   }
+               },error:function () {
+                   // error_result.NO_RESULT();
+               }
+           });
+       }
+       function recharge(money,mark,cid) {
+           $.ajax({
+               url:'${global_url}charge/recharge',
+               method:"post",
+               dataType:"json",
+               data:{
+                   cardId:cid,
+                   money:money,
+                   mark:mark
+               },
+               success:function (data) {
+                   my_tip.tip(data.data);
+                   getMsg($("#card_id").val());
+                   $(".chiose_content .close").click();
+               },error:function () {
+                  error_result.TIP();
+               }
+           });
+       }
+
+       $(".recharge-bottom .charge").click(function () {
+           $(".chiose_content").css("display","block");
+           $(".chiose_content").animate({opacity:'1','z-index':"10"},800);
+       });
+   </script>
+
+    <script>
+        $(".chiose_content .close").click(function () {
+            $(".chiose_content").animate({opacity:'0','z-index':"0"},{
+                duration: 800,
+                complete:function () {
+                    $(".chiose_content").css("display","none");
+                    $(".chiose_content .mark").val("");
+                }
+            });
+        });
+        $(".chiose_content .accept-money").click(function () {
+            let money = $.trim($(".chiose_content .input_money").val());
+            let mark = $.trim($(".chiose_content .mark").val());
+            let cid = $("#card_id").val();
+
+            if(isNaN(money)){
+                error_result.TIP("输入金额有误！充值失败！");
+                $(".chiose_content .input_money").val("");
+                return;
+            }
+            if(money == ""){
+                error_result.TIP("请选择金额");
+                return;
+            }
+
+            if (typeof (cid)=="undefined" || isNaN(cid) || parseInt(cid)<=0){
+                error_result.TIP("IC卡信息已失效，请刷新页面或重新登录");
+                return 0;
+            }
+            if(typeof (mark) =="undefined" || mark==""){
+                alter_layer.show("没有填写备注","确认不想填写备注就提交吗！",function () {
+                    recharge(money,"",cid);
+                });
+                return ;
+            }
+            recharge(money,mark,cid);
+        });
+
+        var is_other_money = false;
+        $(".chiose_content .other_item").click(function () {
+            if(is_other_money){
+                return;
+            }
+            $(".chiose_content .input_money").val("");
+            $(".chiose_content .input_money").css("border","2px solid var(--sub_color)");
+            $(".chiose_content .input_money").animate({width:'300px','padding-left':'5px'},800);
+            is_other_money = true;
+        });
+        $(".chiose_content .number_money").click(function () {
+            $(".chiose_content .input_money").val("");
+            $(".chiose_content .input_money").css("border","none");
+            var tex = $(this).html();
+            $(".chiose_content .input_money").animate({width:'0','padding-left':'0'},{
+                duration:800,
+                complete:function () {
+                    $(".chiose_content .input_money").val(tex);
+                }
+            });
+            is_other_money = false;
+        });
+
+        $(".chiose_content .item img").click(function () {
+            $(this).parent(".item").find(".content").click();
+        })
+    </script>
 </body>
 </html>

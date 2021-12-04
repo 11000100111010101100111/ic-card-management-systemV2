@@ -1048,3 +1048,22 @@ var alter_layer = {
     $(".alter-layer .layer-accept").click(acceptEvent);
 }
 };
+
+
+var error_result = {
+    NOT_CONNECT:function () {
+            window.location.href = "http://localhost:8080/nchkkjxy/navTo?url=notfind";
+    },
+    NO_RESULT:function () {
+        window.location.href = "http://localhost:8080/nchkkjxy/navTo?url=notfind";
+    },
+    NOT_FOND:function () {
+        window.location.href = "http://localhost:8080/nchkkjxy/navTo?url=notfind";
+    },
+    TIP:function (tip) {
+        if(typeof(tip) == "undefined"|| tip=="")
+            my_tip.tip("网络无无连接，~~~~");
+        else
+            my_tip.tip(tip);
+    }
+};
