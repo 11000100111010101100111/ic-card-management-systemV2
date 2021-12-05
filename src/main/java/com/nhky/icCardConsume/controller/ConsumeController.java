@@ -36,4 +36,16 @@ public class ConsumeController {
     public String toGetOrder(){
         return "/icCardConsume/getOder";
     }
+
+    @RequestMapping("/getGoods")
+    @ResponseBody
+    public String getGoods(){
+        return consumeService.findGoods();
+    }
+
+    @RequestMapping("/hot")
+    @ResponseBody
+    public String hot(){
+        return consumeService.hotGoods();
+    }
 }

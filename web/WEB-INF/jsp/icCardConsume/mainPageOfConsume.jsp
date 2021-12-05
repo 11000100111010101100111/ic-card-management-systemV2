@@ -81,13 +81,14 @@
             box-shadow: inset 0 0 6px #666,0 6px 6px #666;
             color:var(--sub_color);
             transform: translateX(-50%);
+            margin-bottom: 10px;
             cursor: pointer;
         }
         .ramdon-goods .ending .ending-msg{
             position: absolute;
-            top:42px;
+            top:55px;
             width:100%;
-            background-color: #777;
+            background-color: #fff;
             height: calc(100% - 42px);
         }
     </style>
@@ -359,10 +360,10 @@
             <div>
                 <table>
                     <tr>
-                        <td><font class="find-title">商品名称：</font></td>
+                        <td><font class="find-title">关键字：</font></td>
                         <td colspan="2">
                             <div id="goodsName">
-                                <input type="text" value="${key}">
+                                <input type="text" value="${key}" id="goods_key">
                             </div>
                         </td>
                     </tr>
@@ -370,7 +371,7 @@
                         <td><font  class="find-title">单价区间：</font></td>
                         <td colspan="2">
                             <div id="goodPrice">
-                                <input type="text" ><font class="find-title">&nbsp;元 - </font><input type="text"><font class="find-title">&nbsp;元</font>
+                                <input type="text" id="beginPrice"><font class="find-title">&nbsp;元 - </font><input id="endPrice" type="text"><font class="find-title">&nbsp;元</font>
                             </div>
                         </td>
                     </tr>
@@ -458,70 +459,83 @@
 
     <script>
 
+        $("#goods_key").blur(function () {
+            goodsList();
+        });
+        $("#beginPrice").blur(function () {
+            goodsList();
+        });
+        $("#endPrice").blur(function () {
+            goodsList();
+        });
         var host_url = "${global_url}";
         function goodsList() {
-            $(".ramdon-goods .good-table tbody").remove();
-            let good_hltm_ = "" +
-                "<tbody>" +
-                "<tr>" +
-                "    <td align='center'>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "    </td>" +
-                "</tr>"  +
-                "<tr>" +
-                "    <td align='center'>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "    </td>" +
-                "</tr>" +
-                    "<tr>" +
-                "    <td align='center'>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "    </td>" +
-                "</tr>"  +
-                "<tr>" +
-                "    <td align='center'>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "    </td>" +
-                "</tr>"  +
-                "<tr>" +
-                "    <td align='center'>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "    </td>" +
-                "</tr>"  +
-                "<tr>" +
-                "    <td align='center'>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-                "    </td>" +
-                "</tr>" +
-                "</tbody>";
-            $(".ramdon-goods .good-table").append(good_hltm_);
+            let key = $("#goods_key").val();
+            let typeName = $("#goodClass").val();
+            let beginPrice = $("#beginPrice").val();
+            let endPrice = $("#endPrice").val();
+            let order = "1";//$("#").val();
+
+            $.ajax({
+                url:'${global_url}consume/getGoods',
+                async:false,
+                dataType:'json',
+                method:'post',
+                data:{
+                    key: key,
+                    typeName:typeName,
+                    beginPrice:beginPrice,
+                    endPrice:endPrice,
+                    order:order,
+                    off: 0,
+                    end: 50
+                },
+                success:function (data) {
+                    if(data.succeed===true) {
+
+                        $(".ramdon-goods .good-table tbody").remove();
+
+                        let good_hltm_ = "<tbody>" ;
+                        let len =  data.data.length;
+                        if(len<=0){
+                            $(".ramdon-goods .good-table").append("<tbody></tbody>");
+                            setGoods([]);
+                            return;
+                        }
+                        let row = ( parseInt(len/5) + (len%5>0?1:0) );
+                        for (let index=0;index< row;index++) {
+                            good_hltm_ += "<tr><td align='center'>" ;
+
+                            for (let indexJ = 0;indexJ + 5*index < len ;indexJ++) {
+                                good_hltm_ += "<a class='goods-item' href='" + host_url + "consume/toOrder?key=" + (data.data[index * 5 + indexJ].goodsId) + "'></a>";
+                            }
+
+                            good_hltm_ += "</td></tr>";
+                        }
+                        good_hltm_ += "</tbody>";
+
+                        $(".ramdon-goods .good-table").append(good_hltm_);
+                    }
+                    else {
+                        $(".ramdon-goods .good-table tbody").remove();
+                        $(".ramdon-goods .good-table").append("<tbody></tbody>");
+                        setGoods([]);
+                        error_result.TIP(data.data);
+                    }
+                },
+                error:function () {
+                    $(".ramdon-goods .good-table tbody").remove();
+                    $(".ramdon-goods .good-table").append("<tbody></tbody>");
+                    setGoods([]);
+                    error_result.TIP();
+                }
+            })
+
         }
         goodsList();
-
+        $("#find-btn").click(function () {
+            goodsList();
+        });
 
 
         function addGoods(goods) {
@@ -531,7 +545,7 @@
                 "<tr>" +
                 "    <td align='center'>" ;
             for (let index_goods=0;index_goods<goods.length;index_goods++){
-                _good_list_html +="<a href='"+host_url+"consume/toOrder?key=1"+"'></a>\n";
+                _good_list_html +="<a class='goods-item' href='"+host_url+"consume/toOrder?key=" + goods[index_goods].goodsId +"'></a>\n";
             }
             _good_list_html +=
                 "    </td>" +
@@ -548,9 +562,28 @@
             if($(".ramdon-goods .good-table tbody").find(".not-goods").length<=0)
                 $(".ramdon-goods .good-table tbody").append(_good_list_html);
         }
+
+
         $(".ramdon-goods .ending .more-goods").click(function () {
-            getGoods();
+            let goodsLength = $(".ramdon-goods .good-table tbody").find(".goods-item").length;
+            let key = $("#goods_key").val();
+            let typeName = $("#goodClass").val();
+            let beginPrice = $("#beginPrice").val();
+            let endPrice = $("#endPrice").val();
+            let order = "1";//$("#").val();
+
+            let obj = {
+                key: key,
+                typeName:typeName,
+                beginPrice:beginPrice,
+                endPrice:endPrice,
+                order:order,
+                off: goodsLength+1,
+                end: goodsLength+5
+            };
+            getGoods(obj);
         });
+
         function setGoods(goods) {
             if(goods.length<=0){
                 no_add_goods();
@@ -561,22 +594,38 @@
                 scrollTop:'+=250'
             }, 800);
         }
-        function getGoods() {
+        function getGoods(obj) {
             $.ajax({
-                url:'${global_url}test/getGoods',
+                url:'${global_url}consume/hot',
                 async:false,
                 dataType:'json',
                 method:'post',
-                data:{},
+                data:{
+                    key:obj.key,
+                    typeName:obj.typeName,
+                    beginPrice:obj.beginPrice,
+                    endPrice:obj.endPrice,
+                    order:obj.order,
+                    off:obj.off,
+                    end:obj.end
+                },
                 success:function (data) {
+                    console.log(data.data)
                     if(data.succeed===true) {
+                        if(data.data.length<=0){
+                            setGoods([]);
+                            return;
+                        }
                         setGoods( data.data);
                     }
-                    else
+                    else {
                         setGoods([]);
+                        error_result.TIP(data.data);
+                    }
                 },
                 error:function () {
                     setGoods([]);
+                    error_result.TIP();
                 }
             })
         }
@@ -588,9 +637,11 @@
         });
         $(".chiose_content .good-class .content").click(function () {
            $("#goodClass").val($.trim($(this).html()));
+            goodsList();
         });
         $(".chiose_content .good-class .item img").click(function () {
             $(this).parent(".item").find(".content").click();
+            goodsList();
         });
     </script>
 </body>

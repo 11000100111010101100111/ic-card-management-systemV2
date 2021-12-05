@@ -162,6 +162,7 @@
             border-left: 0px solid var(--sub_color);
             font-size: 14px;
             padding-left: 5px;
+
             transition: width 0.8s;
         }
         #search-btn:focus{
@@ -410,11 +411,12 @@
             box-shadow: inset 0 0 6px #666,0 6px 6px #666;
             color:var(--sub_color);
             transform: translateX(-50%);
+            margin-bottom: 10px;
             cursor: pointer;
         }
         .bottom-contain .box .ending .ending-msg{
             position: absolute;
-            top:42px;
+            top:55px;
             width:100%;
             background-color: #777;
             height: calc(100% - 42px);
@@ -690,18 +692,60 @@
 <script>
     var host_url = "${global_url}";
     function goodsList() {
-        $(".ramdon-goods .good-table tbody").remove();
-        let good_hltm_ = "" +
-            "<tbody><tr>" +
-            "    <td align='center'>" +
-            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
-            "    </td>" +
-            "</tr></tbody>";
-        $(".ramdon-goods .good-table").append(good_hltm_);
+        // $(".ramdon-goods .good-table tbody").remove();
+        // let good_hltm_ = "" +
+        //     "<tbody><tr>" +
+        //     "    <td align='center'>" +
+        //     "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+        //     "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+        //     "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+        //     "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+        //     "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+        //     "    </td>" +
+        //     "</tr></tbody>";
+        // $(".ramdon-goods .good-table").append(good_hltm_);
+
+        $.ajax({
+            url:'${global_url}consume/hot',
+            async:false,
+            dataType:'json',
+            method:'post',
+            data:{
+                off:0,
+                end:50
+            },
+            success:function (data) {
+                console.log(data)
+                if(data.succeed===true) {
+                    $(".ramdon-goods .good-table tbody").remove();
+
+                    let good_hltm_ = "<tbody>" ;
+                    let len =  data.data.length;
+                    let row = ( parseInt(len/5) + (len%5>0?1:0) );
+                    for (let index=0;index< row;index++) {
+                        good_hltm_ += "<tr><td align='center'>" ;
+
+                        for (let indexJ = 0;indexJ + 5*index < len ;indexJ++) {
+                            good_hltm_ += "<a class='goods-item' href='" + host_url + "consume/toOrder?key=" + (data.data[index * 5 + indexJ].goodsId) + "'></a>";
+                        }
+
+                        good_hltm_ += "</td></tr>";
+                    }
+                    good_hltm_ += "</tbody>";
+
+                    $(".ramdon-goods .good-table").append(good_hltm_);
+                }
+                else {
+                    setGoods([]);
+                    error_result.TIP(data.data);
+                }
+            },
+            error:function () {
+                setGoods([]);
+                error_result.TIP();
+            }
+        })
+
     }
     goodsList();
 
@@ -714,7 +758,7 @@
                             "<tr>" +
                             "    <td align='center'>" ;
         for (let index_goods=0;index_goods<goods.length;index_goods++){
-            _good_list_html +="<a href='"+host_url+"consume/toOrder?key=1"+"'></a>\n";
+            _good_list_html +="<a class='goods-item' href='"+host_url+"consume/toOrder?key=" + goods[index_goods].goodsId +"'></a>\n";
         }
         _good_list_html +=
                         "    </td>" +
@@ -732,7 +776,8 @@
             $(".ramdon-goods .good-table tbody").append(_good_list_html);
     }
     $(".bottom-contain .box .ending .more-goods").click(function () {
-        getGoods();
+        let goodsLength = $(".ramdon-goods .good-table tbody").find(".goods-item").length;
+        getGoods(goodsLength+1,goodsLength+5);
     });
     function setGoods(goods) {
         if(goods.length<=0){
@@ -744,22 +789,27 @@
             scrollTop:'+=250'
         }, 800);
     }
-    function getGoods() {
+    function getGoods(off,end) {
         $.ajax({
-            url:'${global_url}test/getGoods',
+            url:'${global_url}consume/hot',
             async:false,
             dataType:'json',
             method:'post',
-            data:{},
+            data:{
+                off:off,
+                end:end
+            },
             success:function (data) {
                 if(data.succeed===true) {
                     setGoods( data.data);
+                    error_result.TIP(data.data);
                 }
                 else
                     setGoods([]);
             },
             error:function () {
                 setGoods([]);
+                error_result.TIP();
             }
         })
     }

@@ -1,6 +1,7 @@
 package com.nhky.icCardConsume.dao;
 
 import com.nhky.pojo.GoodsVO;
+import com.nhky.pojo.HotGoodsVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -17,10 +18,11 @@ public interface ConsumeDao {
 
     public List<GoodsVO> getGoods(
             @Param("typeName") String typeName,
-            @Param("endPrice") Float beginPrice,
-            @Param("beginPrice") Float endPrice,
+            @Param("beginPrice") Float beginPrice,
+            @Param("endPrice") Float endPrice,
             @Param("key") String key,
             @Param("off") Integer off,
             @Param("end") Integer end,
             @Param("order") String order);
+    public List<HotGoodsVO> getHotGoods(@Param("off") Integer off,@Param("end") Integer end);
 }

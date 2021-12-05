@@ -30,18 +30,43 @@
             FROM `ic_shopping_goods` AS isg
             WHERE
             isg.`extant` &gt; 0
-            AND (isg.`title` LIKE CONCAT('%',#{key},'%') OR isg.`description` LIKE CONCAT('%',#{key},'%') )
-            AND isg.`unit_price` &gt;= #{beginPrice}
-            AND isg.`unit_price` &lt;= #{endPrice}
-            AND isg.`goods_class` IN (SELECT `id` FROM `ic_util_goods_type` WHERE `type_name` = #{typeName})
-            ORDER BY isg.`unit_price`
-            <if test="#{order} != null and #{order} =='1'">
-                desc
+            <if test="key != null and key !=''">
+                AND (isg.`title` LIKE CONCAT('%',#{key},'%') OR isg.`description` LIKE CONCAT('%',#{key},'%') )
             </if>
-            <if test="#{order} != null and #{order} =='2'">
+            <if test="beginPrice != null and beginPrice >=0">
+                    AND isg.`unit_price` &gt;= #{beginPrice}
+            </if>
+            <if test="endPrice != null and endPrice >=0">
+                    AND isg.`unit_price` &lt;= #{endPrice}
+            </if>
+            <if test="typeName != null and typeName !=''">
+                AND isg.`goods_class` IN (SELECT `id` FROM `ic_util_goods_type` WHERE `type_name` = #{typeName})
+            </if>
+            ORDER BY isg.`unit_price`
+            <if test="order != null and order == '2'.toString()">
                  asc
             </if>
             limit #{off},#{end}
     </select>
 
+        <select id="getHotGoods" resultType="com.nhky.pojo.HotGoodsVO" parameterType="java.lang.Integer">
+                  SELECT
+                    `id` AS goodsId,
+                    `goods_name` AS goodsName,
+                    `icon` AS goodsIcon,
+                    `unit_price` AS goodsPrice,
+                    `extant` AS goodsExtant,
+                    `inventory` AS goodsInventory,
+                    `discount` AS goodsDiscount,
+                    `title` AS goodsTitle,
+                    `description` AS goodsDescription,
+                    `is_special` AS goodsIsSpecial,
+                    (SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
+                    (SELECT `id` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil,
+                    (CAST(isg.`inventory` AS SIGNED) - CAST(isg.`extant` AS SIGNED)) AS goodsCellNum
+                   FROM `ic_shopping_goods` AS isg
+                   WHERE `extant` > 0
+                   ORDER BY goodsCellNum DESC
+                   LIMIT #{off},#{end}
+        </select>
 </mapper>

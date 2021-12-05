@@ -12,10 +12,14 @@ import java.util.regex.Pattern;
  **/
 public class StringUtil {
 
+    final static String FLOAT_REGEX = "(^[1-9]\\d*\\.\\d+$|^0\\.\\d+$|^[1-9]\\d*$|^0$)";
+    final static String LONG_REGEX = "[0-9]*";
+    final static String NULL_STR = "";
+
     //判断字符串是否为空，或空串
     public static boolean isBank(Object val){
         if(null != val){
-            if(val.toString().equals("")) return true;
+            if(NULL_STR.equals(val.toString())) return true;
             return false;
         }
         return true;
@@ -28,9 +32,9 @@ public class StringUtil {
 
     public static String getPamterString(Object val){
         if(isBank(val)){
-            return "";
+            return NULL_STR;
         }
-        return val.toString();
+        return val.toString().trim();
     }
 
     //字符串转码
@@ -52,14 +56,17 @@ public class StringUtil {
 //            return
 //        }
 //        return false;
-       if(getPamterString(str).equals("")){
-           return false;
-       }
-        return (Pattern.compile("[0-9]*")).matcher(getPamterString(str)).matches();
+        return matcher(LONG_REGEX,getPamterString(str));
     }
 
+    public static boolean isFloat(Object str){
+        return matcher(FLOAT_REGEX,getPamterString(str));
+    }
     //正则表达式验证字符串
     public static boolean matcher(String reg,String obj){
+        if(NULL_STR.equals(getPamterString(obj))){
+            return false;
+        }
         return Pattern.compile(reg).matcher(obj).matches();
     }
 
