@@ -14,6 +14,12 @@
 <fmt:message key="http_url" var="global_url" bundle="${global_args}" />
 <html>
 <head>
+    <link rel="shortcut icon" href="${global_url}pic/page-home.ico" type="image/x-icon">
+    <link rel="stylesheet" href="${global_url}font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/baseCss.css">
+    <link rel="stylesheet" type="text/css" href="${global_url}theame/css/mySelect.css">
+    <script src="${global_url}theame/js/jquery-3.6.0.js"></script>
+    <script src="${global_url}theame/js/baseJs.js"></script>
     <title>下单页</title>
     <style>
         * {

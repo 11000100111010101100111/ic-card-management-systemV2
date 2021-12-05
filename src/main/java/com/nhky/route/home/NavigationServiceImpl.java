@@ -68,6 +68,15 @@ public class NavigationServiceImpl implements NavigationService {
             case "home/system/ligel":
                 pageName = "/system/law";
                 break;//法律
+//            case "searchGoods":
+//                pageName = "/icCardConsume/mainPageOfConsume";
+//                break;//搜索商品
+//            case "order":
+//                pageName = "/icCardConsume/getOrder";
+//                break;//搜索商品
+            case "getConsumeNode":
+                pageName = "/icCardConsume/consumeNode";
+                break;//消费记录
             //...
             default:
                 pageName = "/system/not-find-page";//请求的页面不存在

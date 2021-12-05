@@ -2,6 +2,7 @@ package com.nhky.templete;
 
 import com.alibaba.fastjson.JSON;
 import com.nhky.utils.RequestUtil;
+import com.nhky.utils.ResultUtil;
 import com.nhky.utils.VeryificationCodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -217,5 +218,17 @@ public class TestController {
             e.printStackTrace();
         }
         return "";
+    }
+
+    @RequestMapping("/getGoods")
+    @ResponseBody
+    public String goods(){
+        List val =new ArrayList<>();
+        val.add(1);
+        val.add(1);
+        val.add(1);
+        val.add(1);
+        val.add(1);
+        return JSON.toJSONString(ResultUtil.succeed(val));
     }
 }

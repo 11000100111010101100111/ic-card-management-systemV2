@@ -37,9 +37,19 @@
     </style>
     <style>
         .top-contain{
+            position: fixed;
             width: 100%;
             height: 15%;
-            background-color: rgb(255, 113, 87);
+            background-color: rgba(4, 167, 140,0);
+            box-shadow: 0 3px 6px #666;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 5;
+        }
+        .top-contain-item{
+            width: 100%;
+            height: 15%;
+            background-color: rgba(4, 167, 140,0.8);
         }
         .top-contain .top{
             width: 88%;
@@ -184,7 +194,6 @@
             box-shadow: 0 0 0 var(--sub_color);
         }
     </style>
-
     <style>
         .bottom-contain{
             position: relative;
@@ -231,7 +240,6 @@
             height: 100%;
         }
     </style>
-
     <style>
         .bottom-contain .box .ramdon-msg{
             width: 100%;
@@ -323,8 +331,9 @@
             position:relative;
             height: 50px;
             width: 100%;
-            background-color: aquamarine;
+            /*background-color: aquamarine;*/
             margin-bottom: 2px;
+            border-bottom: 2px solid #aaa;
         }
         .bottom-contain .box .goods-title ul{
             list-style: none;
@@ -333,8 +342,31 @@
             display: inline-block;
             width: 50px;
             height: 50px;
-            background-color: blueviolet;
+            /*background-color: blueviolet;*/
             margin-right: 5px;
+        }
+        .bottom-contain .box .goods-title ul li svg{
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+        }
+        .bottom-contain .box .goods-title ul .font{
+            position: absolute;
+            width: 200px;
+            line-height: 50px;
+            top: 0;
+            /*background-color: #4e65c7;*/
+        }
+        .bottom-contain .box .goods-title ul li span{
+            font-size: 16px;
+            font-weight: 800;
+            text-align: center;
+            padding: 3px 5px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            color: #fff;
+
+            background-color: var(--sub_color);
         }
         .bottom-contain .box .goods-title ul li a{
             width: 100%;
@@ -347,25 +379,112 @@
             right: 1px;
             bottom: 1px;
             text-decoration: none;
-            color:#fff;
+            color:#aaa;
+            font-size: 14px;
             transition: all var(--transform_slowily);
         }
         .bottom-contain .box .goods-title a:hover{
             color: var(--sub_color);
         }
     </style>
-
     <style>
         .bottom-contain .box .ending{
             position: absolute;
-            margin-bottom: 0;
             width: 125%;
             height: 200px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #666;
             margin-bottom: 0;
             margin-top: 5px;
+        }
+        .bottom-contain .box .ending .more-goods{
+            position: absolute;
+            top:0;
+            left:50%;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            box-shadow: inset 0 0 6px #666,0 6px 6px #666;
+            color:var(--sub_color);
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+        .bottom-contain .box .ending .ending-msg{
+            position: absolute;
+            top:42px;
+            width:100%;
+            background-color: #777;
+            height: calc(100% - 42px);
+        }
+    </style>
+
+    <style>
+        /*.good-list-panel{*/
+        /*    position: absolute;*/
+        /*    width: 100%;*/
+        /*    top:5%;*/
+        /*    left: 50%;*/
+        /*    transform: translate(-50%,0);*/
+        /*    background: #4e65c7;*/
+        /*}*/
+        .ramdon-goods{
+            width: 100%;
+            height: 200px;
+
+            position: relative;
+            /* left: 50%;
+            transform: translateX(-50%); */
+
+            /* background-color: #666; */
+            margin-bottom: 10px;
+        }
+        .good-table{
+            /*position: absolute;*/
+            width: 100%;
+        }
+        .good-table tr{
+            /*position: absolute;*/
+            width: 100%;
+            height: 150px;
+        }
+        .good-table tr td{
+            /*position: initial;*/
+            /*width: 250px;*/
+            /*height: 150px;*/
+            width: 100%;
+            height: 100%;
+            /*background-color: var(--sub_color);*/
+            /*padding: 20px;*/
+        }
+        .good-table tr td a{
+            /*position: absolute;*/
+            display: inline-block;
+            height: 130px;
+            /*top: 50%;*/
+            /*left: 50%;*/
+            /*transform: translate(-50%,-50%);*/
+            width: calc(20% - 20px);
+            /*height: calc(20% - 20px);*/
+            max-width: 250px;
+            max-height: 150px;
+            background-color: var(--sub_color);
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url("http://localhost:8080/nchkkjxy/pic/main_page/card.png");
+            transition: all var(--transform_slowily);
+            filter: blur(1px);
+            margin-left: 10px;
+        }
+        .good-table tr td a:hover{
+            background-size: 120% 120%;
+            filter: blur(0);
+            box-shadow: 0 6px 6px var(--sub_color);
+            transform: scale(1.01) translateY(-5px) translateZ(-5px);
         }
     </style>
 </head>
@@ -388,10 +507,11 @@
     <div class="bottom">
         <div class="logo"></div>
         <input type="button"  value="查 找" id="searching" ><!--
-            --><input type="text" id="search-btn" value="${userId}"><!--
+            --><input type="text" id="search-btn" value=""><!--
             --><label for="searching" class="iconfont icon-sousuo" id="seach-lab"></label><!--
         --></div>
 </div>
+<div class="top-contain-item"></div>
 <%--//导航栏--%>
 <script>
 
@@ -471,7 +591,7 @@
         success:function (data) {
             $(".top-contain .top .right .head-img").css("background-image","url('"+data.data.head_url+"')");
 
-            elemTitle.gridTitle(".top-contain .top .right .head-img",data.data.name);
+            elemTitle.gridTitle(".top-contain .top .right .head-img",typeof (data.data.name)!="undefined"?data.data.name:"未登录");
             // user_name = data.data.name;
             // console.log(user_name+"=="+data.data.name)
             // background: url('http://localhost:8080/nchkkjxy/pic/login/no_login.png') center no-repeat;
@@ -536,198 +656,116 @@
         <div class="goods-title">
             <ul>
                 <li>
-
+                    <svg t="1638683915768" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="36904" width="64" height="64"><path d="M994.491259 495.674911c-35.367066-99.453374-87.213697-179.731254-155.571892-240.937638-47.654742-41.29491-92.589555-63.102334-134.82044-65.374273l-0.047998-0.039999c9.951737 33.647112 15.343595 62.702344 16.135574 87.197697 0.823978 24.471354-1.13597 42.830869-5.743849 55.046547-4.631878 12.239677-11.719691 21.999419-21.303437 29.279226-9.599747 7.255808-17.655534 11.463697-24.207361 12.615667-6.503828 1.159969-13.64764 1.727954-21.311437 1.727955-33.823107 0.75998-60.870393-7.271808-81.237855-24.079365-20.359462-16.823556-33.023128-38.422985-38.030996-64.846287-4.975869-26.423302-6.335833-55.086545-3.983895-86.053728 2.311939-30.951183 7.879792-60.414405 16.711559-88.333667 8.791768-27.919263 17.991525-51.822632 27.615271-71.686107C578.318249 20.343463 586.98202 8.479776 594.653817 4.631878c-0.783979 0-5.167864 0.399989-13.25565 1.11997a616.183729 616.183729 0 0 0-24.775345 2.863924c-8.479776 1.13597-19.399488 3.271914-32.863133 6.303834a361.398457 361.398457 0 0 0-39.774949 11.495696c-13.039656 4.599879-27.823265 11.103707-44.374828 19.495486a365.04636 365.04636 0 0 0-47.222753 28.663243c-14.975605 10.719717-30.711189 24.111363-47.254753 40.174939a476.843408 476.843408 0 0 0-46.646768 52.774606c-21.511432 31.351172-34.791081 63.286329-39.806949 95.773471-2.103944 16.023577-2.335938 13.423646 0 26.103311a1360.564073 1360.564073 0 0 1 12.719664 61.390379c3.495908 19.095496 0.983974 34.759082-7.471802 47.014758-8.495776 12.231677-9.431751 24.663349-36.319041 31.519168-17.695533 3.087918-48.398722-4.191889-58.790448-16.031577-10.367726-11.839687-16.895554-27.143283-19.575483-45.878788a334.271173 334.271173 0 0 1-3.495908-53.950575c0.399989-17.199546 2.111944-31.911157 5.231862-44.134835-12.287676-0.77598-31.119178 19.871475-56.486508 61.950364C45.364322 412.365111 6.477349 564.689089 1.853471 653.406746c-7.719796 147.572103 56.846499 251.993346 193.618887 313.151731 86.773709 38.24699 200.842696 57.390485 342.214964 57.390484 228.945954 1.543959 376.070069-62.310355 441.372345-191.586941 46.846763-90.957598 59.958417-211.234422 15.431592-336.687109zM342.804468 821.01832h-46.502772V704.989384H174.136922v116.028936h-46.502772V557.745272h46.502772v104.853231h122.164774V557.745272h46.502772v263.273048z m311.135784-75.861997c-6.895818 16.855555-16.495564 31.359172-28.79124 43.510851-12.303675 12.143679-26.935289 21.639429-43.91884 28.439249-16.991551 6.83182-35.687058 10.343727-56.110518 10.60772-20.167467 0-38.686978-3.295913-55.542534-9.85574-16.855555-6.575826-31.367172-15.871581-43.55085-27.887263-12.175678-12.015683-21.711427-26.455301-28.607244-43.310856-6.895818-16.855555-10.335727-35.575061-10.335727-56.158518 0-21.063444 3.439909-40.214938 10.335727-57.454482 6.879818-17.215545 16.423566-31.903158 28.607244-44.078836 12.183678-12.143679 26.687295-21.503432 43.55085-28.079259 16.855555-6.575826 35.367066-9.85574 55.542534-9.85574 20.423461-0.247993 39.118967 2.783926 56.110518 9.11176 16.983552 6.327833 31.615165 15.559589 43.91884 27.719268 12.295675 12.143679 21.887422 26.767293 28.79124 43.870841 6.887818 17.111548 10.327727 36.199044 10.327727 57.262488 0 20.583456-3.439909 39.302962-10.327727 56.158517z m234.737801-145.03617h-80.093885v220.882167H762.073396V600.120153H681.995511v-42.40688h206.682542v42.40688z" fill="#E64340" p-id="36905"></path><path d="M579.654214 599.46417a74.446034 74.446034 0 0 0-25.175336-17.807529c-9.823741-4.287887-20.727453-6.43183-32.711136-6.431831-12.015683 0-22.847397 2.143943-32.55914 6.431831a74.398035 74.398035 0 0 0-25.023339 17.807529 80.981862 80.981862 0 0 0-16.199573 26.543299c-3.807899 10.111733-5.727849 20.991446-5.727848 32.639139 0 12.527669 1.90395 24.063365 5.727848 34.607086 3.815899 10.543722 9.215757 19.663481 16.199573 27.359277a75.198014 75.198014 0 0 0 25.023339 18.127522c9.703744 4.407884 20.559457 6.591826 32.55914 6.591826 11.983684 0 22.887396-2.183942 32.711136-6.591826 9.815741-4.399884 18.199519-10.431725 25.175336-18.127522s12.367673-16.815556 16.191572-27.359277c3.815899-10.543722 5.735849-22.079417 5.735848-34.607086 0-11.647692-1.90395-22.527405-5.735848-32.639139s-9.215757-18.959499-16.191572-26.543299z" fill="#E64340" p-id="36906"></path></svg>
                 </li>
-                <li>
-                    <!-- <a href="#"> </a> -->
-                </li>
-            </ul>
-            <a href="#">更多>></a>
-        </div>
-        <div class="ramdon-msg">
-            <a class="run-bo inline" href="#">
-                <!--背景400*200，图片5张-->
-                <div class="xinwen-logo xinwen-sub" href="#">推&nbsp;荐</div>
-                <div class="xinwen-points xinwen-sub">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </a><!--
-                --><div class="tui-jian inline">
-            <ul>
-                <!--每个里的背景图片为30*46-->
-                <li class="left-li"><span></span></li><!--
-                        --><li></li><!--
-                        --><li></li><!--
-                        --><li class="bottom-li left-li"></li><!--
-                        --><li class="bottom-li"></li><!--
-                        --><li class="bottom-li"></li>
-            </ul>
-        </div>
-        </div>
-
-        <div class="goods-title">
-            <ul>
-                <li>
-
-                </li>
-                <li>
-                    <!-- <a href="#"> </a> -->
+                <li class="font">
+                    <span>热销商品</span>
+<%--                    <a href="#"> 热销商品</a>--%>
                 </li>
             </ul>
             <a href="#">更多>></a>
         </div>
-        <div class="ramdon-msg">
-            <a class="run-bo inline" href="#">
-                <!--背景400*200，图片5张-->
-                <div class="xinwen-logo xinwen-sub" href="#">推&nbsp;荐</div>
-                <div class="xinwen-points xinwen-sub">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </a><!--
-                --><div class="tui-jian inline">
-            <ul>
-                <!--每个里的背景图片为30*46-->
-                <li class="left-li"><span></span></li><!--
-                        --><li></li><!--
-                        --><li></li><!--
-                        --><li class="bottom-li left-li"></li><!--
-                        --><li class="bottom-li"></li><!--
-                        --><li class="bottom-li"></li>
-            </ul>
-        </div>
-        </div>
+        <div class="ramdon-goods">
+<%--            <div class="good-list-panel">--%>
+                <table class="good-table">
 
-        <div class="goods-title">
-            <ul>
-                <li>
-
-                </li>
-                <li>
-                    <!-- <a href="#"> </a> -->
-                </li>
-            </ul>
-            <a href="#">更多>></a>
-        </div>
-        <div class="ramdon-msg">
-            <a class="run-bo inline" href="#">
-                <!--背景400*200，图片5张-->
-                <div class="xinwen-logo xinwen-sub" href="#">推&nbsp;荐</div>
-                <div class="xinwen-points xinwen-sub">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </a><!--
-                --><div class="tui-jian inline">
-            <ul>
-                <!--每个里的背景图片为30*46-->
-                <li class="left-li"><span></span></li><!--
-                        --><li></li><!--
-                        --><li></li><!--
-                        --><li class="bottom-li left-li"></li><!--
-                        --><li class="bottom-li"></li><!--
-                        --><li class="bottom-li"></li>
-            </ul>
-        </div>
-        </div>
-
-        <div class="goods-title">
-            <ul>
-                <li>
-
-                </li>
-                <li>
-                    <!-- <a href="#"> </a> -->
-                </li>
-            </ul>
-            <a href="#">更多>></a>
-        </div>
-        <div class="ramdon-msg">
-            <a class="run-bo inline" href="#">
-                <!--背景400*200，图片5张-->
-                <div class="xinwen-logo xinwen-sub" href="#">推&nbsp;荐</div>
-                <div class="xinwen-points xinwen-sub">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </a><!--
-                --><div class="tui-jian inline">
-            <ul>
-                <!--每个里的背景图片为30*46-->
-                <li class="left-li"><span></span></li><!--
-                        --><li></li><!--
-                        --><li></li><!--
-                        --><li class="bottom-li left-li"></li><!--
-                        --><li class="bottom-li"></li><!--
-                        --><li class="bottom-li"></li>
-            </ul>
-        </div>
-        </div>
-
-        <div class="goods-title">
-            <ul>
-                <li>
-
-                </li>
-                <li>
-                    <!-- <a href="#"> </a> -->
-                </li>
-            </ul>
-            <a href="#">更多>></a>
-        </div>
-        <div class="ramdon-msg">
-            <a class="run-bo inline" href="#">
-                <!--背景400*200，图片5张-->
-                <div class="xinwen-logo xinwen-sub" href="#">推&nbsp;荐</div>
-                <div class="xinwen-points xinwen-sub">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </a><!--
-                --><div class="tui-jian inline">
-            <ul>
-                <!--每个里的背景图片为30*46-->
-                <li class="left-li"><span></span></li><!--
-                        --><li></li><!--
-                        --><li></li><!--
-                        --><li class="bottom-li left-li"></li><!--
-                        --><li class="bottom-li"></li><!--
-                        --><li class="bottom-li"></li>
-            </ul>
-        </div>
-        </div>
+                </table>
+<%--            </div>--%>
 
 
-        <div class="ending">
-
+            <div class="ending">
+                <div class="more-goods">更多</div>
+                <div class="ending-msg"></div>
+            </div>
         </div>
+
     </div>
 </div>
+<script>
+    $("#searching").click(function () {
+        window.open("${global_url}consume/toFind?key="+$("#search-btn").val());
+    });
+
+    <%--$(".ramdon-goods .good-table a").click(function () {--%>
+    <%--    window.open("${global_url}consume/toOrder?key=1");--%>
+    <%--});--%>
+</script>
+<script>
+    var host_url = "${global_url}";
+    function goodsList() {
+        $(".ramdon-goods .good-table tbody").remove();
+        let good_hltm_ = "" +
+            "<tbody><tr>" +
+            "    <td align='center'>" +
+            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+            "        <a href='"+host_url+"consume/toOrder?key=1"+"'></a>" +
+            "    </td>" +
+            "</tr></tbody>";
+        $(".ramdon-goods .good-table").append(good_hltm_);
+    }
+    goodsList();
+
+
+
+    function addGoods(goods) {
+        if($(".ramdon-goods .good-table tbody").find(".not-goods").length>0)
+            $(".ramdon-goods .good-table tbody .not-goods").remove();
+        let _good_list_html = ""+
+                            "<tr>" +
+                            "    <td align='center'>" ;
+        for (let index_goods=0;index_goods<goods.length;index_goods++){
+            _good_list_html +="<a href='"+host_url+"consume/toOrder?key=1"+"'></a>\n";
+        }
+        _good_list_html +=
+                        "    </td>" +
+                        "</tr>";
+
+        $(".ramdon-goods .good-table tbody").append(_good_list_html);
+    }
+    function no_add_goods(){
+        let _good_list_html =
+            "<tr class='not-goods'>" +
+            "    <td align='center'><span style='font-size: 16px;color:#888;'>没有更多了</span>" +
+            "    </td>" +
+            "</tr>";
+        if($(".ramdon-goods .good-table tbody").find(".not-goods").length<=0)
+            $(".ramdon-goods .good-table tbody").append(_good_list_html);
+    }
+    $(".bottom-contain .box .ending .more-goods").click(function () {
+        getGoods();
+    });
+    function setGoods(goods) {
+        if(goods.length<=0){
+            no_add_goods();
+        }else{
+            addGoods(goods);
+        }
+        $('body').animate({
+            scrollTop:'+=250'
+        }, 800);
+    }
+    function getGoods() {
+        $.ajax({
+            url:'${global_url}test/getGoods',
+            async:false,
+            dataType:'json',
+            method:'post',
+            data:{},
+            success:function (data) {
+                if(data.succeed===true) {
+                    setGoods( data.data);
+                }
+                else
+                    setGoods([]);
+            },
+            error:function () {
+                setGoods([]);
+            }
+        })
+    }
+</script>
 </body>
 </html>

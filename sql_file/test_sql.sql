@@ -281,8 +281,14 @@ FROM `ic_card_msg` icm
    LEFT JOIN `ic_card_type` AS ict ON ict.`type_name` = icem.`card_type_type`
    LEFT JOIN `ic_card_msg` AS icm ON icm.`card_id` = icem.`id`
    LEFT JOIN `ic_main_user` AS imu ON imu.`easy_id` = icm.`user_id`
-   WHERE icem.`id` = 1 AND icem.`status`=1
+   WHERE icem.`id` = 3
    
+    UPDATE `ic_main_user` AS a SET `money_balance` = FORMAT(
+                CAST( a.`money_balance` AS DECIMAL)
+                +
+                CAST( (SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 2 ) AS DECIMAL)
+            ,2)
+           WHERE `easy_id` = 2
    
    # 注销卡后卡内余额需全部转到账户余额
    UPDATE `ic_main_user` SET `money_balance` = FORMAT(
@@ -336,3 +342,43 @@ FROM `ic_card_msg` icm
  SELECT `id`,card_id,user_id,
  (SELECT `card_status` FROM `ic_card_easy_msg` AS icem WHERE icem.id = icm.card_id) AS `card_status`,
  `status` FROM ic_card_msg AS icm WHERE icm.user_id =  2
+ 
+ 
+   #  //查看当前正在使用的卡
+   #  public List<Long> usingCard(@Param("uid")Long uid);
+   SELECT id FROM `ic_card_easy_msg` WHERE id IN (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 2) AND `card_status` = 1
+   #  //查看卡内余额
+   #  public Map<String,Object> cardMsg(@Param("cid")Long cid);
+   SELECT 
+   imu.`easy_id` AS uId,imu.`name` AS uName,imu.`identify_card` AS uIdentify,imu.`phone` AS uPhone,imu.`email` AS uEmail,imu.`head_url` AS uHead,imu.`register_identify` AS uRegisterIdentify,imu.`money_balance` AS uBalance,
+   icem.`id` AS cId,icem.`blance` AS cBalance,icem.`create_date` AS cCreateDate,icem.`card_status` AS cStatus,
+   ict.`type_name` AS cName,ict.`icon` AS cIcon,ict.`count` AS cCount
+   FROM `ic_card_easy_msg` AS icem
+   LEFT JOIN `ic_card_type` AS ict ON ict.`type_name` = icem.`card_type_type`
+   LEFT JOIN `ic_card_msg` AS icm ON icm.`card_id` = icem.`id`
+   LEFT JOIN `ic_main_user` AS imu ON imu.`easy_id` = icm.`user_id`
+   WHERE icem.`id` = 4
+   #  //给卡充值
+   #  public Integer chrageMoneyForCard(@Param("money") String money,@Param("cid")Long cid);
+   UPDATE `ic_card_easy_msg` SET `blance` = `blance` + 1.45 WHERE `id` = 4
+   
+   INSERT INTO `ic_recharge_node`
+   (`recharge_money`,`recharge_time`,`blance`,`note`)
+   VALUES
+   ('2.22',NOW(),(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 4),'充值')
+   
+   INSERT INTO `ic_recharge_record`
+   (`recharge_id`,`card_id`,`user_id`,`status`)
+   VALUES
+   (2,4,2,1)
+   
+
+INSERT INTO `ic_recharge_node`
+            (`recharge_money`,`recharge_time`,`blance`,`note`,`status`)
+            VALUES
+            ('10.00',NOW(),(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 4),'',1)  
+   
+   
+   SELECT id FROM `ic_card_easy_msg` WHERE id IN (
+                    SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 2
+                ) AND `card_status` = 1
