@@ -9,4 +9,39 @@
  * Date: 2021/12/4
  * Time: 22:25
 -->
+
+<!--    # 查询商品类型-->
+<!--    SELECT id ,type_name AS `name` FROM `ic_util_goods_type`-->
+
+<!--    #查询商品-->
+    <select id="getGoods" resultType="com.nhky.pojo.GoodsVO">
+            SELECT `goods_name` AS goodsName,
+            `id` AS goodsId,
+            `icon` AS goodsIcon,
+            `unit_price` AS goodsPrice,
+            `extant` AS goodsExtant,
+            `inventory` AS goodsInventory,
+            `discount` AS goodsDiscount,
+            `title` AS goodsTitle,
+            `description` AS goodsDescription,
+            `is_special` AS goodsIsSpecial,
+            (SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
+            (SELECT `id` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil
+            FROM `ic_shopping_goods` AS isg
+            WHERE
+            isg.`extant` &gt; 0
+            AND (isg.`title` LIKE CONCAT('%',#{key},'%') OR isg.`description` LIKE CONCAT('%',#{key},'%') )
+            AND isg.`unit_price` &gt;= #{beginPrice}
+            AND isg.`unit_price` &lt;= #{endPrice}
+            AND isg.`goods_class` IN (SELECT `id` FROM `ic_util_goods_type` WHERE `type_name` = #{typeName})
+            ORDER BY isg.`unit_price`
+            <if test="#{order} != null and #{order} =='1'">
+                desc
+            </if>
+            <if test="#{order} != null and #{order} =='2'">
+                 asc
+            </if>
+            limit #{off},#{end}
+    </select>
+
 </mapper>

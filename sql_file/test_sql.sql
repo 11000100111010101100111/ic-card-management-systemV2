@@ -382,3 +382,51 @@ INSERT INTO `ic_recharge_node`
    SELECT id FROM `ic_card_easy_msg` WHERE id IN (
                     SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 2
                 ) AND `card_status` = 1
+
+   DROP TABLE `ic_shopping_trade_goods`
+
+   INSERT INTO `ic_shopping_util_price`
+   (`until`,`mark`)
+   VALUES
+   ('元/箱','标准单位')
+
+INSERT INTO `ic_util_goods_type`
+(`type_name`,`description`,`icon`,`create_data`,`create_personal`)VALUES
+('学习用品','学习用品','#',NOW(),10)
+
+
+   INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('新西兰西兰花','#','9.99','100','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,午餐必备','南昌蔬菜园','0',1,1);
+
+  INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('葡萄牙酸葡萄','#','9.99','100','100','1.0','水果,进口,葡萄,维生素,减肥,好吃,大家喜欢,优惠购','南昌水果园','0',2,1);
+
+    INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('吉安菠萝','#','22.66','100','100','1.0','水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购','南昌水果园','0',2,1);
+
+   # 查询商品类型
+   SELECT id ,type_name AS `name` FROM `ic_util_goods_type`
+
+   #查询商品
+   SELECT `goods_name` AS goodsName,
+	`icon` AS goodsIcon,
+	`unit_price` AS goodsPrice,
+	`extant` AS goodsExtant,
+	`inventory` AS goodsInventory,
+	`discount` AS goodsDiscount,
+	`title` AS goodsTitle,
+	`description` AS goodsDescription,
+	`is_special` AS goodsIsSpecial,
+	(SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
+	(SELECT `id` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil
+   FROM `ic_shopping_goods` AS isg
+   WHERE
+   isg.`extant` > 0
+   AND (isg.`title` LIKE '%水%' OR isg.`description` LIKE '南昌' )
+   AND isg.`unit_price` >1
+   AND isg.`unit_price` <100
+   AND isg.`goods_class` IN (SELECT `id` FROM `ic_util_goods_type` WHERE `type_name` = '水果')
+   ORDER BY isg.`unit_price` DESC

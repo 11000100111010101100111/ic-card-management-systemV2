@@ -686,9 +686,6 @@
         window.open("${global_url}consume/toFind?key="+$("#search-btn").val());
     });
 
-    <%--$(".ramdon-goods .good-table a").click(function () {--%>
-    <%--    window.open("${global_url}consume/toOrder?key=1");--%>
-    <%--});--%>
 </script>
 <script>
     var host_url = "${global_url}";
