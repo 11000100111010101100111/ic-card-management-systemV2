@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,4 +26,6 @@ public interface ConsumeDao {
             @Param("end") Integer end,
             @Param("order") String order);
     public List<HotGoodsVO> getHotGoods(@Param("off") Integer off,@Param("end") Integer end);
+
+    public List<Map<String,Object>> getTypeNameList();
 }

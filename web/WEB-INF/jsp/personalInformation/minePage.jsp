@@ -1525,7 +1525,7 @@
 </script>
 <script type="text/javascript">
     function showMyCoume() {
-        $(".sub-4 .my-chart").remove();
+        // $(".sub-4 .my-chart").remove();
 <%--        $.getJSON('http://localhost:8080/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {--%>
 <%--            echarts.registerTheme('wonderland.project', themeJSON);--%>
 <%--            // var myChart = echarts.init(dom, 'wonderland');--%>

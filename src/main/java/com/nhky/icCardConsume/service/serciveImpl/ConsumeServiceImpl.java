@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -92,5 +93,11 @@ public class ConsumeServiceImpl implements ConsumeService {
             System.out.println(e.getLocalizedMessage()+"=="+e.getStackTrace()+"=="+e.getMessage());
             return JSON.toJSONString(ResultUtil.error("获取失败！"));
         }
+    }
+
+    @Override
+    public String getTypeNameList() {
+        List<Map<String,Object>> val = consumeDao.getTypeNameList();
+        return JSON.toJSONString(ResultUtil.succeed(val));
     }
 }

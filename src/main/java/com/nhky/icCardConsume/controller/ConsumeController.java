@@ -1,5 +1,6 @@
 package com.nhky.icCardConsume.controller;
 
+import com.nhky.annotation.AjaxConnect;
 import com.nhky.icCardConsume.service.ConsumeService;
 import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
@@ -26,12 +27,14 @@ public class ConsumeController {
 
     @RequestMapping("/toFind")
 //    @ResponseBody
+    @AjaxConnect(time = 2000)
     public String toSerachGoods(Model model){
         String key = StringUtil.getPamterString(RequestUtil.getRequestParam("key"));
         model.addAttribute("key",key);
         return "/icCardConsume/mainPageOfConsume";
     }
     @RequestMapping("/toOrder")
+    @AjaxConnect
 //    @ResponseBody
     public String toGetOrder(){
         return "/icCardConsume/getOder";
@@ -39,13 +42,21 @@ public class ConsumeController {
 
     @RequestMapping("/getGoods")
     @ResponseBody
+    @AjaxConnect(time = 100)
     public String getGoods(){
         return consumeService.findGoods();
     }
 
     @RequestMapping("/hot")
     @ResponseBody
+    @AjaxConnect(time = 200)
     public String hot(){
         return consumeService.hotGoods();
+    }
+
+    @RequestMapping("/types")
+    @ResponseBody
+    public String getTypes(){
+        return consumeService.getTypeNameList();
     }
 }

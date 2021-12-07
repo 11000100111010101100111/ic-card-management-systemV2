@@ -231,4 +231,11 @@ public class TestController {
         val.add(1);
         return JSON.toJSONString(ResultUtil.succeed(val));
     }
+
+    @RequestMapping("/autoAddGoods")
+    @ResponseBody
+    public String addGoods(){
+
+        return "true";
+    }
 }

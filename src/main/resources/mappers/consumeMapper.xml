@@ -69,4 +69,10 @@
                    ORDER BY goodsCellNum DESC
                    LIMIT #{off},#{end}
         </select>
+
+<!--    //获取商品列表-->
+    <select id="getTypeNameList" resultType="map">
+           SELECT id AS typeId,`description` AS typeDesc,`icon` AS typeIcon,`type_name` AS typeName
+                FROM `ic_util_goods_type` WHERE `status` = 1
+    </select>
 </mapper>

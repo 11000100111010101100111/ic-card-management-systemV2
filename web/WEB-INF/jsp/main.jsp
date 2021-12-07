@@ -388,6 +388,7 @@
             color: var(--sub_color);
         }
     </style>
+
     <style>
         .bottom-contain .box .ending{
             position: absolute;
@@ -420,6 +421,27 @@
             width:100%;
             background-color: #777;
             height: calc(100% - 42px);
+        }
+        .ramdon-goods .ending .more-goods:hover{
+            animation: moreGoods 0.4s cubic-bezier(0,1.17,1,.67);
+            animation-fill-mode: forwards;
+        }
+        @keyframes moreGoods {
+            from{
+                box-shadow: inset 0 0 6px #666,0 6px 6px #666;
+            }
+            25%{
+                box-shadow: inset 0 0 6px #666,-6px 0 6px #666;
+            }
+            50%{
+                box-shadow: inset 0 0 6px #666,0 -6px 6px #666;
+            }
+            75%{
+                box-shadow: inset 0 0 6px #666,6px 0 6px #666;
+            }
+            to{
+                box-shadow: inset 0 0 6px #666,0 6px 6px #666;
+            }
         }
     </style>
 
@@ -461,7 +483,37 @@
             /*background-color: var(--sub_color);*/
             /*padding: 20px;*/
         }
-        .good-table tr td a{
+        /*.good-table tr td a{*/
+        /*    !*position: absolute;*!*/
+        /*    display: inline-block;*/
+        /*    height: 130px;*/
+        /*    !*top: 50%;*!*/
+        /*    !*left: 50%;*!*/
+        /*    !*transform: translate(-50%,-50%);*!*/
+        /*    width: calc(20% - 20px);*/
+        /*    !*height: calc(20% - 20px);*!*/
+        /*    max-width: 250px;*/
+        /*    max-height: 150px;*/
+        /*    background-color: var(--sub_color);*/
+
+        /*    background-position: center;*/
+        /*    background-repeat: no-repeat;*/
+        /*    background-size: 100% 100%;*/
+        /*    background-image: url("http://localhost:8080/nchkkjxy/pic/main_page/card.png");*/
+        /*    transition: all var(--transform_slowily);*/
+        /*    filter: blur(1px);*/
+        /*    margin-left: 10px;*/
+        /*}*/
+        /*.good-table tr td a:hover{*/
+        /*    background-size: 120% 120%;*/
+        /*    filter: blur(0);*/
+        /*    box-shadow: 0 6px 6px var(--sub_color);*/
+        /*    transform: scale(1.01) translateY(-5px) translateZ(-5px);*/
+        /*}*/
+    </style>
+
+    <style>
+        .goods-item{
             /*position: absolute;*/
             display: inline-block;
             height: 130px;
@@ -478,15 +530,117 @@
             background-repeat: no-repeat;
             background-size: 100% 100%;
             background-image: url("http://localhost:8080/nchkkjxy/pic/main_page/card.png");
-            transition: all var(--transform_slowily);
-            filter: blur(1px);
+            transition: all 0.8s;
+            backdrop-filter: blur(1px);
             margin-left: 10px;
+            box-shadow: 0 0 10px #666;
         }
-        .good-table tr td a:hover{
+        .goods-item:hover{
             background-size: 120% 120%;
-            filter: blur(0);
-            box-shadow: 0 6px 6px var(--sub_color);
+            backdrop-filter: blur(0);
+            box-shadow: 0 3px 6px var(--sub_color);
             transform: scale(1.01) translateY(-5px) translateZ(-5px);
+
+        }
+        .goods-item:hover .goods-msg{
+            opacity: .9;
+            top:50%;
+            height: 50%;
+        }
+        .goods-item .goods-msg{
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            top: 80%;
+            left:0;
+            opacity: .5;
+            background-color: #fff;
+            transition: all 0.8s;
+            filter: blur(0);
+            border-top: 1px solid #666;
+            box-shadow: 0 -5px 5px #666;
+        }
+        .goods-item:hover .goods-line1{
+            position: absolute;
+            /*width: 100%;*/
+            opacity: 1;
+            top:40%;
+            transition: all 0.8s;
+        }
+        .goods-item:hover .goods-line2{
+            position: absolute;
+            /*width: 100%;*/
+            opacity: 1;
+            top:65%;
+            transition: all 0.8s;
+        }
+        .goods-item:hover .goods-line3{
+            position: absolute;
+            /*width: 100%;*/
+            opacity: 1;
+            top:85%;
+            transition: all 0.8s;
+        }
+        .goods-item .good-line{
+            position: absolute;
+            /*width: 100%;*/
+            opacity: 0;
+            top:100%;
+            left:0;
+            transition: all 0.8s;
+        }
+        .goods-item .goods-line1{
+            top:80%;
+            opacity: 1;
+        }
+        .goods-item .goods-line1 .goodName{
+            font-size: 14px;
+            padding:3px 5px;
+            margin: 2px 0 2px 2px;
+            color: #fff;
+            font-weight: 800;
+            background-color: var(--sub_color);
+            border-radius: 5px;
+            opacity: 1 !important;
+        }
+        .goods-item .goods-line2 .goodPrice{
+            padding:3px 5px;
+            margin: 2px ;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #c7254e;
+        }
+        .goods-item .goods-line2 .goodPersonal{
+            font-size: 12px;
+            color: #999;
+        }
+
+        .goods-item .goods-line3 .goods-line4 .goods-title{
+            padding: 2px 3px;
+            background-color: var(--sub_color);
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            margin: 5px 0 5px 5px;
+            border-radius: 5px;
+        }
+
+        .goods-item .goods-line3{
+            width: 100%;
+        }
+        .goods-item .goods-line3 .goods-line4{
+            display: inline-block;
+        }
+        .goods-item .goods-line3 .right{
+            float: right;
+            color: #666;
+            font-size: 16px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .goods-item .goods-line3 .left{
+            float: left;
         }
     </style>
 </head>
@@ -725,8 +879,34 @@
                     for (let index=0;index< row;index++) {
                         good_hltm_ += "<tr><td align='center'>" ;
 
-                        for (let indexJ = 0;indexJ + 5*index < len ;indexJ++) {
-                            good_hltm_ += "<a class='goods-item' href='" + host_url + "consume/toOrder?key=" + (data.data[index * 5 + indexJ].goodsId) + "'></a>";
+                        for (let indexJ = 0; indexJ<5 && (indexJ + 5*index < len) ;indexJ++) {
+                            good_hltm_ += "<a class='goods-item' href='" + host_url + "consume/toOrder?key=" + (data.data[index * 5 + indexJ].goodsId) + "' style='background-image: url("+
+                                data.data[index * 5 + indexJ].goodsIcon+")'>" +
+                                "        <span class='goods-msg'></span>" +
+                                "        <span class='good-line goods-line1'>" +
+                                "            <span class='goodName'>"+
+                                data.data[index * 5 + indexJ].goodsName+"</span>" +
+                                "        </span>" +
+                                "        <span class='good-line goods-line2'>" +
+                                "            <span class='goodPrice'>￥<font class='price'>"+
+                                data.data[index * 5 + indexJ].goodsPrice+"</font></span>" +
+                                "            <span class='goodPersonal'><font class='personal'>"+
+                                (parseInt(data.data[index * 5 + indexJ].goodsInventory) - parseInt(data.data[index * 5 + indexJ].goodsExtant))+"</font>人付款</span>" +
+                                "        </span>" +
+                                "        <span class='good-line goods-line3'>" +
+                                "            <span class='goods-line4 left'>" +
+                                "                 <span class='goods-title'>包邮</span>";
+
+                            if(data.data[index * 5 + indexJ].goodsIsSpecial =="1") {
+                                good_hltm_ += "<span class='goods-title'>特价</span><span class='goods-title'>" +
+                                    data.data[index * 5 + indexJ].goodsDiscount +"折</span>";
+                            }
+
+                            good_hltm_ += "</span>" +
+                                "            <span class='goods-line4 right'>...</span>" +
+                                "        </span>" +
+                                "</a>";
+                            console.log(index * 5 + indexJ);
                         }
 
                         good_hltm_ += "</td></tr>";
@@ -758,7 +938,32 @@
                             "<tr>" +
                             "    <td align='center'>" ;
         for (let index_goods=0;index_goods<goods.length;index_goods++){
-            _good_list_html +="<a class='goods-item' href='"+host_url+"consume/toOrder?key=" + goods[index_goods].goodsId +"'></a>\n";
+            _good_list_html +="<a class='goods-item' href='"+host_url+"consume/toOrder?key=" + goods[index_goods].goodsId +"' style='background-image: url("+
+                goods[index_goods].goodsIcon+")'>" +
+                "        <span class='goods-msg'></span>" +
+                "        <span class='good-line goods-line1'>" +
+                "            <span class='goodName'>"+
+                goods[index_goods].goodsName+"</span>" +
+                "        </span>" +
+                "        <span class='good-line goods-line2'>" +
+                "            <span class='goodPrice'>￥<font class='price'>"+
+                goods[index_goods].goodsPrice+"</font></span>" +
+                "            <span class='goodPersonal'><font class='personal'>"+
+                (parseInt(goods[index_goods].goodsInventory) - parseInt(goods[index_goods].goodsExtant))+"</font>人付款</span>" +
+                "        </span>" +
+                "        <span class='good-line goods-line3'>" +
+                "            <span class='goods-line4 left'>" +
+                "                 <span class='goods-title'>包邮</span>";
+
+            if(goods[index_goods].goodsIsSpecial =="1") {
+                _good_list_html += "<span class='goods-title'>特价</span><span class='goods-title'>" +
+                    goods[index_goods].goodsDiscount +"折</span>";
+            }
+
+            _good_list_html += "</span>" +
+                "            <span class='goods-line4 right'>...</span>" +
+                "        </span>" +
+                "</a>";
         }
         _good_list_html +=
                         "    </td>" +

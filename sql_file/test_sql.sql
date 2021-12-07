@@ -382,36 +382,64 @@ INSERT INTO `ic_recharge_node`
    SELECT id FROM `ic_card_easy_msg` WHERE id IN (
                     SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 2
                 ) AND `card_status` = 1
-
+                
    DROP TABLE `ic_shopping_trade_goods`
-
+   
    INSERT INTO `ic_shopping_util_price`
    (`until`,`mark`)
    VALUES
    ('元/箱','标准单位')
-
+   
 INSERT INTO `ic_util_goods_type`
 (`type_name`,`description`,`icon`,`create_data`,`create_personal`)VALUES
 ('学习用品','学习用品','#',NOW(),10)
-
-
-   INSERT INTO `ic_shopping_goods`
+   
+   
+   INSERT INTO `ic_shopping_goods` 
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
    ('新西兰西兰花','#','9.99','100','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,午餐必备','南昌蔬菜园','0',1,1);
+  
+  INSERT INTO `ic_shopping_goods` 
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('葡萄牙酸葡萄','#','9.99','100','100','1.0','水果,进口,葡萄,维生素,减肥,好吃,大家喜欢,优惠购','南昌水果园','0',2,1);
+   
+    INSERT INTO `ic_shopping_goods` 
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('吉安菠萝','#','22.66','100','100','1.0','水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购','南昌水果园','0',2,1);
+   
+      INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('狗不理包子','http://localhost:8080/nchkkjxy/pic/main_page/card.png','108.99','10','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备','南昌包子铺','0',1,3);
 
   INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('葡萄牙酸葡萄','#','9.99','100','100','1.0','水果,进口,葡萄,维生素,减肥,好吃,大家喜欢,优惠购','南昌水果园','0',2,1);
+   ('好莱坞大红袍','http://localhost:8080/nchkkjxy/pic/main_page/card.png','1230.00','99','100','1.0','服装,进口,袍,修身,大咖,有钱人,大家喜欢,优惠购','义乌小商城','0',3,8);
 
     INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('吉安菠萝','#','22.66','100','100','1.0','水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购','南昌水果园','0',2,1);
+   ('小米钢笔','http://localhost:8080/nchkkjxy/pic/main_page/card.png','99.66','1','100','0.95','文具,高科技,小米,牛逼,好写,笔,优惠购','小米旗舰店','1',4,4);
+
+         INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('老挝茄子','http://localhost:8080/nchkkjxy/pic/main_page/card.png','12.99','86','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备','万达广场-南昌店','0',1,3);
+
+  INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('鸿星尔克跑步鞋NK-13','http://localhost:8080/nchkkjxy/pic/main_page/card.png','520.00','99','100','1.0','服装,国产,国货之光,跑步,运动鞋,大咖,有钱人,大家喜欢,优惠购','鸿星尔克旗舰店','0',3,8);
+
+    INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   ('笔记本A4','http://localhost:8080/nchkkjxy/pic/main_page/card.png','25.00','85','160','0.8','文具,高科技,晨光,牛逼,好笔记本,漂亮,优惠购','小米旗舰店','1',4,4);
+
+   select count(id) from `ic_shopping_goods`
 
    # 查询商品类型
    SELECT id ,type_name AS `name` FROM `ic_util_goods_type`
 
    #查询商品
-   SELECT `goods_name` AS goodsName,
+   SELECT
+	`id` AS goodsId,
+	`goods_name` AS goodsName,
 	`icon` AS goodsIcon,
 	`unit_price` AS goodsPrice,
 	`extant` AS goodsExtant,
@@ -425,8 +453,31 @@ INSERT INTO `ic_util_goods_type`
    FROM `ic_shopping_goods` AS isg
    WHERE
    isg.`extant` > 0
-   AND (isg.`title` LIKE '%水%' OR isg.`description` LIKE '南昌' )
+   AND (isg.`title` LIKE '%水%' OR isg.`description` LIKE '%南昌%' )
    AND isg.`unit_price` >1
    AND isg.`unit_price` <100
    AND isg.`goods_class` IN (SELECT `id` FROM `ic_util_goods_type` WHERE `type_name` = '水果')
    ORDER BY isg.`unit_price` DESC
+   LIMIT 0,2
+
+   
+   #按销售量排序
+
+  SELECT 
+	`id` AS goodsId,
+	`goods_name` AS goodsName,
+	`icon` AS goodsIcon,
+	`unit_price` AS goodsPrice,
+	`extant` AS goodsExtant,
+	`inventory` AS goodsInventory,
+	`discount` AS goodsDiscount,
+	`title` AS goodsTitle,
+	`description` AS goodsDescription,
+	`is_special` AS goodsIsSpecial,
+	(SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
+	(SELECT `id` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil,
+	(CAST(isg.`inventory` AS SIGNED) - CAST(isg.`extant` AS SIGNED)) AS goodsCellNum
+   FROM `ic_shopping_goods` AS isg
+   WHERE `extant`>0
+   ORDER BY goodsCellNum DESC
+   LIMIT 0,50

@@ -1022,7 +1022,7 @@
     position: absolute;
     width: 15%;
     height: 35%;
-    background-color: rgb(4, 167, 140);
+    background-color: rgba(4, 167, 140,0);
 }
 .sub-4 .chart-panel .box-left{
     left: 0;
@@ -1058,6 +1058,8 @@
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #aaa;
 }
 
 

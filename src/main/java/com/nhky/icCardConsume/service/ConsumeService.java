@@ -17,4 +17,7 @@ public interface ConsumeService {
 
     //获取热卖商品
     public String hotGoods();
+
+    //获取商品类型
+    public String getTypeNameList();
 }
