@@ -2,8 +2,8 @@
 
   SELECT * FROM `ic_recharge_node` WHERE `id` IN
     (SELECT recharge_id  FROM `ic_recharge_record` WHERE card_id IN
-	(SELECT card_id FROM ic_card_msg WHERE user_id ='10' AND `status` = 1) ) 
-	
+	(SELECT card_id FROM ic_card_msg WHERE user_id =''10'' AND `status` = 1) )
+
 
 SELECT a.* AS total FROM(
 	(
@@ -14,13 +14,13 @@ SELECT a.* AS total FROM(
 		    irn.`status` AS changeType,
 		    irn.`blance` AS blance,
 		    irn.note AS note,
-		    (SELECT `name` FROM `ic_main_user` WHERE `easy_id` = '10' ) AS operatorUser
+		    (SELECT `name` FROM `ic_main_user` WHERE `easy_id` = ''10'' ) AS operatorUser
 		FROM `ic_recharge_node` AS irn WHERE `id` IN (
 			    SELECT `consume_id` FROM `ic_consume_record` WHERE `consume_card_id` IN(
-				    SELECT card_id FROM ic_card_msg WHERE user_id = '10' AND `status` = 1)
-		 )  daa	
-				   
-	) 
+				    SELECT card_id FROM ic_card_msg WHERE user_id = ''10'' AND `status` = 1)
+		 )  daa
+
+	)
 	UNION ALL
 	(
 		SELECT
@@ -30,52 +30,52 @@ SELECT a.* AS total FROM(
 		    icn.`status` AS changeType,
 		    icn.`blance` AS blance,
 		    icn.note AS note,
-		    (SELECT `name` FROM `ic_main_user` WHERE `easy_id` = '10') AS operatorUser
+		    (SELECT `name` FROM `ic_main_user` WHERE `easy_id` = ''10'') AS operatorUser
 		FROM `ic_consume_node` AS icn WHERE `id` IN (
 			    SELECT `consume_id` FROM `ic_consume_record` WHERE `consume_card_id` IN(
-				    SELECT card_id FROM ic_card_msg WHERE user_id = '10' AND `status` = 1)  
-		) dbb	  
-	) 
-	
-	)AS a ORDER BY a.id  LIMIT 0,20 
-	
-	
-	
+				    SELECT card_id FROM ic_card_msg WHERE user_id = ''10'' AND `status` = 1)
+		) dbb
+	)
+
+	)AS a ORDER BY a.id  LIMIT 0,20
+
+
+
 UPDATE `ic_main_user` AS u
-LEFT JOIN `ic_recharge_record` AS irr ON irr.`user_id` IN ( SELECT card_id FROM ic_card_msg WHERE user_id = '10' AND `status` = 1 )
-LEFT JOIN `ic_recharge_node` AS irn ON 
+LEFT JOIN `ic_recharge_record` AS irr ON irr.`user_id` IN ( SELECT card_id FROM ic_card_msg WHERE user_id = ''10'' AND `status` = 1 )
+LEFT JOIN `ic_recharge_node` AS irn ON
 SET table1.xx=VALUE,table2.xx=VALUE （update value）
 WHERE table1.xx=xx （条件）
 
 INSERT INTO `ic_main_user_balance_log` (user_id,money,`type`,`time`,balance,operator_user,ip_host,note)
-VALUES(10,'0.01','签到',NOW(),'100.01',10,'192.168.102.1','每日签到')
+VALUES(10,''0.01'',''签到'',NOW(),''100.01'',10,''192.168.102.1'',''每日签到'')
 
 
 INSERT INTO `ic_main_user_balance_log` (user_id,money,`type`,`time`,balance,operator_user,ip_host,note)
-VALUES(10,'100','充值',NOW(),(SELECT FORMAT(`money_balance`,2) FROM `ic_main_user` WHERE `easy_id` = '10' )+100,10,'192.168.102.1','充值')
+VALUES(10,''100'',''充值'',NOW(),(SELECT FORMAT(`money_balance`,2) FROM `ic_main_user` WHERE `easy_id` = ''10'' )+100,10,''192.168.102.1'',''充值'')
 
 INSERT INTO `ic_main_user_balance_log` (user_id,money,`type`,`time`,balance,operator_user,ip_host,note)
-VALUES(10,FORMAT('10',2),'充值',NOW(),(SELECT FORMAT(`money_balance`,2) FROM `ic_main_user` WHERE `easy_id` = 10 )+'10','10','192.168.102.1','充值')
+VALUES(10,FORMAT(''10'',2),''充值'',NOW(),(SELECT FORMAT(`money_balance`,2) FROM `ic_main_user` WHERE `easy_id` = 10 )+''10'',''10'',''192.168.102.1'',''充值'')
 
 UPDATE `ic_main_user` SET `money_balance` = FORMAT(
-	(SELECT `balance` FROM `ic_main_user_balance_log` WHERE user_id = 10 ORDER BY `time` DESC LIMIT 0,1),2) WHERE `easy_id` = '10'
+	(SELECT `balance` FROM `ic_main_user_balance_log` WHERE user_id = 10 ORDER BY `time` DESC LIMIT 0,1),2) WHERE `easy_id` = ''10''
 
-SELECT id,user_id AS userId,money,`type`,`time`,FORMAT(balance,2) AS balance,operator_user AS operatorUser,ip_host AS ipHost,`status`,note 
-FROM `ic_main_user_balance_log` WHERE user_id = '10'  ORDER BY `time` DESC LIMIT 0,1
+SELECT id,user_id AS userId,money,`type`,`time`,FORMAT(balance,2) AS balance,operator_user AS operatorUser,ip_host AS ipHost,`status`,note
+FROM `ic_main_user_balance_log` WHERE user_id = ''10''  ORDER BY `time` DESC LIMIT 0,1
 
 ##查询账号变更记录总数
 SELECT COUNT(id) FROM `ic_main_user_balance_log` WHERE user_id = 10
 
-##分页查询账号变更记录		            
+##分页查询账号变更记录
 SELECT id,user_id AS userId,money,`type`,`time`,balance,
             (SELECT mu.name FROM `ic_main_user` AS mu WHERE `ic_main_user_balance_log`.operator_user = mu.easy_id) AS operatorUser,
             ip_host AS ipHost,`status`,note
-            FROM `ic_main_user_balance_log` WHERE user_id = 10 ORDER BY `time` DESC LIMIT 0,10 
- 
-##取账号余额           
-SELECT FORMAT(money_balance,2) AS balance FROM `ic_main_user` WHERE easy_id = 10         
+            FROM `ic_main_user_balance_log` WHERE user_id = 10 ORDER BY `time` DESC LIMIT 0,10
 
-UPDATE `ic_main_user` SET `brithday` = '2000-12-01'   
+##取账号余额
+SELECT FORMAT(money_balance,2) AS balance FROM `ic_main_user` WHERE easy_id = 10
+
+UPDATE `ic_main_user` SET `brithday` = ''2000-12-01''
 
 
 ##查询对应用户消费产生的消费类型
@@ -83,131 +83,131 @@ UPDATE `ic_main_user` SET `brithday` = '2000-12-01'
 -- 用户id为空
 SELECT DISTINCT type_name FROM `ic_util_consume_type` WHERE id IN (
 	            SELECT `consume_type` FROM `ic_consume_node`)
--- 用户id不为空	            
+-- 用户id不为空
 SELECT DISTINCT type_name FROM `ic_util_consume_type` WHERE id IN (
 	SELECT `consume_type` FROM `ic_consume_node` WHERE id IN (
 		SELECT `consume_id` FROM `ic_consume_record` WHERE `consume_user_id` = 10 ))
 ##查询用户对于消费类型产生的消费金额
-SELECT SUM(consume_money) FROM `ic_consume_node` WHERE consume_type = (SELECT id FROM `ic_util_consume_type` WHERE type_name = '饮食')
+SELECT SUM(consume_money) FROM `ic_consume_node` WHERE consume_type = (SELECT id FROM `ic_util_consume_type` WHERE type_name = ''饮食'')
 	AND id IN(SELECT `consume_id` FROM `ic_consume_record` WHERE `consume_user_id` = 10)
-	
+
 ## 向消费类型表添加数据
 INSERT INTO `ic_util_consume_type` (`type_name`,`description`,`icon`,`create_data`,`create_personal`)
-VALUES('衣物','人靠衣裳马靠鞍','#',NOW(),10);
+VALUES(''衣物'',''人靠衣裳马靠鞍'',''#'',NOW(),10);
 INSERT INTO `ic_util_consume_type` (`type_name`,`description`,`icon`,`create_data`,`create_personal`)
-VALUES('电子产品','电话是用来收取件码的，微信是用来打卡的，只有你是...','#',NOW(),10);
+VALUES(''电子产品'',''电话是用来收取件码的，微信是用来打卡的，只有你是...'',''#'',NOW(),10);
 INSERT INTO `ic_util_consume_type` (`type_name`,`description`,`icon`,`create_data`,`create_personal`)
-VALUES('房租水电','今天你发了工资吗？房东又来催啦！！！','#',NOW(),10);
+VALUES(''房租水电'',''今天你发了工资吗？房东又来催啦！！！'',''#'',NOW(),10);
 
 
 ##插入路由信息
 DELETE FROM `ic_util_router_navigation`;
 -- 添加‘主页’一级菜单
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '主   页','#','icon-shouye',0,'主页',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '主   页'));
+	(SELECT ''主   页'',''#'',''icon-shouye'',0,''主页'',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''主   页''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '个人消费','#','icon-gouwuche',0,'主页',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '个人消费'));
+	(SELECT ''个人消费'',''#'',''icon-gouwuche'',0,''主页'',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''个人消费''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '业务办理','#','icon-bumengaikuang',0,'主页',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '业务办理'));
+	(SELECT ''业务办理'',''#'',''icon-bumengaikuang'',0,''主页'',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''业务办理''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '我   的','#','icon-chanxueyanhezuo',0,'主页',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '我   的'));
+	(SELECT ''我   的'',''#'',''icon-chanxueyanhezuo'',0,''主页'',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '系   统','#','icon-shezhi',0,'主页',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '系   统'));
+	(SELECT ''系   统'',''#'',''icon-shezhi'',0,''主页'',0,NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''系   统''));
 -- 添加主页中‘个人消费’的子菜单
 INSERT INTO `ic_util_router_navigation`  (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '余额','#','icon-wodezijin',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '个人消费'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '余额'));
+	(SELECT ''余额'',''#'',''icon-wodezijin'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''个人消费''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''余额''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '消费记录','#','icon-shouxinxiangqing-xiaofeijilu',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '个人消费'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '消费记录'));
+	(SELECT ''消费记录'',''#'',''icon-shouxinxiangqing-xiaofeijilu'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''个人消费''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''消费记录''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '充值提现','#','icon-chongzhi',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '个人消费'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '充值提现'));
+	(SELECT ''充值提现'',''#'',''icon-chongzhi'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''个人消费''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''充值提现''));
 -- - 添加主页中‘业务办理’的子菜单
 INSERT INTO `ic_util_router_navigation`  (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT 'IC卡申领','#','icon-kexuejishu',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '业务办理'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = 'IC卡申领'));
+	(SELECT ''IC卡申领'',''#'',''icon-kexuejishu'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''业务办理''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''IC卡申领''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT 'IC卡挂失','#','icon-301guashishenqing-lv',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '业务办理'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = 'IC卡挂失'));
+	(SELECT ''IC卡挂失'',''#'',''icon-301guashishenqing-lv'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''业务办理''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''IC卡挂失''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT 'IC卡注销','#','icon-chonghong-21',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '业务办理'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = 'IC卡注销'));
+	(SELECT ''IC卡注销'',''#'',''icon-chonghong-21'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''业务办理''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''IC卡注销''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '业务记录','#','icon-shouxinxiangqing-xiaofeijilu',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '业务办理'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '业务记录'));
+	(SELECT ''业务记录'',''#'',''icon-shouxinxiangqing-xiaofeijilu'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''业务办理''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''业务记录''));
 -- - 添加主页中’我   的‘的子菜单
 INSERT INTO `ic_util_router_navigation`  (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '个人信息','http://localhost:8080/nchkkjxy/balance/go','icon-xueshengziliao',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '我   的'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '个人信息'));
+	(SELECT ''个人信息'',''http://localhost:8080/nchkkjxy/balance/go'',''icon-xueshengziliao'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''个人信息''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '登录选项','#','icon-huidaodingbu',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '我   的'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '登录选项'));
+	(SELECT ''登录选项'',''#'',''icon-huidaodingbu'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''登录选项''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '退出系统','http://localhost:8080/nchkkjxy/go/toLogin','icon-tuichudenglu',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '我   的'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '退出系统'));
+	(SELECT ''退出系统'',''http://localhost:8080/nchkkjxy/go/toLogin'',''icon-tuichudenglu'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''退出系统''));
 -- - 添加主页中‘系   统’的子菜单
 INSERT INTO `ic_util_router_navigation`  (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '关于我们','#','icon-dollar-symbol',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '系   统'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '关于我们'));
+	(SELECT ''关于我们'',''#'',''icon-dollar-symbol'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''系   统''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''关于我们''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '使用手册','#','icon-shiyongshouce_icon',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '系   统'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '使用手册'));
+	(SELECT ''使用手册'',''#'',''icon-shiyongshouce_icon'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''系   统''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''使用手册''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '开发者','#','icon-kaifazhe',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '系   统'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '开发者'));
+	(SELECT ''开发者'',''#'',''icon-kaifazhe'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''系   统''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''开发者''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT '法律','#','icon-falvshengmingfalv',0,'主页',(SELECT id FROM `ic_util_router_navigation` WHERE title = '系   统'),NOW(),10 FROM DUAL WHERE NOT EXISTS (
-			SELECT id FROM `ic_util_router_navigation` WHERE title = '法律'));
-			
+	(SELECT ''法律'',''#'',''icon-falvshengmingfalv'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''系   统''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+			SELECT id FROM `ic_util_router_navigation` WHERE title = ''法律''));
+
 SELECT COUNT(id) FROM `ic_util_router_navigation`
 ## 查询用户可访问路由leavel = 0 OR
-SELECT `id`,`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`,`del_time`,`del_personal`,`status` 
+SELECT `id`,`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`,`del_time`,`del_personal`,`status`
 	FROM `ic_util_router_navigation` WHERE  leavel <= (
-		SELECT `leavel` FROM `ic_user_leavel` WHERE `user_type` = (SELECT `register_identify` FROM `ic_main_user` WHERE `easy_id` = 10)) 
-	AND `router_type` = '主页' AND `status` = 1 ORDER BY `parent_router`
+		SELECT `leavel` FROM `ic_user_leavel` WHERE `user_type` = (SELECT `register_identify` FROM `ic_main_user` WHERE `easy_id` = 10))
+	AND `router_type` = ''主页'' AND `status` = 1 ORDER BY `parent_router`
 
 
-##插入开发者信息	
-INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT '188207207','123456','开发者' 
-	FROM DUAL WHERE NOT EXISTS (SELECT `easy_id` FROM `ic_main_easy_user` WHERE easy_id = '188207207'));	
-INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)	
-	( SELECT (SELECT s.id FROM `ic_main_easy_user` s WHERE s.`easy_id` = '188207207'),'项若颖','333333333333333333','15777777771','111@123.com','3333-33-33','女','http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png','没有个性也是一种个性！' ,'开发者','1','0.00','1' 
-	 FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT s.id FROM `ic_main_easy_user` s WHERE s.`easy_id` = '188207207')));
+##插入开发者信息
+INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT ''188207207'',''123456'',''开发者''
+	FROM DUAL WHERE NOT EXISTS (SELECT `easy_id` FROM `ic_main_easy_user` WHERE easy_id = ''188207207''));
+INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)
+	( SELECT (SELECT s.id FROM `ic_main_easy_user` s WHERE s.`easy_id` = ''188207207''),''项若颖'',''333333333333333333'',''15777777771'',''111@123.com'',''3333-33-33'',''女'',''http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
+	 FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT s.id FROM `ic_main_easy_user` s WHERE s.`easy_id` = ''188207207'')));
 
-INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT '188206140','123456','开发者' FROM DUAL WHERE NOT EXISTS 
-		(SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = '188206140'));	
-INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)	
-	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = '188206140'),'郑子豪','433333333333333333','1577777772','111@124.com','3333-33-34','男','http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png','没有个性也是一种个性！' ,'开发者','1','0.00','1'
-	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = '188206140')));
+INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT ''188206140'',''123456'',''开发者'' FROM DUAL WHERE NOT EXISTS
+		(SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = ''188206140''));
+INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)
+	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206140''),''郑子豪'',''433333333333333333'',''1577777772'',''111@124.com'',''3333-33-34'',''男'',''http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
+	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206140'')));
 
-INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) ( SELECT '188206119','123456','开发者' FROM DUAL WHERE NOT EXISTS 
-	(SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = '188206119'));	
-INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)	
-	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = '188206119'),'卢正豪','533333333333333333','15777777773','111@125.com','3333-33-35','男','http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png','没有个性也是一种个性！' ,'开发者','1','0.00','1'
-	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = '188206119')));
+INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) ( SELECT ''188206119'',''123456'',''开发者'' FROM DUAL WHERE NOT EXISTS
+	(SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = ''188206119''));
+INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)
+	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206119''),''卢正豪'',''533333333333333333'',''15777777773'',''111@125.com'',''3333-33-35'',''男'',''http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
+	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206119'')));
 
-INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT '188206107','123456','开发者'
-	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = '188206107')) ;	
-INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)	
-	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = '188206107'),'晏慧君','633333333333333333','15777777774','111@126.com','3333-33-36','女','http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png','没有个性也是一种个性！' ,'开发者','1','0.00','1'
-	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = '188206107')));
+INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT ''188206107'',''123456'',''开发者''
+	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = ''188206107'')) ;
+INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)
+	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206107''),''晏慧君'',''633333333333333333'',''15777777774'',''111@126.com'',''3333-33-36'',''女'',''http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
+	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206107'')));
 
 
 # 查询用户信息
 SELECT * FROM `ic_main_user` WHERE `easy_id` = 10 AND `node_status` = 1 AND `user_status` = 1
 
 #查询开发者信息
-SELECT * FROM `ic_main_user` WHERE `register_identify` = '开发者' AND `node_status` = 1 AND `user_status` = 1      
+SELECT * FROM `ic_main_user` WHERE `register_identify` = ''开发者'' AND `node_status` = 1 AND `user_status` = 1
 
 
 ##查询用户名下ic卡
-SELECT `id`,card_id,user_id,`status` FROM ic_card_msg WHERE user_id = 10  
+SELECT `id`,card_id,user_id,`status` FROM ic_card_msg WHERE user_id = 10
 
 SELECT
 icm.`card_id` AS cardId,
@@ -219,37 +219,37 @@ FROM `ic_card_msg` icm
  LEFT JOIN `ic_card_type` ict ON ict.`type_name` = icem.`card_type_type`
  LEFT JOIN `ic_main_user` imu ON imu.`easy_id` = icm.`user_id`
  WHERE icm.`user_id` = 10
- 
- SELECT `card_id`,`handle_type`,`handle_date`,`handle_result`,`mark` FROM `ic_card_handel` WHERE `card_id` IN 
- (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 10 AND `status` = 1 ) 
- ORDER BY `card_id` 
- 
- SELECT 
+
+ SELECT `card_id`,`handle_type`,`handle_date`,`handle_result`,`mark` FROM `ic_card_handel` WHERE `card_id` IN
+ (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 10 AND `status` = 1 )
+ ORDER BY `card_id`
+
+ SELECT
 	icem.id AS cardId,icem.`blance` AS cardBalance,icem.`create_date` AS cardCreareDate,icem.`card_type_type` ascardType,
 	ich.`handle_type` AS handleType,ich.`handle_date` AS handleDate,ich.`handle_result` AS handleResult ,ich.`mark` AS handleMark,
 	ict.`icon` AS cardIcon,ict.`count` AS cardCount
   FROM `ic_card_easy_msg` AS icem
  LEFT JOIN `ic_card_handel` AS ich ON  ich.`card_id` = icem.`id`
  LEFT JOIN `ic_card_type` AS ict ON ict.`type_name` = icem.`card_type_type`
-  WHERE icem.`id` = 1 AND icem.`status`=1 
-  ORDER BY ich.`handle_date` 
- 
- INSERT INTO `ic_card_handel` (`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`) VALUES 
- (1,'挂失',NOW(),'0','卡丢失了')
- UPDATE `ic_card_easy_msg` SET `card_status` = '-1' WHERE `id` = 1
- 
- UPDATE `ic_main_user` SET `email` = '2749984520@qq.com' WHERE `easy_id` = 10
- 
- 
- SELECT id AS cardId,card_status AS cardStatus,(SELECT `name` FROM `ic_main_user` WHERE `easy_id`= 10 AND `status` = 1) AS uName FROM 
+  WHERE icem.`id` = 1 AND icem.`status`=1
+  ORDER BY ich.`handle_date`
+
+ INSERT INTO `ic_card_handel` (`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`) VALUES
+ (1,''挂失'',NOW(),''0'',''卡丢失了'')
+ UPDATE `ic_card_easy_msg` SET `card_status` = ''-1'' WHERE `id` = 1
+
+ UPDATE `ic_main_user` SET `email` = ''2749984520@qq.com'' WHERE `easy_id` = 10
+
+
+ SELECT id AS cardId,card_status AS cardStatus,(SELECT `name` FROM `ic_main_user` WHERE `easy_id`= 10 AND `status` = 1) AS uName FROM
   `ic_card_easy_msg` WHERE `id` IN(SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 10 AND `status`=1) AND `status` = 1
- 
+
  SELECT COUNT(`id`)  FROM `ic_card_easy_msg` WHERE `id` IN (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 10 AND `status`=1 ) AND `status` = 1
- 
- 
+
+
   #   //获取挂失卡列表：卡id+用户姓名+卡图表+卡余额
   #  public List<Map<String,Object>> getCards(@Param("uid") Long uid);
-    SELECT 
+    SELECT
     icem.id AS cardId,icem.`blance` AS cardBalance,
     (SELECT `icon` FROM `ic_card_type` WHERE `type_name` = icem.`card_type_type` AND `status`=1) AS cardUrl,
     (SELECT `name` FROM `ic_main_user` WHERE `easy_id` = 10 AND `node_status`=1) AS uName
@@ -258,22 +258,22 @@ FROM `ic_card_msg` icm
   #  public PageVO<Map<String,Object>> getLossMsgOfCard(@Param("cardId") Long cardId);
 	SELECT `card_id` AS cardId,`handle_type` AS handleType,`handle_date` AS handelDate,`handle_result` AS handleResult,`mark` AS handelMark
 	 FROM `ic_card_handel` WHERE `card_id`=1 AND `status`=1  ORDER BY handle_date LIMIT 0,5
-  
-  
+
+
    #   //挂失撤回
    # public Integer lossBack(@Param("cardId")Long cardId);
 	UPDATE `ic_card_easy_msg` SET `card_status`=1 WHERE `id` = 1
-   
+
    # public Integer addLossBackHistory(@Param("cardId")Long cardId,@Param("uid") Long uid);
    INSERT INTO `ic_card_handel` (`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`,`status`)
-   VALUES(1,'挂失撤回',NOW(),'撤回成功','撤回',1)
-   
+   VALUES(1,''挂失撤回'',NOW(),''撤回成功'',''撤回'',1)
+
    SELECT `name` FROM `ic_main_user` WHERE `easy_id` = 10 AND `node_status` = 1
-   
+
    # 根据用户id查询用户持有的正常卡
    SELECT `card_id`,`user_id`,`status` FROM `ic_card_msg` WHERE `user_id`=10 AND `status`=1
    #根据卡id查找卡的基本信息
-   SELECT 
+   SELECT
    imu.`easy_id` AS uId,imu.`name` AS uName,imu.`identify_card` AS uIdentify,imu.`phone` AS uPhone,imu.`email` AS uEmail,imu.`head_url` AS uHead,imu.`register_identify` AS uRegisterIdentify,imu.`money_balance` AS uBalance,
    icem.`id` AS cId,icem.`blance` AS cBalance,icem.`create_date` AS cCreateDate,icem.`card_status` AS cStatus,
    ict.`type_name` AS cName,ict.`icon` AS cIcon,ict.`count` AS cCount
@@ -282,18 +282,18 @@ FROM `ic_card_msg` icm
    LEFT JOIN `ic_card_msg` AS icm ON icm.`card_id` = icem.`id`
    LEFT JOIN `ic_main_user` AS imu ON imu.`easy_id` = icm.`user_id`
    WHERE icem.`id` = 3
-   
+
     UPDATE `ic_main_user` AS a SET `money_balance` = FORMAT(
                 CAST( a.`money_balance` AS DECIMAL)
                 +
                 CAST( (SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 2 ) AS DECIMAL)
             ,2)
            WHERE `easy_id` = 2
-   
+
    # 注销卡后卡内余额需全部转到账户余额
    UPDATE `ic_main_user` SET `money_balance` = FORMAT(
-	CAST(`money_balance` AS DECIMAL) 
-	+ 
+	CAST(`money_balance` AS DECIMAL)
+	+
 	CAST(
 		(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = (
 			SELECT `id` FROM `ic_card_easy_msg` AS icem WHERE icem.`id` IN (
@@ -301,32 +301,32 @@ FROM `ic_card_msg` icm
 				)
 			 AND icem.`card_status` = 1
 			)
-		) 
+		)
 		AS DECIMAL
 	) ,2)
    WHERE `easy_id` = 10
    #添加账户余额变更记录
    INSERT INTO `ic_main_user_balance_log` (user_id,money,`type`,`time`,balance,operator_user,ip_host,note)
-	VALUES(10,(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 1),'卡注销资金变更',NOW(),(SELECT FORMAT(`money_balance`,2) FROM `ic_main_user` WHERE `easy_id` = '10' ),10,'192.168.102.1','卡注销资金变更')
-   
+	VALUES(10,(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 1),''卡注销资金变更'',NOW(),(SELECT FORMAT(`money_balance`,2) FROM `ic_main_user` WHERE `easy_id` = ''10'' ),10,''192.168.102.1'',''卡注销资金变更'')
+
   # 修改卡的状态为：-3//注销为永久不可逆
-   UPDATE `ic_card_easy_msg` SET `card_status` = -3,`blance`='0.00' ,`status`=0 WHERE `id`=1
-   
-   
+   UPDATE `ic_card_easy_msg` SET `card_status` = -3,`blance`=''0.00'' ,`status`=0 WHERE `id`=1
+
+
    #添加注销卡业务历史
     INSERT INTO `ic_card_handel` (`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`,`status`)
-   VALUES(1,'IC卡注销',NOW(),'注销成功','注销',1)
-   
+   VALUES(1,''IC卡注销'',NOW(),''注销成功'',''注销'',1)
+
    #修改邮箱
-   UPDATE `ic_main_user` SET `email`='2749984521@qq.com' WHERE `easy_id`=10
-   
-   
+   UPDATE `ic_main_user` SET `email`=''2749984521@qq.com'' WHERE `easy_id`=10
+
+
    #办卡
    -- 插入卡信息
-   INSERT INTO `ic_card_easy_msg` 
-   (`blance`,`create_date`,`card_status`,`card_type_type`,`status`) 
+   INSERT INTO `ic_card_easy_msg`
+   (`blance`,`create_date`,`card_status`,`card_type_type`,`status`)
    VALUES
-   ('0.00',NOW(),1,'普通卡',1)
+   (''0.00'',NOW(),1,''普通卡'',1)
    -- 绑定卡到用户
    INSERT INTO `ic_card_msg`
    (`card_id`,`user_id`,`status`)
@@ -336,20 +336,20 @@ FROM `ic_card_msg` icm
    INSERT INTO `ic_card_handel`
    (`card_id`,`handle_type`,`handle_date`,`handle_result`,`mark`,`status`)
    VALUES
-   (2,'创建',(SELECT icem.`create_date` FROM `ic_card_easy_msg` AS icem WHERE icem.`id`=2),'创建成功','无',1)
- 
- 
+   (2,''创建'',(SELECT icem.`create_date` FROM `ic_card_easy_msg` AS icem WHERE icem.`id`=2),''创建成功'',''无'',1)
+
+
  SELECT `id`,card_id,user_id,
  (SELECT `card_status` FROM `ic_card_easy_msg` AS icem WHERE icem.id = icm.card_id) AS `card_status`,
  `status` FROM ic_card_msg AS icm WHERE icm.user_id =  2
- 
- 
+
+
    #  //查看当前正在使用的卡
    #  public List<Long> usingCard(@Param("uid")Long uid);
    SELECT id FROM `ic_card_easy_msg` WHERE id IN (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 2) AND `card_status` = 1
    #  //查看卡内余额
    #  public Map<String,Object> cardMsg(@Param("cid")Long cid);
-   SELECT 
+   SELECT
    imu.`easy_id` AS uId,imu.`name` AS uName,imu.`identify_card` AS uIdentify,imu.`phone` AS uPhone,imu.`email` AS uEmail,imu.`head_url` AS uHead,imu.`register_identify` AS uRegisterIdentify,imu.`money_balance` AS uBalance,
    icem.`id` AS cId,icem.`blance` AS cBalance,icem.`create_date` AS cCreateDate,icem.`card_status` AS cStatus,
    ict.`type_name` AS cName,ict.`icon` AS cIcon,ict.`count` AS cCount
@@ -361,77 +361,77 @@ FROM `ic_card_msg` icm
    #  //给卡充值
    #  public Integer chrageMoneyForCard(@Param("money") String money,@Param("cid")Long cid);
    UPDATE `ic_card_easy_msg` SET `blance` = `blance` + 1.45 WHERE `id` = 4
-   
+
    INSERT INTO `ic_recharge_node`
    (`recharge_money`,`recharge_time`,`blance`,`note`)
    VALUES
-   ('2.22',NOW(),(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 4),'充值')
-   
+   (''2.22'',NOW(),(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 4),''充值'')
+
    INSERT INTO `ic_recharge_record`
    (`recharge_id`,`card_id`,`user_id`,`status`)
    VALUES
    (2,4,2,1)
-   
+
 
 INSERT INTO `ic_recharge_node`
             (`recharge_money`,`recharge_time`,`blance`,`note`,`status`)
             VALUES
-            ('10.00',NOW(),(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 4),'',1)  
-   
-   
+            (''10.00'',NOW(),(SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` = 4),'''',1)
+
+
    SELECT id FROM `ic_card_easy_msg` WHERE id IN (
                     SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 2
                 ) AND `card_status` = 1
-                
+
    DROP TABLE `ic_shopping_trade_goods`
-   
+
    INSERT INTO `ic_shopping_util_price`
    (`until`,`mark`)
    VALUES
-   ('元/箱','标准单位')
-   
+   (''元/箱'',''标准单位'')
+
 INSERT INTO `ic_util_goods_type`
 (`type_name`,`description`,`icon`,`create_data`,`create_personal`)VALUES
-('学习用品','学习用品','#',NOW(),10)
-   
-   
-   INSERT INTO `ic_shopping_goods` 
+(''学习用品'',''学习用品'',''#'',NOW(),10)
+
+
+   INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('新西兰西兰花','#','9.99','100','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,午餐必备','南昌蔬菜园','0',1,1);
-  
-  INSERT INTO `ic_shopping_goods` 
-   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('葡萄牙酸葡萄','#','9.99','100','100','1.0','水果,进口,葡萄,维生素,减肥,好吃,大家喜欢,优惠购','南昌水果园','0',2,1);
-   
-    INSERT INTO `ic_shopping_goods` 
-   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('吉安菠萝','#','22.66','100','100','1.0','水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购','南昌水果园','0',2,1);
-   
-      INSERT INTO `ic_shopping_goods`
-   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('狗不理包子','http://localhost:8080/nchkkjxy/pic/main_page/card.png','108.99','10','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备','南昌包子铺','0',1,3);
+   (''新西兰西兰花'',''#'',''9.99'',''100'',''100'',''1.0'',''蔬菜,进口,新鲜,美味,优惠,减肥,午餐必备'',''南昌蔬菜园'',''0'',1,1);
 
   INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('好莱坞大红袍','http://localhost:8080/nchkkjxy/pic/main_page/card.png','1230.00','99','100','1.0','服装,进口,袍,修身,大咖,有钱人,大家喜欢,优惠购','义乌小商城','0',3,8);
+   (''葡萄牙酸葡萄'',''#'',''9.99'',''100'',''100'',''1.0'',''水果,进口,葡萄,维生素,减肥,好吃,大家喜欢,优惠购'',''南昌水果园'',''0'',2,1);
 
     INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('小米钢笔','http://localhost:8080/nchkkjxy/pic/main_page/card.png','99.66','1','100','0.95','文具,高科技,小米,牛逼,好写,笔,优惠购','小米旗舰店','1',4,4);
+   (''吉安菠萝'',''#'',''22.66'',''100'',''100'',''1.0'',''水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购'',''南昌水果园'',''0'',2,1);
+
+      INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   (''狗不理包子'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''108.99'',''10'',''100'',''1.0'',''蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备'',''南昌包子铺'',''0'',1,3);
+
+  INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   (''好莱坞大红袍'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''1230.00'',''99'',''100'',''1.0'',''服装,进口,袍,修身,大咖,有钱人,大家喜欢,优惠购'',''义乌小商城'',''0'',3,8);
+
+    INSERT INTO `ic_shopping_goods`
+   (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
+   (''小米钢笔'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''99.66'',''1'',''100'',''0.95'',''文具,高科技,小米,牛逼,好写,笔,优惠购'',''小米旗舰店'',''1'',4,4);
 
          INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('老挝茄子','http://localhost:8080/nchkkjxy/pic/main_page/card.png','12.99','86','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备','万达广场-南昌店','0',1,3);
+   (''老挝茄子'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''12.99'',''86'',''100'',''1.0'',''蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备'',''万达广场-南昌店'',''0'',1,3);
 
   INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('鸿星尔克跑步鞋NK-13','http://localhost:8080/nchkkjxy/pic/main_page/card.png','520.00','99','100','1.0','服装,国产,国货之光,跑步,运动鞋,大咖,有钱人,大家喜欢,优惠购','鸿星尔克旗舰店','0',3,8);
+   (''鸿星尔克跑步鞋NK-13'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''520.00'',''99'',''100'',''1.0'',''服装,国产,国货之光,跑步,运动鞋,大咖,有钱人,大家喜欢,优惠购'',''鸿星尔克旗舰店'',''0'',3,8);
 
     INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   ('笔记本A4','http://localhost:8080/nchkkjxy/pic/main_page/card.png','25.00','85','160','0.8','文具,高科技,晨光,牛逼,好笔记本,漂亮,优惠购','小米旗舰店','1',4,4);
+   (''笔记本A4'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''25.00'',''85'',''160'',''0.8'',''文具,高科技,晨光,牛逼,好笔记本,漂亮,优惠购'',''小米旗舰店'',''1'',4,4);
 
-   select count(id) from `ic_shopping_goods`
+   SELECT COUNT(id) FROM `ic_shopping_goods`
 
    # 查询商品类型
    SELECT id ,type_name AS `name` FROM `ic_util_goods_type`
@@ -453,17 +453,17 @@ INSERT INTO `ic_util_goods_type`
    FROM `ic_shopping_goods` AS isg
    WHERE
    isg.`extant` > 0
-   AND (isg.`title` LIKE '%水%' OR isg.`description` LIKE '%南昌%' )
+   AND (isg.`title` LIKE ''%水%'' OR isg.`description` LIKE ''%南昌%'' )
    AND isg.`unit_price` >1
    AND isg.`unit_price` <100
-   AND isg.`goods_class` IN (SELECT `id` FROM `ic_util_goods_type` WHERE `type_name` = '水果')
+   AND isg.`goods_class` IN (SELECT `id` FROM `ic_util_goods_type` WHERE `type_name` = ''水果'')
    ORDER BY isg.`unit_price` DESC
    LIMIT 0,2
 
-   
+
    #按销售量排序
 
-  SELECT 
+  SELECT
 	`id` AS goodsId,
 	`goods_name` AS goodsName,
 	`icon` AS goodsIcon,
@@ -481,3 +481,61 @@ INSERT INTO `ic_util_goods_type`
    WHERE `extant`>0
    ORDER BY goodsCellNum DESC
    LIMIT 0,50
+
+
+
+#根据商品id获取商品信息，用于下单页
+SELECT
+	`id` AS goodsId,
+	`goods_name` AS goodsName,
+	`icon` AS goodsIcon,
+	`unit_price` AS goodsPrice,
+	`extant` AS goodsExtant,
+	`inventory` AS goodsInventory,
+	`discount` AS goodsDiscount,
+	`title` AS goodsTitle,
+	`description` AS goodsDescription,
+	`is_special` AS goodsIsSpecial,
+	(SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
+	(SELECT `until` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil,
+	(CAST(isg.`inventory` AS SIGNED) - CAST(isg.`extant` AS SIGNED)) AS goodsCellNum
+   FROM `ic_shopping_goods` AS isg
+   WHERE `id` = 2 AND `status`=1
+
+
+#查询账户余额和卡余额
+SELECT
+	icem.`blance` AS cardBalance,
+	icem.`card_type_type` AS cardType,
+	icem.`id` AS cardId,
+	imu.`easy_id` AS uId,
+	imu.`name` AS uName,
+	imu.`identify_card` AS uIdentify,
+	imu.`phone` AS uPhone,
+	imu.`email` AS uEmail,
+	imu.`head_url` AS uHeadUrl,
+	imu.`single` AS uSingle,
+	imu.`register_identify` AS uRegisterIdentify,
+	imu.`money_balance` AS uBalance
+FROM `ic_card_easy_msg` AS icem
+LEFT JOIN `ic_main_user` AS imu ON imu.`easy_id` = 10
+WHERE icem.`id` IN (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 10) AND icem.`card_status` = 1
+
+#验证支付信息
+SELECT COUNT(id) FROM `ic_shopping_verify` WHERE `easy_id` = 10 AND `pwd` = ''123456'' AND `status` = 1
+
+#验证商品库存充值且Ic卡余额充足后修改商品库存
+UPDATE `ic_shopping_goods` AS isg SET isg.`extant` = isg.`extant` - 50 WHERE
+	isg.`extant` > 50 - 1
+	AND
+	(
+		(SELECT `blance` FROM `ic_card_easy_msg` WHERE
+		`id` IN ( SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = 10)
+		AND `card_status` = 1 )
+		>
+		(isg.`unit_price` * 50)
+	)
+	AND
+	isg.`id` = 2
+
+

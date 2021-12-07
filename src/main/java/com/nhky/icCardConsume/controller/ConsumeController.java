@@ -59,4 +59,27 @@ public class ConsumeController {
     public String getTypes(){
         return consumeService.getTypeNameList();
     }
+
+
+    //根据商品id获取商品信息
+    @RequestMapping("/get")
+    @ResponseBody
+    public String getGoodsById(){
+        return consumeService.getGoodsById();
+    }
+
+    //获取用户卡内余额以及账户余额，以及相关信息
+    @RequestMapping("/getBalance")
+    @ResponseBody
+    public String getCardBalance(){
+        return consumeService.getBalance();
+    }
+
+    //用户下单：
+    //   【】验证密码->确认订单->下单->修改商品表库存->添加商品购买记录->修改IC卡余额->下单成功
+    @RequestMapping("/order")
+    @ResponseBody
+    public String order(){
+        return consumeService.order();
+    }
 }

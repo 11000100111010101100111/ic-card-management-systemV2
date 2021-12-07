@@ -100,4 +100,42 @@ public class ConsumeServiceImpl implements ConsumeService {
         List<Map<String,Object>> val = consumeDao.getTypeNameList();
         return JSON.toJSONString(ResultUtil.succeed(val));
     }
+
+    @Override
+    public String getGoodsById() {
+        String gid = StringUtil.getPamterString(RequestUtil.getRequestParam("gid"));
+
+        if (StringUtil.isLong(gid)){
+            return JSON.toJSONString(ResultUtil.error("商品标识不符！"));
+        }
+        try {
+            return JSON.toJSONString(ResultUtil.succeed(consumeDao.getGoodsById(Long.parseLong(gid))));
+        }catch (Exception e){
+            return JSON.toJSONString(ResultUtil.error("查询失败！"));
+        }
+    }
+
+    //获取用户卡内余额以及账户余额，以及相关信息
+    @Override
+    public String getBalance() {
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
+        try {
+            Map<String ,Object> result = consumeDao.getBalance(Long.parseLong(uid));
+            return JSON.toJSONString(
+                    null!=result&&result.size()>0?
+                            ResultUtil.succeed(result):
+                            ResultUtil.error("获取失败！"));
+        }catch (Exception e){
+            return JSON.toJSONString(ResultUtil.error("访问异常！"));
+        }
+
+    }
+
+    //用户下单：
+    //   【】验证密码->确认订单->下单->修改商品表库存->添加商品购买记录->修改IC卡余额->下单成功
+    @Override
+    public String order() {
+        return null;
+    }
+
 }

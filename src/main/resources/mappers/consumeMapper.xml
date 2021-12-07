@@ -75,4 +75,88 @@
            SELECT id AS typeId,`description` AS typeDesc,`icon` AS typeIcon,`type_name` AS typeName
                 FROM `ic_util_goods_type` WHERE `status` = 1
     </select>
+
+<!--    //根据商品id获取商品信息，用于下单页-->
+<!--    public GoodsVO getGoodsById(@Param("gid") Long gid);-->
+    <select id="getGoodsById" resultType="com.nhky.pojo.GoodsVO" parameterType="java.lang.Long">
+        SELECT
+            `id` AS goodsId,
+            `goods_name` AS goodsName,
+            `icon` AS goodsIcon,
+            `unit_price` AS goodsPrice,
+            `extant` AS goodsExtant,
+            `inventory` AS goodsInventory,
+            `discount` AS goodsDiscount,
+            `title` AS goodsTitle,
+            `description` AS goodsDescription,
+            `is_special` AS goodsIsSpecial,
+            (SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
+            (SELECT `until` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil,
+            (CAST(isg.`inventory` AS SIGNED) - CAST(isg.`extant` AS SIGNED)) AS goodsCellNum
+           FROM `ic_shopping_goods` AS isg
+           WHERE `id` = #{gid} AND `status`=1
+    </select>
+
+    <select id="getBalance" resultType="map" parameterType="java.lang.Long">
+        SELECT
+            icem.`blance` AS cardBalance,
+            icem.`card_type_type` AS cardType,
+            icem.`id` AS cardId,
+            imu.`easy_id` AS uId,
+            imu.`name` AS uName,
+            imu.`identify_card` AS uIdentify,
+            imu.`phone` AS uPhone,
+            imu.`email` AS uEmail,
+            imu.`head_url` AS uHeadUrl,
+            imu.`single` AS uSingle,
+            imu.`register_identify` AS uRegisterIdentify,
+            imu.`money_balance` AS uBalance
+        FROM `ic_card_easy_msg` AS icem
+        LEFT JOIN `ic_main_user` AS imu ON imu.`easy_id` = #{uid}
+        WHERE icem.`id` IN (SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{uid}) AND icem.`card_status` = 1
+    </select>
+
+<!--    //下单-->
+<!--    //（1）验证密码-->
+<!--    public Integer verifyPaymentPassword(@Param("uid")Long uid,@Param("pwd")String pwd);-->
+    <select id="verifyPaymentPassword">
+        SELECT COUNT(id) FROM `ic_shopping_verify` WHERE `easy_id` = #{uid} AND `pwd` = #{pwd} AND `status` = 1
+    </select>
+<!--    // (2)确认订单库存足够且账户余额充足时修改商品表库存-->
+<!--    public Integer modifyGoodsExtent(@Param("buyNum")Integer buyNum,//购买数量-->
+<!--    @Param("gid") Long gid,//商品id-->
+<!--    @Param("uid") Long uid);//用户id-->
+    <update id="modifyGoodsExtent">
+        UPDATE `ic_shopping_goods` AS isg SET isg.`extant` = isg.`extant` - #{buyNum} WHERE
+            isg.`extant` > #{buyNum} - 1
+            AND
+            (
+                (
+                    SELECT `blance` FROM `ic_card_easy_msg` WHERE
+                    `id` IN ( SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{uid})
+                    AND `card_status` = 1
+                )
+                >=
+                (
+                    isg.`unit_price` * #{buyNum}
+                )
+            )
+            AND
+            isg.`id` = #{gid}
+    </update>
+<!--    //(3)添加商品购买记录-->
+<!--    public Integer addPaymentHistory();-->
+    <insert id="addPaymentHistory">
+
+    </insert>
+<!--    //(4))修改IC卡余额-->
+<!--    public Integer updateBalance();-->
+    <update id="updateBalance">
+
+    </update>
+<!--    //添加ic卡余额变更记录-->
+<!--    public Integer addICBalanceHistory();-->
+    <insert id="addICBalanceHistory">
+
+    </insert>
 </mapper>

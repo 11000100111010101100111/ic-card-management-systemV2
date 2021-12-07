@@ -2,6 +2,7 @@ package com.nhky.icCardConsume.dao;
 
 import com.nhky.pojo.GoodsVO;
 import com.nhky.pojo.HotGoodsVO;
+import com.nhky.pojo.ShoppingHistory;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -28,4 +29,35 @@ public interface ConsumeDao {
     public List<HotGoodsVO> getHotGoods(@Param("off") Integer off,@Param("end") Integer end);
 
     public List<Map<String,Object>> getTypeNameList();
+
+    //根据商品id获取商品信息，用于下单页
+    public GoodsVO getGoodsById(@Param("gid") Long gid);
+
+    //获取用户卡内余额以及账户余额，以及相关信息
+    public Map<String,Object> getBalance(@Param("uid")Long uid);
+
+
+
+
+    //下单
+    //（1）验证密码
+    public Integer verifyPaymentPassword(@Param("uid")Long uid,@Param("pwd")String pwd);
+
+
+    // (2)确认订单库存足够时修改商品表现存
+    // Param: buyNum-->购买数量
+    public Integer modifyGoodsExtent(@Param("buyNum")Integer buyNum,//购买数量
+                                        @Param("gid") Long gid,//商品id
+                                        @Param("uid") Long uid);//用户id
+
+
+    //(3)添加商品购买记录
+    public Integer addPaymentHistory(ShoppingHistory history);
+
+
+    //(4))修改IC卡余额
+    public Integer updateBalance();
+
+    //添加ic卡余额变更记录
+    public Integer addICBalanceHistory();
 }

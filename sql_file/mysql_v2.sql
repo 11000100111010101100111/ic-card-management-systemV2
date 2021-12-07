@@ -659,7 +659,7 @@ CREATE TABLE `ic_shopping_goods` (
 /*Data for the table `ic_shopping_goods` */
 
 insert  into `ic_shopping_goods`(`id`,`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`status`,`util`) values 
-(2,'新西兰西兰花','http://localhost:8080/nchkkjxy/pic/main_page/card.png','9.99','100','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,午餐必备,食品,','南昌蔬菜园','0',1,1,1),
+(2,'新西兰西兰花','http://localhost:8080/nchkkjxy/pic/main_page/card.png','9.99','49','100','1.0','蔬菜,进口,新鲜,美味,优惠,减肥,午餐必备,食品,','南昌蔬菜园','0',1,1,1),
 (3,'葡萄牙酸葡萄','http://localhost:8080/nchkkjxy/pic/main_page/card.png','9.99','91','100','1.0','水果,进口,葡萄,维生素,减肥,好吃,大家喜欢,优惠购,食品,','南昌水果园','1',2,1,1),
 (4,'南昌哈喇子','http://localhost:8080/nchkkjxy/pic/main_page/card.png','9.99','80','100','1.0','水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购,食品,','南昌水果园','0',2,1,1),
 (5,'吉安菠萝','http://localhost:8080/nchkkjxy/pic/main_page/card.png','22.66','100','100','1.0','水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购,食品,','南昌水果园','1',2,1,1),
@@ -714,6 +714,23 @@ insert  into `ic_shopping_util_price`(`id`,`until`,`mark`,`create_date`,`create_
 (7,'元/g','标准单位','2021-12-07 12:00:00',10,NULL,NULL,1),
 (8,'元/件','标准单位','2021-12-07 12:00:00',10,NULL,NULL,1),
 (9,'元/箱','标准单位','2021-12-07 12:00:00',10,NULL,NULL,1);
+
+/*Table structure for table `ic_shopping_verify` */
+
+DROP TABLE IF EXISTS `ic_shopping_verify`;
+
+CREATE TABLE `ic_shopping_verify` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '记录id',
+  `easy_id` bigint(20) NOT NULL COMMENT '用户id',
+  `pwd` varchar(50) DEFAULT '123456' COMMENT '付款密码（6位数字密码）',
+  `status` int(11) DEFAULT '1' COMMENT '状态',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `ic_shopping_verify` */
+
+insert  into `ic_shopping_verify`(`id`,`easy_id`,`pwd`,`status`) values 
+(1,10,'123456',1);
 
 /*Table structure for table `ic_user_leavel` */
 
