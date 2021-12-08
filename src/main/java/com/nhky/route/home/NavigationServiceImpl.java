@@ -1,5 +1,6 @@
 package com.nhky.route.home;
 
+import com.nhky.loginAndRegister.service.LoginAndRegisterService;
 import com.nhky.pojo.Router;
 import com.nhky.pojo.User;
 import com.nhky.utils.RequestUtil;
@@ -19,6 +20,10 @@ import java.util.*;
 public class NavigationServiceImpl implements NavigationService {
     @Resource(name = "routerNavigationDao")
     RouterNavigationDao routerNavigationDao;
+
+    @Resource(name = "loginAndRegisterImpl")
+    LoginAndRegisterService loginAndRegisterService;
+
 
     @Override
     public String seachPage() {
@@ -53,7 +58,7 @@ public class NavigationServiceImpl implements NavigationService {
                 break;//登录选项
             case "home/mine/exit":;
             case "toLogin":
-                RequestUtil.destroySession();
+                loginAndRegisterService.exit();
                 pageName = "/loginAndRegister/login";
                 break;//退出系统
             case "home/system/our":

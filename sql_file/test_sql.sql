@@ -539,3 +539,25 @@ UPDATE `ic_shopping_goods` AS isg SET isg.`extant` = isg.`extant` - 50 WHERE
 	isg.`id` = 2
 
 
+#记录当前访问主机
+INSERT INTO `ic_util_visitor`
+(`ip`,`time`,`name`)
+VALUES
+('127.0.0.1',NOW(),'127.0.0.1')
+
+#保存用户登录信息到当前主机:当前账号以经保存登录信息，则覆盖之前的登录信息，不存在就插入一条
+ INSERT INTO `ic_login_history`
+(`uid`,`ip`,`is_save`,`create_time`,`save_times`,`status`)
+VALUES(
+9,'127.0.0.6',1,NOW(),3600,1 )ON DUPLICATE KEY UPDATE
+`uid`=9,`ip`='127.0.0.6',`is_save`=1,`create_time`=NOW(),`save_times`=3600,`status`=1
+#查询用户信息
+SELECT `id`,`easy_id`,`indentify` FROM `ic_main_easy_user` WHERE id = 10
+
+#查询当前主机是否保存某个用户登录信息并且未过期
+SELECT
+`id`,`uid`,`ip`,`is_save`,`create_time`,`save_times`,`leavel`,`status`
+ FROM `ic_login_history` WHERE `ip` = '127.0.0.6' AND `status` = 1 ORDER BY `leavel`,`create_time` DESC
+
+#修改过期的登录信息
+UPDATE `ic_login_history` SET `status` = 0 WHERE `uid` = 10 AND `ip` = '127.0.0.6'

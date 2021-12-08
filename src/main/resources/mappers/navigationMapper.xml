@@ -47,4 +47,40 @@
     <update id="modifyEmail">
         UPDATE `ic_main_user` SET `email`=#{email} WHERE `easy_id`=#{uid}
     </update>
+
+<!--    //记录当前访问主机-->
+<!--    public Integer addVisitor(@Param("ip") String ip);-->
+    <insert id="addVisitor">
+        INSERT INTO `ic_util_visitor`
+            (`ip`,`time`,`name`)
+        VALUES
+            (#{ip},NOW(),#{name})
+    </insert>
+
+<!--    //查询当前主机是否保存某个用户登录信息并且未过期-->
+<!--    public LoginHistory getLoginHistory(@Param("ip") String ip);-->
+    <select id="getLoginHistory" parameterType="java.lang.String" resultType="com.nhky.pojo.LoginHistory">
+        SELECT
+        `id`,`uid`,`ip`,`is_save`,`create_time`,`save_times`,`leavel`,`status`
+         FROM `ic_login_history` WHERE `ip` = #{ip} AND `status` = 1 ORDER BY `leavel`,`create_time` DESC
+    </select>
+<!--    #查询用户信息-->
+    <select id="getUMsg" parameterType="java.lang.Long" resultType="map">
+        SELECT `id`,`easy_id`,`indentify` FROM `ic_main_easy_user` WHERE id = #{uid}
+    </select>
+<!--    //保存用户登录信息到当前主机:当前账号以经保存登录信息，则覆盖之前的登录信息，不存在就插入一条-->
+<!--    public Integer saveLoginMsg(LoginHistory history);-->
+    <insert id="saveLoginMsg" parameterType="com.nhky.pojo.LoginHistory">
+         INSERT INTO `ic_login_history`
+        (`uid`,`ip`,`is_save`,`create_time`,`save_times`,`status`)
+        VALUES
+        (#{uid},#{ip},1,NOW(),#{save_times},1 )
+        ON DUPLICATE KEY UPDATE
+        `uid`=#{uid},`ip`=#{ip},`is_save`=1,`create_time`=NOW(),`save_times`=#{save_times},`status`=1
+    </insert>
+<!--    //修改过期的登录信息-->
+<!--    public Integer removeTimeOutHistory();-->
+    <update id="removeTimeOutHistory" >
+        UPDATE `ic_login_history` SET `status` = 0 WHERE `uid` = #{uid} AND `ip` = #{ip}
+    </update>
 </mapper>

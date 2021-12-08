@@ -17,4 +17,5 @@ public interface LoginAndRegisterService {
     public String login(Model model);
     public String register();
     public String getCode(int size);
+    public void exit();
 }

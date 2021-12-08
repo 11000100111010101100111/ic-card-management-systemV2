@@ -59,4 +59,11 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+<!--    //配置访问量统计-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.nhky.config.interceptor.VisitorInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

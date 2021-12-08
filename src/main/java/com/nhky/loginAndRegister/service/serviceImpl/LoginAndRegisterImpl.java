@@ -4,11 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.nhky.loginAndRegister.dao.LoginAndRegisterDao;
 import com.nhky.loginAndRegister.service.LoginAndRegisterService;
 import com.nhky.pojo.EasyUser;
+import com.nhky.pojo.LoginHistory;
 import com.nhky.pojo.User;
-import com.nhky.utils.LogUtil;
-import com.nhky.utils.RequestUtil;
-import com.nhky.utils.StringUtil;
-import com.nhky.utils.VeryificationCodeUtil;
+import com.nhky.route.home.RouterNavigationDao;
+import com.nhky.utils.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -31,6 +30,10 @@ import java.util.Random;
 public class LoginAndRegisterImpl implements LoginAndRegisterService {
     @Resource
     LoginAndRegisterDao loginAndRegisterDao;
+
+    @Resource(name = "routerNavigationDao")
+    RouterNavigationDao navigationDao;
+
     @Override
     public String login(Model model) {
 
@@ -56,6 +59,14 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
                     RequestUtil.setRequestSessionAttr("userIdentify",easyUser.getIndentify());
 
                     LogUtil.info("--用户："+id+"已登录");
+
+                    //记住当前ip的登录，记住5个小时，五个小时内不登录需重新登录
+                    LoginHistory loginHistory = new LoginHistory();
+                    loginHistory.setIp(AccessUtil.getRemoteHost(RequestUtil.getRequest()));
+                    loginHistory.setIs_save(1);
+                    loginHistory.setSave_times(18000);
+                    loginHistory.setUid(easyUser.getId());
+                    navigationDao.saveLoginMsg(loginHistory);
 
                     //获取当前登录用户id
 //                    UserVO.setUID(easyUser.getId());
@@ -149,5 +160,16 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
     @Override
     public String getCode(int size) {
         return VeryificationCodeUtil.getCode(size);
+    }
+
+    //退出登录
+    @Override
+    public void exit(){
+        if (null != RequestUtil.getRequest()) {
+            Long uid = Long.parseLong(StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId")));
+            String ip = AccessUtil.getRemoteHost(RequestUtil.getRequest());
+            navigationDao.removeTimeOutHistory(uid, ip);
+            RequestUtil.destroySession();
+        }
     }
 }

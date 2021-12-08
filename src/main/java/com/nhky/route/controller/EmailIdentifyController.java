@@ -16,6 +16,7 @@ import javax.annotation.Resource;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -60,7 +61,7 @@ public class EmailIdentifyController {
             MimeMessageHelper mMessageHelper = new MimeMessageHelper(mMessage, true);
             mMessageHelper.setFrom(from);//发件人邮箱
             mMessageHelper.setTo(email);//收件人邮箱
-            mMessageHelper.setSubject( StringUtil.getPamterString(prop.get("mail.theame.title")));//邮件的主题
+            mMessageHelper.setSubject( new String (StringUtil.getPamterString(prop.get("mail.theame.title")).getBytes(), StandardCharsets.UTF_8));//邮件的主题
 
             //生成验证码
             int codeLen = Integer.parseInt( StringUtil.getPamterString(prop.get("mail.code.len")) );
