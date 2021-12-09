@@ -9,6 +9,7 @@ import com.nhky.utils.RequestUtil;
 import com.nhky.utils.ResultUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -37,25 +38,25 @@ public class ConsumeServiceImpl implements ConsumeService {
         String end = StringUtil.getPamterString(RequestUtil.getRequestParam("end"));
         String order = StringUtil.getPamterString(RequestUtil.getRequestParam("order"));
 
-        if("".equals(end)){
+        if ("".equals(end)) {
             end = "50";
         }
-        if ("".equals(off)){
-            off="0";
+        if ("".equals(off)) {
+            off = "0";
         }
-        if("".equals(beginPrice)){
+        if ("".equals(beginPrice)) {
             beginPrice = "0";
         }
-        if("".equals(endPrice)){
+        if ("".equals(endPrice)) {
             endPrice = "10000000000";
         }
-        if(!beginPrice.equals("0") && !StringUtil.isFloat(beginPrice)){
-            return JSON.toJSONString(ResultUtil.error("不能查到单价大于等于["+beginPrice+"]元的商品！"));
+        if (!beginPrice.equals("0") && !StringUtil.isFloat(beginPrice)) {
+            return JSON.toJSONString(ResultUtil.error("不能查到单价大于等于[" + beginPrice + "]元的商品！"));
         }
-        if(!StringUtil.isFloat(endPrice)){
-            return JSON.toJSONString(ResultUtil.error("不能查到单价小于等于["+endPrice+"]元的商品！"));
+        if (!StringUtil.isFloat(endPrice)) {
+            return JSON.toJSONString(ResultUtil.error("不能查到单价小于等于[" + endPrice + "]元的商品！"));
         }
-        try{
+        try {
             List<GoodsVO> val = consumeDao.getGoods(
                     typeName,
                     Float.parseFloat(beginPrice),
@@ -65,8 +66,8 @@ public class ConsumeServiceImpl implements ConsumeService {
                     Integer.parseInt(end),
                     order);
             return JSON.toJSONString(ResultUtil.succeed(val));
-        }catch(Exception e){
-            System.out.println(e.getLocalizedMessage()+"=="+e.getStackTrace()+"=="+e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getLocalizedMessage() + "==" + e.getStackTrace() + "==" + e.getMessage());
             return JSON.toJSONString(ResultUtil.error("获取失败！"));
         }
 
@@ -77,27 +78,27 @@ public class ConsumeServiceImpl implements ConsumeService {
         String off = StringUtil.getPamterString(RequestUtil.getRequestParam("off"));
         String end = StringUtil.getPamterString(RequestUtil.getRequestParam("end"));
 
-        if("".equals(end)){
+        if ("".equals(end)) {
             end = "50";
         }
-        if ("".equals(off)){
-            off="0";
+        if ("".equals(off)) {
+            off = "0";
         }
 
-        try{
+        try {
             List<HotGoodsVO> val = consumeDao.getHotGoods(
                     Integer.parseInt(off),
                     Integer.parseInt(end));
             return JSON.toJSONString(ResultUtil.succeed(val));
-        }catch(Exception e){
-            System.out.println(e.getLocalizedMessage()+"=="+e.getStackTrace()+"=="+e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getLocalizedMessage() + "==" + e.getStackTrace() + "==" + e.getMessage());
             return JSON.toJSONString(ResultUtil.error("获取失败！"));
         }
     }
 
     @Override
     public String getTypeNameList() {
-        List<Map<String,Object>> val = consumeDao.getTypeNameList();
+        List<Map<String, Object>> val = consumeDao.getTypeNameList();
         return JSON.toJSONString(ResultUtil.succeed(val));
     }
 
@@ -105,13 +106,47 @@ public class ConsumeServiceImpl implements ConsumeService {
     public String getGoodsById() {
         String gid = StringUtil.getPamterString(RequestUtil.getRequestParam("gid"));
 
-        if (StringUtil.isLong(gid)){
+        if (StringUtil.isLong(gid)) {
             return JSON.toJSONString(ResultUtil.error("商品标识不符！"));
         }
         try {
             return JSON.toJSONString(ResultUtil.succeed(consumeDao.getGoodsById(Long.parseLong(gid))));
-        }catch (Exception e){
+        } catch (Exception e) {
             return JSON.toJSONString(ResultUtil.error("查询失败！"));
+        }
+    }
+
+    @Override
+    public String setGoodsByIdToModel(Model model) {
+        String gid = StringUtil.getPamterString(RequestUtil.getRequestParam("key"));
+
+        if (!StringUtil.isLong(gid)) {
+            return "/system/not-find-page";
+        }
+        try {
+            GoodsVO goods = consumeDao.getGoodsById(Long.parseLong(gid));
+            model.addAttribute("goodsName",goods.getGoodsName());
+            model.addAttribute("goodsClass",goods.getGoodsClass());
+            model.addAttribute("goodsDescription",goods.getGoodsDescription());
+            model.addAttribute("goodsDiscount",goods.getGoodsDiscount());
+            model.addAttribute("goodsExtant",goods.getGoodsExtant());
+
+
+            model.addAttribute("goodsIcon",goods.getGoodsIcon());
+            model.addAttribute("goodsUtil",goods.getGoodsUtil());
+            model.addAttribute("goodsPrice",goods.getGoodsPrice());
+            model.addAttribute("goodsIsSpecial",goods.getGoodsIsSpecial().equals("1")?"限时特价":"均价");
+
+            Integer goodCellNum = Integer.parseInt(StringUtil.getPamterString(goods.getGoodsInventory())) - Integer.parseInt(StringUtil.getPamterString(goods.getGoodsExtant()));
+            model.addAttribute("goodsCellNum",goodCellNum);
+            model.addAttribute("goodsInventory",goods.getGoodsInventory());
+
+            model.addAttribute("goodsMark",goods.getGoodsMark());
+            String [] titles = StringUtil.getPamterString(goods.getGoodsTitle()).split(",");
+            model.addAttribute("goodsTitles",titles);
+            return "/icCardConsume/getOder";
+        } catch (Exception e) {
+            return "/system/not-find-page";
         }
     }
 
@@ -120,12 +155,12 @@ public class ConsumeServiceImpl implements ConsumeService {
     public String getBalance() {
         String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
         try {
-            Map<String ,Object> result = consumeDao.getBalance(Long.parseLong(uid));
+            Map<String, Object> result = consumeDao.getBalance(Long.parseLong(uid));
             return JSON.toJSONString(
-                    null!=result&&result.size()>0?
-                            ResultUtil.succeed(result):
+                    null != result && result.size() > 0 ?
+                            ResultUtil.succeed(result) :
                             ResultUtil.error("获取失败！"));
-        }catch (Exception e){
+        } catch (Exception e) {
             return JSON.toJSONString(ResultUtil.error("访问异常！"));
         }
 
@@ -136,6 +171,12 @@ public class ConsumeServiceImpl implements ConsumeService {
     @Override
     public String order() {
         return null;
+    }
+
+    public static void main(String[] args) {
+        String[] s = "水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购,食品,  ".trim().split(",");
+
+        System.out.println(s.length);
     }
 
 }

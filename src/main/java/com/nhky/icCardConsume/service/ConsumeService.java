@@ -2,6 +2,7 @@ package com.nhky.icCardConsume.service;
 
 import com.nhky.pojo.GoodsVO;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.ui.Model;
 
 import java.util.List;
 
@@ -24,6 +25,8 @@ public interface ConsumeService {
 
     //根据商品id获取商品信息，用于下单页
     public String getGoodsById();
+
+    public String setGoodsByIdToModel(Model model);
 
     //获取用户卡内余额以及账户余额，以及相关信息
     String getBalance();

@@ -20,7 +20,15 @@ public class HotGoodsVO {
     String goodsClass;
     String goodsUtil;
     String goodsCellNum;//销售量
+    public String getGoodsMark() {
+        return goodsMark;
+    }
 
+    public void setGoodsMark(String goodsMark) {
+        this.goodsMark = goodsMark;
+    }
+
+    String goodsMark;
     public String getGoodsCellNum() {
         return goodsCellNum;
     }

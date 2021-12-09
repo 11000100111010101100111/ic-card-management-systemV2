@@ -25,6 +25,7 @@
             `title` AS goodsTitle,
             `description` AS goodsDescription,
             `is_special` AS goodsIsSpecial,
+            `mark` AS goodsMark,
             (SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
             (SELECT `id` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil
             FROM `ic_shopping_goods` AS isg
@@ -61,6 +62,7 @@
                     `title` AS goodsTitle,
                     `description` AS goodsDescription,
                     `is_special` AS goodsIsSpecial,
+                    `mark` AS goodsMark,
                     (SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
                     (SELECT `id` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil,
                     (CAST(isg.`inventory` AS SIGNED) - CAST(isg.`extant` AS SIGNED)) AS goodsCellNum
@@ -90,6 +92,7 @@
             `title` AS goodsTitle,
             `description` AS goodsDescription,
             `is_special` AS goodsIsSpecial,
+            `mark` AS goodsMark,
             (SELECT `type_name` FROM `ic_util_goods_type` WHERE `id` = isg.`goods_class`) AS goodsClass,
             (SELECT `until` FROM `ic_shopping_util_price` WHERE `id` = isg.`util`) AS goodsUtil,
             (CAST(isg.`inventory` AS SIGNED) - CAST(isg.`extant` AS SIGNED)) AS goodsCellNum

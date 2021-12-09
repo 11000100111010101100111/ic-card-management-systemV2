@@ -36,8 +36,8 @@ public class ConsumeController {
     @RequestMapping("/toOrder")
     @AjaxConnect
 //    @ResponseBody
-    public String toGetOrder(){
-        return "/icCardConsume/getOder";
+    public String toGetOrder(Model model){
+        return consumeService.setGoodsByIdToModel(model);
     }
 
     @RequestMapping("/getGoods")

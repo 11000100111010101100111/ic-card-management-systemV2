@@ -20,6 +20,16 @@ public class GoodsVO {
     String goodsClass;
     String goodsUtil;
 
+    public String getGoodsMark() {
+        return goodsMark;
+    }
+
+    public void setGoodsMark(String goodsMark) {
+        this.goodsMark = goodsMark;
+    }
+
+    String goodsMark;
+
     public GoodsVO() {
     }
 
