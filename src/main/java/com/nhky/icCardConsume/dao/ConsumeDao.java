@@ -1,5 +1,6 @@
 package com.nhky.icCardConsume.dao;
 
+import com.nhky.pojo.CardRechargeVO;
 import com.nhky.pojo.GoodsVO;
 import com.nhky.pojo.HotGoodsVO;
 import com.nhky.pojo.ShoppingHistory;
@@ -37,6 +38,8 @@ public interface ConsumeDao {
     public Map<String,Object> getBalance(@Param("uid")Long uid);
 
 
+    //获取商品库存
+    public Integer getExtent(@Param("gid")Long gid);
 
 
     //下单
@@ -56,8 +59,9 @@ public interface ConsumeDao {
 
 
     //(4))修改IC卡余额
-    public Integer updateBalance();
+    public Integer updateBalance(@Param("money") Double money,@Param("uid") Long uid);
 
     //添加ic卡余额变更记录
-    public Integer addICBalanceHistory();
+    public Integer addICBalanceHistory(CardRechargeVO rechargeVO);
+    public Integer addICSubHistory(@Param("rid")Long rid,@Param("uid")Long uid);
 }

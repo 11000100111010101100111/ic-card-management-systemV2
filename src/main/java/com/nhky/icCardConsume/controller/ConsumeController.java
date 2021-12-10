@@ -1,8 +1,10 @@
 package com.nhky.icCardConsume.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.nhky.annotation.AjaxConnect;
 import com.nhky.icCardConsume.service.ConsumeService;
 import com.nhky.utils.RequestUtil;
+import com.nhky.utils.ResultUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -80,6 +82,12 @@ public class ConsumeController {
     @RequestMapping("/order")
     @ResponseBody
     public String order(){
-        return consumeService.order();
+        try {
+            String val = consumeService.order();
+            return JSON.toJSONString(ResultUtil.succeed(val));
+        }catch (Exception e){
+            return JSON.toJSONString(ResultUtil.error(e.getMessage()));
+        }
+
     }
 }

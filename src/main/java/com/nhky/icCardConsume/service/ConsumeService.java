@@ -33,5 +33,5 @@ public interface ConsumeService {
 
     //用户下单：
     //   【】验证密码->确认订单->下单->修改商品表库存->添加商品购买记录->修改IC卡余额->下单成功
-    String order();
+    String order() throws Exception;
 }

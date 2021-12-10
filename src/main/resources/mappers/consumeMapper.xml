@@ -122,7 +122,7 @@
 <!--    //下单-->
 <!--    //（1）验证密码-->
 <!--    public Integer verifyPaymentPassword(@Param("uid")Long uid,@Param("pwd")String pwd);-->
-    <select id="verifyPaymentPassword">
+    <select id="verifyPaymentPassword" resultType="java.lang.Integer">
         SELECT COUNT(id) FROM `ic_shopping_verify` WHERE `easy_id` = #{uid} AND `pwd` = #{pwd} AND `status` = 1
     </select>
 <!--    // (2)确认订单库存足够且账户余额充足时修改商品表库存-->
@@ -147,19 +147,60 @@
             AND
             isg.`id` = #{gid}
     </update>
+    <select id="getExtent" parameterType="java.lang.Long" resultType="java.lang.Integer">
+        select `extant` from `ic_shopping_goods` where `id` = #{gid}
+    </select>
 <!--    //(3)添加商品购买记录-->
 <!--    public Integer addPaymentHistory();-->
-    <insert id="addPaymentHistory">
-
+    <insert id="addPaymentHistory" parameterType="com.nhky.pojo.ShoppingHistory">
+        INSERT INTO `ic_shopping_goods_tag`
+        (`goods_id`,`card_id`,`shopping_time`,`shopping_money`,`shopping_user`,`mark`)
+        VALUES
+        (
+            #{goods_id},
+            (SELECT `id` FROM `ic_card_easy_msg` WHERE
+                    `id` IN ( SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{shopping_user})
+                    AND `card_status` = 1),
+            NOW(),
+            #{shopping_money},
+            #{shopping_user},
+            #{mark}
+        )
     </insert>
 <!--    //(4))修改IC卡余额-->
 <!--    public Integer updateBalance();-->
     <update id="updateBalance">
-
+        UPDATE `ic_card_easy_msg` AS icem SET icem.`blance` = (icem.`blance` - #{money})
+          WHERE icem.`id` IN ( SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{uid})
+          AND `card_status` = 1
     </update>
 <!--    //添加ic卡余额变更记录-->
 <!--    public Integer addICBalanceHistory();-->
-    <insert id="addICBalanceHistory">
+    <insert id="addICBalanceHistory" parameterType="com.nhky.pojo.CardRechargeVO">
+        INSERT INTO `ic_recharge_node`
+            (`recharge_money`,`recharge_time`,`blance`,`note`,`status`)
+            VALUES
+            (
+                #{recharge_money},
+                NOW(),
+                (SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` IN (
+                    SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{cid}) AND `card_status` = 1),
+                #{note},
+                0
+            )
+    </insert>
 
+    <!--    //添加充值记录子表信息-->
+    <insert id="addICSubHistory">
+            INSERT INTO `ic_recharge_record`
+            (`recharge_id`,`card_id`,`user_id`,`status`)
+            VALUES
+            (
+                #{rid},
+                (SELECT `blance` FROM `ic_card_easy_msg` WHERE `id` IN (
+                        SELECT `card_id` FROM `ic_card_msg` WHERE `user_id` = #{uid}) AND `card_status` = 1),
+                #{uid},
+                1
+            )
     </insert>
 </mapper>

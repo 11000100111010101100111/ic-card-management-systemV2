@@ -112,8 +112,131 @@
             }
 
         </style>
+
+        <style>
+            .safe-pwd{
+                position: absolute;
+                width: 0; /*450px;*/
+                height: 0;/*500px;*/
+                top:100%;/*50%;*/
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 8px #666;
+            }
+            .safe-pwd *{
+                opacity: 0;
+            }
+            .safe-pwd  .safe-pwd-sub{
+                width: 100%;
+            }
+            .safe-pwd .keys-ul{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                list-style: none;
+                width: 95%;
+                margin-top: 15%;
+                background-color: #fff;
+                /*justify-items: center;*/
+                /*justify-content: center;*/
+                /*align-items: center;*/
+            }
+            .safe-pwd .keys-ul li{
+                width: 55px;
+                height: 55px;
+                background-color: #fff;
+                display: inline-block;
+                cursor: not-allowed;
+                margin: 10px 5px;
+                box-shadow:inset 0 0 4px #666;
+                font-size: 24px;
+                color: #04A78C;
+                font-weight: 800;
+                line-height: 55px;
+                text-align: center;
+            }
+
+            .safe-pwd .input-tab{
+                position: absolute;
+                width: 100%;
+                top: 100%;
+                transform: translateY(-100%);
+            }
+            .safe-pwd .input-tab td{
+                text-align: center;
+                font-size: 16px;
+                font-weight: 800;
+                padding-bottom: 10px;
+            }
+            .safe-pwd .input-tab td input{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #fff;
+                font-size: 20px;
+                font-weight: 800;
+                color: #4e65c7;
+                border: 0;
+                outline: 0;
+                cursor: pointer;
+                box-shadow: inset 2px -4px 8px #666;
+                transition: all 0.8s;
+            }
+            .safe-pwd .input-tab td input:focus{
+                border: 0;
+                outline: none;
+                /*animation: focus-btn-number 0.5s linear;*/
+                /*animation-fill-mode: forwards;*/
+            }
+            @keyframes focus-btn-number {
+                from{
+                    transform: scale(1);
+                }
+                25%{
+                    transform: scale(1.1);
+                }
+                50%{transform: scale(0.9);}
+                75%{
+                    transform: scale(1.1);
+                }
+                to{transform: scale(1);}
+            }
+            .safe-pwd .input-tab td .number:hover{
+                animation: hover-btn-number 0.8s linear;
+                animation-fill-mode: forwards;
+                box-shadow: inset -2px -4px 8px #666;
+                transform: scale(1.1);
+            }
+            @keyframes hover-btn-number {
+                from{
+                    box-shadow:inset -2px -4px 8px #666, 0 0 5px #4e65c7;
+                }
+                25%{box-shadow:inset -1px -4px 8px #666, 0 0 10px #4e65c7;}
+                50%{box-shadow:inset 0 -4px 8px #666, 0 0 15px #4e65c7;}
+                75%{box-shadow:inset -1px -4px 8px #666, 0 0 10px #4e65c7;}
+                to{box-shadow:inset -2px -4px 8px #666, 0 0 0 #4e65c7;}
+            }
+            .safe-pwd .input-tab td .clean-pwds:hover{
+                animation: hover-btn-number-calen 0.8s linear;
+                animation-fill-mode: forwards;
+                box-shadow: inset -2px -4px 8px #666;
+                transform: scale(1.1);
+            }
+            @keyframes hover-btn-number-calen {
+                from{
+                    box-shadow:inset -2px -4px 8px #666, 0 0 5px #c7254e;
+                }
+                25%{box-shadow:inset -1px -4px 8px #666, 0 0 10px #c7254e;}
+                50%{box-shadow:inset 0 -4px 8px #666, 0 0 15px #c7254e;}
+                75%{box-shadow:inset -1px -4px 8px #666, 0 0 10px #c7254e;}
+                to{box-shadow:inset -2px -4px 8px #666, 0 0 0 #c7254e;}
+            }
+        </style>
     </head>
     <body>
+    <input type="hidden" value="${goodsId}" id="goodsId">
     <div class="order-page">
         <div class="contain">
             <div class="order-img sub-contain">
@@ -220,6 +343,130 @@
             </div>
         </div>
     </div>
+
+    <div class="safe-pwd">
+        <div class="keys-panel safe-pwd-sub">
+            <ul class="keys-ul">
+                <li class="keys"> </li>
+                <li class="keys"> </li>
+                <li class="keys"> </li>
+                <li class="keys"> </li>
+                <li class="keys"> </li>
+                <li class="keys"> </li>
+            </ul>
+        </div>
+        <div class="inputs-panel safe-pwd-sub">
+            <table class="input-tab">
+                <tr>
+                    <td align="center"><input type="button" value="1" class="number"></td>
+                    <td align="center"><input type="button" value="2" class="number"></td>
+                    <td align="center"><input type="button" value="3" class="number"></td>
+                </tr>
+                <tr>
+                    <td align="center"><input type="button" value="4" class="number"></td>
+                    <td align="center"><input type="button" value="5" class="number"></td>
+                    <td align="center"><input type="button" value="6" class="number"></td>
+                </tr>
+                <tr>
+                    <td align="center"><input type="button" value="7" class="number"></td>
+                    <td align="center"><input type="button" value="8" class="number"></td>
+                    <td align="center"><input type="button" value="9" class="number"></td>
+                </tr>
+                <tr>
+                    <td align="center"><input type="button" value="*" class="clean-pwds"></td>
+                    <td align="center"><input type="button" value="0" class="number"></td>
+                    <td align="center"><input type="button" value="-" class="exit-pwds"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        $(".safe-pwd .input-tab td input").mousedown(function () {
+            $(this).animate({},20,function(){
+                $(this).css({'transform':'scale(0.8)'});
+            });
+        });
+        $(".safe-pwd .input-tab td input").mouseup(function () {
+            var clickBtn = $(this);
+            $(clickBtn).animate({},300,function(){
+                $(clickBtn).css({'transform':'scale(1.3)'});
+                $(clickBtn).animate({},200,function(){
+                    $(clickBtn).css({'transform':'scale(0.8)'});
+                    $(clickBtn).animate({},300,function(){
+                        $(clickBtn).css({'transform':'scale(1)'});
+                    });
+                });
+            });
+        });
+        $(".safe-pwd .input-tab td .number").click(function () {
+            let pwdInputs = $(".safe-pwd .keys");
+            for (let index = 0;index < pwdInputs.length;index++){
+                let key = $(pwdInputs[index]).html();
+                if (typeof (key) == "undefined" || $.trim(key) === ""){
+                    $(pwdInputs[index]).html($(this).val());
+                    if(index == pwdInputs.length-1){
+                        payment();
+                    }
+                    return;
+                }
+            }
+
+        });
+        $(".safe-pwd .input-tab .clean-pwds").click(function () {
+            let pwdInputs = $(".safe-pwd .keys");
+            for (let index = 0;index < pwdInputs.length;index++){
+                $(pwdInputs[index]).html("");
+            }
+        });
+
+        $(".safe-pwd .input-tab .exit-pwds").click(function () {
+            $(".safe-pwd").animate({
+                width:0,
+                height:0,
+                top:'100%',
+                opacity:0
+            },{
+                duration:800,
+                complete:function () {
+                    $(".safe-pwd *").css("opacity","0");
+                }
+            });
+        });
+        function show_pwd() {
+            $(".safe-pwd").animate({
+                width:'450px',
+                height:'500px',
+                top:'50%',
+                opacity:1
+            },{
+                duration:800,
+                complete:function () {
+                    $(".safe-pwd *").css("opacity","1");
+                }
+            });
+        }
+
+        function setNumber() {
+            let nums = $(".safe-pwd .input-tab td .number");
+            let arr = shuffle();
+            for (let index =0;index<nums.length;index++){
+                $(nums[index]).val(arr[index]);
+            }
+        }
+        function shuffle() {
+            let a = [0,1,2,3,4,5,6,7,8,9];
+            let len = a.length;
+            for (let i = 0; i < len - 1; i++) {
+                let index = parseInt(Math.random() * (len - i));
+                let temp = a[index];
+                a[index] = a[len - i - 1];
+                a[len - i - 1] = temp;
+            }
+            return a;
+        }
+        setNumber();
+    </script>
     <script>
         //单价： #util-price
         //减一： #desc
@@ -265,15 +512,69 @@
                 utilPrice = 0.00;
             }
             let count = $.trim($("#count").html());
-            if (typeof (count) =="undefined" || count == "" || isNaN(count)){
+            if (typeof (count) =="undefined" || count === "" || isNaN(count)){
                 utilPrice = 0;
             }
-            return (parseFloat(_discount) * parseFloat(utilPrice) * parseInt(count)).toFixed(2);
+            return (parseFloat(_discount)*0.1 * parseFloat(utilPrice) * parseInt(count)).toFixed(2);
         }
 
         $("#cost").click(function () {
-            console.log("buy");
+            $(".safe-pwd .input-tab .clean-pwds").click();
+            startpwd();
         });
+
+        function payment() {
+            let verify_ = "";
+            let pwdInputs = $(".safe-pwd .keys");
+            for (let index = 0;index < pwdInputs.length;index++){
+                let key = $(pwdInputs[index]).html();
+                if (typeof (key) == "undefined" || key === ""){
+                    my_tip.tip("密码输入不完整,请重新输入！");
+                    $(".safe-pwd .keys").html("");
+                    return;
+                }
+                verify_ += key;
+            }
+            if(typeof(verify_) == "undefined" || $.trim(verify_).length !=6){
+                my_tip.tip("密码输入不完整,请重新输入！");
+                $(".safe-pwd .keys").html("");
+                return;
+            }
+            let dto = {
+                verify:verify_,//支付密码
+                buyNum:$("#buy-count").html(),//支付数量
+                gid:$("#goodsId").val(),//：商品id
+                money:$("#need-cost").html(),//消费金额
+            };
+
+            endPwd();
+            $.ajax({
+                url:'${global_url}consume/order',dataType:'json',method:'post',data:dto,
+                beforeSend:function () {
+                    loading_cir.loading("body");
+                },
+                success:function (data) {
+                    if(data.succeed == true){
+                        my_tip.tip("购买成功！");
+                        loading_cir.loaded("body");
+                        // window.history.back();
+                        return;
+                    }
+                    loading_cir.loaded("body");
+                    my_tip.tip(data.data);
+                },error:function () {
+                    loading_cir.loaded("body");
+                }
+            })
+        }
+        //打开密码输入框
+        function startpwd() {
+            show_pwd();
+        }
+        //关闭输入密码框
+        function endPwd() {
+            $(".safe-pwd .input-tab .exit-pwds").click();
+        }
     </script>
     </body>
 </html>

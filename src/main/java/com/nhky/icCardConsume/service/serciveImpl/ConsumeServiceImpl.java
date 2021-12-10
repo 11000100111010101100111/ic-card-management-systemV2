@@ -3,12 +3,15 @@ package com.nhky.icCardConsume.service.serciveImpl;
 import com.alibaba.fastjson.JSON;
 import com.nhky.icCardConsume.dao.ConsumeDao;
 import com.nhky.icCardConsume.service.ConsumeService;
+import com.nhky.pojo.CardRechargeVO;
 import com.nhky.pojo.GoodsVO;
 import com.nhky.pojo.HotGoodsVO;
+import com.nhky.pojo.ShoppingHistory;
 import com.nhky.utils.RequestUtil;
 import com.nhky.utils.ResultUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
@@ -131,7 +134,7 @@ public class ConsumeServiceImpl implements ConsumeService {
             model.addAttribute("goodsDiscount",goods.getGoodsDiscount());
             model.addAttribute("goodsExtant",goods.getGoodsExtant());
 
-
+            model.addAttribute("goodsId",goods.getGoodsId());
             model.addAttribute("goodsIcon",goods.getGoodsIcon());
             model.addAttribute("goodsUtil",goods.getGoodsUtil());
             model.addAttribute("goodsPrice",goods.getGoodsPrice());
@@ -168,15 +171,47 @@ public class ConsumeServiceImpl implements ConsumeService {
 
     //用户下单：
     //   【】验证密码->确认订单->下单->修改商品表库存->添加商品购买记录->修改IC卡余额->下单成功
+
     @Override
-    public String order() {
-        return null;
-    }
+    @Transactional
+    public String order() throws Exception {
+        String uid = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
+        String pwd = StringUtil.getPamterString(RequestUtil.getRequestParam("verify"));
+        if (consumeDao.verifyPaymentPassword(Long.parseLong(uid),pwd)<=0){
+            throw new Exception("支付密码输入不正确！");
+        }
 
-    public static void main(String[] args) {
-        String[] s = "水果,葡萄,维生素,减肥,好吃,大家喜欢,优惠购,食品,  ".trim().split(",");
+        String buyNum = StringUtil.getPamterString(RequestUtil.getRequestParam("buyNum"));
+        String gid = StringUtil.getPamterString(RequestUtil.getRequestParam("gid"));
+        String money = StringUtil.getPamterString(RequestUtil.getRequestParam("money"));
 
-        System.out.println(s.length);
+        if(Integer.parseInt(buyNum) > consumeDao.getExtent(Long.parseLong(gid))){
+            throw new Exception("商品库存不足"+buyNum+"，购买失败！");
+        }
+
+        Integer makeSure = consumeDao.modifyGoodsExtent(Integer.parseInt(buyNum),Long.parseLong(gid),Long.parseLong(uid));
+        if (makeSure<1){
+            throw new Exception("IC卡余额不足");
+        }
+
+        ShoppingHistory history = new ShoppingHistory();
+        history.setGoods_id(Long.parseLong(gid));
+        history.setShopping_user(Long.parseLong(uid));
+        history.setShopping_money(money);
+        history.setMark("购买商品");
+        consumeDao.addPaymentHistory(history);
+
+        consumeDao.updateBalance(Double.parseDouble(money),Long.parseLong(uid));
+
+        CardRechargeVO consumVO = new CardRechargeVO();
+        consumVO.setRecharge_money(money);
+        consumVO.setNote("消费");
+        consumVO.setCid(Long.parseLong(uid));
+        consumeDao.addICBalanceHistory(consumVO);
+
+        consumeDao.addICSubHistory(consumVO.getId(),Long.parseLong(uid));
+
+        return "购买成功";
     }
 
 }

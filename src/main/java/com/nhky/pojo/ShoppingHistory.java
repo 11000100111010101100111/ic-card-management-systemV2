@@ -24,6 +24,15 @@ public class ShoppingHistory {
     String shopping_money;
     Integer shopping_num;
     Integer status;
+    String mark;
+
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
 
     public ShoppingHistory() {
     }
