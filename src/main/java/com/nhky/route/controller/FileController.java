@@ -18,6 +18,7 @@ import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.util.UUID;
 
@@ -58,27 +59,27 @@ public class FileController {
             case "jpeg":;
             case "png":;
             case "gif":
-                path = "/upload/img";break;
+                path = "upload/img/";break;
             case "doc":;
             case "txt":;
             case "xlsx":;
             case "xls":;
             case "docx":;
             case "md":;
-            case "pdf":path="/upload/doc";break;
+            case "pdf":path="upload/doc/";break;
             case "mp4":;
             case "mp3":;
-            case "avi":path = "/upload/viedo";break;
-            default:path="/upload/other";break;
+            case "avi":path = "upload/viedo/";break;
+            default:path="upload/other/";break;
         }
 
-        HTTP_PATH.append(path+"/");
+        HTTP_PATH.append(path);
 
         path = RequestUtil.getRequest().getSession().getServletContext().getRealPath(path);
 
 
         //判断文件夹是否存在，不存在则创建
-        File file = new File(path);
+        File file = new File(new URL(HTTP_PATH.toString()).toString());
         if(!file.exists()) {
             file.mkdirs();
         }
@@ -91,7 +92,7 @@ public class FileController {
         //声明输入流， 进行文件传输
         InputStream is = uploadFile.getInputStream();
         //指定输出文件的位置
-        OutputStream os = new FileOutputStream(new File(path+"\\"+newName));
+        OutputStream os = new FileOutputStream(new File(path+"/"+newName));
 
         //定义byte数组
         byte[] buffer = new byte[1024];

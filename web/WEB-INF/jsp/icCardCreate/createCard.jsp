@@ -282,7 +282,7 @@
     })();
 </script>
 <%--<script src="${global_url}theame/js/dynamics.min.js"></script>--%>
-<%--<script src="http://localhost:8080/nchkkjxy/theame/js/createCard.js"></script>--%>
+<%--<script src="http://47.113.189.196:80/nchkkjxy/theame/js/createCard.js"></script>--%>
 <script src="${global_url}staticRes/js/icCardCreate/dynamics.min.js"></script>
 
 <script src="${global_url}staticRes/js/icCardCreate/main.js"></script>

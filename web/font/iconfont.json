@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6241660",
+      "name": "后台总览",
+      "font_class": "houtaizonglan",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "11441201",
+      "name": "促销活动",
+      "font_class": "ancuguanli",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "18853244",
+      "name": "管理员",
+      "font_class": "guanliyuan",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
       "icon_id": "992",
       "name": "话费",
       "font_class": "huafei",

@@ -169,7 +169,7 @@
         /*    background-position: center;*/
         /*    background-repeat: no-repeat;*/
         /*    background-size: 100% 100%;*/
-        /*    background-image: url("http://localhost:8080/nchkkjxy/pic/main_page/card.png");*/
+        /*    background-image: url("http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png");*/
         /*    transition: all var(--transform_slowily);*/
         /*    filter: blur(1px);*/
         /*    margin-left: 10px;*/
@@ -199,7 +199,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            background-image: url("http://localhost:8080/nchkkjxy/pic/main_page/card.png");
+            background-image: url("http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png");
             transition: all 0.8s;
             backdrop-filter: blur(1px);
             margin-left: 10px;
@@ -541,7 +541,7 @@
 <%--                                            <div class="content">--%>
 <%--                                                学习用品--%>
 <%--                                            </div>--%>
-<%--                                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />--%>
+<%--                                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />--%>
 <%--                                        </div>--%>
 <%--                                    </label>--%>
 <%--                                </div>--%>
@@ -552,7 +552,7 @@
 <%--                                            <div class="content">--%>
 <%--                                                蔬菜--%>
 <%--                                            </div>--%>
-<%--                                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />--%>
+<%--                                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />--%>
 <%--                                        </div>--%>
 <%--                                    </label>--%>
 <%--                                </div>--%>
@@ -563,7 +563,7 @@
 <%--                                            <div class="content">--%>
 <%--                                                水果--%>
 <%--                                            </div>--%>
-<%--                                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />--%>
+<%--                                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />--%>
 <%--                                        </div>--%>
 <%--                                    </label>--%>
 <%--                                </div>--%>
@@ -574,7 +574,7 @@
 <%--                                            <div class="content">--%>
 <%--                                                服装--%>
 <%--                                            </div>--%>
-<%--                                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />--%>
+<%--                                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />--%>
 <%--                                        </div>--%>
 <%--                                    </label>--%>
 <%--                                </div>--%>
@@ -585,7 +585,7 @@
 <%--                                            <div class="content">--%>
 <%--                                                其他--%>
 <%--                                            </div>--%>
-<%--                                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />--%>
+<%--                                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />--%>
 <%--                                        </div>--%>
 <%--                                    </label>--%>
 <%--                                </div>--%>

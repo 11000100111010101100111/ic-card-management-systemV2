@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background: #333; */
+    overflow: hidden;
+    /* filter: blur(px); */
+}
+#canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.back{
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    background-color: rgba(4, 167, 140,0.6) ;/*rgba(0,0,0,0.3);*/
+    z-index: 1;
+    filter: blur(10px);
+}
+
+.msg-panel{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    /* box-shadow: 0 0 12px #2b92d4; */
+    border:2px dashed rgb(4, 167, 140) ;/*#2b92d4;*/
+
+    background-color: rgba(255,255,255,0.78);
+    z-index: 99;
+}
+.msg-panel>.logo{
+    display: inline-block;
+    position: fixed;
+    transform: translate(20px,21px);
+    margin: 0;
+    padding: 1px 2px 1px 2px;
+    border-radius: 5px;
+    /*border: 1px solid #fff;*/
+    background-color: rgb(4, 167, 140);/*#2b92d4;*/
+    color: #fff;
+    font-weight: 800;
+}
+.msg-panel *{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.msg-panel>h1{
+    text-align: center;
+    color: rgb(4, 167, 140);
+}
+.msg-panel>span{
+    position:absolute;
+    width: 98%;
+    left: 1%;
+    margin: 0;
+    height: 1px;
+    background-color: #ccc;
+}
+.msg-panel>.img{
+    position:relative;
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 45px;
+    /*background: url("${icon}") no-repeat center;*/
+    background-size: cover;
+}
+.msg-panel>p{
+    color: crimson;
+    font-weight: bold;
+    text-align: center;
+    margin: 1px;
+}
+.ball
+{
+    width:8px;
+    height:8px;
+    background:rgb(4, 167, 140);/*#2b92d4;*/
+    border-radius:4px;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 10px  rgb(4, 167, 140);/*#2b92d4;*/
+    position:absolute;
+    -webkit-animation:action 20s linear infinite;
+}
+@-webkit-keyframes action
+{
+    from{transform: rotate(0deg)  translate(250px) rotate(0deg);}
+    to{transform: rotate(360deg) translate(258px) rotate(-360deg);}
+}

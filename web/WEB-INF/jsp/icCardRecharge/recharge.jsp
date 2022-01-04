@@ -454,7 +454,7 @@
                     <label for="item6">
                         <div class="item">
                             <div class="content number_money">10.00</div>
-                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />
                         </div>
                     </label>
                 </div>
@@ -464,7 +464,7 @@
                     <label for="item7">
                         <div class="item">
                             <div class="content number_money">20.00</div>
-                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />
                         </div>
                     </label>
                 </div>
@@ -474,7 +474,7 @@
                     <label for="item8">
                         <div class="item">
                             <div class="content number_money">50.00</div>
-                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />
                         </div>
                     </label>
                 </div>
@@ -483,7 +483,7 @@
                     <label for="item9">
                         <div class="item">
                             <div class="content number_money">100.00</div>
-                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />
                         </div>
                     </label>
                 </div>
@@ -492,7 +492,7 @@
                     <label for="item10">
                         <div class="item other_item">
                             <div class="content">其他</div>
-                            <img src="http://localhost:8080/nchkkjxy/pic/card/gou.png" />
+                            <img src="http://47.113.189.196:80/nchkkjxy/pic/card/gou.png" />
                         </div>
                     </label>
                 </div>
@@ -542,7 +542,7 @@
                success:function (data) {
                    if(data.succeed == true){
                        $("#card_balance").html(data.data.cBalance);
-                       console.log(data.data)
+                       // console.log(data.data)
                    }else{
                        $("#card_balance").html("****.**");
                    }
@@ -561,16 +561,41 @@
                    money:money,
                    mark:mark
                },
+               beforeSend:function () {
+                   loading_cir.loading("body");
+               },
                success:function (data) {
-                   my_tip.tip(data.data);
+                   // my_tip.tip(data.data);
                    getMsg($("#card_id").val());
                    $(".chiose_content .close").click();
+                   // setTimeout(function (cid,money) {
+                   //     succeed(cid,money);
+                   loading_cir.loaded("body");
+                       window.location.href = '${global_url}charge/succeed?cid='+cid+"&money="+money;
+                   // },1000);//1秒后跳转
                },error:function () {
+                   loading_cir.loaded("body");
                   error_result.TIP();
+
                }
            });
        }
 
+       function succeed(cid,money){
+           $.ajax({
+               url:'${global_url}charge/succeed',
+               method:"post",
+               dataType:"json",
+               data:{
+                   cardId:cid,
+                   money:money
+               },
+               success:function (data) {
+               },error:function () {
+                   error_result.TIP();
+               }
+           });
+       }
        $(".recharge-bottom .charge").click(function () {
            $(".chiose_content").css("display","block");
            $(".chiose_content").animate({opacity:'1','z-index':"10"},800);

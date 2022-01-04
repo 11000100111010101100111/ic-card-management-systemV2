@@ -26,4 +26,7 @@ public interface LoginAndRegisterDao {
 
     //注册用户信息
     public int registerUser(User user);
+
+    //添加支付信息
+    public int addPayment(@Param("uid") Long uid,@Param("pwd") String pwd);
 }

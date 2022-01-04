@@ -113,7 +113,7 @@ $(".login .but .sure").click(function submit(){
         };
         $.ajax({
             type: "post",
-            url: "http://localhost:8080/finance_war_exploded/login",
+            url: "http://47.113.189.196:80/finance_war_exploded/login",
             dataType: "json",
             data:data,
             success: function (data) {
@@ -123,7 +123,7 @@ $(".login .but .sure").click(function submit(){
                     // $(this).submit();
                     window.sessionStorage.setItem("uid",$("#uid").val());
                     // $.session.set();
-                    document.location.href = "http://localhost:8080/finance_war_exploded/home";
+                    document.location.href = "http://47.113.189.196:80/finance_war_exploded/home";
                 }else{
                     alert("账号或密码错误！");
                     getCodeImg();
@@ -170,7 +170,7 @@ function getCodeImg() {
     //异步请求获取验证码
     // $.ajax({
     //     type: "post",
-    //     url: "http://localhost:8080/finance_war_exploded/getCode",
+    //     url: "http://47.113.189.196:80/finance_war_exploded/getCode",
     //     dataType: "json",
     //     success: function (data) {
     //         for(i=0;i<data.length;i++){

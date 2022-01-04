@@ -601,12 +601,12 @@
                 <div class="table-box">
                     <div class="table-top">
                         <ul>
-<%--                            <li id="loss_li_1" class="card_li" style="background-image: url('http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png');">--%>
+<%--                            <li id="loss_li_1" class="card_li" style="background-image: url('http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png');">--%>
 <%--                                <span class="loss_li_span loss_li_span_01"><font class=" iconfont icon-huizhang1" style="color: #4e65c7"> </font>NO.<font style="color: var(--sub_color);">1</font></span>--%>
 <%--                                <span class="loss_li_span loss_li_span_02"><font class=" iconfont icon--yue" style="color: #ffda62"></font>余额：<font style="color: #ffda62">122.00</font>￥</span>--%>
 <%--                                <span class="loss_li_span loss_li_span_03"><font class="iconfont icon-xuesheng" style="color: var(--sub_color);"> </font>持有人：<font style="color: var(--sub_color);">肖家海</font></span>--%>
 <%--                            </li>--%>
-<%--                            <li id="loss_li_2" class="card_li" style="background-image: url('http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png');">--%>
+<%--                            <li id="loss_li_2" class="card_li" style="background-image: url('http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png');">--%>
 <%--                                <span class="loss_li_span loss_li_span_01"><font class=" iconfont icon-huizhang1" style="color: #4e65c7"> </font>NO.<font style="color: var(--sub_color);">2</font></span>--%>
 <%--                                <span class="loss_li_span loss_li_span_02"><font class=" iconfont icon--yue" style="color: #ffda62"></font>余额：<font style="color: #ffda62">182.00</font>￥</span>--%>
 <%--                                <span class="loss_li_span loss_li_span_03"><font class="iconfont icon-xuesheng" style="color: var(--sub_color);"> </font>持有人：<font style="color: var(--sub_color);">肖家海</font></span>--%>
@@ -816,7 +816,7 @@
     //     {
     //         "easy_id":10,
     //         "email":"123@123.com",
-    //         "head_url":"http://localhost:8080/nchkkjxy/pic/head_icon/defult.png",
+    //         "head_url":"http://47.113.189.196:80/nchkkjxy/pic/head_icon/defult.png",
     //         "id":1,
     //         "identify_card":"362430199999999999",
     //         "money_balance":"201.63",
@@ -1071,7 +1071,7 @@
                 method:"post",
                 dataType:"json",
                 data:{
-                    head_url:$("#new-msg-headIcon").attr("src"),//"http://localhost:8080/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
+                    head_url:$("#new-msg-headIcon").attr("src"),//"http://47.113.189.196:80/nchkkjxy/pic/head_icon/client_user_xjh_10.png",//$("#new-msg-headIcon").html(),//:修改头像
                     single:$("#new-msg-single").html(),//:签名
                     name:$("#new-msg-name").val(),//：修改姓名
                     sex: elemUtil.getRadioVal("new-sex"),//:修改性别
@@ -1501,12 +1501,12 @@
 </script>
 <!--sub-4我的消费-->
 <script>
-    // $.getJSON('http://localhost:8080/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {
+    // $.getJSON('http://47.113.189.196:80/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {
     // echarts.registerTheme('wonderland.project', themeJSON);
     // var myChart = echarts.init(dom, 'wonderland');
     // var myChart = echarts.init(document.querySelector(".my-chart"));//,'wonderland.project');
     // myChart.showLoading();  // 开启 loading 效果
-    // $.get('http://localhost:8080/nchkkjxy/test/eChartValue', function (data) {
+    // $.get('http://47.113.189.196:80/nchkkjxy/test/eChartValue', function (data) {
     //     myChart.hideLoading();  // 隐藏 loading 效果
     //     myChart.setOption({
     //         series : [
@@ -1526,7 +1526,7 @@
 <script type="text/javascript">
     function showMyCoume() {
         // $(".sub-4 .my-chart").remove();
-<%--        $.getJSON('http://localhost:8080/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {--%>
+<%--        $.getJSON('http://47.113.189.196:80/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {--%>
 <%--            echarts.registerTheme('wonderland.project', themeJSON);--%>
 <%--            // var myChart = echarts.init(dom, 'wonderland');--%>
         var myChart = echarts.init(document.querySelector(".sub-4 .my-chart"),'wonderland.project');
@@ -1617,9 +1617,9 @@
 <script>
     function getCardList() {
         // let cards = [
-        //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'1','uName':'肖家海','cardBalance':'100.22'},
-        //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'2','uName':'肖家海','cardBalance':'100.22'},
-        //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'3','uName':'肖家海','cardBalance':'100.22'}
+        //     {'cardUrl':'http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'1','uName':'肖家海','cardBalance':'100.22'},
+        //     {'cardUrl':'http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'2','uName':'肖家海','cardBalance':'100.22'},
+        //     {'cardUrl':'http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'3','uName':'肖家海','cardBalance':'100.22'}
         // ];
         $.ajax({
             url:"${global_url}personalLoss/getLoss",

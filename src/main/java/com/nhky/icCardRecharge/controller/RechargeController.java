@@ -2,9 +2,13 @@ package com.nhky.icCardRecharge.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.nhky.icCardRecharge.service.RechargeService;
+import com.nhky.utils.RequestUtil;
 import com.nhky.utils.ResultUtil;
+import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -44,5 +48,11 @@ public class RechargeController {
         Boolean rechargeResult = rechargeService.chrageMoneyForCard();
         return JSON.toJSONString(
                 rechargeResult?ResultUtil.succeed("充值成功！"):ResultUtil.error("充值失败！"));
+    }
+
+    @RequestMapping("/succeed")
+    public String succeed(Model model, @RequestParam("money") String money, @RequestParam("cid") String cardId){
+        rechargeService.succeed(model,money,cardId);
+        return "/icCardRecharge/succeed";
     }
 }

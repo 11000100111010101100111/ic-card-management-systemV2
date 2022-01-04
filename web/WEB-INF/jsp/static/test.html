@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-    <script src="http://localhost:8080/nchkkjxy/theame/js/echarts.min.js"></script>
+    <script src="http://47.113.189.196:80/nchkkjxy/theame/js/echarts.min.js"></script>
 <!--    <script src="https://cdn.staticfile.org/echarts/5.2.0/echarts.min.js"></script>-->
     <title>Title</title>
     <style>
@@ -81,12 +81,12 @@
     <div class="border-box box-bottom box-right box-bottom-right"></div>
 </div>
 <script>
-    // $.getJSON('http://localhost:8080/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {
+    // $.getJSON('http://47.113.189.196:80/nchkkjxy/theame/js/wonderland.project.json', function (themeJSON) {
         // echarts.registerTheme('wonderland.project', themeJSON);
         // var myChart = echarts.init(dom, 'wonderland');
         var myChart = echarts.init(document.querySelector(".my-chart"));//,'wonderland.project');
         myChart.showLoading();  // 开启 loading 效果
-        // $.post('http://localhost:8080/nchkkjxy/test/eChartValue', function (data) {
+        // $.post('http://47.113.189.196:80/nchkkjxy/test/eChartValue', function (data) {
         //     myChart.hideLoading();  // 隐藏 loading 效果
         //     myChart.setOption({
         //         series : [
@@ -100,7 +100,7 @@
         //     })
         // }, 'jsonp');
         $.ajax({
-            url:"http://localhost:8080/nchkkjxy/test/eChartValue",
+            url:"http://47.113.189.196:80/nchkkjxy/test/eChartValue",
             dataType:"json",
             method:"post",
             success:function (data) {

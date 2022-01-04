@@ -7,6 +7,7 @@ import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -35,6 +36,7 @@ public class RechargeServiceImpl implements RechargeService {
     public Map<String, Object> cardMsg() {
         String cardId = StringUtil.getPamterString(RequestUtil.getRequestParam("cardId"));
         Map<String, Object> result = rechargeDao.cardMsg(Long.parseLong(cardId));
+        result.put("cBalance",String.format("%.2f",Double.parseDouble(StringUtil.getPamterString(result.get("cBalance")))) );
         return result;
     }
 
@@ -54,5 +56,19 @@ public class RechargeServiceImpl implements RechargeService {
         Integer flag = rechargeDao.addSubHistory(recharge.getId(), Long.parseLong(uid), Long.parseLong(cardId));
 
         return flag>0;
+    }
+
+    public void succeed(Model model,String money,String cardId){
+//        String uid = StringUtil.getPamterString( RequestUtil.getRequestSessionAttr("userId") );
+//        String money =  StringUtil.getPamterString(RequestUtil.getRequestParam("money"));
+////        money = String.format("%.2f", "".equals(money)?"0":money);
+//        String cardId = StringUtil.getPamterString(RequestUtil.getRequestParam("cardId"));
+        Map<String, Object> result = rechargeDao.cardMsg(Long.parseLong(cardId));
+        result.put("cBalance",String.format("%.2f",Double.parseDouble(StringUtil.getPamterString(result.get("cBalance")))) );
+        model.addAttribute("title","充值成功");
+        model.addAttribute("detil","亲爱的用户："+ result.get("uName")+
+                ",您本次卡号为["+result.get("cId")+"]的IC卡充值："+money+
+                "元，当前余额："+result.get("cBalance")+"元。");
+        model.addAttribute("icon","/pic/login/success.png");
     }
 }

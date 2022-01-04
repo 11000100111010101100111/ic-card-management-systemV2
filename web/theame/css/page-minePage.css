@@ -456,7 +456,7 @@
     border-radius: 5px;
     transition: all var(--transform_slowily);
     cursor: pointer;
-    background-image: url('http://localhost:8080/nchkkjxy/pic/main_page/file_add.png');
+    background-image: url('http://47.113.189.196:80/nchkkjxy/pic/main_page/file_add.png');
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position: center;
@@ -603,7 +603,7 @@
     box-shadow: 0 0 8px #666;
     transition: all 0.8s;
     transform: translateY(-40px);
-    cursor: url('http://localhost:8080/nchkkjxy/pic/cursor_style/love.cur'),auto;
+    cursor: url('http://47.113.189.196:80/nchkkjxy/pic/cursor_style/love.cur'),auto;
     z-index: 5;
 }
 /*#new-msg-headIcon:hover::after{*/
@@ -854,7 +854,7 @@
     transform: translate(-50%,-50%);
     border-radius: 5px;
     background-color: white;
-    background-image: url("http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png");
+    background-image: url("http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png");
     background-position: 100% 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;

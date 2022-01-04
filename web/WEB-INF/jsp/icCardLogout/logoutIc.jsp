@@ -874,7 +874,7 @@
                         <div class="history-left">
                             <ul>
                                 <li>
-                                    <img src="http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png" class="card_img" alt="">
+                                    <img src="http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png" class="card_img" alt="">
                                 </li>
                                 <li>
                                     <font class="history-font">创建日期</font>2021-11-13 12:22:56
@@ -1087,7 +1087,7 @@
 
             //返回主页
             $("#logout-toHome-btn").click(function () {
-                window.location.href='http://localhost:8080/nchkkjxy/';
+                window.location.href='http://47.113.189.196:80/nchkkjxy/';
             });
 
             function showPanel(panelNode) {
@@ -1108,9 +1108,9 @@
         <script>
             function getCardList() {
                 // let cards = [
-                //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'1','uName':'肖家海','cardBalance':'100.22'},
-                //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'2','uName':'肖家海','cardBalance':'100.22'},
-                //     {'cardUrl':'http://localhost:8080/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'3','uName':'肖家海','cardBalance':'100.22'}
+                //     {'cardUrl':'http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'1','uName':'肖家海','cardBalance':'100.22'},
+                //     {'cardUrl':'http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'2','uName':'肖家海','cardBalance':'100.22'},
+                //     {'cardUrl':'http://47.113.189.196:80/nchkkjxy/staticRes/icon/icCardCreate/nomal.png','cardId':'3','uName':'肖家海','cardBalance':'100.22'}
                 // ];
                 $.ajax({
                     url:"${global_url}personalLoss/getLoss",

@@ -109,4 +109,10 @@
             #{phone}
         )
     </insert>
+
+<!--    //添加支付信息-->
+<!--    public int addPayment(@Param("uid") Long uid,@Param("pwd") String pwd);-->
+    <insert id="addPayment">
+        insert into `ic_shopping_verify` (`easy_id`,`pwd`) values (#{uid},#{pwd})
+    </insert>
 </mapper>

@@ -145,6 +145,7 @@ public class LoginAndRegisterImpl implements LoginAndRegisterService {
             //注册用户
             loginAndRegisterDao.registerUser(user);
 
+            loginAndRegisterDao.addPayment(easy_id,"123456");
             msg = "succeed";
             val.append("注册成功！");
         }catch (Exception e) {

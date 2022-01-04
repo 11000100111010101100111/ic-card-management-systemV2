@@ -38,7 +38,7 @@ public class DateUtil {
         try {
             Date now = new Date();
             Calendar timeEnd=Calendar.getInstance();
-            timeEnd.setTime(DATA_FORMAT.parse(data1));
+            timeEnd.setTime(DATA_FORMAT_.parse(data1));
             timeEnd.add(Calendar.SECOND,seconds);
             return timeEnd.getTime().before(now);
         } catch (Exception e) {

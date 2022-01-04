@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 
 //统一请求的返回对象
 public class ResultVO<T> {
-
     //是否成功
     private Boolean succeed;
     //状态代码

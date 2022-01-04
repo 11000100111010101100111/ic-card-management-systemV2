@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/main/test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Tomcat 9.0.35"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/libs"/>
+	<classpathentry kind="lib" path="src/main/resources"/>
+	<classpathentry kind="lib" path="src/main/resources/mappers"/>
+	<classpathentry kind="lib" path="web/WEB-INF/classes"/>
+	<classpathentry kind="output" path="web/WEB-INF/classes"/>
+</classpath>

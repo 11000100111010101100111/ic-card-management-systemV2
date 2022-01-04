@@ -82,6 +82,9 @@ public class NavigationServiceImpl implements NavigationService {
             case "getConsumeNode":
                 pageName = "/icCardConsume/consumeNode";
                 break;//消费记录
+            case "admin":
+                pageName = "/admin/admin";
+                break;//消费记录
             //...
             default:
                 pageName = "/system/not-find-page";//请求的页面不存在
@@ -131,7 +134,7 @@ public class NavigationServiceImpl implements NavigationService {
     public User getLoginUser() {
         String id = StringUtil.getPamterString(RequestUtil.getRequestSessionAttr("userId"));
         User u = new User();
-        u.setHead_url("http://localhost:8080/nchkkjxy/pic/login/no_login.png");
+        u.setHead_url("http://47.113.189.196:80/nchkkjxy/pic/login/no_login.png");
         if(null != id && !id.equals("")) {
             if(StringUtil.isLong(id)) {
                 return routerNavigationDao.getUser(Long.parseLong(id));

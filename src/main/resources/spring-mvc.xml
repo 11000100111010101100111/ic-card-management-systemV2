@@ -59,11 +59,24 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-<!--    //配置访问量统计-->
+
     <mvc:interceptors>
+        <!--    //配置访问量统计-->
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.nhky.config.interceptor.VisitorInterceptor"/>
+            <mvc:exclude-mapping path="/go/toLogin"/>
+            <mvc:exclude-mapping path="/go/toRegister"/>
+            <mvc:exclude-mapping path="/getLoginUser"/>
+            <mvc:exclude-mapping path="/getNav"/>
+            <bean class="com.nhky.config.interceptor.VisitorInterceptor" />
+        </mvc:interceptor>
+        <!--    //配置登录验证-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/go/*"/>
+            <mvc:exclude-mapping path="/getLoginUser"/>
+            <mvc:exclude-mapping path="/getNav"/>
+            <bean class="com.nhky.config.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 </beans>

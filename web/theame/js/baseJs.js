@@ -609,7 +609,7 @@ $(".msg-content .cancen").click(function () {
 function showMessage_myLayer(msg,u) {
     let height = $(".msg-content").css("height");
     $(".msg-content .msg-body .mb_revise .icon").css("background","url('"+
-        (typeof(u)!="undefined" &&  u !==""? u:"http://localhost:8080/nchkkjxy/pic/login/忘记密码.png")+
+        (typeof(u)!="undefined" &&  u !==""? u:"http://47.113.189.196:80/nchkkjxy/pic/login/忘记密码.png")+
         "') no-repeat center");
     // console.log(u);
     $(".msg-content .msg-body .mb_revise .icon").css("background-size","100% 100%");
@@ -1052,13 +1052,13 @@ var alter_layer = {
 
 var error_result = {
     NOT_CONNECT:function () {
-            window.location.href = "http://localhost:8080/nchkkjxy/navTo?url=notfind";
+            window.location.href = "http://47.113.189.196:80/nchkkjxy/navTo?url=notfind";
     },
     NO_RESULT:function () {
-        window.location.href = "http://localhost:8080/nchkkjxy/navTo?url=notfind";
+        window.location.href = "http://47.113.189.196:80/nchkkjxy/navTo?url=notfind";
     },
     NOT_FOND:function () {
-        window.location.href = "http://localhost:8080/nchkkjxy/navTo?url=notfind";
+        window.location.href = "http://47.113.189.196:80/nchkkjxy/navTo?url=notfind";
     },
     TIP:function (tip) {
         if(typeof(tip) == "undefined"|| tip=="")

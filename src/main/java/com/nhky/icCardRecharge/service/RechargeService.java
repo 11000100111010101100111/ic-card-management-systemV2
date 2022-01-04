@@ -1,6 +1,7 @@
 package com.nhky.icCardRecharge.service;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.ui.Model;
 
 import java.util.List;
 import java.util.Map;
@@ -20,4 +21,6 @@ public interface RechargeService {
 
     //给卡充值
     public Boolean chrageMoneyForCard();
+
+    public void succeed(Model model,String money,String cardId);
 }

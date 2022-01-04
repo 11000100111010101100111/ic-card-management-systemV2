@@ -499,7 +499,7 @@
         /*    background-position: center;*/
         /*    background-repeat: no-repeat;*/
         /*    background-size: 100% 100%;*/
-        /*    background-image: url("http://localhost:8080/nchkkjxy/pic/main_page/card.png");*/
+        /*    background-image: url("http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png");*/
         /*    transition: all var(--transform_slowily);*/
         /*    filter: blur(1px);*/
         /*    margin-left: 10px;*/
@@ -529,7 +529,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            background-image: url("http://localhost:8080/nchkkjxy/pic/main_page/card.png");
+            background-image: url("http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png");
             transition: all 0.8s;
             backdrop-filter: blur(1px);
             margin-left: 10px;
@@ -691,14 +691,14 @@
     //     ]
     //     ,
     //     [
-    //         {url:"http://localhost:8080/nchkkjxy/createCard/toCreateCard",title:"IC卡申领",icon:"icon-kexuejishu"},
+    //         {url:"http://47.113.189.196:80/nchkkjxy/createCard/toCreateCard",title:"IC卡申领",icon:"icon-kexuejishu"},
     //         {url:"#",title:"IC卡挂失",icon:"icon-301guashishenqing-lv"},
     //         {url:"#",title:"IC卡注销",icon:"icon-chonghong-21"},
     //         {url:"#",title:"业务记录",icon:"icon-shouxinxiangqing-xiaofeijilu"}],
     //     [
-    //         {url:"http://localhost:8080/nchkkjxy/balance/go",title:"个人信息",icon:"icon-xueshengziliao"},
+    //         {url:"http://47.113.189.196:80/nchkkjxy/balance/go",title:"个人信息",icon:"icon-xueshengziliao"},
     //         {url:"#",title:"登录选项",font:"icon-huidaodingbu"},
-    //         {url:"http://localhost:8080/nchkkjxy/go/toLogin",title:"退出系统",   icon:"icon-tuichudenglu"}
+    //         {url:"http://47.113.189.196:80/nchkkjxy/go/toLogin",title:"退出系统",   icon:"icon-tuichudenglu"}
     //         ],
     //     [
     //         {url:"#",title:"关于我们",icon:"icon-dollar-symbol"},
@@ -750,7 +750,7 @@
             elemTitle.gridTitle(".top-contain .top .right .head-img",typeof (data.data.name)!="undefined"?data.data.name:"未登录");
             // user_name = data.data.name;
             // console.log(user_name+"=="+data.data.name)
-            // background: url('http://localhost:8080/nchkkjxy/pic/login/no_login.png') center no-repeat;
+            // background: url('http://47.113.189.196:80/nchkkjxy/pic/login/no_login.png') center no-repeat;
         },error:function () {
             $(".top-contain .top .right .head-img").prop("title","没有登录信息");
             my_tip.tip("获取登录信息失败，网络瘫痪...",1,"body",[{cssName:"opacity",cssValue:"1"}]);

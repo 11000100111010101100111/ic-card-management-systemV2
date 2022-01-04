@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="libs">
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/asm-5.2.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/jstl-1.2.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/ant-1.9.6.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/junit-4.12.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/cglib-3.2.5.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/ognl-3.1.15.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/servlet-api.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/druid-1.0.15.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/log4j-api-2.3.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/mybatis-3.1.1.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/commons-io-2.4.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/fastjson-1.2.7.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/log4j-core-2.3.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/hamcrest-all-1.3.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/javax.mail-1.6.2.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/slf4j-api-1.7.25.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/ant-launcher-1.9.6.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/commons-dbcp2-2.1.1.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/commons-pool2-2.8.0.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/aspectjweaver-1.8.13.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/javassist-3.22.0-CR2.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/mybatis-spring-1.3.1.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/slf4j-log4j12-1.7.25.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/commons-fileupload-1.3.1.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-tx-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-aop-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-web-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-core-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-jdbc-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-test-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-beans-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-context-support-5.3.9.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-webmvc-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-aspects-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-context-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/mysql-connector-java-5.1.6-bin.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/spring-expression-3.2.16.RELEASE.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/com.springsource.org.aopalliance-1.0.0.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/com.springsource.org.apache.log4j-1.2.15.jar" />
+    <archive path="D:/myFile/javaEE/nchkkjxy/web/WEB-INF/libs/com.springsource.org.apache.commons.logging-1.1.1.jar" />
+  </library>
+</eclipse-userlibraries>
+

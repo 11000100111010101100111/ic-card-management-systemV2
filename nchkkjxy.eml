@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/web/WEB-INF/classes"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/main/test"/>
+		<excludeFolder url="file://$MODULE_DIR$/web/WEB-INF/classes"/>
+	</contentEntry>
+	<lib name="Tomcat 9.0.35" scope="PROVIDED"/>
+	<lib name="resources" scope="COMPILE">
+		<relative-module-cls project-related="file://$PROJECT_DIR$/src/main/resources"/>
+	</lib>
+	<lib name="mappers" scope="COMPILE">
+		<relative-module-cls project-related="file://$PROJECT_DIR$/src/main/resources/mappers"/>
+	</lib>
+	<levels>
+		<level name="Tomcat 9.0.35" value="application_server_libraries"/>
+		<level name="libs" value="project"/>
+	</levels>
+</component>

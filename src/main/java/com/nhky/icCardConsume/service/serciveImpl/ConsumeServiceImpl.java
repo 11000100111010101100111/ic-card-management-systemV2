@@ -32,7 +32,6 @@ public class ConsumeServiceImpl implements ConsumeService {
 
     @Override
     public String findGoods() {
-
         String key = StringUtil.getPamterString(RequestUtil.getRequestParam("key"));
         String typeName = StringUtil.getPamterString(RequestUtil.getRequestParam("typeName"));
         String beginPrice = StringUtil.getPamterString(RequestUtil.getRequestParam("beginPrice"));
@@ -73,7 +72,6 @@ public class ConsumeServiceImpl implements ConsumeService {
             System.out.println(e.getLocalizedMessage() + "==" + e.getStackTrace() + "==" + e.getMessage());
             return JSON.toJSONString(ResultUtil.error("获取失败！"));
         }
-
     }
 
     @Override

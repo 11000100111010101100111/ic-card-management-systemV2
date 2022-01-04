@@ -3,6 +3,7 @@ package com.nhky.config.interceptor;
 import com.nhky.pojo.LoginHistory;
 import com.nhky.route.home.RouterNavigationDao;
 import com.nhky.utils.AccessUtil;
+import com.nhky.utils.DateUtil;
 import com.nhky.utils.RequestUtil;
 import com.nhky.utils.StringUtil;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -34,7 +35,13 @@ public class VisitorInterceptor implements HandlerInterceptor {
             if(null != list && list.size()>0){
                 LoginHistory login = list.get(0);
                 List<Map<String,Object>> users = navigationDao.getUMsg(login.getUid());
-                if(null != users && users.size()>0) {
+                String saveTimes = StringUtil.getPamterString(users.get(0).get("save_times"));
+                saveTimes = "".equals(saveTimes)?"0":saveTimes;
+                if(null != users
+                        && users.size()>0
+                        && !DateUtil.isTimeOut(
+                                StringUtil.getPamterString(users.get(0).get("create_time")),
+                                Integer.parseInt(saveTimes))) {
                     Map<String,Object> user = users.get(0);
                     request.getSession().setAttribute("userId", login.getUid());
                     request.getSession().setAttribute("userAccount", StringUtil.getPamterString(user.get("easy_id")));

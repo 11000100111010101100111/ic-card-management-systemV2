@@ -8,7 +8,7 @@ $(".msg-content .cancen").click(function () {
 function showMessage_myLayer(msg,u) {
     let height = $(".msg-content").css("height");
     $(".msg-content .msg-body .mb_revise .icon").css("background","url('"+
-        (typeof(u)!="undefined" &&  u !==""? u:"http://localhost:8080/nchkkjxy/pic/login/忘记密码.png")+
+        (typeof(u)!="undefined" &&  u !==""? u:"http://47.113.189.196:80/nchkkjxy/pic/login/忘记密码.png")+
         "') no-repeat center");
     // console.log(u);
     $(".msg-content .msg-body .mb_revise .icon").css("background-size","100% 100%");

@@ -143,13 +143,13 @@ INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_t
 			SELECT id FROM `ic_util_router_navigation` WHERE title = ''业务记录''));
 -- - 添加主页中’我   的‘的子菜单
 INSERT INTO `ic_util_router_navigation`  (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT ''个人信息'',''http://localhost:8080/nchkkjxy/balance/go'',''icon-xueshengziliao'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+	(SELECT ''个人信息'',''http://47.113.189.196:80/nchkkjxy/balance/go'',''icon-xueshengziliao'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
 			SELECT id FROM `ic_util_router_navigation` WHERE title = ''个人信息''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
 	(SELECT ''登录选项'',''#'',''icon-huidaodingbu'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
 			SELECT id FROM `ic_util_router_navigation` WHERE title = ''登录选项''));
 INSERT INTO `ic_util_router_navigation` (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
-	(SELECT ''退出系统'',''http://localhost:8080/nchkkjxy/go/toLogin'',''icon-tuichudenglu'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
+	(SELECT ''退出系统'',''http://47.113.189.196:80/nchkkjxy/go/toLogin'',''icon-tuichudenglu'',0,''主页'',(SELECT id FROM `ic_util_router_navigation` WHERE title = ''我   的''),NOW(),10 FROM DUAL WHERE NOT EXISTS (
 			SELECT id FROM `ic_util_router_navigation` WHERE title = ''退出系统''));
 -- - 添加主页中‘系   统’的子菜单
 INSERT INTO `ic_util_router_navigation`  (`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_time`,`create_personal`)
@@ -177,25 +177,25 @@ SELECT `id`,`title`,`url`,`icon`,`leavel`,`router_type`,`parent_router`,`create_
 INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT ''188207207'',''123456'',''开发者''
 	FROM DUAL WHERE NOT EXISTS (SELECT `easy_id` FROM `ic_main_easy_user` WHERE easy_id = ''188207207''));
 INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)
-	( SELECT (SELECT s.id FROM `ic_main_easy_user` s WHERE s.`easy_id` = ''188207207''),''项若颖'',''333333333333333333'',''15777777771'',''111@123.com'',''3333-33-33'',''女'',''http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
+	( SELECT (SELECT s.id FROM `ic_main_easy_user` s WHERE s.`easy_id` = ''188207207''),''项若颖'',''333333333333333333'',''15777777771'',''111@123.com'',''3333-33-33'',''女'',''http://47.113.189.196:80/nchkkjxy/pic/head_icon/defult_woman.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
 	 FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT s.id FROM `ic_main_easy_user` s WHERE s.`easy_id` = ''188207207'')));
 
 INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT ''188206140'',''123456'',''开发者'' FROM DUAL WHERE NOT EXISTS
 		(SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = ''188206140''));
 INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)
-	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206140''),''郑子豪'',''433333333333333333'',''1577777772'',''111@124.com'',''3333-33-34'',''男'',''http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
+	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206140''),''郑子豪'',''433333333333333333'',''1577777772'',''111@124.com'',''3333-33-34'',''男'',''http://47.113.189.196:80/nchkkjxy/pic/head_icon/defult_man.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
 	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206140'')));
 
 INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) ( SELECT ''188206119'',''123456'',''开发者'' FROM DUAL WHERE NOT EXISTS
 	(SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = ''188206119''));
 INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)
-	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206119''),''卢正豪'',''533333333333333333'',''15777777773'',''111@125.com'',''3333-33-35'',''男'',''http://localhost:8080/nchkkjxy/pic/head_icon/defult_man.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
+	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206119''),''卢正豪'',''533333333333333333'',''15777777773'',''111@125.com'',''3333-33-35'',''男'',''http://47.113.189.196:80/nchkkjxy/pic/head_icon/defult_man.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
 	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206119'')));
 
 INSERT INTO `ic_main_easy_user` (`easy_id`,`password`,`indentify`) (SELECT ''188206107'',''123456'',''开发者''
 	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_easy_user` WHERE easy_id = ''188206107'')) ;
 INSERT INTO `ic_main_user` (`easy_id`,`name`,`identify_card`,`phone`,`email`,`brithday`,`sex`,`head_url`,`single`,`register_identify`,`user_status`,`money_balance`,`node_status`)
-	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206107''),''晏慧君'',''633333333333333333'',''15777777774'',''111@126.com'',''3333-33-36'',''女'',''http://localhost:8080/nchkkjxy/pic/head_icon/defult_woman.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
+	(SELECT (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206107''),''晏慧君'',''633333333333333333'',''15777777774'',''111@126.com'',''3333-33-36'',''女'',''http://47.113.189.196:80/nchkkjxy/pic/head_icon/defult_woman.png'',''没有个性也是一种个性！'' ,''开发者'',''1'',''0.00'',''1''
 	FROM DUAL WHERE NOT EXISTS (SELECT easy_id FROM `ic_main_user` WHERE easy_id = (SELECT id FROM `ic_main_easy_user` WHERE `easy_id` = ''188206107'')));
 
 
@@ -409,27 +409,27 @@ INSERT INTO `ic_util_goods_type`
 
       INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   (''狗不理包子'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''108.99'',''10'',''100'',''1.0'',''蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备'',''南昌包子铺'',''0'',1,3);
+   (''狗不理包子'',''http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png'',''108.99'',''10'',''100'',''1.0'',''蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备'',''南昌包子铺'',''0'',1,3);
 
   INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   (''好莱坞大红袍'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''1230.00'',''99'',''100'',''1.0'',''服装,进口,袍,修身,大咖,有钱人,大家喜欢,优惠购'',''义乌小商城'',''0'',3,8);
+   (''好莱坞大红袍'',''http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png'',''1230.00'',''99'',''100'',''1.0'',''服装,进口,袍,修身,大咖,有钱人,大家喜欢,优惠购'',''义乌小商城'',''0'',3,8);
 
     INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   (''小米钢笔'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''99.66'',''1'',''100'',''0.95'',''文具,高科技,小米,牛逼,好写,笔,优惠购'',''小米旗舰店'',''1'',4,4);
+   (''小米钢笔'',''http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png'',''99.66'',''1'',''100'',''0.95'',''文具,高科技,小米,牛逼,好写,笔,优惠购'',''小米旗舰店'',''1'',4,4);
 
          INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   (''老挝茄子'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''12.99'',''86'',''100'',''1.0'',''蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备'',''万达广场-南昌店'',''0'',1,3);
+   (''老挝茄子'',''http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png'',''12.99'',''86'',''100'',''1.0'',''蔬菜,进口,新鲜,美味,优惠,减肥,早餐必备'',''万达广场-南昌店'',''0'',1,3);
 
   INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   (''鸿星尔克跑步鞋NK-13'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''520.00'',''99'',''100'',''1.0'',''服装,国产,国货之光,跑步,运动鞋,大咖,有钱人,大家喜欢,优惠购'',''鸿星尔克旗舰店'',''0'',3,8);
+   (''鸿星尔克跑步鞋NK-13'',''http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png'',''520.00'',''99'',''100'',''1.0'',''服装,国产,国货之光,跑步,运动鞋,大咖,有钱人,大家喜欢,优惠购'',''鸿星尔克旗舰店'',''0'',3,8);
 
     INSERT INTO `ic_shopping_goods`
    (`goods_name`,`icon`,`unit_price`,`extant`,`inventory`,`discount`,`title`,`description`,`is_special`,`goods_class`,`util`)VALUES
-   (''笔记本A4'',''http://localhost:8080/nchkkjxy/pic/main_page/card.png'',''25.00'',''85'',''160'',''0.8'',''文具,高科技,晨光,牛逼,好笔记本,漂亮,优惠购'',''小米旗舰店'',''1'',4,4);
+   (''笔记本A4'',''http://47.113.189.196:80/nchkkjxy/pic/main_page/card.png'',''25.00'',''85'',''160'',''0.8'',''文具,高科技,晨光,牛逼,好笔记本,漂亮,优惠购'',''小米旗舰店'',''1'',4,4);
 
    SELECT COUNT(id) FROM `ic_shopping_goods`
 
