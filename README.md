@@ -97,7 +97,6 @@
 ![输入图片说明](file/%E4%B8%8B%E5%8D%95%E9%A1%B5.jpg)
 ### 12、其他
 ![输入图片说明](file/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%B9%E7%AA%97.jpg)
-![输入图片说明](file/%E5%BC%80%E5%8F%91%E8%80%85.jpg)
 ![输入图片说明](file/%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF-%E4%BF%AE%E6%94%B9-%E7%AD%BE%E5%90%8D.jpg)
 ![输入图片说明](file/register_page.jpg)
 ![输入图片说明](file/%E5%9B%BE%E7%89%871.png)
